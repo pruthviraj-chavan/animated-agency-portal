@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { toast } from "@/components/ui/sonner";
+import { toast } from "sonner";
 import { Facebook, Instagram, Linkedin, Twitter, ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -54,8 +54,8 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
-          <div className="col-span-1">
-            <Link to="/" className="flex items-center gap-2 font-bold text-2xl mb-4">
+          <div className="col-span-1 animate-fade-in" style={{ animationDelay: "100ms" }}>
+            <Link to="/" className="flex items-center gap-2 font-bold text-2xl mb-4 hover-scale">
               <div className="w-10 h-10 bg-gradient rounded-full flex items-center justify-center text-white">
                 DA
               </div>
@@ -65,12 +65,13 @@ export function Footer() {
               Creating stunning digital experiences with the perfect blend of design and technology.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
+              {socialLinks.map((social, index) => (
                 <a
                   key={social.label}
                   href={social.link}
                   aria-label={social.label}
-                  className="h-10 w-10 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="h-10 w-10 flex items-center justify-center rounded-full border border-border hover:bg-primary hover:text-primary-foreground transition-colors animate-fade-in"
+                  style={{ animationDelay: `${150 + index * 50}ms` }}
                 >
                   <social.icon size={18} />
                 </a>
@@ -79,14 +80,18 @@ export function Footer() {
           </div>
 
           {/* Quick links */}
-          <div className="col-span-1">
+          <div className="col-span-1 animate-fade-in" style={{ animationDelay: "200ms" }}>
             <h3 className="font-bold text-lg mb-4">Company</h3>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
+              {footerLinks.company.map((link, index) => (
+                <li 
+                  key={link.name}
+                  className="animate-slide-in-bottom"
+                  style={{ animationDelay: `${250 + index * 50}ms` }}
+                >
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground hover:text-foreground transition-colors story-link"
                   >
                     {link.name}
                   </Link>
@@ -96,14 +101,18 @@ export function Footer() {
           </div>
 
           {/* Legal links */}
-          <div className="col-span-1">
+          <div className="col-span-1 animate-fade-in" style={{ animationDelay: "300ms" }}>
             <h3 className="font-bold text-lg mb-4">Legal</h3>
             <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
-                <li key={link.name}>
+              {footerLinks.legal.map((link, index) => (
+                <li 
+                  key={link.name}
+                  className="animate-slide-in-bottom"
+                  style={{ animationDelay: `${350 + index * 50}ms` }}
+                >
                   <Link
                     to={link.path}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground hover:text-foreground transition-colors story-link"
                   >
                     {link.name}
                   </Link>
@@ -113,7 +122,7 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="col-span-1">
+          <div className="col-span-1 animate-fade-in" style={{ animationDelay: "400ms" }}>
             <h3 className="font-bold text-lg mb-4">Subscribe to our newsletter</h3>
             <form onSubmit={handleSubscribe} className="space-y-2">
               <Input
@@ -121,11 +130,11 @@ export function Footer() {
                 placeholder="Your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-muted/50"
+                className="bg-muted/50 hover-scale"
               />
               <Button 
                 type="submit" 
-                className="w-full bg-gradient hover:opacity-90 button-pop"
+                className="w-full bg-gradient hover:opacity-90 button-pop animate-pulse-slow"
               >
                 Subscribe
               </Button>
@@ -134,7 +143,7 @@ export function Footer() {
         </div>
 
         {/* Copyright and back to top */}
-        <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t">
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t animate-fade-in" style={{ animationDelay: "500ms" }}>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Digital Agency. All rights reserved.
           </p>
