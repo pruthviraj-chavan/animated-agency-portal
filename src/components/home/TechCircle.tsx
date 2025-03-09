@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from "react";
 
-// List of programming languages and technologies
+// Enhanced list of programming languages and technologies with better colors
 const technologies = [
   { name: "React", color: "#61DAFB" },
   { name: "Node.js", color: "#8CC84B" },
@@ -116,6 +116,20 @@ export function TechCircle() {
         <div className="bg-gradient-to-r from-agency-purple to-agency-blue rounded-full w-32 h-32 flex items-center justify-center animate-pulse">
           <span className="text-white font-bold">Tech Stack</span>
         </div>
+      </div>
+      
+      {/* Decorative code elements */}
+      <div className="absolute top-10 left-10 font-mono text-xs text-agency-purple/30 animate-fade-in">
+        &lt;div className="technologies"&gt;
+      </div>
+      <div className="absolute bottom-10 right-10 font-mono text-xs text-agency-purple/30 animate-fade-in">
+        &lt;/div&gt;
+      </div>
+      <div className="absolute top-1/4 right-1/4 font-mono text-xs text-agency-blue/30 animate-fade-in">
+        import * from 'tech-stack';
+      </div>
+      <div className="absolute bottom-1/4 left-1/4 font-mono text-xs text-agency-pink/30 animate-fade-in">
+        export default Technologies;
       </div>
     </div>
   );

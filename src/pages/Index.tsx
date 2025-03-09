@@ -8,7 +8,7 @@ import { CtaSection } from "@/components/home/CtaSection";
 import { TechCircle } from "@/components/home/TechCircle";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { ProgrammingBackground } from "@/components/ProgrammingBackground";
 import { useEffect, useRef } from "react";
 
 const CodeRain = () => {
@@ -99,6 +99,7 @@ const CodeElement = ({ delay = 0, children }: { delay?: number, children: React.
 const CodeSection = () => {
   return (
     <section className="py-20 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/5 via-agency-blue/5 to-agency-pink/5 opacity-30"></div>
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient animate-scale-in">
           Our Development Process
@@ -153,12 +154,50 @@ const CodeSection = () => {
   );
 };
 
+const BinaryBackgroundEffect = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const container = containerRef.current;
+    const createBinary = () => {
+      const span = document.createElement('span');
+      span.className = 'binary-bit';
+      span.innerText = Math.random() > 0.5 ? '1' : '0';
+      span.style.left = `${Math.random() * 100}%`;
+      span.style.top = `${Math.random() * 100}%`;
+      span.style.fontSize = `${Math.random() * 14 + 8}px`;
+      span.style.opacity = `${Math.random() * 0.4 + 0.1}`;
+      span.style.color = Math.random() > 0.5 ? '#9b87f5' : '#33C3F0';
+      span.style.position = 'absolute';
+      span.style.animation = `fadeInOut ${Math.random() * 3 + 2}s ease-in-out infinite`;
+      container.appendChild(span);
+      
+      setTimeout(() => {
+        span.remove();
+      }, 5000);
+    };
+    
+    const interval = setInterval(() => {
+      createBinary();
+    }, 200);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return (
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none z-0"></div>
+  );
+};
+
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen relative">
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="fixed top-0 left-0 w-full h-screen">
           <CodeRain />
+          <ProgrammingBackground />
         </div>
       </div>
       
@@ -167,7 +206,9 @@ const Index = () => {
         <HeroSection />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
-          <div className="container mx-auto px-4">
+          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10 animate-pulse-slow"></div>
+          <BinaryBackgroundEffect />
+          <div className="container mx-auto px-4 relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gradient animate-scale-in">
               Technologies We Master
             </h2>
