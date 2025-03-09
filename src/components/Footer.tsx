@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { Facebook, Instagram, Linkedin, Twitter, ArrowUp } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, ArrowUp, Code } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -33,7 +33,6 @@ export function Footer() {
       { name: "Home", path: "/" },
       { name: "About", path: "/about" },
       { name: "Services", path: "/services" },
-      { name: "Portfolio", path: "/portfolio" },
     ],
     legal: [
       { name: "Privacy Policy", path: "/privacy" },
@@ -50,14 +49,24 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-background border-t">
+    <footer className="bg-background border-t border-border/30">
       <div className="container mx-auto px-4 py-12">
+        {/* Animated code line effect */}
+        <div className="overflow-hidden mb-8 max-w-full">
+          <div className="w-full h-6 bg-muted/30 rounded-lg relative mb-4">
+            <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-agency-purple to-agency-blue animate-pulse w-24 rounded-lg"></div>
+          </div>
+          <div className="typing-code font-mono text-xs text-muted-foreground overflow-hidden whitespace-nowrap animate-typing">
+            <span className="text-agency-blue">const</span> <span className="text-agency-pink">createAmazingExperience</span> = (<span className="text-agency-purple">client</span>) =&gt; &#123; <span className="text-agency-blue">return</span> <span className="text-agency-pink">client.success</span> &#125;;
+          </div>
+        </div>
+        
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and description */}
           <div className="col-span-1 animate-fade-in" style={{ animationDelay: "100ms" }}>
             <Link to="/" className="flex items-center gap-2 font-bold text-2xl mb-4 hover-scale">
               <div className="w-10 h-10 bg-gradient rounded-full flex items-center justify-center text-white">
-                DA
+                <Code className="animate-pulse" />
               </div>
               <span className="text-gradient">DigitalAgency</span>
             </Link>
@@ -143,7 +152,7 @@ export function Footer() {
         </div>
 
         {/* Copyright and back to top */}
-        <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t animate-fade-in" style={{ animationDelay: "500ms" }}>
+        <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t border-border/30 animate-fade-in" style={{ animationDelay: "500ms" }}>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Digital Agency. All rights reserved.
           </p>

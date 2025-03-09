@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { useState, FormEvent } from "react";
-import { MapPin, Phone, Mail, Send, CheckCircle, Loader2 } from "lucide-react";
+import { useState, FormEvent, useEffect, useRef } from "react";
+import { MapPin, Phone, Mail, Send, CheckCircle, Loader2, Code } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Contact = () => {
@@ -41,12 +41,27 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    // Simulate API call with timeout
+    // Create WhatsApp message
+    const whatsappNumber = "9404895667"; // The WhatsApp number
+    const message = `New Contact from Website:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone || 'Not provided'}
+Message: ${formData.message}`;
+    
+    // Encode the message for WhatsApp
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Simulate delay and then open WhatsApp
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      toast.success("Your message has been sent! We'll get back to you soon.");
+      toast.success("Redirecting you to WhatsApp to send your message!");
       console.log("Form submitted:", formData);
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
       
       // Reset form after a delay
       setTimeout(() => {
@@ -61,10 +76,81 @@ const Contact = () => {
     }, 1500);
   };
 
+  // Matrix code effect for the background
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    if (!canvasRef.current) return;
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const characters = "01アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
+    const fontSize = 12;
+    const columns = canvas.width / fontSize;
+
+    // Array to store the y position of each character
+    const drops: number[] = [];
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.random() * -100;
+    }
+
+    const draw = () => {
+      // Semi-transparent black background to show trail
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Set the color and font of the text
+      ctx.fillStyle = '#0f0';
+      ctx.font = `${fontSize}px monospace`;
+
+      // Loop through each drop
+      for (let i = 0; i < drops.length; i++) {
+        // Pick a random character
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+
+        // Draw the character
+        ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%, 0.5)`;
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        // Reset when it reaches the bottom and randomize the speed
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        // Increment y coordinate
+        drops[i]++;
+      }
+    };
+
+    const animation = setInterval(draw, 33);
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearInterval(animation);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
+      <canvas 
+        ref={canvasRef}
+        className="fixed top-0 left-0 w-full h-full opacity-20 pointer-events-none z-0"
+      />
+      
       <Header />
-      <main className="flex-grow pt-24">
+      <main className="flex-grow pt-24 relative z-10">
         {/* Hero Section */}
         <section className="relative py-20 bg-muted/30 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
@@ -74,12 +160,16 @@ const Contact = () => {
           
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient animate-scale-in">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient animate-scale-in glitch">
                 Contact Us
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 Have a project in mind? Get in touch with our team and let's create something amazing together.
               </p>
+              
+              <div className="terminal mb-8">
+                <span className="terminal-text">Initializing secure connection...</span>
+              </div>
             </div>
           </div>
         </section>
@@ -106,7 +196,7 @@ const Contact = () => {
                     {
                       icon: Phone,
                       title: "Call Us",
-                      details: "+1 (555) 123-4567",
+                      details: "+91 94048 95667",
                       color: "from-blue-500 to-cyan-600"
                     },
                     {
@@ -135,11 +225,42 @@ const Contact = () => {
                   ))}
                 </div>
                 
-                {/* Social links could be added here */}
+                {/* Code Animation */}
+                <div className="mt-12">
+                  <div className="code-line py-1 px-2 text-xs font-mono text-muted-foreground mb-2">
+                    <span className="text-agency-purple">import</span> <span className="text-agency-blue">&#123; sendMessage &#125;</span> <span className="text-agency-purple">from</span> <span className="text-agency-pink">'./contact'</span>;
+                  </div>
+                  <div className="code-line py-1 px-2 text-xs font-mono text-muted-foreground mb-2">
+                    <span className="text-agency-purple">const</span> <span className="text-agency-blue">response</span> = <span className="text-agency-purple">await</span> sendMessage(formData);
+                  </div>
+                  <div className="code-line py-1 px-2 text-xs font-mono text-muted-foreground">
+                    <span className="text-agency-purple">if</span> (response.success) <span className="text-agency-blue">console</span>.log(<span className="text-agency-pink">'Message sent successfully!'</span>);
+                  </div>
+                </div>
+                
+                {/* DNA Helix Animation */}
+                <div className="dna-helix mt-12">
+                  <div className="dna-strand"></div>
+                  {[...Array(10)].map((_, i) => (
+                    <div 
+                      key={i} 
+                      className="dna-rung" 
+                      style={{ 
+                        top: `${i * 20}px`,
+                        animationDelay: `${i * 0.5}s`,
+                        background: i % 2 === 0 ? '#9b87f5' : '#D946EF'
+                      }}
+                    ></div>
+                  ))}
+                </div>
               </div>
               
               {/* Contact Form */}
-              <div className="bg-muted/30 rounded-xl p-8 animate-fade-in" style={{ animationDelay: "300ms" }}>
+              <div className="bg-muted/30 rounded-xl p-8 animate-fade-in relative" style={{ animationDelay: "300ms" }}>
+                <div className="absolute -top-5 -left-5 w-10 h-10 rounded-full bg-agency-purple flex items-center justify-center animate-float">
+                  <Code size={20} className="text-white" />
+                </div>
+                
                 <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -151,7 +272,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder="John Doe"
-                      className="hover-scale"
+                      className="hover-scale backdrop-blur-sm bg-background/50"
                       required
                     />
                   </div>
@@ -165,7 +286,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="john@example.com"
-                      className="hover-scale"
+                      className="hover-scale backdrop-blur-sm bg-background/50"
                       required
                     />
                   </div>
@@ -177,8 +298,8 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      placeholder="+1 (555) 123-4567"
-                      className="hover-scale"
+                      placeholder="+91 98765 43210"
+                      className="hover-scale backdrop-blur-sm bg-background/50"
                     />
                   </div>
                   
@@ -190,7 +311,7 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Tell us about your project..."
-                      className="min-h-[120px] hover-scale"
+                      className="min-h-[120px] hover-scale backdrop-blur-sm bg-background/50"
                       required
                     />
                   </div>
@@ -207,22 +328,30 @@ const Contact = () => {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Sending...
+                          Connecting to WhatsApp...
                         </>
                       ) : isSubmitted ? (
                         <>
                           <CheckCircle className="mr-2 h-4 w-4" />
-                          Sent Successfully
+                          Ready to Send via WhatsApp
                         </>
                       ) : (
                         <>
                           <Send className="mr-2 h-4 w-4" />
-                          Send Message
+                          Send via WhatsApp
                         </>
                       )}
                     </Button>
+                    <p className="text-center text-xs text-muted-foreground mt-2">
+                      Your message will be sent directly to our WhatsApp
+                    </p>
                   </div>
                 </form>
+                
+                {/* Binary decoration */}
+                <div className="absolute -bottom-3 -right-3 text-xs font-mono text-muted-foreground opacity-50 binary-pulse">
+                  01001100 01101111 01110110 01100101
+                </div>
               </div>
             </div>
           </div>
@@ -231,13 +360,23 @@ const Contact = () => {
         {/* Google Maps (Placeholder) */}
         <section className="py-12 bg-muted/10">
           <div className="container mx-auto px-4">
-            <div className="rounded-xl overflow-hidden shadow-lg h-[400px] border border-border animate-fade-in">
-              <div className="w-full h-full bg-muted flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+            <div className="rounded-xl overflow-hidden shadow-lg h-[400px] border border-border animate-fade-in relative">
+              <div className="w-full h-full bg-muted/50 flex items-center justify-center">
+                <div className="text-center relative z-10">
+                  <MapPin className="w-16 h-16 text-muted-foreground mx-auto mb-4 animate-pulse" />
                   <p className="text-xl font-semibold">Interactive Map</p>
                   <p className="text-muted-foreground">(Map integration placeholder)</p>
                 </div>
+              </div>
+              
+              {/* Grid lines animation */}
+              <div className="absolute inset-0 grid grid-cols-10 grid-rows-10 pointer-events-none">
+                {[...Array(10)].map((_, i) => (
+                  <div key={`row-${i}`} className="w-full h-px bg-border/20"></div>
+                ))}
+                {[...Array(10)].map((_, i) => (
+                  <div key={`col-${i}`} className="h-full w-px bg-border/20"></div>
+                ))}
               </div>
             </div>
           </div>

@@ -8,7 +8,6 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Portfolio from "./pages/Portfolio";
 import Fun from "./pages/Fun";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -17,7 +16,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider defaultTheme="light">
+    <ThemeProvider defaultTheme="dark">
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -26,7 +25,6 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/fun" element={<Fun />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

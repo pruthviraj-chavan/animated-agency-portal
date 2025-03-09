@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -28,7 +27,6 @@ export function Header() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
-    { name: "Portfolio", path: "/portfolio" },
     { name: "Fun Page", path: "/fun" },
     { name: "Contact", path: "/contact" },
   ];
@@ -70,7 +68,6 @@ export function Header() {
 
         {/* Right side - Actions */}
         <div className="flex items-center gap-4">
-          <ThemeToggle />
           <Button className="bg-gradient hover:opacity-90 button-pop hidden sm:flex">
             Get a Quote!
           </Button>

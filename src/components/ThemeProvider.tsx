@@ -19,32 +19,21 @@ const ThemeProviderContext = createContext<ThemeProviderState | undefined>(
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "dark", // Changed from 'system' to 'dark'
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
+  // Force dark mode
+  const [theme] = useState<Theme>("dark");
 
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
-
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      root.classList.add(systemTheme);
-      return;
-    }
-
-    root.classList.add(theme);
-  }, [theme]);
+    root.classList.add("dark");
+  }, []);
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      setTheme(theme);
-      localStorage.setItem("theme", theme);
-    },
+    // This is a no-op now since we always want dark mode
+    setTheme: () => {},
   };
 
   return (
