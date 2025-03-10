@@ -20,116 +20,124 @@ export function GradientBackgroundEffect() {
     setDimensions();
     window.addEventListener('resize', setDimensions);
     
-    // Colors for our gradients
-    const colors = [
-      { r: 155, g: 135, b: 245 }, // agency-purple
-      { r: 51, g: 195, b: 240 },  // agency-blue
-      { r: 217, g: 70, b: 239 },  // agency-pink
-      { r: 180, g: 120, b: 255 }, // purple variant
-      { r: 80, g: 210, b: 255 },  // blue variant
-      { r: 255, g: 90, b: 180 }   // pink variant
-    ];
+    // Create a more lightweight background animation
+    // AI-themed with a grid pattern and occasional glowing nodes
     
-    // Create orbs
-    const orbs = Array.from({ length: 10 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      radius: Math.random() * 200 + 100,
-      color: colors[Math.floor(Math.random() * colors.length)],
-      vx: (Math.random() - 0.5) * 0.8,
-      vy: (Math.random() - 0.5) * 0.8,
-      alpha: 0.1 + Math.random() * 0.2
-    }));
+    // Grid properties
+    const gridSize = 30;
+    const nodeRadius = 1;
+    const activeNodeRadius = 3;
+    
+    // Active nodes - simulating AI neural network activity
+    const activeNodes: { x: number, y: number, life: number, maxLife: number }[] = [];
+    const maxActiveNodes = 15;
     
     // Animation
-    const drawGradients = () => {
-      // Clear canvas with a very dark background
+    const draw = () => {
+      // Clear canvas with dark background
       ctx.fillStyle = "rgba(10, 10, 15, 1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
-      // Update and draw each orb
-      orbs.forEach(orb => {
-        // Move orb
-        orb.x += orb.vx;
-        orb.y += orb.vy;
-        
-        // Boundary check
-        if (orb.x < -orb.radius) orb.x = canvas.width + orb.radius;
-        if (orb.x > canvas.width + orb.radius) orb.x = -orb.radius;
-        if (orb.y < -orb.radius) orb.y = canvas.height + orb.radius;
-        if (orb.y > canvas.height + orb.radius) orb.y = -orb.radius;
-        
-        // Create radial gradient
-        const gradient = ctx.createRadialGradient(
-          orb.x, orb.y, 0,
-          orb.x, orb.y, orb.radius
-        );
-        
-        gradient.addColorStop(0, `rgba(${orb.color.r}, ${orb.color.g}, ${orb.color.b}, ${orb.alpha})`);
-        gradient.addColorStop(1, `rgba(${orb.color.r}, ${orb.color.g}, ${orb.color.b}, 0)`);
-        
-        ctx.globalCompositeOperation = "lighter";
-        ctx.fillStyle = gradient;
+      // Draw grid
+      ctx.strokeStyle = "rgba(80, 80, 120, 0.1)";
+      ctx.lineWidth = 0.5;
+      
+      // Horizontal lines
+      for (let y = 0; y < canvas.height; y += gridSize) {
         ctx.beginPath();
-        ctx.arc(orb.x, orb.y, orb.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
       
-      // Add noise pattern for texture
-      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      const data = imageData.data;
+      // Vertical lines
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
       
-      for (let i = 0; i < data.length; i += 4) {
-        // Add very subtle noise
-        if (Math.random() > 0.99) {
-          data[i] = Math.min(255, data[i] + Math.random() * 20);
-          data[i+1] = Math.min(255, data[i+1] + Math.random() * 20);
-          data[i+2] = Math.min(255, data[i+2] + Math.random() * 20);
+      // Draw grid nodes
+      ctx.fillStyle = "rgba(100, 100, 160, 0.2)";
+      
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        for (let y = 0; y < canvas.height; y += gridSize) {
+          ctx.beginPath();
+          ctx.arc(x, y, nodeRadius, 0, Math.PI * 2);
+          ctx.fill();
         }
       }
       
-      ctx.putImageData(imageData, 0, 0);
-      requestAnimationFrame(drawGradients);
-    };
-    
-    // Additional floating code elements
-    const codeElements = Array.from({ length: 15 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      text: Math.random() > 0.5 ? '{' : Math.random() > 0.5 ? '}' : Math.random() > 0.5 ? '<>' : '</>',
-      size: 20 + Math.random() * 30,
-      opacity: 0.1 + Math.random() * 0.2,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      color: colors[Math.floor(Math.random() * colors.length)]
-    }));
-    
-    const drawCodeElements = () => {
-      codeElements.forEach(el => {
-        // Move element
-        el.x += el.vx;
-        el.y += el.vy;
+      // Randomly activate new nodes
+      if (activeNodes.length < maxActiveNodes && Math.random() > 0.92) {
+        const gridX = Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize;
+        const gridY = Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize;
         
-        // Boundary check
-        if (el.x < 0) el.x = canvas.width;
-        if (el.x > canvas.width) el.x = 0;
-        if (el.y < 0) el.y = canvas.height;
-        if (el.y > canvas.height) el.y = 0;
+        activeNodes.push({
+          x: gridX,
+          y: gridY,
+          life: 0,
+          maxLife: 50 + Math.random() * 50
+        });
+      }
+      
+      // Draw and update active nodes
+      ctx.globalCompositeOperation = "lighter";
+      
+      for (let i = activeNodes.length - 1; i >= 0; i--) {
+        const node = activeNodes[i];
+        node.life++;
         
-        // Draw text
-        ctx.font = `${el.size}px monospace`;
-        ctx.fillStyle = `rgba(${el.color.r}, ${el.color.g}, ${el.color.b}, ${el.opacity})`;
-        ctx.fillText(el.text, el.x, el.y);
-      });
+        // Remove dead nodes
+        if (node.life > node.maxLife) {
+          activeNodes.splice(i, 1);
+          continue;
+        }
+        
+        // Calculate alpha based on life cycle
+        let alpha = node.life < 10 ? node.life / 10 : 
+                   node.life > node.maxLife - 10 ? (node.maxLife - node.life) / 10 : 1;
+        
+        // Draw active node
+        const gradient = ctx.createRadialGradient(
+          node.x, node.y, 0,
+          node.x, node.y, activeNodeRadius * 3
+        );
+        
+        gradient.addColorStop(0, `rgba(100, 200, 255, ${alpha * 0.8})`);
+        gradient.addColorStop(1, "rgba(100, 200, 255, 0)");
+        
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, activeNodeRadius * 3, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Draw connections between nearby active nodes
+        for (let j = 0; j < activeNodes.length; j++) {
+          if (i === j) continue;
+          
+          const otherNode = activeNodes[j];
+          const dx = node.x - otherNode.x;
+          const dy = node.y - otherNode.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < gridSize * 5) {
+            ctx.strokeStyle = `rgba(100, 200, 255, ${alpha * 0.2 * (1 - distance / (gridSize * 5))})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(node.x, node.y);
+            ctx.lineTo(otherNode.x, otherNode.y);
+            ctx.stroke();
+          }
+        }
+      }
+      
+      ctx.globalCompositeOperation = "source-over";
+      requestAnimationFrame(draw);
     };
     
-    const animate = () => {
-      drawGradients();
-      drawCodeElements();
-      requestAnimationFrame(animate);
-    };
-    
-    const animationId = requestAnimationFrame(animate);
+    const animationId = requestAnimationFrame(draw);
     
     return () => {
       window.removeEventListener('resize', setDimensions);
@@ -141,6 +149,7 @@ export function GradientBackgroundEffect() {
     <canvas 
       ref={canvasRef}
       className="fixed top-0 left-0 w-full h-full opacity-100 pointer-events-none z-0"
+      aria-hidden="true"
     />
   );
 }

@@ -1,3 +1,4 @@
+
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
@@ -6,178 +7,116 @@ import { CtaSection } from "@/components/home/CtaSection";
 import { TechCircle } from "@/components/home/TechCircle";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { useEffect, useRef } from "react";
 import { GradientBackgroundEffect } from "@/components/GradientBackgroundEffect";
+import { AIChatBot } from "@/components/home/AIChatBot";
 
-const CodeRain = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    canvas.width = window.innerWidth;
-    canvas.height = 300;
-
-    const characters = "01アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン";
-    const fontSize = 12;
-    const columns = canvas.width / fontSize;
-
-    const drops: number[] = [];
-    for (let i = 0; i < columns; i++) {
-      drops[i] = Math.random() * -100;
-    }
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = '#0f0';
-      ctx.font = `${fontSize}px monospace`;
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = characters.charAt(Math.floor(Math.random() * characters.length));
-
-        ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 70%)`;
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-    };
-
-    const animation = setInterval(draw, 33);
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = 300;
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      clearInterval(animation);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+// New AI-themed code section for the homepage
+const AICodeSection = () => {
   return (
-    <canvas 
-      ref={canvasRef}
-      className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none z-0"
-    />
-  );
-};
-
-const CodeElement = ({ delay = 0, children }: { delay?: number, children: React.ReactNode }) => {
-  return (
-    <div 
-      className="animate-slide-in-bottom bg-muted/30 rounded-lg p-4 border border-primary/20 shadow-lg shadow-primary/5"
-      style={{ animationDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const CodeSection = () => {
-  return (
-    <section className="py-20 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/5 via-agency-blue/5 to-agency-pink/5 opacity-30"></div>
+    <section className="py-20 bg-background/80 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/5 via-agency-blue/5 to-agency-pink/5"></div>
+      
+      {/* Decorative AI binary elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div 
+            key={i} 
+            className="absolute text-xs font-mono text-primary"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              opacity: 0.3 + Math.random() * 0.7,
+              transform: `rotate(${Math.random() * 90 - 45}deg)`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
+          >
+            {Math.random() > 0.5 ? '10110101' : '01001011'}
+          </div>
+        ))}
+      </div>
+      
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient animate-scale-in">
-          Our Development Process
+          Our AI-Powered Development Process
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <CodeElement delay={100}>
-            <div className="text-xs font-mono mb-4">
-              <span className="text-agency-purple">function</span> <span className="text-agency-blue">designProcess</span><span className="text-white">(</span><span className="text-agency-pink">requirements</span><span className="text-white">) {`{`}</span>
-              <div className="pl-4 text-muted-foreground">
-                <p>// First we understand your needs</p>
-                <p><span className="text-agency-blue">const</span> <span className="text-agency-pink">design</span> = analyze(requirements);</p>
-                <p><span className="text-agency-blue">return</span> createPrototype(design);</p>
-              </div>
-              <span className="text-white">{`}`}</span>
+          <div className="bg-background/60 backdrop-blur-sm rounded-lg p-6 border border-agency-purple/20 shadow-lg transform transition-all hover:translate-y-[-5px] hover:shadow-agency-purple/10 animate-fade-in" style={{ animationDelay: "100ms" }}>
+            <div className="w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-agency-purple to-agency-blue flex items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-brain">
+                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path>
+                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
+              </svg>
             </div>
-            <h3 className="text-xl font-bold mb-2">1. Design & Prototype</h3>
-            <p className="text-muted-foreground">We create beautiful, functional designs based on your requirements and business goals.</p>
-          </CodeElement>
-          
-          <CodeElement delay={300}>
-            <div className="text-xs font-mono mb-4">
-              <span className="text-agency-purple">async function</span> <span className="text-agency-blue">developSolution</span><span className="text-white">(</span><span className="text-agency-pink">prototype</span><span className="text-white">) {`{`}</span>
+            
+            <div className="text-xs font-mono mb-4 text-agency-purple opacity-70">
+              <span className="text-agency-blue">async function</span> <span>analyzeRequirements</span><span>(</span><span>clientData</span><span>) {`{`}</span>
               <div className="pl-4 text-muted-foreground">
-                <p>// Building with best practices</p>
-                <p><span className="text-agency-blue">const</span> <span className="text-agency-pink">code</span> = <span className="text-agency-blue">await</span> writeCleanCode();</p>
-                <p><span className="text-agency-blue">return</span> test(code);</p>
+                <p>// AI analysis of business needs</p>
+                <p><span className="text-agency-blue">const</span> insights = <span className="text-agency-blue">await</span> ai.process(clientData);</p>
+                <p><span className="text-agency-blue">return</span> generateStrategy(insights);</p>
               </div>
-              <span className="text-white">{`}`}</span>
+              <span>{`}`}</span>
             </div>
-            <h3 className="text-xl font-bold mb-2">2. Development</h3>
-            <p className="text-muted-foreground">Our expert developers build your solution using modern technologies and best practices.</p>
-          </CodeElement>
+            
+            <h3 className="text-xl font-bold mb-2">1. AI Analysis</h3>
+            <p className="text-muted-foreground">Our AI analyzes your business requirements to identify the optimal digital strategy and technical approach.</p>
+          </div>
           
-          <CodeElement delay={500}>
-            <div className="text-xs font-mono mb-4">
-              <span className="text-agency-purple">function</span> <span className="text-agency-blue">deployAndMaintain</span><span className="text-white">(</span><span className="text-agency-pink">solution</span><span className="text-white">) {`{`}</span>
+          <div className="bg-background/60 backdrop-blur-sm rounded-lg p-6 border border-agency-blue/20 shadow-lg transform transition-all hover:translate-y-[-5px] hover:shadow-agency-blue/10 animate-fade-in" style={{ animationDelay: "300ms" }}>
+            <div className="w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-agency-blue to-agency-pink flex items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu">
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <rect x="9" y="9" width="6" height="6"></rect>
+                <path d="M15 2v2"></path>
+                <path d="M15 20v2"></path>
+                <path d="M2 15h2"></path>
+                <path d="M2 9h2"></path>
+                <path d="M20 15h2"></path>
+                <path d="M20 9h2"></path>
+                <path d="M9 2v2"></path>
+                <path d="M9 20v2"></path>
+              </svg>
+            </div>
+            
+            <div className="text-xs font-mono mb-4 text-agency-blue opacity-70">
+              <span className="text-agency-purple">function</span> <span>developSolution</span><span>(</span><span>strategy</span><span>) {`{`}</span>
               <div className="pl-4 text-muted-foreground">
-                <p>// Ensuring everything runs smoothly</p>
+                <p>// AI-accelerated development</p>
+                <p><span className="text-agency-purple">const</span> prototype = ai.generateCode(strategy);</p>
+                <p><span className="text-agency-purple">return</span> engineers.refine(prototype);</p>
+              </div>
+              <span>{`}`}</span>
+            </div>
+            
+            <h3 className="text-xl font-bold mb-2">2. AI-Assisted Development</h3>
+            <p className="text-muted-foreground">Our engineers work alongside AI to rapidly build and iterate on your digital solution with unprecedented efficiency.</p>
+          </div>
+          
+          <div className="bg-background/60 backdrop-blur-sm rounded-lg p-6 border border-agency-pink/20 shadow-lg transform transition-all hover:translate-y-[-5px] hover:shadow-agency-pink/10 animate-fade-in" style={{ animationDelay: "500ms" }}>
+            <div className="w-12 h-12 mb-4 rounded-full bg-gradient-to-r from-agency-pink to-agency-purple flex items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            
+            <div className="text-xs font-mono mb-4 text-agency-pink opacity-70">
+              <span className="text-agency-purple">function</span> <span>optimizeAndScale</span><span>(</span><span>solution</span><span>) {`{`}</span>
+              <div className="pl-4 text-muted-foreground">
+                <p>// Continuous AI optimization</p>
                 <p>deployToCloud(solution);</p>
-                <p>setupMonitoring();</p>
-                <p><span className="text-agency-blue">return</span> provideContinuousSupport();</p>
+                <p>ai.monitor(solution);</p>
+                <p><span className="text-agency-purple">return</span> ai.continuouslyImprove(solution);</p>
               </div>
-              <span className="text-white">{`}`}</span>
+              <span>{`}`}</span>
             </div>
-            <h3 className="text-xl font-bold mb-2">3. Deploy & Support</h3>
-            <p className="text-muted-foreground">We deploy your solution and provide ongoing maintenance and support to ensure success.</p>
-          </CodeElement>
+            
+            <h3 className="text-xl font-bold mb-2">3. AI Optimization</h3>
+            <p className="text-muted-foreground">Our AI continuously monitors and optimizes your solution, ensuring peak performance and adapting to changing needs.</p>
+          </div>
         </div>
       </div>
     </section>
-  );
-};
-
-const BinaryBackgroundEffect = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    if (!containerRef.current) return;
-    
-    const container = containerRef.current;
-    const createBinary = () => {
-      const span = document.createElement('span');
-      span.className = 'binary-bit';
-      span.innerText = Math.random() > 0.5 ? '1' : '0';
-      span.style.left = `${Math.random() * 100}%`;
-      span.style.top = `${Math.random() * 100}%`;
-      span.style.fontSize = `${Math.random() * 14 + 8}px`;
-      span.style.opacity = `${Math.random() * 0.4 + 0.1}`;
-      span.style.color = Math.random() > 0.5 ? '#9b87f5' : '#33C3F0';
-      span.style.position = 'absolute';
-      span.style.animation = `fadeInOut ${Math.random() * 3 + 2}s ease-in-out infinite`;
-      container.appendChild(span);
-      
-      setTimeout(() => {
-        span.remove();
-      }, 5000);
-    };
-    
-    const interval = setInterval(() => {
-      createBinary();
-    }, 200);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
-  return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none z-0"></div>
   );
 };
 
@@ -193,24 +132,27 @@ const Index = () => {
         <HeroSection />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/20 via-agency-blue/20 to-agency-pink/20 animate-pulse-slow"></div>
-          <BinaryBackgroundEffect />
+          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10"></div>
           <div className="container mx-auto px-4 relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gradient animate-scale-in">
-              Technologies We Master
+              AI-Powered Technology Stack
             </h2>
             <p className="text-lg text-center text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
-              Our team is proficient in a wide range of programming languages and frameworks, enabling us to choose the perfect technology for your project.
+              Our AI systems are built on cutting-edge technologies that enable us to deliver intelligent, 
+              scalable solutions that drive your business forward.
             </p>
             <TechCircle />
           </div>
         </section>
-        <CodeSection />
+        <AICodeSection />
         <TestimonialsSection />
         <ClientsSection />
         <CtaSection />
       </main>
       <Footer />
+      
+      {/* AI Chatbot */}
+      <AIChatBot />
     </div>
   );
 };
