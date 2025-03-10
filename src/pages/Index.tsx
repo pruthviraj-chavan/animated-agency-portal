@@ -6,8 +6,8 @@ import { CtaSection } from "@/components/home/CtaSection";
 import { TechCircle } from "@/components/home/TechCircle";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ProgrammingBackground } from "@/components/ProgrammingBackground";
 import { useEffect, useRef } from "react";
+import { GradientBackgroundEffect } from "@/components/GradientBackgroundEffect";
 
 const CodeRain = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -26,36 +26,28 @@ const CodeRain = () => {
     const fontSize = 12;
     const columns = canvas.width / fontSize;
 
-    // Array to store the y position of each character
     const drops: number[] = [];
     for (let i = 0; i < columns; i++) {
       drops[i] = Math.random() * -100;
     }
 
     const draw = () => {
-      // Semi-transparent black background to show trail
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Set the color and font of the text
       ctx.fillStyle = '#0f0';
       ctx.font = `${fontSize}px monospace`;
 
-      // Loop through each drop
       for (let i = 0; i < drops.length; i++) {
-        // Pick a random character
         const text = characters.charAt(Math.floor(Math.random() * characters.length));
 
-        // Draw the character
         ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 70%)`;
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-        // Reset when it reaches the bottom and randomize the speed
         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
 
-        // Increment y coordinate
         drops[i]++;
       }
     };
@@ -193,10 +185,7 @@ const Index = () => {
   return (
     <div className="flex flex-col min-h-screen relative">
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="fixed top-0 left-0 w-full h-screen">
-          <CodeRain />
-          <ProgrammingBackground />
-        </div>
+        <GradientBackgroundEffect />
       </div>
       
       <Header />
@@ -204,7 +193,7 @@ const Index = () => {
         <HeroSection />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10 animate-pulse-slow"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/20 via-agency-blue/20 to-agency-pink/20 animate-pulse-slow"></div>
           <BinaryBackgroundEffect />
           <div className="container mx-auto px-4 relative z-10">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gradient animate-scale-in">
