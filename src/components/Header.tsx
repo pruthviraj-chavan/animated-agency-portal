@@ -47,9 +47,9 @@ export function Header() {
           className="flex items-center gap-2 font-bold text-2xl hover-scale"
         >
           <div className="w-10 h-10 bg-gradient rounded-full flex items-center justify-center text-white">
-            DA
+            DV
           </div>
-          <span className="text-gradient">DigitalAgency</span>
+          <span className="text-gradient">dieVektor</span>
         </Link>
 
         {/* Desktop Navigation */}
