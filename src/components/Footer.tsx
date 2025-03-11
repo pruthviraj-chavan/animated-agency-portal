@@ -68,7 +68,7 @@ export function Footer() {
               <div className="w-10 h-10 bg-gradient rounded-full flex items-center justify-center text-white">
                 <Code className="animate-pulse" />
               </div>
-              <span className="text-gradient">DigitalAgency</span>
+              <span className="text-gradient">dieVektor</span>
             </Link>
             <p className="text-muted-foreground mb-4">
               Creating stunning digital experiences with the perfect blend of design and technology.
@@ -154,7 +154,7 @@ export function Footer() {
         {/* Copyright and back to top */}
         <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t border-border/30 animate-fade-in" style={{ animationDelay: "500ms" }}>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Digital Agency. All rights reserved.
+            © {new Date().getFullYear()} dieVektor. All rights reserved.
           </p>
           
           <Button
