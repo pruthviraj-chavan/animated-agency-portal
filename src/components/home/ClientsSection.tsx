@@ -7,12 +7,11 @@ interface Client {
 }
 
 const clients: Client[] = [
-  { name: "Company 1", logo: "C1" },
-  { name: "Company 2", logo: "C2" },
-  { name: "Company 3", logo: "C3" },
-  { name: "Company 4", logo: "C4" },
-  { name: "Company 5", logo: "C5" },
-  { name: "Company 6", logo: "C6" },
+  { name: "Walster", logo: "Walster" },
+  { name: "JSAT", logo: "JSAT" },
+  { name: "Sequid", logo: "Sequid" },
+  { name: "Incite", logo: "Incite" },
+  { name: "Reapmind", logo: "Reapmind" },
 ];
 
 export function ClientsSection() {
@@ -28,11 +27,11 @@ export function ClientsSection() {
             <div 
               key={client.name}
               className={cn(
-                "flex items-center justify-center h-24 w-36 rounded-lg bg-muted/40 transition-all duration-300 hover:bg-primary/10 animate-fade-in",
+                "flex items-center justify-center h-24 w-36 rounded-lg bg-gradient-to-br from-agency-purple/20 to-agency-blue/20 transition-all duration-300 hover:from-agency-purple/40 hover:to-agency-blue/40 animate-fade-in",
               )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <span className="text-2xl font-bold text-muted-foreground">{client.logo}</span>
+              <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-agency-purple to-agency-blue">{client.logo}</span>
             </div>
           ))}
         </div>
