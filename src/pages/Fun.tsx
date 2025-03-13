@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { RefreshCcw, Award, Clock, RotateCw } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -129,8 +128,8 @@ const Fun = () => {
           
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient animate-scale-in">
-                Memory Card Game
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 animate-scale-in">
+                <span className="text-gradient">Memory Card Game</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 Test your memory by matching pairs of cards. Can you find all the matches with the fewest moves?
@@ -190,21 +189,21 @@ const Fun = () => {
                     >
                       <div 
                         className={cn(
-                          "w-full h-full rounded-lg perspective-card flip-card",
+                          "w-full h-full rounded-lg",
                           (flipped.includes(index) || matched.includes(index)) ? "flipped" : ""
                         )}
                       >
-                        <div className="flip-card-inner w-full h-full relative">
-                          <div className="flip-card-front absolute w-full h-full bg-primary/10 rounded-lg border-2 border-primary/20 flex items-center justify-center">
+                        <div className="w-full h-full relative">
+                          <div className="absolute inset-0 flex items-center justify-center bg-primary/10 rounded-lg border-2 border-primary/20 transition-all duration-300 backface-hidden">
                             <span className="text-4xl opacity-20">?</span>
                           </div>
                           <div className={cn(
-                            "flip-card-back absolute w-full h-full rounded-lg flex items-center justify-center",
-                            "bg-gradient-to-br text-white",
-                            matched.includes(index) ? "from-green-500 to-emerald-600 border-2 border-green-400" : 
-                            card % 2 === 0 ? "from-agency-purple to-agency-blue" : "from-agency-blue to-agency-pink"
+                            "absolute inset-0 flex items-center justify-center rounded-lg transition-all duration-300 backface-hidden transform rotate-y-180",
+                            matched.includes(index) ? "bg-gradient-to-br from-green-500 to-emerald-600 border-2 border-green-400" : 
+                            card % 2 === 0 ? "bg-gradient-to-br from-agency-purple to-agency-blue" : "bg-gradient-to-br from-agency-blue to-agency-pink",
+                            (flipped.includes(index) || matched.includes(index)) ? "rotate-y-0" : ""
                           )}>
-                            <span>{card}</span>
+                            <span className="text-white">{card}</span>
                           </div>
                         </div>
                       </div>
@@ -263,7 +262,7 @@ const Fun = () => {
                 ].map((instruction, index) => (
                   <div 
                     key={index}
-                    className="flex items-start gap-3 animate-slide-in-bottom"
+                    className="flex items-start gap-3 animate-fade-in"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex-shrink-0 flex items-center justify-center text-primary font-medium text-sm">

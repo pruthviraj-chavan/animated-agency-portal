@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,6 +54,24 @@
 
 .hover-scale {
   @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Memory Card Game Styles */
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.rotate-y-0 {
+  transform: rotateY(0deg);
+}
+
+.flipped .backface-hidden {
+  transition: transform 0.6s;
 }
 
 /* Story Link Animation */
