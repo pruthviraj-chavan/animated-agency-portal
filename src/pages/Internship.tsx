@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -16,7 +15,7 @@ import {
   TrendingUp, 
   Users,
   GraduationCap,
-  BriefCase,
+  Briefcase,
   CheckCircle,
   Download
 } from "lucide-react";
@@ -548,7 +547,7 @@ joinInternship(you);`}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <BriefCase className="h-8 w-8 text-agency-purple" />,
+                  icon: <Briefcase className="h-8 w-8 text-agency-purple" />,
                   title: "Real-World Projects",
                   description: "Work on actual client projects and build a strong portfolio that stands out to future employers."
                 },
