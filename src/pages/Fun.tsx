@@ -3,7 +3,6 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { toast } from "sonner";
 import { RefreshCcw, Award, Clock, RotateCw } from "lucide-react";
 import { cn } from "@/lib/utils";
