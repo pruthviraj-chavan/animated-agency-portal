@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 // Predefined responses for the AI chatbot
 const AI_RESPONSES = [
   {
-    question: "what is digital agency",
+    question: "what is dievektor",
     answer: "A digital agency is a business that specializes in creating, designing, and managing digital solutions for clients. We offer services like web development, app creation, UI/UX design, and digital marketing to help businesses establish and grow their online presence."
   },
   {
@@ -23,7 +23,7 @@ const AI_RESPONSES = [
   },
   {
     question: "contact",
-    answer: "You can reach our team through our contact page or by emailing hello@digitalagency.com. We're also available via phone at (555) 123-4567 during regular business hours. We'd love to discuss your project requirements!"
+    answer: "You can reach our team through our contact page or by emailing dievektor@gmail.com. We're also available via phone at +919404895667 during regular business hours. We'd love to discuss your project requirements!"
   },
   {
     question: "pricing",
