@@ -9,7 +9,7 @@ const teamMembers = [
     name: "Pruthviraj Chavan",
     role: "Founder & CEO",
     bio: "Computer Science Engineer from DYP Salokhenagar. Experience in software engineering at Infomatics & Intellipaat.",
-    image: "/placeholder.svg",
+    image: "/me1.png",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
@@ -31,7 +31,7 @@ const teamMembers = [
     name: "Ketaki Mulik",
     role: "Business Advisor",
     bio: "MBA at York St John University UK.",
-    image: "/placeholder.svg",
+    image: "/ketaki.png",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com"
