@@ -29,7 +29,7 @@ const teamMembers = [
   },
   {
     name: "Ketaki Mulik",
-    role: "Business Advisor",
+    role: "Co-founder",
     bio: "MBA at York St John University UK.",
     image: "/ketaki.png",
     socialLinks: {
