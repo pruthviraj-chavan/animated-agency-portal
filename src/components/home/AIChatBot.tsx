@@ -2,7 +2,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Bot, SendHorizontal, User, X, Minimize2, Maximize2 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
@@ -163,11 +162,11 @@ const AI_RESPONSES = [
   },
   {
     "question": "Who is the founder of dieVektor?",
-    "answer": "dieVektor was founded by Pruthviraj Chavan with  team of passionate tech enthusiasts with a vision to revolutionize digital experiences through innovative and scalable solutions."
+    "answer": "dieVektor was founded by Pruthviraj Chavan with a team of passionate tech enthusiasts with a vision to revolutionize digital experiences through innovative and scalable solutions."
   },
   {
     "question": "When was dieVektor founded?",
-    "answer": "dieVektor was established in [Year], with a mission to provide high-quality digital solutions to businesses of all sizes."
+    "answer": "dieVektor was established in 2024, with a mission to provide high-quality digital solutions to businesses of all sizes."
   },
   {
     "question": "What is the vision of dieVektor?",
@@ -179,7 +178,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Where is dieVektor located?",
-    "answer": "dieVektor is headquartered in [Location], but we work with clients globally, providing digital solutions tailored to their needs."
+    "answer": "dieVektor is headquartered in Kolhapur, but we work with clients globally, providing digital solutions tailored to their needs."
   },
   {
     "question": "What makes dieVektor unique?",
@@ -214,7 +213,7 @@ const AI_RESPONSES = [
     "answer": "You can reach us through our website, email, or phone. Visit our contact page for more details."
   },
   {
-    "question": "What is dieVektor’s work culture like?",
+    "question": "What is dieVektor's work culture like?",
     "answer": "Our work culture is innovation-driven, collaborative, and focused on continuous learning and growth."
   },
   {
@@ -222,7 +221,7 @@ const AI_RESPONSES = [
     "answer": "Yes, we work with clients worldwide and provide remote digital solutions tailored to their needs."
   },
   {
-    "question": "What is dieVektor’s approach to problem-solving?",
+    "question": "What is dieVektor's approach to problem-solving?",
     "answer": "We use a strategic and data-driven approach, ensuring that our solutions are efficient, scalable, and future-proof."
   },
   {
@@ -238,12 +237,12 @@ const AI_RESPONSES = [
     "answer": "Yes, we collaborate with leading technology providers, cloud platforms, and industry experts to deliver the best solutions."
   },
   {
-    "question": "What is dieVektor’s future goal?",
+    "question": "What is dieVektor's future goal?",
     "answer": "Our goal is to continue pushing the boundaries of technology, helping businesses succeed in an ever-evolving digital world."
   },
   {
     "question": "Founder",
-    "answer": "dieVektor was founded by Pruthviraj Chavan a team of passionate tech enthusiasts with a vision to revolutionize digital experiences."
+    "answer": "dieVektor was founded by Pruthviraj Chavan, a team of passionate tech enthusiasts with a vision to revolutionize digital experiences."
   },
   {
     "question": "Established",
@@ -321,7 +320,7 @@ const AI_RESPONSES = [
     "question": "Future",
     "answer": "Our goal is to push technological boundaries and help businesses thrive in the digital world."
   },
-    {
+  {
     "question": "Founder | CEO",
     "answer": "dieVektor was founded by Pruthviraj Chavan"
   },
@@ -339,7 +338,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Location | Office",
-    "answer": "dieVektor is headquartered in kolhapur but works with global clients."
+    "answer": "dieVektor is headquartered in Kolhapur but works with global clients."
   },
   {
     "question": "Uniqueness | Speciality",
@@ -461,7 +460,7 @@ const AI_RESPONSES = [
     "question": "Automation | DevOps",
     "answer": "We offer CI/CD, automated deployments, and DevOps solutions."
   },
-    {
+  {
     "question": "AI | Artificial Intelligence",
     "answer": "We develop AI-driven solutions including automation, predictive analytics, and intelligent decision-making systems."
   },
@@ -556,8 +555,45 @@ const AI_RESPONSES = [
   {
     "question": "AI Deployment | MLOps",
     "answer": "We streamline AI model deployment using MLOps, CI/CD pipelines, and cloud integration."
+  },
+  // New questions about our team
+  {
+    "question": "Who are the team members?",
+    "answer": "Our core team consists of Pruthviraj Chavan (Founder & CEO), Atharva Sankpal (Co-founder), and Ketaki Mulik (Business Advisor). We also have a talented group of developers, designers, and marketing specialists."
+  },
+  {
+    "question": "Who is Pruthviraj Chavan?",
+    "answer": "Pruthviraj Chavan is the Founder & CEO of dieVektor. He is a Computer Science Engineer from DYP Salokhenagar with professional experience in software engineering at Infomatics & Intellipaat."
+  },
+  {
+    "question": "Who is Atharva Sankpal?",
+    "answer": "Atharva Sankpal is the Co-founder of dieVektor and also the Founder of Market Media. He brings extensive marketing expertise to our digital solutions."
+  },
+  {
+    "question": "Who is Ketaki Mulik?",
+    "answer": "Ketaki Mulik is our Business Advisor with an MBA from York St John University in the UK. She provides strategic business insights to guide our growth and client solutions."
+  },
+  {
+    "question": "What is the expertise of your team?",
+    "answer": "Our team has diverse expertise in software development, UI/UX design, AI/ML, digital marketing, business strategy, and project management. This multidisciplinary approach allows us to deliver comprehensive digital solutions."
+  },
+  // Questions about current tech news and AI
+  {
+    "question": "What are the latest AI trends?",
+    "answer": "Current AI trends include multimodal AI models, AI democratization with no-code platforms, AI in edge computing, responsible AI frameworks, and generative AI for content creation and creative tasks."
+  },
+  {
+    "question": "What is generative AI?",
+    "answer": "Generative AI refers to AI systems that can create new content like text, images, code, and audio. Technologies like GPT-4, DALL-E, and Midjourney are examples of generative AI that can produce human-like outputs based on prompts."
+  },
+  {
+    "question": "How is AI transforming business?",
+    "answer": "AI is transforming businesses through automation of routine tasks, enhanced data analytics for decision-making, personalized customer experiences, predictive maintenance, supply chain optimization, and creating entirely new product categories and services."
+  },
+  {
+    "question": "What is the future of web development?",
+    "answer": "The future of web development includes AI-assisted coding, increased use of WebAssembly for performance, serverless architectures, progressive web apps, AR/VR integration, and continued advancement of JavaScript frameworks and tools."
   }
-  
 ];
 
 type Message = {
@@ -600,6 +636,40 @@ export function AIChatBot() {
     }
   }, [isOpen, messages.length]);
 
+  const findBestResponse = (userQuery: string) => {
+    // Normalize the query by converting to lowercase
+    const normalizedQuery = userQuery.toLowerCase().trim();
+    
+    // Default response if nothing specific is found
+    let bestResponse = "I'm not sure how to help with that specific query. Please try asking about our services, tech stack, contact information, or portfolio.";
+    let bestMatchScore = 0;
+    
+    // Check for exact matches or partial matches in keywords
+    for (const response of AI_RESPONSES) {
+      const questionKeywords = response.question.toLowerCase().split(/\s+|\|/);
+      
+      // Calculate match score - how many keywords from the question appear in the user's query
+      const matchCount = questionKeywords.filter(keyword => 
+        normalizedQuery.includes(keyword.trim())
+      ).length;
+      
+      const matchScore = matchCount / questionKeywords.length;
+      
+      // If we find an exact match, return immediately
+      if (normalizedQuery === response.question.toLowerCase()) {
+        return response.answer;
+      }
+      
+      // If this is a better partial match than previous ones
+      if (matchScore > bestMatchScore && matchScore > 0.3) { // Require at least 30% keyword match
+        bestMatchScore = matchScore;
+        bestResponse = response.answer;
+      }
+    }
+    
+    return bestResponse;
+  };
+
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
@@ -617,16 +687,8 @@ export function AIChatBot() {
 
     // Simulate typing delay
     setTimeout(() => {
-      // Find a response that matches keywords in the user's query
-      const userQuery = inputValue.toLowerCase();
-      let aiResponse = "I'm not sure how to help with that specific query. Please try asking about our services, tech stack, contact information, or portfolio.";
-      
-      for (const response of AI_RESPONSES) {
-        if (userQuery.includes(response.question)) {
-          aiResponse = response.answer;
-          break;
-        }
-      }
+      // Find the best matching response
+      const aiResponse = findBestResponse(userMessage.content);
       
       // Add AI response
       const botMessage: Message = {
@@ -638,7 +700,7 @@ export function AIChatBot() {
       
       setMessages(prev => [...prev, botMessage]);
       setIsTyping(false);
-    }, 1000 + Math.random() * 1000); // Random delay between 1-2 seconds
+    }, 800 + Math.random() * 1200); // Random delay between 0.8-2 seconds
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {

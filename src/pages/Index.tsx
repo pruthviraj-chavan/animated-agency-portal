@@ -10,6 +10,7 @@ import { Footer } from "@/components/Footer";
 import { GradientBackgroundEffect } from "@/components/GradientBackgroundEffect";
 import { AIChatBot } from "@/components/home/AIChatBot";
 import { LatestProjectsSection } from "@/components/home/LatestProjectsSection";
+import { TeamSection } from "@/components/home/TeamSection";
 
 // New AI-themed code section for the homepage
 const AICodeSection = () => {
@@ -149,6 +150,7 @@ const Index = () => {
         <TestimonialsSection />
         <ClientsSection />
         <LatestProjectsSection />
+        <TeamSection />
         <CtaSection />
       </main>
       <Footer />
