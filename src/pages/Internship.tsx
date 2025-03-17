@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -16,7 +15,7 @@ import {
   TrendingUp, 
   Users,
   GraduationCap,
-  BriefCase,
+  Briefcase,
   CheckCircle,
   Download
 } from "lucide-react";
@@ -126,7 +125,6 @@ const Internship = () => {
 
   const handleRoleSelect = (roleId: string) => {
     setSelectedRole(roleId === selectedRole ? null : roleId);
-    // Scroll to form when a role is selected
     if (roleId !== selectedRole) {
       setTimeout(() => {
         document.getElementById("application-form")?.scrollIntoView({ behavior: "smooth" });
@@ -149,10 +147,8 @@ const Internship = () => {
 
     setIsSubmitting(true);
 
-    // Get selected role title
     const roleName = internshipRoles.find(role => role.id === selectedRole)?.title || selectedRole;
     
-    // Format the WhatsApp message with form data
     const message = encodeURIComponent(`
 *New Internship Application*
 
@@ -166,13 +162,10 @@ const Internship = () => {
 *Message:* ${formData.message}
     `);
 
-    // Open WhatsApp with the formatted message
     window.open(`https://wa.me/919404895667?text=${message}`, "_blank");
     
-    // Show success message
     toast.success("Application submitted successfully!");
     
-    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -195,7 +188,6 @@ const Internship = () => {
         <section className="relative py-20 overflow-hidden">
           <div className="absolute inset-0 bg-ai-grid opacity-30 z-0"></div>
           
-          {/* Neural network animation */}
           <div className="absolute inset-0 pointer-events-none z-0">
             <svg className="w-full h-full opacity-10" viewBox="0 0 800 600">
               <g className="neural-connection">
@@ -247,7 +239,6 @@ const Internship = () => {
               </div>
             </div>
             
-            {/* Animated code section */}
             <div className="max-w-lg mx-auto rounded-lg p-4 bg-background/80 border border-border backdrop-blur-sm code-highlight overflow-hidden">
               <pre className="text-xs md:text-sm font-mono overflow-x-auto animate-typing">
                 <code>
@@ -271,7 +262,6 @@ joinInternship(you);`}
           </div>
         </section>
         
-        {/* Internship Roles Section */}
         <section id="roles" className="py-16 bg-background relative">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-fade-in">
@@ -330,14 +320,11 @@ joinInternship(you);`}
           </div>
         </section>
         
-        {/* Application Form Section */}
         <section id="application-form" className="py-16 bg-secondary/5 relative overflow-hidden">
-          {/* Animated background elements */}
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-10 left-10 w-32 h-32 bg-agency-purple/10 rounded-full blur-3xl"></div>
             <div className="absolute bottom-10 right-10 w-40 h-40 bg-agency-blue/10 rounded-full blur-3xl"></div>
             
-            {/* Code raining effect (Matrix style) */}
             <div className="absolute inset-0 overflow-hidden opacity-5">
               {[...Array(10)].map((_, i) => (
                 <div 
@@ -530,7 +517,6 @@ joinInternship(you);`}
           </div>
         </section>
         
-        {/* Benefits Section */}
         <section className="py-16 bg-background relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
           
@@ -548,7 +534,7 @@ joinInternship(you);`}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <BriefCase className="h-8 w-8 text-agency-purple" />,
+                  icon: <Briefcase className="h-8 w-8 text-agency-purple" />,
                   title: "Real-World Projects",
                   description: "Work on actual client projects and build a strong portfolio that stands out to future employers."
                 },
@@ -595,7 +581,6 @@ joinInternship(you);`}
           </div>
         </section>
         
-        {/* WhatsApp CTA Section */}
         <section className="py-12 bg-gradient text-primary-foreground">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">

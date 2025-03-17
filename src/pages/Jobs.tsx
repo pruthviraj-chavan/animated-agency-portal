@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -22,14 +21,13 @@ import {
   ArrowRight,
   Phone,
   Mail,
-  Robot
+  Bot
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
-// Job Data
 const techJobs = [
   {
     id: 1,
@@ -123,14 +121,12 @@ const Jobs = () => {
   const filteredJobs = () => {
     let jobs = [...techJobs, ...salesJobs];
     
-    // Apply category filter
     if (categoryFilter === "tech") {
       jobs = [...techJobs];
     } else if (categoryFilter === "sales") {
       jobs = [...salesJobs];
     }
     
-    // Apply search filter
     if (searchTerm) {
       return jobs.filter(job => 
         job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -142,15 +138,12 @@ const Jobs = () => {
   };
 
   const handleApply = (jobTitle: string) => {
-    // Create WhatsApp message
     const whatsappNumber = "9404895667";
     const message = `I'm interested in applying for the ${jobTitle} position at dieVektor.`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     
-    // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
     
-    // Show toast
     toast.success("Redirecting you to WhatsApp to submit your application!");
   };
 
@@ -158,7 +151,6 @@ const Jobs = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow pt-24">
-        {/* Hero Section */}
         <section className="relative py-20 bg-muted/30 overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
             <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-agency-purple/10 animate-pulse-slow"></div>
@@ -218,15 +210,12 @@ const Jobs = () => {
           </div>
         </section>
 
-        {/* Job Listings Section */}
         <section className="py-20 bg-background relative overflow-hidden">
           <div className="container mx-auto px-4">
-            {/* Floating Robot Animation */}
             <div className="absolute right-10 md:right-20 top-10 animate-float" style={{zIndex: 1}}>
               <div className="relative">
-                <Robot className="h-32 w-32 md:h-40 md:w-40 text-agency-purple/60" />
+                <Bot className="h-32 w-32 md:h-40 md:w-40 text-agency-purple/60" />
                 <div className="absolute inset-0 blur-xl bg-agency-purple/20 rounded-full"></div>
-                {/* Orbiting elements */}
                 <div className="absolute top-0 left-0 w-full h-full">
                   {[...Array(5)].map((_, i) => (
                     <div 
@@ -244,105 +233,98 @@ const Jobs = () => {
               </div>
             </div>
           
-            {/* Technology Jobs */}
-            {(categoryFilter === "all" || categoryFilter === "tech") && (
-              <div className="mb-16">
-                <h2 className="text-3xl font-bold mb-8 text-gradient inline-block">Technology Jobs</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {techJobs
-                    .filter(job => 
-                      !searchTerm || 
-                      job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                      job.description.toLowerCase().includes(searchTerm.toLowerCase())
-                    )
-                    .map((job) => (
-                      <Card key={job.id} className="border border-border bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
-                        <div className={`absolute h-1 top-0 left-0 right-0 bg-gradient-to-r ${job.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
-                        <CardHeader className="pb-2">
-                          <div className="flex justify-between items-start">
-                            <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center text-white mr-4 bg-gradient-to-r", job.color)}>
-                              <job.icon size={20} />
-                            </div>
-                            <Badge variant="outline" className="flex items-center gap-1">
-                              <MapPin className="h-3 w-3" />
-                              {job.location}
-                            </Badge>
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-gradient inline-block">Technology Jobs</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {techJobs
+                  .filter(job => 
+                    !searchTerm || 
+                    job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                    job.description.toLowerCase().includes(searchTerm.toLowerCase())
+                  )
+                  .map((job) => (
+                    <Card key={job.id} className="border border-border bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
+                      <div className={`absolute h-1 top-0 left-0 right-0 bg-gradient-to-r ${job.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
+                      <CardHeader className="pb-2">
+                        <div className="flex justify-between items-start">
+                          <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center text-white mr-4 bg-gradient-to-r", job.color)}>
+                            <job.icon size={20} />
                           </div>
-                          <CardTitle className="mt-4">{job.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription className="text-muted-foreground min-h-[60px]">
-                            {job.description}
-                          </CardDescription>
-                        </CardContent>
-                        <CardFooter>
-                          <Button 
-                            onClick={() => handleApply(job.title)} 
-                            variant="outline" 
-                            className="w-full border-agency-purple/50 hover:bg-agency-purple/10 button-pop group"
-                          >
-                            Apply Now 
-                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    ))
-                  }
-                </div>
+                          <Badge variant="outline" className="flex items-center gap-1">
+                            <MapPin className="h-3 w-3" />
+                            {job.location}
+                          </Badge>
+                        </div>
+                        <CardTitle className="mt-4">{job.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-muted-foreground min-h-[60px]">
+                          {job.description}
+                        </CardDescription>
+                      </CardContent>
+                      <CardFooter>
+                        <Button 
+                          onClick={() => handleApply(job.title)} 
+                          variant="outline" 
+                          className="w-full border-agency-purple/50 hover:bg-agency-purple/10 button-pop group"
+                        >
+                          Apply Now 
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  ))
+                }
               </div>
-            )}
+            </div>
             
-            {/* Sales & Marketing Jobs */}
-            {(categoryFilter === "all" || categoryFilter === "sales") && (
-              <div>
-                <h2 className="text-3xl font-bold mb-8 text-gradient inline-block">Sales & Marketing Jobs</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {salesJobs
-                    .filter(job => 
-                      !searchTerm || 
-                      job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                      job.description.toLowerCase().includes(searchTerm.toLowerCase())
-                    )
-                    .map((job) => (
-                      <Card key={job.id} className="border border-border bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
-                        <div className={`absolute h-1 top-0 left-0 right-0 bg-gradient-to-r ${job.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
-                        <CardHeader className="pb-2">
-                          <div className="flex justify-between items-start">
-                            <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center text-white mr-4 bg-gradient-to-r", job.color)}>
-                              <job.icon size={20} />
-                            </div>
-                            <Badge variant="outline" className="flex items-center gap-1">
-                              <MapPin className="h-3 w-3" />
-                              {job.location}
-                            </Badge>
+            <div>
+              <h2 className="text-3xl font-bold mb-8 text-gradient inline-block">Sales & Marketing Jobs</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {salesJobs
+                  .filter(job => 
+                    !searchTerm || 
+                    job.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                    job.description.toLowerCase().includes(searchTerm.toLowerCase())
+                  )
+                  .map((job) => (
+                    <Card key={job.id} className="border border-border bg-card/50 backdrop-blur-sm hover:shadow-lg transition-all duration-300 overflow-hidden group">
+                      <div className={`absolute h-1 top-0 left-0 right-0 bg-gradient-to-r ${job.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></div>
+                      <CardHeader className="pb-2">
+                        <div className="flex justify-between items-start">
+                          <div className={cn("w-10 h-10 rounded-lg flex items-center justify-center text-white mr-4 bg-gradient-to-r", job.color)}>
+                            <job.icon size={20} />
                           </div>
-                          <CardTitle className="mt-4">{job.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <CardDescription className="text-muted-foreground min-h-[60px]">
-                            {job.description}
-                          </CardDescription>
-                        </CardContent>
-                        <CardFooter>
-                          <Button 
-                            onClick={() => handleApply(job.title)} 
-                            variant="outline" 
-                            className="w-full border-agency-blue/50 hover:bg-agency-blue/10 button-pop group"
-                          >
-                            Apply Now 
-                            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </CardFooter>
-                      </Card>
-                    ))
-                  }
-                </div>
+                          <Badge variant="outline" className="flex items-center gap-1">
+                            <MapPin className="h-3 w-3" />
+                            {job.location}
+                          </Badge>
+                        </div>
+                        <CardTitle className="mt-4">{job.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-muted-foreground min-h-[60px]">
+                          {job.description}
+                        </CardDescription>
+                      </CardContent>
+                      <CardFooter>
+                        <Button 
+                          onClick={() => handleApply(job.title)} 
+                          variant="outline" 
+                          className="w-full border-agency-blue/50 hover:bg-agency-blue/10 button-pop group"
+                        >
+                          Apply Now 
+                          <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  ))
+                }
               </div>
-            )}
+            </div>
           </div>
         </section>
         
-        {/* Application Section */}
         <section className="py-16 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="bg-card rounded-xl p-8 shadow-lg border border-border relative overflow-hidden">
