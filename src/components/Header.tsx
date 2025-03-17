@@ -27,9 +27,20 @@ export function Header() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
+    { name: "Jobs", path: "/jobs" },
     { name: "Fun Page", path: "/fun" },
     { name: "Contact", path: "/contact" },
   ];
+
+  const handleGetQuote = () => {
+    // Create WhatsApp message
+    const whatsappNumber = "9404895667";
+    const message = `Hi, I'm interested in getting a quote for your services.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <header
@@ -68,7 +79,10 @@ export function Header() {
 
         {/* Right side - Actions */}
         <div className="flex items-center gap-4">
-          <Button className="bg-gradient hover:opacity-90 button-pop hidden sm:flex">
+          <Button 
+            className="bg-gradient hover:opacity-90 button-pop hidden sm:flex"
+            onClick={handleGetQuote}
+          >
             Get a Quote!
           </Button>
 
@@ -102,7 +116,10 @@ export function Header() {
               {link.name}
             </Link>
           ))}
-          <Button className="bg-gradient mt-4 button-pop w-full">
+          <Button 
+            className="bg-gradient mt-4 button-pop w-full"
+            onClick={handleGetQuote}
+          >
             Get a Quote!
           </Button>
         </div>
