@@ -8,7 +8,7 @@ const teamMembers = [
   {
     name: "Pruthviraj Chavan",
     role: "Founder & CEO",
-    bio: "Computer Science Engineer from DYP Salokhenagar. Experience in software engineering at Infomatics & Intellipaat.",
+    bio: "Computer Science Engineering With Data Science Specialisation. Experience at Infomatics & Intellipaat.",
     image: "/me1.png",
     socialLinks: {
       linkedin: "https://linkedin.com",
