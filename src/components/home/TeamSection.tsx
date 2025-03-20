@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: "Atharva Sankpal",
     role: "Co-founder",
-    bio: "Founder - market media",
+    bio: "Founder - Market-Media Solutions , Expertise In Sales , Buisness Operations",
     image: "/placeholder.svg",
     socialLinks: {
       linkedin: "https://linkedin.com",
@@ -29,9 +29,9 @@ const teamMembers = [
   },
   {
     name: "Ketaki Mulik",
-    role: "Co-founder",
-    bio: "MBA at York St John University UK.",
-    image: "/ketaki.png",
+    role: "Co-founder & CMO",
+    bio: "MBA at York St John University UK , Expertise in Sales & Markettting Operations",
+    image: "/kk.jpeg",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com"
