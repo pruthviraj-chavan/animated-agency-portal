@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -13,41 +12,84 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    id: 1,
-    title: "Emprise Study Abroad",
-    description: "A sleek and informative website designed to help students explore global education opportunities with ease.",
-    url: "#"
-  },
-  {
-    id: 2,
-    title: "LanguageBerg",
-    description: "A language learning platform with an intuitive UI to enhance the digital learning experience.",
-    url: "#"
-  },
+  
   {
     id: 3,
     title: "Incite Computers (Radhanagri)",
     description: "A professional website for a leading IT solutions provider, built with a responsive and user-friendly design.",
-    url: "#"
+    url: "https://www.incitecomputer.com"
   },
   {
     id: 4,
     title: "Numerologist Shivaani Kalle",
     description: "An elegant portfolio website for a renowned numerologist, showcasing services and testimonials.",
-    url: "#"
+    url: "https://shivannikalle.vercel.app/"
   },
   {
     id: 5,
     title: "Kolhapur Bachat Gat",
     description: "A dynamic website designed to support and promote self-help groups in Kolhapur.",
-    url: "#"
+    url: "https://kolhapurbachatgat.com/"
   },
   {
     id: 6,
     title: "Kolhapur Incubation Centre",
     description: "A platform designed to foster innovation and entrepreneurship, providing resources for startups and businesses.",
-    url: "#"
+    url: "https://kolhapurincubation.com/"
+  },
+  {
+    id: 7,
+    title: "Linda Cars",
+    description: "Website made for a car dealership through MarketMedia.",
+    url: "https://lindacars.com/"
+  },
+  {
+    id: 8,
+    title: "Heal's Way",
+    description: "Website made for a luxury furniture brand through MarketMedia.",
+    url: "https://healsway.in/"
+  },
+  {
+    id: 9,
+    title: "Kaksha Live",
+    description: "Website made for an educational platform through MarketMedia.",
+    url: "https://kaksha.live/"
+  },
+  {
+    id: 10,
+    title: "Rotorooter",
+    description: "Website made for a plumber association through MarketMedia.",
+    url: "https://rotorooter.com/"
+  },
+  {
+    id: 11,
+    title: "Shraddha Institution",
+    description: "Website made for an institution through MarketMedia.",
+    url: "https://shraddhainstitution.com/"
+  },
+  {
+    id: 12,
+    title: "Maguire Shoes",
+    description: "Website made for an e-commerce store through MarketMedia.",
+    url: "https://maguireshoes.com/"
+  },
+  {
+    id: 13,
+    title: "Brand Alley",
+    description: "Website made for an online clothing store through MarketMedia.",
+    url: "https://brandalley.com/"
+  },
+  {
+    id: 14,
+    title: "Open House Cafe",
+    description: "Website made for a cafe through MarketMedia.",
+    url: "https://openhousecafe.in/"
+  },
+  {
+    id: 15,
+    title: "Cardtonic",
+    description: "Website made for an online banking firm through MarketMedia.",
+    url: "https://cardtonic.com/"
   }
 ];
 
@@ -60,20 +102,20 @@ export function LatestProjectsSection() {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
     if (isMobile) return; // Don't animate on mobile
-    
+
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % projects.length);
     }, 4000);
-    
+
     return () => clearInterval(interval);
   }, [isMobile]);
 
@@ -82,25 +124,25 @@ export function LatestProjectsSection() {
     if (isMobile) {
       return {};
     }
-    
+
     const totalProjects = projects.length;
     const angleStep = (2 * Math.PI) / totalProjects;
     const angle = angleStep * index - Math.PI / 2; // Start from top
-    
+
     const radius = 180; // Circle radius
     const centerX = 0;
     const centerY = 0;
-    
+
     const x = centerX + radius * Math.cos(angle);
     const y = centerY + radius * Math.sin(angle);
-    
+
     const isActive = index === activeIndex;
-    
+
     return {
       transform: `translate(${x}px, ${y}px) scale(${isActive ? 1.1 : 0.9})`,
       zIndex: isActive ? 10 : 1,
       opacity: isActive ? 1 : 0.7,
-      transition: 'all 0.7s ease-out'
+      transition: "all 0.7s ease-out"
     };
   };
 
@@ -111,48 +153,36 @@ export function LatestProjectsSection() {
           Our Latest Projects
         </h2>
         <p className="text-lg text-center text-muted-foreground mb-16 max-w-2xl mx-auto animate-fade-in">
-          We take pride in delivering high-quality digital solutions that empower businesses and individuals. 
+          We take pride in delivering high-quality digital solutions that empower businesses and individuals.
           Here are some of our latest projects:
         </p>
 
         {!isMobile ? (
-          <div className="relative h-[500px] mx-auto max-w-4xl mb-16" ref={containerRef}>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full">
-              {projects.map((project, index) => (
-                <div
-                  key={project.id}
-                  className={cn(
-                    "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
-                    "w-64 p-4 rounded-lg bg-background/80 backdrop-blur-md border border-primary/20 shadow-lg",
-                    "hover:shadow-primary/10 transition-all duration-300 cursor-pointer"
-                  )}
-                  style={getProjectStyle(index)}
-                  onClick={() => setActiveIndex(index)}
-                >
-                  <div className="h-full flex flex-col">
-                    <h3 className="text-lg font-bold mb-2 text-gradient">{project.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-4 flex-grow">{project.description}</p>
-                    <div className="flex justify-end">
-                      <a 
-                        href={project.url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-xs text-primary hover:text-primary-foreground"
-                      >
-                        <span>Visit Website</span>
-                        <ExternalLink className="ml-1 h-3 w-3" />
-                      </a>
-                    </div>
-                  </div>
+          <div className="grid grid-cols-2 gap-8 mb-16">
+            {projects.map((project, index) => (
+              <div
+                key={project.id}
+                className={cn(
+                  "relative p-6 rounded-lg bg-background/80 backdrop-blur-md border border-primary/20 shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-in",
+                  index === activeIndex && "scale-105 shadow-xl"
+                )}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                <h3 className="text-lg font-bold mb-2 text-gradient">{project.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4 flex-grow">{project.description}</p>
+                <div className="flex justify-end">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-xs text-primary hover:text-primary-foreground"
+                  >
+                    <span>Visit Website</span>
+                    <ExternalLink className="ml-1 h-3 w-3" />
+                  </a>
                 </div>
-              ))}
-            </div>
-            
-            {/* Center ring */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full border border-primary/20 animate-spin-slow"></div>
-            
-            {/* Inner dot */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-primary animate-pulse-slow"></div>
+              </div>
+            ))}
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
@@ -164,9 +194,9 @@ export function LatestProjectsSection() {
                 <h3 className="text-xl font-bold mb-2 text-gradient">{project.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{project.description}</p>
                 <div className="flex justify-end">
-                  <a 
-                    href={project.url} 
-                    target="_blank" 
+                  <a
+                    href={project.url}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-primary hover:text-primary-foreground"
                   >
