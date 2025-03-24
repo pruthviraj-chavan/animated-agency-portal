@@ -195,7 +195,7 @@ Message: ${formData.message}`;
                     {
                       icon: Mail,
                       title: "Email Us",
-                      details: "info@digitalagency.com",
+                      details: "team.divektor@gmail.com",
                       color: "from-pink-500 to-rose-600"
                     },
                     {
