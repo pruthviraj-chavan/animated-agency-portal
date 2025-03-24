@@ -353,7 +353,7 @@ const Jobs = () => {
                       toast.success("Email copied to clipboard!");
                     }}
                   >
-                    <Mail className="mr-2 h-4 w-4" /> info@digitalagency.com
+                    <Mail className="mr-2 h-4 w-4" /> team.divektor@gmail.com
                   </Button>
                 </div>
               </div>
