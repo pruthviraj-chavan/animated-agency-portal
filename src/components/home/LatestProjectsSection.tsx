@@ -212,7 +212,7 @@ export function LatestProjectsSection() {
         <div className="text-center">
           <Button asChild size="lg" className="bg-gradient hover:opacity-90 button-pop">
             <Link to="/contact" className="flex items-center">
-              <span>Got a project in mind? Let's build something amazing together!</span>
+              <span>Got a project in mind?</span>
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
