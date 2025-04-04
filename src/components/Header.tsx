@@ -1,8 +1,10 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -127,7 +129,9 @@ export function Header() {
         </nav>
 
         {/* Right side - Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          
           <Button
             className="bg-gradient hover:opacity-90 button-pop hidden sm:flex"
             onClick={handleGetQuote}
@@ -139,7 +143,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
@@ -150,26 +154,38 @@ export function Header() {
       {/* Mobile Navigation */}
       <div
         className={cn(
-          "fixed top-[57px] left-0 w-full h-[calc(100vh-57px)] bg-background/95 backdrop-blur-md md:hidden transform transition-transform duration-300 ease-in-out",
+          "fixed top-[57px] left-0 w-full h-[calc(100vh-57px)] bg-background/95 backdrop-blur-md md:hidden transform transition-transform duration-300 ease-in-out z-50",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="flex flex-col gap-4 p-8 text-center">
+        <div className="flex flex-col gap-2 p-6 overflow-y-auto max-h-full">
           {navigationLinks.map((link) => (
-            <div key={link.name}>
+            <div key={link.name} className="border-b border-border/30 pb-2">
               {link.subPages ? (
                 <>
                   {/* Services with Arrow */}
                   <div
-                    className="flex items-center justify-between cursor-pointer text-lg font-medium py-3 hover:text-primary transition-colors duration-300"
-                    onClick={toggleDropdown}
+                    className="flex items-center justify-between cursor-pointer text-lg font-medium py-2 hover:text-primary transition-colors duration-300"
+                    onClick={() => link.name === "Services" && toggleDropdown()}
                   >
-                    <span>{link.name}</span>
-                    {isDropdownOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                    <Link 
+                      to={link.path}
+                      onClick={() => {
+                        if (link.name !== "Services") {
+                          setMobileMenuOpen(false);
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </Link>
+                    {link.name === "Services" && (
+                      isDropdownOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />
+                    )}
                   </div>
+                  
                   {/* Sub-pages */}
-                  {isDropdownOpen && (
-                    <div className="pl-4">
+                  {link.name === "Services" && isDropdownOpen && (
+                    <div className="pl-4 mt-1 space-y-1">
                       {link.subPages.map((subPage) => (
                         <Link
                           key={subPage.name}
@@ -189,7 +205,7 @@ export function Header() {
               ) : (
                 <Link
                   to={link.path}
-                  className="text-lg font-medium py-3 hover:text-primary transition-colors duration-300 block"
+                  className="text-lg font-medium py-2 hover:text-primary transition-colors duration-300 block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -199,7 +215,10 @@ export function Header() {
           ))}
           <Button
             className="bg-gradient mt-4 button-pop w-full"
-            onClick={handleGetQuote}
+            onClick={() => {
+              handleGetQuote();
+              setMobileMenuOpen(false);
+            }}
           >
             Get a Quote!
           </Button>
