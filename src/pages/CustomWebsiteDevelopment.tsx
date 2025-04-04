@@ -2,10 +2,11 @@ import React from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CustomWebsiteDevelopment = () => {
-  // Dummy data for showcasing features
   const features = [
     {
       title: "Responsive Design",
@@ -46,10 +47,7 @@ const CustomWebsiteDevelopment = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header */}
       <Header />
-
-      {/* Main Content */}
       <main className="flex-grow pt-24">
         {/* Hero Section */}
         <section className="relative py-20 bg-muted/30 overflow-hidden">
@@ -100,17 +98,19 @@ const CustomWebsiteDevelopment = () => {
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Let us help you create a custom website that drives results. Contact us today for a free consultation.
               </p>
-              <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity duration-300">
-              <Link to="/contact">
-              Get Started <ArrowRight className="ml-2 h-4 w-4 inline-block" />
-              </Link>
+              <Button 
+                asChild 
+                size="lg" 
+                className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity duration-300"
+              >
+                <Link to="/contact">
+                  Get Started <ArrowRight className="ml-2 h-4 w-4 inline-block" />
+                </Link>
               </Button>
             </div>
           </div>
         </section>
       </main>
-
-      {/* Footer */}
       <Footer />
     </div>
   );
