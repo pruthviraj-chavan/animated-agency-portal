@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -8,6 +7,7 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Track scroll position for sticky header
   useEffect(() => {
@@ -26,7 +26,20 @@ export function Header() {
   const navigationLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
+    {
+      name: "Services",
+      path: "/services",
+      subPages: [
+        { name: "Custom Website Development", path: "/services/custom-website-development" },
+        { name: "E-commerce Solutions", path: "/services/e-commerce-solutions" },
+        { name: "SEO Optimization", path: "/services/seo-optimization" },
+        { name: "UI/UX Design", path: "/services/ui-ux-design" },
+        { name: "Web Hosting & Maintenance", path: "/services/web-hosting-maintenance" },
+        { name: "WordPress Development", path: "/services/wordpress-development" },
+        { name: "Mobile App Development", path: "/services/mobile-app-development" },
+        { name: "API Development & Integration", path: "/services/api-development-integration" },
+      ],
+    },
     { name: "Jobs", path: "/jobs" },
     { name: "Fun Page", path: "/fun" },
     { name: "Contact", path: "/contact" },
@@ -37,9 +50,9 @@ export function Header() {
     const whatsappNumber = "9404895667";
     const message = `Hi, I'm interested in getting a quote for your services.`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    
+
     // Open WhatsApp in a new tab
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -64,22 +77,55 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-6 relative">
           {navigationLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className="text-foreground hover:text-primary relative overflow-hidden group transition-colors duration-300 py-1"
-            >
-              {link.name}
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-            </Link>
+            <div key={link.name} className="relative group">
+              {link.subPages ? (
+                <>
+                  {/* Services Dropdown Trigger */}
+                  <span
+                    className="cursor-pointer text-foreground hover:text-primary relative overflow-hidden group-hover:text-primary transition-colors duration-300 py-1"
+                    onMouseEnter={() => setIsDropdownOpen(true)}
+                    onMouseLeave={() => setIsDropdownOpen(false)}
+                  >
+                    {link.name}
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  </span>
+                  {/* Dropdown Menu */}
+                  {isDropdownOpen && (
+                    <div
+                      className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10"
+                      onMouseEnter={() => setIsDropdownOpen(true)}
+                      onMouseLeave={() => setIsDropdownOpen(false)}
+                    >
+                      {link.subPages.map((subPage) => (
+                        <Link
+                          key={subPage.name}
+                          to={subPage.path}
+                          className="block text-foreground hover:text-primary py-2 transition-colors duration-300"
+                        >
+                          {subPage.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  to={link.path}
+                  className="text-foreground hover:text-primary relative overflow-hidden group-hover:text-primary transition-colors duration-300 py-1"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </Link>
+              )}
+            </div>
           ))}
         </nav>
 
         {/* Right side - Actions */}
         <div className="flex items-center gap-4">
-          <Button 
+          <Button
             className="bg-gradient hover:opacity-90 button-pop hidden sm:flex"
             onClick={handleGetQuote}
           >
@@ -107,16 +153,41 @@ export function Header() {
       >
         <div className="flex flex-col gap-4 p-8 text-center">
           {navigationLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className="text-lg font-medium py-3 hover:text-primary transition-colors duration-300"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
+            <div key={link.name}>
+              {link.subPages ? (
+                <>
+                  <div
+                    className="text-lg font-medium py-3 cursor-pointer hover:text-primary transition-colors duration-300"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </div>
+                  <div className="pl-4">
+                    {link.subPages.map((subPage) => (
+                      <Link
+                        key={subPage.name}
+                        to={subPage.path}
+                        className="block text-base py-2 hover:text-primary transition-colors duration-300"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {subPage.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="text-lg font-medium py-3 hover:text-primary transition-colors duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              )}
+            </div>
           ))}
-          <Button 
+          <Button
             className="bg-gradient mt-4 button-pop w-full"
             onClick={handleGetQuote}
           >
