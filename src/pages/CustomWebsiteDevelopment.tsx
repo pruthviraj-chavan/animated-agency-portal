@@ -100,9 +100,11 @@ const CustomWebsiteDevelopment = () => {
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
                 Let us help you create a custom website that drives results. Contact us today for a free consultation.
               </p>
-              <button className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity duration-300">
-                Get Started <ArrowRight className="ml-2 h-4 w-4 inline-block" />
-              </button>
+              <Button asChild size="lg" className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white hover:opacity-90 transition-opacity duration-300">
+              <Link to="/contact">
+              Get Started <ArrowRight className="ml-2 h-4 w-4 inline-block" />
+              </Link>
+              </Button>
             </div>
           </div>
         </section>
