@@ -5,17 +5,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Database, Cpu, Monitor, Zap, Award, Users, Globe, BarChart } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
+import { TeamSection } from "@/components/home/TeamSection";
 
 const About = () => {
-  const teamMembers = [
-    {
-      name: "Pruthviraj Chavan",
-      role: "Founder & CEO",
-      bio: "Computer Science Engineer from DYP Salokhenagar. Experience in software engineering at Infomatics & Intellipaat.",
-      skills: ["Django", "Python", "SQL", "HTML", "CSS", "JavaScript", "React"],
-      background: "Computer Science Engineer from DYP Salokhenagar."
-    }
-  ];
+ 
 
   const milestones = [
     {
@@ -316,56 +309,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center text-gradient animate-scale-in">
-              Meet Our Team
-            </h2>
-            
-            <div className="flex justify-center">
-              {teamMembers.map((member, index) => (
-                <div 
-                  key={member.name}
-                  className="bg-muted/30 backdrop-blur-sm rounded-lg p-6 text-center hover-scale animate-slide-in-bottom perspective-card max-w-md"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <div className="flip-card-inner relative">
-                    <div className="flip-card-front">
-                      <div className="w-24 h-24 bg-gradient-to-br from-agency-purple to-agency-pink rounded-full mx-auto mb-4 flex items-center justify-center text-white font-bold text-xl">
-                        PC
-                      </div>
-                      <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                      <p className="text-primary text-sm mb-3">{member.role}</p>
-                      <p className="text-muted-foreground text-sm">{member.bio}</p>
-                      
-                      <button className="mt-4 text-xs text-primary hover:text-primary-foreground transition-colors">
-                        View More
-                      </button>
-                    </div>
-                    <div className="flip-card-back absolute inset-0 bg-muted rounded-lg p-6 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="text-xl font-bold mb-3">{member.name}</h3>
-                      <div className="mb-3">
-                        <h4 className="text-sm font-semibold text-primary mb-1">Skills:</h4>
-                        <div className="flex flex-wrap gap-1 justify-center">
-                          {member.skills.map(skill => (
-                            <span key={skill} className="text-xs bg-primary/20 text-primary-foreground px-2 py-1 rounded">
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-primary mb-1">Background:</h4>
-                        <p className="text-xs text-muted-foreground">{member.background}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <TeamSection />
 
         {/* CTA Section */}
         <section className="py-16 bg-muted/30">
