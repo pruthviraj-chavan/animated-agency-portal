@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
@@ -31,7 +32,13 @@ export function Header() {
       path: "/services",
       subPages: [
         { name: "Custom Website Development", path: "/services/custom-website-development" },
-      
+        { name: "E-commerce Solutions", path: "/services/ecommerce-solutions" },
+        { name: "SEO Optimization", path: "/services/seo-optimization" },
+        { name: "UI/UX Design", path: "/services/ui-ux-design" },
+        { name: "Web Hosting & Maintenance", path: "/services/web-hosting" },
+        { name: "WordPress Development", path: "/services/wordpress-development" },
+        { name: "Mobile App Development", path: "/services/mobile-app-development" },
+        { name: "API Development & Integration", path: "/services/api-development" }
       ],
     },
     { name: "Jobs", path: "/jobs" },
@@ -47,6 +54,10 @@ export function Header() {
 
     // Open WhatsApp in a new tab
     window.open(whatsappUrl, "_blank");
+  };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -76,27 +87,23 @@ export function Header() {
             <div key={link.name} className="relative group">
               {link.subPages ? (
                 <>
-                  {/* Services Dropdown Trigger */}
-                  <span
-                    className="cursor-pointer text-foreground hover:text-primary relative overflow-hidden group-hover:text-primary transition-colors duration-300 py-1"
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
-                  >
-                    {link.name}
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </span>
+                  {/* Services with Dropdown */}
+                  <div className="flex items-center cursor-pointer text-foreground hover:text-primary transition-colors duration-300 py-1" onClick={toggleDropdown}>
+                    <Link to={link.path} className="mr-1">
+                      {link.name}
+                    </Link>
+                    {isDropdownOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                  </div>
+                  
                   {/* Dropdown Menu */}
                   {isDropdownOpen && (
-                    <div
-                      className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10"
-                      onMouseEnter={() => setIsDropdownOpen(true)}
-                      onMouseLeave={() => setIsDropdownOpen(false)}
-                    >
+                    <div className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10">
                       {link.subPages.map((subPage) => (
                         <Link
                           key={subPage.name}
                           to={subPage.path}
                           className="block text-foreground hover:text-primary py-2 transition-colors duration-300"
+                          onClick={() => setIsDropdownOpen(false)}
                         >
                           {subPage.name}
                         </Link>
@@ -150,12 +157,13 @@ export function Header() {
             <div key={link.name}>
               {link.subPages ? (
                 <>
-                  <div
-                    className="text-lg font-medium py-3 cursor-pointer hover:text-primary transition-colors duration-300"
+                  <Link
+                    to={link.path}
+                    className="text-lg font-medium py-3 hover:text-primary transition-colors duration-300 block"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
-                  </div>
+                  </Link>
                   <div className="pl-4">
                     {link.subPages.map((subPage) => (
                       <Link
@@ -171,9 +179,8 @@ export function Header() {
                 </>
               ) : (
                 <Link
-                  key={link.name}
                   to={link.path}
-                  className="text-lg font-medium py-3 hover:text-primary transition-colors duration-300"
+                  className="text-lg font-medium py-3 hover:text-primary transition-colors duration-300 block"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}

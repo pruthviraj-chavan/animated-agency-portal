@@ -12,7 +12,14 @@ import Fun from "./pages/Fun";
 import Jobs from "./pages/Jobs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import CustomWebsiteDevelopment from "./pages/CustomWebsiteDevelopment";
+import CustomWebsiteDevelopment from "./pages/services/CustomWebsiteDevelopment";
+import EcommerceSolutions from "./pages/services/EcommerceSolutions";
+import SeoOptimization from "./pages/services/SeoOptimization";
+import UiUxDesign from "./pages/services/UiUxDesign";
+import WebHosting from "./pages/services/WebHosting";
+import WordpressDevelopment from "./pages/services/WordpressDevelopment";
+import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
+import ApiDevelopment from "./pages/services/ApiDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +35,13 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/custom-website-development" element={<CustomWebsiteDevelopment />} />
+            <Route path="/services/ecommerce-solutions" element={<EcommerceSolutions />} />
+            <Route path="/services/seo-optimization" element={<SeoOptimization />} />
+            <Route path="/services/ui-ux-design" element={<UiUxDesign />} />
+            <Route path="/services/web-hosting" element={<WebHosting />} />
+            <Route path="/services/wordpress-development" element={<WordpressDevelopment />} />
+            <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
+            <Route path="/services/api-development" element={<ApiDevelopment />} />
             <Route path="/fun" element={<Fun />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/contact" element={<Contact />} />
