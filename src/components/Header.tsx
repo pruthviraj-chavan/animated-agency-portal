@@ -87,13 +87,16 @@ export function Header() {
               {link.subPages ? (
                 <>
                   {/* Services with Dropdown */}
-                  <div className="flex items-center cursor-pointer text-foreground hover:text-primary transition-colors duration-300 py-1" onClick={toggleDropdown}>
+                  <div
+                    className="flex items-center cursor-pointer text-foreground hover:text-primary transition-colors duration-300 py-1"
+                    onClick={toggleDropdown}
+                  >
                     <Link to={link.path} className="mr-1">
                       {link.name}
                     </Link>
                     {isDropdownOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </div>
-                  
+
                   {/* Dropdown Menu */}
                   {isDropdownOpen && (
                     <div className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10">
