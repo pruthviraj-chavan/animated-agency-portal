@@ -1,10 +1,8 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -129,9 +127,7 @@ export function Header() {
         </nav>
 
         {/* Right side - Actions */}
-        <div className="flex items-center gap-2">
-          <ThemeToggle />
-          
+        <div className="flex items-center gap-4">
           <Button
             className="bg-gradient hover:opacity-90 button-pop hidden sm:flex"
             onClick={handleGetQuote}
