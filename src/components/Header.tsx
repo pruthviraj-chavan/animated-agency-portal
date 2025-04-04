@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
@@ -38,7 +37,7 @@ export function Header() {
         { name: "Web Hosting & Maintenance", path: "/services/web-hosting" },
         { name: "WordPress Development", path: "/services/wordpress-development" },
         { name: "Mobile App Development", path: "/services/mobile-app-development" },
-        { name: "API Development & Integration", path: "/services/api-development" }
+        { name: "API Development & Integration", path: "/services/api-development" },
       ],
     },
     { name: "Jobs", path: "/jobs" },
@@ -157,25 +156,32 @@ export function Header() {
             <div key={link.name}>
               {link.subPages ? (
                 <>
-                  <Link
-                    to={link.path}
-                    className="text-lg font-medium py-3 hover:text-primary transition-colors duration-300 block"
-                    onClick={() => setMobileMenuOpen(false)}
+                  {/* Services with Arrow */}
+                  <div
+                    className="flex items-center justify-between cursor-pointer text-lg font-medium py-3 hover:text-primary transition-colors duration-300"
+                    onClick={toggleDropdown}
                   >
-                    {link.name}
-                  </Link>
-                  <div className="pl-4">
-                    {link.subPages.map((subPage) => (
-                      <Link
-                        key={subPage.name}
-                        to={subPage.path}
-                        className="block text-base py-2 hover:text-primary transition-colors duration-300"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {subPage.name}
-                      </Link>
-                    ))}
+                    <span>{link.name}</span>
+                    {isDropdownOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </div>
+                  {/* Sub-pages */}
+                  {isDropdownOpen && (
+                    <div className="pl-4">
+                      {link.subPages.map((subPage) => (
+                        <Link
+                          key={subPage.name}
+                          to={subPage.path}
+                          className="block text-base py-2 hover:text-primary transition-colors duration-300"
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            setIsDropdownOpen(false);
+                          }}
+                        >
+                          {subPage.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </>
               ) : (
                 <Link
