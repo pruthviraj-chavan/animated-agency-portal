@@ -10,15 +10,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, "index.html"),
-        about: path.resolve(__dirname, "about.html"),
-        services: path.resolve(__dirname, "services.html"),
-        customWebsiteDevelopment: path.resolve(__dirname, "custom-website-development.html"),
-        // Add other sub-pages here
-      },
-    },
-  },
 });
