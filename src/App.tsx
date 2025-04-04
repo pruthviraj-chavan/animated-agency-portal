@@ -12,6 +12,7 @@ import Fun from "./pages/Fun";
 import Jobs from "./pages/Jobs";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import CustomWebsiteDevelopment from "./pages/CustomWebsiteDevelopment";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/services/custom-website-development" element={<CustomWebsiteDevelopment />} />
             <Route path="/fun" element={<Fun />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/contact" element={<Contact />} />
