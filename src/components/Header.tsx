@@ -31,13 +31,7 @@ export function Header() {
       path: "/services",
       subPages: [
         { name: "Custom Website Development", path: "/services/custom-website-development" },
-        { name: "E-commerce Solutions", path: "/services/e-commerce-solutions" },
-        { name: "SEO Optimization", path: "/services/seo-optimization" },
-        { name: "UI/UX Design", path: "/services/ui-ux-design" },
-        { name: "Web Hosting & Maintenance", path: "/services/web-hosting-maintenance" },
-        { name: "WordPress Development", path: "/services/wordpress-development" },
-        { name: "Mobile App Development", path: "/services/mobile-app-development" },
-        { name: "API Development & Integration", path: "/services/api-development-integration" },
+      
       ],
     },
     { name: "Jobs", path: "/jobs" },
