@@ -20,6 +20,8 @@ import WebHosting from "./pages/services/WebHosting";
 import WordpressDevelopment from "./pages/services/WordpressDevelopment";
 import MobileAppDevelopment from "./pages/services/MobileAppDevelopment";
 import ApiDevelopment from "./pages/services/ApiDevelopment";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +44,8 @@ const App = () => (
             <Route path="/services/wordpress-development" element={<WordpressDevelopment />} />
             <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
             <Route path="/services/api-development" element={<ApiDevelopment />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/fun" element={<Fun />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/contact" element={<Contact />} />
