@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dievektor.tech/sitemap.xml
+Sitemap: https://www.dievektor.tech/sitemap.xml
