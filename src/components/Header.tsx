@@ -40,6 +40,7 @@ export function Header() {
         { name: "API Development & Integration", path: "/services/api-development" },
       ],
     },
+    { name: "Blog", path: "/blog" },
     { name: "Jobs", path: "/jobs" },
     { name: "Fun Page", path: "/fun" },
     { name: "Contact", path: "/contact" },

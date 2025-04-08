@@ -11,4 +11,6 @@ if (!rootElement) {
   document.body.appendChild(root);
 }
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Hydrate or render depending on environment
+const root = createRoot(document.getElementById("root")!);
+root.render(<App />);
