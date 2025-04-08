@@ -73,7 +73,7 @@ At Dievektor, we're embracing these AI advancements while maintaining our commit
     `,
     author: {
       name: "Alex Johnson",
-      avatar: "/team/member1.jpg",
+      avatar: "/team/member1.jpg"
     },
     date: "April 5, 2025",
     readTime: "6 min read",
@@ -143,7 +143,7 @@ By implementing these strategies, your website can achieve better visibility in 
     `,
     author: {
       name: "Sarah Chen",
-      avatar: "/team/member2.jpg",
+      avatar: "/team/member2.jpg"
     },
     date: "March 22, 2025",
     readTime: "8 min read",
@@ -242,7 +242,7 @@ At Dievektor, we specialize in creating PWAs that deliver exceptional user exper
     `,
     author: {
       name: "Michael Rodriguez",
-      avatar: "/team/member3.jpg",
+      avatar: "/team/member3.jpg"
     },
     date: "March 10, 2025",
     readTime: "7 min read",
@@ -366,7 +366,7 @@ By making accessibility a priority in your web projects, you're not only doing t
     `,
     author: {
       name: "Emily Washington",
-      avatar: "/team/member4.jpg",
+      avatar: "/team/member4.jpg"
     },
     date: "February 28, 2025",
     readTime: "9 min read",
@@ -413,16 +413,16 @@ Here's a simplified example of a Jamstack implementation using React and a headl
 \`\`\`jsx
 // During build time, data is fetched from APIs
 export async function getStaticProps() {
-  const res = await fetch('https://api.cms.com/posts')
-  const posts = await res.json()
+  const res = await fetch('https://api.cms.com/posts');
+  const posts = await res.json();
   
   return {
     props: {
-      posts,
+      posts
     },
     // Re-generate pages at most once per hour
-    revalidate: 3600,
-  }
+    revalidate: 3600
+  };
 }
 
 // The component receives pre-fetched data as props
@@ -433,14 +433,12 @@ function BlogIndex({ posts }) {
       <ul>
         {posts.map(post => (
           <li key={post.id}>
-            <Link href={`/blog/${post.slug}`}>
-              <a>{post.title}</a>
-            </Link>
+            <a href={"/blog/" + post.slug}>{post.title}</a>
           </li>
         ))}
       </ul>
     </main>
-  )
+  );
 }
 \`\`\`
 
@@ -495,7 +493,7 @@ At Dievektor, we've helped numerous clients transition to Jamstack architecture,
     `,
     author: {
       name: "David Kim",
-      avatar: "/team/member5.jpg",
+      avatar: "/team/member5.jpg"
     },
     date: "February 15, 2025",
     readTime: "7 min read",
