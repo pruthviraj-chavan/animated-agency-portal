@@ -1,4 +1,3 @@
-
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
@@ -12,14 +11,13 @@ import { AIChatBot } from "@/components/home/AIChatBot";
 import { LatestProjectsSection } from "@/components/home/LatestProjectsSection";
 import { TeamSection } from "@/components/home/TeamSection";
 import MeetingBookingForm from "@/components/home/MeetingBookingForm";
+import { ReferralSection } from "@/components/home/ReferralSection";
 
-// New AI-themed code section for the homepage
 const AICodeSection = () => {
   return (
     <section className="py-20 bg-background/80 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/5 via-agency-blue/5 to-agency-pink/5"></div>
       
-      {/* Decorative AI binary elements */}
       <div className="absolute inset-0 overflow-hidden opacity-5 pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div 
@@ -152,12 +150,12 @@ const Index = () => {
         <ClientsSection />
         <LatestProjectsSection />
         <TeamSection />
+        <ReferralSection />
         <CtaSection />
         <MeetingBookingForm/>
       </main>
       <Footer />
       
-      {/* AI Chatbot */}
       <AIChatBot />
     </div>
   );

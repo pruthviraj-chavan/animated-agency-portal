@@ -38,6 +38,7 @@ export function Header() {
         { name: "WordPress Development", path: "/services/wordpress-development" },
         { name: "Mobile App Development", path: "/services/mobile-app-development" },
         { name: "API Development & Integration", path: "/services/api-development" },
+        { name: "Refer & Earn", path: "/services/refer" },
       ],
     },
     { name: "Blog", path: "/blog" },
@@ -70,7 +71,6 @@ export function Header() {
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {/* Logo */}
         <Link
           to="/"
           className="flex items-center gap-2 font-bold text-2xl hover-scale"
@@ -81,13 +81,11 @@ export function Header() {
           <span className="text-gradient">dieVektor</span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 relative">
           {navigationLinks.map((link) => (
             <div key={link.name} className="relative group">
               {link.subPages ? (
                 <>
-                  {/* Services with Dropdown */}
                   <div
                     className="flex items-center cursor-pointer text-foreground hover:text-primary transition-colors duration-300 py-1"
                     onClick={toggleDropdown}
@@ -98,7 +96,6 @@ export function Header() {
                     {isDropdownOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </div>
 
-                  {/* Dropdown Menu */}
                   {isDropdownOpen && (
                     <div className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10">
                       {link.subPages.map((subPage) => (
@@ -127,7 +124,6 @@ export function Header() {
           ))}
         </nav>
 
-        {/* Right side - Actions */}
         <div className="flex items-center gap-4">
           <Button
             className="bg-gradient hover:opacity-90 button-pop hidden sm:flex"
@@ -136,7 +132,6 @@ export function Header() {
             Get a Quote!
           </Button>
 
-          {/* Mobile menu button */}
           <Button
             variant="ghost"
             size="icon"
@@ -148,7 +143,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <div
         className={cn(
           "fixed top-[57px] left-0 w-full h-[calc(100vh-57px)] bg-background/95 backdrop-blur-md md:hidden transform transition-transform duration-300 ease-in-out z-50",
@@ -160,7 +154,6 @@ export function Header() {
             <div key={link.name} className="border-b border-border/30 pb-2">
               {link.subPages ? (
                 <>
-                  {/* Services with Arrow */}
                   <div
                     className="flex items-center justify-between cursor-pointer text-lg font-medium py-2 hover:text-primary transition-colors duration-300"
                     onClick={() => link.name === "Services" && toggleDropdown()}
@@ -180,7 +173,6 @@ export function Header() {
                     )}
                   </div>
                   
-                  {/* Sub-pages */}
                   {link.name === "Services" && isDropdownOpen && (
                     <div className="pl-4 mt-1 space-y-1">
                       {link.subPages.map((subPage) => (
