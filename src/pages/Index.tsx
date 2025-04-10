@@ -1,3 +1,4 @@
+
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
@@ -12,6 +13,7 @@ import { LatestProjectsSection } from "@/components/home/LatestProjectsSection";
 import { TeamSection } from "@/components/home/TeamSection";
 import MeetingBookingForm from "@/components/home/MeetingBookingForm";
 import { ReferralSection } from "@/components/home/ReferralSection";
+import { GalaxyVideoSection } from "@/components/home/GalaxyVideoSection";
 
 const AICodeSection = () => {
   return (
@@ -145,6 +147,7 @@ const Index = () => {
             <TechCircle />
           </div>
         </section>
+        <GalaxyVideoSection />
         <AICodeSection />
         <TestimonialsSection />
         <ClientsSection />

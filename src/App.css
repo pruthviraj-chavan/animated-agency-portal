@@ -66,6 +66,19 @@
   will-change: transform, opacity;
 }
 
+/* Floating animation for space elements */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-10px) translateX(5px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
 /* Optimization for animations */
 .animate-fade-in,
 .animate-scale-in,
@@ -103,4 +116,3 @@
     background-position: 200% center;
   }
 }
-
