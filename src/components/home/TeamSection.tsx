@@ -19,7 +19,7 @@ const teamMembers = [
   {
     name: "Akash Sakhare",
     role: "Co-founder & COO",
-    bio: "Founder - Market-Media Solutions , Expertise In Sales , Buisness Operations",
+    bio: "Founder - Market-Media Solutions , Expertise In Sales & Buisness Operations",
     image: "/placeholder.svg",
     socialLinks: {
       linkedin: "https://linkedin.com",
