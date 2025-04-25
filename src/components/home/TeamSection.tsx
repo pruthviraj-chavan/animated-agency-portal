@@ -17,7 +17,7 @@ const teamMembers = [
     }
   },
   {
-    name: "Akash Sakhare",
+    name: "Atharv Sankpal",
     role: "Co-founder & COO",
     bio: "Founder - Market-Media Solutions , Expertise In Sales & Buisness Operations",
     image: "/placeholder.svg",
