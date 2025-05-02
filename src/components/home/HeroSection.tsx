@@ -88,7 +88,7 @@ export function HeroSection() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-scale-in">
               Transform Business with{" "}
               <span className="bg-gradient-to-r from-agency-purple via-agency-blue to-agency-pink bg-clip-text text-transparent">
-                Artificial Intelligence
+                Dievektor's Intelligence
               </span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0 animate-fade-in" style={{ animationDelay: "200ms" }}>
