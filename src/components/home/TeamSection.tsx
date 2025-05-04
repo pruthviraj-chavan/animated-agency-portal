@@ -20,7 +20,7 @@ const teamMembers = [
     name: "Atharv Sankpal",
     role: "Co-founder & COO",
     bio: "Founder - Market-Media Solutions , Expertise In Sales & Buisness Operations",
-    image: "/placeholder.svg",
+    image: "/as.jpeg",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
