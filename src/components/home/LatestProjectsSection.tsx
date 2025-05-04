@@ -21,9 +21,9 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Numerologist Shivaani Kalle",
-    description: "An elegant portfolio website for a renowned numerologist, showcasing services and testimonials.",
-    url: "https://shivannikalle.vercel.app/"
+    title: "Lagori Foundation Kolhapur",
+    description: "An elegant portfolio website for a renowned NGO.",
+    url: "https://www.lagorifoundation.in/"
   },
   {
     id: 5,
@@ -40,56 +40,62 @@ const projects: Project[] = [
   {
     id: 7,
     title: "Linda Cars",
-    description: "Website made for a car dealership through MarketMedia.",
+    description: "Website made for a car dealership through dieVektor.",
     url: "https://lindacars.com/"
   },
   {
     id: 8,
     title: "Heal's Way",
-    description: "Website made for a luxury furniture brand through MarketMedia.",
+    description: "Website made for a luxury furniture brand through dieVektor.",
     url: "https://healsway.in/"
   },
   {
     id: 9,
     title: "Kaksha Live",
-    description: "Website made for an educational platform through MarketMedia.",
+    description: "Website made for an educational platform through dieVektor.",
     url: "https://kaksha.live/"
   },
   {
     id: 10,
     title: "Rotorooter",
-    description: "Website made for a plumber association through MarketMedia.",
+    description: "Website made for a plumber association through dieVektor.",
     url: "https://rotorooter.com/"
   },
   {
     id: 11,
-    title: "Shraddha Institution",
-    description: "Website made for an institution through MarketMedia.",
-    url: "https://shraddhainstitution.com/"
+    title: "Fortune Technology",
+    description: "Website made for an institution through dieVektor.",
+    url: "https://fortunekolhapur.com/"
   },
   {
     id: 12,
     title: "Maguire Shoes",
-    description: "Website made for an e-commerce store through MarketMedia.",
+    description: "Website made for an e-commerce store through dieVektor.",
     url: "https://maguireshoes.com/"
   },
   {
     id: 13,
-    title: "Brand Alley",
-    description: "Website made for an online clothing store through MarketMedia.",
-    url: "https://brandalley.com/"
+    title: "Samarth Infotech ",
+    description: "Website made for an Computer Training Institute.",
+    url: "https://mscit.ssitindia.com/"
   },
   {
     id: 14,
     title: "Open House Cafe",
-    description: "Website made for a cafe through MarketMedia.",
+    description: "Website made for a cafe through dieVektor.",
     url: "https://openhousecafe.in/"
   },
   {
     id: 15,
     title: "Cardtonic",
-    description: "Website made for an online banking firm through MarketMedia.",
+    description: "Website made for an online banking firm through dieVektor.",
     url: "https://cardtonic.com/"
+  },
+  {
+    id: 16,
+    title: "Solar Infotech",
+    description: "Website made for an Solar Company.",
+    url: "http://sspowertech.in/"
   }
 ];
 
