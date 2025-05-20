@@ -12,87 +12,80 @@ interface Project {
 }
 
 const projects: Project[] = [
-  
+  {
+    id: 1,
+    title: "Maguire Shoes",
+    description: "Website made for an e-commerce store through dieVektor.",
+    url: "https://maguireshoes.com/   "
+  },
+  {
+    id: 2,
+    title: "Fortune Technology",
+    description: "Website made for an institution through dieVektor.",
+    url: "https://fortunekolhapur.com/   "
+  },
   {
     id: 3,
-    title: "Incite Computers (Radhanagri)",
-    description: "A professional website for a leading IT solutions provider, built with a responsive and user-friendly design.",
-    url: "https://www.incitecomputer.com"
+    title: "Linda Cars",
+    description: "Website made for a car dealership through dieVektor.",
+    url: "https://lindacars.com/   "
   },
   {
     id: 4,
-    title: "Lagori Foundation Kolhapur",
-    description: "An elegant portfolio website for a renowned NGO.",
-    url: "https://www.lagorifoundation.in/"
+    title: "Heal's Way",
+    description: "Website made for a luxury furniture brand through dieVektor.",
+    url: "https://healsway.in/   "
   },
   {
     id: 5,
-    title: "Kolhapur Bachat Gat",
-    description: "A dynamic website designed to support and promote self-help groups in Kolhapur.",
-    url: "https://kolhapurbachatgat.com/"
+    title: "Open House Cafe",
+    description: "Website made for a cafe through dieVektor.",
+    url: "https://openhousecafe.in/   "
   },
   {
     id: 6,
-    title: "Kolhapur Incubation Centre",
-    description: "A platform designed to foster innovation and entrepreneurship, providing resources for startups and businesses.",
-    url: "https://kolhapurincubation.com/"
+    title: "Lagori Foundation Kolhapur",
+    description: "An elegant portfolio website for a renowned NGO.",
+    url: "https://www.lagorifoundation.in/   "
   },
   {
     id: 7,
-    title: "Linda Cars",
-    description: "Website made for a car dealership through dieVektor.",
-    url: "https://lindacars.com/"
+    title: "Kolhapur Incubation Centre",
+    description: "A platform designed to foster innovation and entrepreneurship, providing resources for startups and businesses.",
+    url: "https://kolhapurincubation.com/   "
   },
   {
     id: 8,
-    title: "Heal's Way",
-    description: "Website made for a luxury furniture brand through dieVektor.",
-    url: "https://healsway.in/"
+    title: "Kaksha Live",
+    description: "Website made for an educational platform through dieVektor.",
+    url: "https://kaksha.live/   "
   },
   {
     id: 9,
-    title: "Kaksha Live",
-    description: "Website made for an educational platform through dieVektor.",
-    url: "https://kaksha.live/"
+    title: "Incite Computers (Radhanagri)",
+    description: "A professional website for a leading IT solutions provider, built with a responsive and user-friendly design.",
+    url: "https://www.incitecomputer.com   "
   },
   {
     id: 10,
     title: "Rotorooter",
     description: "Website made for a plumber association through dieVektor.",
-    url: "https://rotorooter.com/"
+    url: "https://rotorooter.com/   "
   },
   {
     id: 11,
-    title: "Fortune Technology",
-    description: "Website made for an institution through dieVektor.",
-    url: "https://fortunekolhapur.com/"
+    title: "Samarth Infotech ",
+    description: "Website made for an Computer Training Institute.",
+    url: "https://mscit.ssitindia.com/   "
   },
   {
     id: 12,
-    title: "Maguire Shoes",
-    description: "Website made for an e-commerce store through dieVektor.",
-    url: "https://maguireshoes.com/"
+    title: "Cardtonic",
+    description: "Website made for an online banking firm through dieVektor.",
+    url: "https://cardtonic.com/   "
   },
   {
     id: 13,
-    title: "Samarth Infotech ",
-    description: "Website made for an Computer Training Institute.",
-    url: "https://mscit.ssitindia.com/"
-  },
-  {
-    id: 14,
-    title: "Open House Cafe",
-    description: "Website made for a cafe through dieVektor.",
-    url: "https://openhousecafe.in/"
-  },
-  {
-    id: 15,
-    title: "Cardtonic",
-    description: "Website made for an online banking firm through dieVektor.",
-    url: "https://cardtonic.com/"
-  },
-  {
-    id: 16,
     title: "Solar Infotech",
     description: "Website made for an Solar Company.",
     url: "http://sspowertech.in/"
