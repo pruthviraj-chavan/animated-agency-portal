@@ -151,9 +151,9 @@ const Index = () => {
         <AICodeSection />
         <TestimonialsSection />
         <ClientsSection />
-        <LatestProjectsSection />
         <TeamSection />
         <ReferralSection />
+        <LatestProjectsSection />
         <CtaSection />
         <MeetingBookingForm/>
       </main>
