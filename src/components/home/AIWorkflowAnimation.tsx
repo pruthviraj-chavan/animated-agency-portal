@@ -104,7 +104,7 @@ export function AIWorkflowAnimation() {
   };
 
   return (
-    <div className="relative w-full h-80 bg-gradient-to-br from-background/60 to-muted/30 rounded-xl border border-border/50 overflow-hidden">
+    <div className="relative w-full h-64 sm:h-80 bg-gradient-to-br from-background/60 to-muted/30 rounded-xl border border-border/50 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/5 via-agency-blue/5 to-agency-pink/5"></div>
       
       {/* Animated background particles */}
@@ -177,38 +177,39 @@ export function AIWorkflowAnimation() {
           }}
         >
           <div
-            className={`relative w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-500 bg-gradient-to-r ${node.color} ${
+            className={`relative w-8 h-8 sm:w-10 md:w-12 sm:h-10 md:h-12 rounded-full flex items-center justify-center text-white shadow-lg transition-all duration-500 bg-gradient-to-r ${node.color} ${
               node.active ? 'animate-pulse shadow-xl' : ''
             }`}
           >
-            <node.icon size={20} />
+            <node.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             {node.active && (
               <div className="absolute inset-0 rounded-full bg-white/20 animate-ping"></div>
             )}
           </div>
-          <div className="absolute top-14 left-1/2 transform -translate-x-1/2 text-xs font-medium text-muted-foreground whitespace-nowrap">
-            {node.label}
+          <div className="absolute top-10 sm:top-12 md:top-14 left-1/2 transform -translate-x-1/2 text-[10px] sm:text-xs font-medium text-muted-foreground whitespace-nowrap text-center px-1">
+            <span className="hidden sm:inline">{node.label}</span>
+            <span className="sm:hidden">{node.label.split(' ')[0]}</span>
           </div>
         </div>
       ))}
 
       {/* Flow indicators */}
-      <div className="absolute bottom-4 left-4 flex items-center space-x-2">
+      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 flex items-center space-x-1 sm:space-x-2">
         <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
-          <span className="text-xs text-muted-foreground">Data Flow</span>
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-500 animate-pulse"></div>
+          <span className="text-[10px] sm:text-xs text-muted-foreground hidden sm:inline">Data Flow</span>
         </div>
-        <ArrowRight className="w-3 h-3 text-muted-foreground" />
+        <ArrowRight className="w-2 h-2 sm:w-3 sm:h-3 text-muted-foreground" />
         <div className="flex items-center space-x-1">
-          <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          <span className="text-xs text-muted-foreground">Processing</span>
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <span className="text-[10px] sm:text-xs text-muted-foreground hidden sm:inline">Processing</span>
         </div>
       </div>
 
       {/* Title overlay */}
-      <div className="absolute top-4 left-4">
-        <h3 className="text-sm font-semibold text-foreground">AI Agent Collaboration</h3>
-        <p className="text-xs text-muted-foreground">Real-time workflow automation</p>
+      <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
+        <h3 className="text-xs sm:text-sm font-semibold text-foreground">AI Agent Collaboration</h3>
+        <p className="text-[10px] sm:text-xs text-muted-foreground">Real-time workflow automation</p>
       </div>
     </div>
   );
