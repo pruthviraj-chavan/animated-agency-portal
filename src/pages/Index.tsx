@@ -1,5 +1,6 @@
 
 import { HeroSection } from "@/components/home/HeroSection";
+import { AIAgentsSection } from "@/components/home/AIAgentsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { ClientsSection } from "@/components/home/ClientsSection";
@@ -133,6 +134,7 @@ const Index = () => {
       <Header />
       <main className="flex-grow pt-16 relative z-10">
         <HeroSection />
+        <AIAgentsSection />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10"></div>

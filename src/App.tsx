@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -23,6 +22,7 @@ import ApiDevelopment from "./pages/services/ApiDevelopment";
 import Refer from "./pages/services/Refer";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Agents from "./pages/Agents";
 
 // Create a new QueryClient instance with proper settings
 const queryClient = new QueryClient({
@@ -45,6 +45,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
+            <Route path="/agents" element={<Agents />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/custom-website-development" element={<CustomWebsiteDevelopment />} />
             <Route path="/services/ecommerce-solutions" element={<EcommerceSolutions />} />
