@@ -24,6 +24,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- agents Page -->
+  <url>
+    <loc>https://www.dievektor.tech/agents</loc>
+    <lastmod>2025-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Blog Page -->
   <url>
