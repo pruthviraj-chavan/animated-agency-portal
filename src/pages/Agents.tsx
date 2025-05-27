@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GradientBackgroundEffect } from "@/components/GradientBackgroundEffect";
@@ -6,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bot, Brain, MessageSquare, Zap, Sparkles, Users, BarChart3, Settings, ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AIWorkflowAnimation } from "@/components/home/AIWorkflowAnimation";
 
 const aiSolutions = [
   {
@@ -139,6 +139,23 @@ export default function Agents() {
                   <Link to="/contact">Schedule Demo</Link>
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* AI Workflow Animation */}
+        <section className="py-12 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gradient">
+                How Our AI Agents Work Together
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Watch our intelligent agents collaborate in real-time to process and deliver results
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <AIWorkflowAnimation />
             </div>
           </div>
         </section>

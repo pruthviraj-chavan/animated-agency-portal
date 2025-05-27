@@ -1,7 +1,7 @@
-
 import { Bot, Brain, MessageSquare, Zap, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { AIWorkflowAnimation } from "./AIWorkflowAnimation";
 
 const aiAgents = [
   {
@@ -69,6 +69,11 @@ export function AIAgentsSection() {
           <p className="text-base text-muted-foreground animate-fade-in" style={{ animationDelay: "200ms" }}>
             Empower your business with intelligent automation that learns, adapts, and delivers results 24/7.
           </p>
+        </div>
+
+        {/* AI Workflow Animation */}
+        <div className="mb-16 animate-fade-in" style={{ animationDelay: "400ms" }}>
+          <AIWorkflowAnimation />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
