@@ -1,4 +1,3 @@
-
 import { HeroSection } from "@/components/home/HeroSection";
 import { AIAgentsSection } from "@/components/home/AIAgentsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
@@ -15,6 +14,7 @@ import { TeamSection } from "@/components/home/TeamSection";
 import MeetingBookingForm from "@/components/home/MeetingBookingForm";
 import { ReferralSection } from "@/components/home/ReferralSection";
 import { GalaxyVideoSection } from "@/components/home/GalaxyVideoSection";
+import { RobotAnimation } from "@/components/home/RobotAnimation";
 
 const AICodeSection = () => {
   return (
@@ -135,6 +135,7 @@ const Index = () => {
       <main className="flex-grow pt-16 relative z-10">
         <HeroSection />
         <AIAgentsSection />
+        <RobotAnimation />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10"></div>

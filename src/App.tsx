@@ -23,6 +23,8 @@ import Refer from "./pages/services/Refer";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Agents from "./pages/Agents";
+import Projects from "./pages/Projects";
+import Products from "./pages/Products";
 
 // Create a new QueryClient instance with proper settings
 const queryClient = new QueryClient({

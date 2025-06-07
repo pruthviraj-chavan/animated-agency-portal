@@ -33,6 +33,22 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Projects Page -->
+  <url>
+    <loc>https://www.dievektor.tech/projects</loc>
+    <lastmod>2025-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Products Page -->
+  <url>
+    <loc>https://www.dievektor.tech/products</loc>
+    <lastmod>2025-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Blog Page -->
   <url>
     <loc>https://www.dievektor.tech/blog</loc>
