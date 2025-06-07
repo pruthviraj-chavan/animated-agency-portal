@@ -4,80 +4,138 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Calendar, Users, Globe, Smartphone } from "lucide-react";
+import { ExternalLink, Calendar, Users } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    description: "A full-featured e-commerce platform with payment integration, inventory management, and customer analytics.",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "AWS"],
-    category: "Web Development",
-    image: "/placeholder.svg",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Maguire Shoes",
+    description: "Website made for an e-commerce store through dieVektor.",
+    technologies: ["React", "E-commerce", "Responsive Design"],
+    category: "E-commerce",
+    url: "https://maguireshoes.com/",
     completedDate: "2024-03",
-    clientType: "Retail Business"
+    clientType: "E-commerce Store"
   },
   {
     id: 2,
-    title: "Healthcare Management System",
-    description: "Digital platform for managing patient records, appointments, and medical history with HIPAA compliance.",
-    technologies: ["Next.js", "PostgreSQL", "TypeScript", "Docker", "Azure"],
-    category: "Healthcare",
-    image: "/placeholder.svg",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Fortune Technology",
+    description: "Website made for an institution through dieVektor.",
+    technologies: ["React", "Institutional Website", "Modern UI"],
+    category: "Education",
+    url: "https://fortunekolhapur.com/",
     completedDate: "2024-02",
-    clientType: "Medical Clinic"
+    clientType: "Educational Institution"
   },
   {
     id: 3,
-    title: "Real Estate Portal",
-    description: "Modern real estate platform with advanced search, virtual tours, and agent management system.",
-    technologies: ["React", "Django", "MySQL", "Redis", "Google Maps API"],
-    category: "Real Estate",
-    image: "/placeholder.svg",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Linda Cars",
+    description: "Website made for a car dealership through dieVektor.",
+    technologies: ["React", "Automotive", "Business Website"],
+    category: "Automotive",
+    url: "https://lindacars.com/",
     completedDate: "2024-01",
-    clientType: "Real Estate Agency"
+    clientType: "Car Dealership"
   },
   {
     id: 4,
-    title: "Educational LMS",
-    description: "Learning management system with course creation, student tracking, and interactive assessments.",
-    technologies: ["Vue.js", "Laravel", "MySQL", "WebRTC", "AWS S3"],
-    category: "Education",
-    image: "/placeholder.svg",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Heal's Way",
+    description: "Website made for a luxury furniture brand through dieVektor.",
+    technologies: ["React", "E-commerce", "Luxury Brand"],
+    category: "Furniture",
+    url: "https://healsway.in/",
     completedDate: "2023-12",
-    clientType: "Educational Institute"
+    clientType: "Luxury Furniture Brand"
   },
   {
     id: 5,
-    title: "Restaurant Management App",
-    description: "Complete restaurant management solution with POS, inventory, staff scheduling, and analytics.",
-    technologies: ["React Native", "Firebase", "Node.js", "Express", "Stripe"],
-    category: "Mobile App",
-    image: "/placeholder.svg",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Open House Cafe",
+    description: "Website made for a cafe through dieVektor.",
+    technologies: ["React", "Restaurant", "Modern Design"],
+    category: "Food & Beverage",
+    url: "https://openhousecafe.in/",
     completedDate: "2023-11",
-    clientType: "Restaurant Chain"
+    clientType: "Cafe"
   },
   {
     id: 6,
-    title: "Social Media Analytics Dashboard",
-    description: "AI-powered analytics dashboard for social media performance tracking and audience insights.",
-    technologies: ["Angular", "Python", "TensorFlow", "PostgreSQL", "D3.js"],
-    category: "Analytics",
-    image: "/placeholder.svg",
-    liveUrl: "#",
-    githubUrl: "#",
+    title: "Lagori Foundation Kolhapur",
+    description: "An elegant portfolio website for a renowned NGO.",
+    technologies: ["React", "NGO Website", "Portfolio"],
+    category: "Non-Profit",
+    url: "https://www.lagorifoundation.in/",
     completedDate: "2023-10",
-    clientType: "Marketing Agency"
+    clientType: "NGO"
+  },
+  {
+    id: 7,
+    title: "Kolhapur Incubation Centre",
+    description: "A platform designed to foster innovation and entrepreneurship, providing resources for startups and businesses.",
+    technologies: ["React", "Business Platform", "Startup Hub"],
+    category: "Business",
+    url: "https://kolhapurincubation.com/",
+    completedDate: "2023-09",
+    clientType: "Incubation Center"
+  },
+  {
+    id: 8,
+    title: "Kaksha Live",
+    description: "Website made for an educational platform through dieVektor.",
+    technologies: ["React", "Educational Platform", "Live Learning"],
+    category: "Education",
+    url: "https://kaksha.live/",
+    completedDate: "2023-08",
+    clientType: "Educational Platform"
+  },
+  {
+    id: 9,
+    title: "Incite Computers (Radhanagri)",
+    description: "A professional website for a leading IT solutions provider, built with a responsive and user-friendly design.",
+    technologies: ["React", "IT Services", "Professional"],
+    category: "Technology",
+    url: "https://www.incitecomputer.com",
+    completedDate: "2023-07",
+    clientType: "IT Solutions Provider"
+  },
+  {
+    id: 10,
+    title: "Rotorooter",
+    description: "Website made for a plumber association through dieVektor.",
+    technologies: ["React", "Service Provider", "Professional"],
+    category: "Services",
+    url: "https://rotorooter.com/",
+    completedDate: "2023-06",
+    clientType: "Plumber Association"
+  },
+  {
+    id: 11,
+    title: "Samarth Infotech",
+    description: "Website made for an Computer Training Institute.",
+    technologies: ["React", "Training Institute", "Educational"],
+    category: "Education",
+    url: "https://mscit.ssitindia.com/",
+    completedDate: "2023-05",
+    clientType: "Computer Training Institute"
+  },
+  {
+    id: 12,
+    title: "Cardtonic",
+    description: "Website made for an online banking firm through dieVektor.",
+    technologies: ["React", "FinTech", "Banking"],
+    category: "Finance",
+    url: "https://cardtonic.com/",
+    completedDate: "2023-04",
+    clientType: "Online Banking Firm"
+  },
+  {
+    id: 13,
+    title: "Solar Infotech",
+    description: "Website made for an Solar Company.",
+    technologies: ["React", "Solar Energy", "Green Tech"],
+    category: "Energy",
+    url: "http://sspowertech.in/",
+    completedDate: "2023-03",
+    clientType: "Solar Company"
   }
 ];
 
@@ -102,13 +160,11 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-background/60 backdrop-blur-sm border-border/50">
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute top-4 left-4">
+                <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-primary/10 via-primary/5 to-background p-8 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto">
+                      {project.title.charAt(0)}
+                    </div>
                     <Badge variant="secondary" className="bg-primary/90 text-primary-foreground">
                       {project.category}
                     </Badge>
@@ -119,12 +175,15 @@ const Projects = () => {
                   <CardTitle className="flex items-center justify-between">
                     <span className="text-xl">{project.title}</span>
                     <div className="flex gap-2">
-                      <Button size="sm" variant="ghost" className="p-2">
-                        <ExternalLink className="w-4 h-4" />
-                      </Button>
-                      <Button size="sm" variant="ghost" className="p-2">
-                        <Github className="w-4 h-4" />
-                      </Button>
+                      <a 
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button size="sm" variant="ghost" className="p-2">
+                          <ExternalLink className="w-4 h-4" />
+                        </Button>
+                      </a>
                     </div>
                   </CardTitle>
                   <CardDescription className="text-sm">
