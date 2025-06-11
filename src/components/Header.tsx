@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
@@ -76,12 +77,16 @@ export function Header() {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link
           to="/"
-          className="flex items-center gap-2 font-bold text-2xl hover-scale"
+          className="flex items-center gap-2 font-bold text-xl sm:text-2xl hover-scale"
         >
-          <div className="w-10 h-10 bg-gradient rounded-full flex items-center justify-center text-white">
-            DV
+          <div className="flex items-center gap-2">
+            <img 
+              src="/lovable-uploads/a7887b9e-e8f5-4fe6-87a2-9579a5b7d12f.png" 
+              alt="dieVektor Logo" 
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
+            />
+            <span className="text-gradient text-lg sm:text-xl md:text-2xl">dieVektor</span>
           </div>
-          <span className="text-gradient">dieVektor</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 relative">
