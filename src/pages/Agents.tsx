@@ -1,100 +1,157 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GradientBackgroundEffect } from "@/components/GradientBackgroundEffect";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Brain, MessageSquare, Zap, Sparkles, Users, BarChart3, Settings, ArrowRight, CheckCircle } from "lucide-react";
+import { Bot, Brain, MessageSquare, Zap, Sparkles, Users, BarChart3, Settings, ArrowRight, CheckCircle, MessageCircle, Calendar, Mail, FileText, TrendingUp, Search, Database, ShoppingCart, Star, Heart, Scale, UserCheck, Mic, Target, Clock, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AIWorkflowAnimation } from "@/components/home/AIWorkflowAnimation";
 
-const aiSolutions = [
+const agentCategories = [
   {
-    id: 1,
-    title: "Smart Customer Support Bot",
-    description: "Transform your customer service with AI-powered support that never sleeps. Our intelligent chatbot handles inquiries, provides instant responses, and seamlessly escalates complex issues to human agents.",
-    icon: MessageSquare,
-    features: [
-      "24/7 availability with instant responses",
-      "Multi-language support (50+ languages)",
-      "Seamless human handoff when needed",
-      "CRM and helpdesk integrations",
-      "Sentiment analysis and emotion detection",
-      "Custom knowledge base training"
-    ],
-    useCases: [
-      "E-commerce customer inquiries",
-      "Technical support automation",
-      "Order tracking and updates",
-      "FAQ automation"
-    ],
+    id: "business",
+    title: "🔧 Business & Productivity Agents",
+    description: "Streamline operations and boost productivity",
     gradient: "from-blue-500 to-cyan-600",
-    bgColor: "bg-blue-50/50 dark:bg-blue-950/20"
+    bgColor: "bg-blue-50/50 dark:bg-blue-950/20",
+    agents: [
+      {
+        title: "AI Customer Support Agent",
+        description: "Instantly answers customer queries across chat, email, and support tickets, reducing response time and support costs.",
+        icon: MessageCircle,
+        features: ["24/7 instant responses", "Multi-channel support", "Ticket auto-routing", "Sentiment analysis"]
+      },
+      {
+        title: "AI Sales Assistant",
+        description: "Engages leads on your site or via email, qualifies them, and books meetings automatically with your sales team.",
+        icon: Target,
+        features: ["Lead qualification", "Meeting scheduling", "CRM integration", "Follow-up automation"]
+      },
+      {
+        title: "AI Meeting Summarizer",
+        description: "Joins Zoom/Meet calls, transcribes discussions, and sends smart summaries and next steps to all participants.",
+        icon: Calendar,
+        features: ["Auto transcription", "Smart summaries", "Action item extraction", "Meeting insights"]
+      },
+      {
+        title: "AI Email Responder",
+        description: "Automatically drafts and sends email replies based on context and tone, perfect for busy professionals and teams.",
+        icon: Mail,
+        features: ["Context-aware replies", "Tone matching", "Auto-scheduling", "Priority filtering"]
+      }
+    ]
   },
   {
-    id: 2,
-    title: "AI Data Analytics Agent",
-    description: "Unlock the power of your business data with our intelligent analytics AI. Get real-time insights, predictive analytics, and automated reporting that drives informed decision-making.",
-    icon: Brain,
-    features: [
-      "Predictive analytics and forecasting",
-      "Real-time data processing",
-      "Custom dashboard creation",
-      "Automated report generation",
-      "Pattern recognition and anomaly detection",
-      "Integration with popular BI tools"
-    ],
-    useCases: [
-      "Sales performance optimization",
-      "Customer behavior analysis",
-      "Inventory management",
-      "Financial forecasting"
-    ],
+    id: "marketing",
+    title: "📊 Marketing & Content Agents",
+    description: "Amplify your marketing efforts with AI",
     gradient: "from-purple-500 to-indigo-600",
-    bgColor: "bg-purple-50/50 dark:bg-purple-950/20"
+    bgColor: "bg-purple-50/50 dark:bg-purple-950/20",
+    agents: [
+      {
+        title: "AI Content Creator",
+        description: "Generates SEO blogs, social media posts, and ad copy tailored to brand voice and current trends.",
+        icon: FileText,
+        features: ["SEO optimization", "Brand voice matching", "Trend analysis", "Multi-format content"]
+      },
+      {
+        title: "AI Social Media Manager",
+        description: "Plans, schedules, and posts content while analyzing engagement for optimal growth strategies.",
+        icon: TrendingUp,
+        features: ["Content scheduling", "Engagement analytics", "Growth strategies", "Hashtag optimization"]
+      },
+      {
+        title: "AI Ad Optimizer",
+        description: "Creates, tests, and optimizes ad campaigns (Google/Facebook) using data to improve ROI.",
+        icon: Target,
+        features: ["A/B testing", "ROI optimization", "Audience targeting", "Budget allocation"]
+      }
+    ]
   },
   {
-    id: 3,
-    title: "Workflow Automation Bot",
-    description: "Streamline your business processes with intelligent automation. Connect your favorite tools and let AI handle repetitive tasks while you focus on what matters most.",
-    icon: Zap,
-    features: [
-      "500+ app integrations available",
-      "Custom workflow builder",
-      "Real-time monitoring and alerts",
-      "Conditional logic and branching",
-      "Error handling and retry mechanisms",
-      "Performance analytics and optimization"
-    ],
-    useCases: [
-      "Lead qualification and routing",
-      "Invoice processing and approval",
-      "Social media management",
-      "Email marketing automation"
-    ],
-    gradient: "from-orange-500 to-red-600",
-    bgColor: "bg-orange-50/50 dark:bg-orange-950/20"
-  },
-  {
-    id: 4,
-    title: "AI Content Creator",
-    description: "Generate high-quality, engaging content at scale. From blog posts to social media copy, our AI understands your brand voice and creates content that resonates with your audience.",
-    icon: Sparkles,
-    features: [
-      "SEO-optimized content generation",
-      "Brand voice training and consistency",
-      "Multiple content formats (blogs, social, ads)",
-      "Plagiarism detection and originality",
-      "Content performance tracking",
-      "Multi-language content creation"
-    ],
-    useCases: [
-      "Blog and article writing",
-      "Social media content",
-      "Email marketing campaigns",
-      "Product descriptions"
-    ],
+    id: "knowledge",
+    title: "🧠 Knowledge & Research Agents",
+    description: "Transform data into actionable insights",
     gradient: "from-green-500 to-emerald-600",
-    bgColor: "bg-green-50/50 dark:bg-green-950/20"
+    bgColor: "bg-green-50/50 dark:bg-green-950/20",
+    agents: [
+      {
+        title: "AI Research Assistant",
+        description: "Gathers and summarizes information from academic papers, blogs, or web pages for any topic or niche.",
+        icon: Search,
+        features: ["Academic research", "Web scraping", "Content summarization", "Citation management"]
+      },
+      {
+        title: "AI Data Analyst Agent",
+        description: "Accepts spreadsheets and dashboards, then explains trends, anomalies, or creates insights in plain language.",
+        icon: Database,
+        features: ["Trend analysis", "Anomaly detection", "Visual insights", "Plain language reports"]
+      }
+    ]
+  },
+  {
+    id: "ecommerce",
+    title: "🛒 E-Commerce Agents",
+    description: "Boost sales and customer experience",
+    gradient: "from-orange-500 to-red-600",
+    bgColor: "bg-orange-50/50 dark:bg-orange-950/20",
+    agents: [
+      {
+        title: "AI Shopping Assistant",
+        description: "Helps users find products based on preferences and FAQs, boosting conversion and reducing cart abandonment.",
+        icon: ShoppingCart,
+        features: ["Product recommendations", "Preference matching", "FAQ automation", "Cart recovery"]
+      },
+      {
+        title: "AI Review Generator",
+        description: "Creates believable customer reviews based on product details or usage patterns.",
+        icon: Star,
+        features: ["Authentic reviews", "Product analysis", "Usage patterns", "Review optimization"]
+      }
+    ]
+  },
+  {
+    id: "specialized",
+    title: "👩‍⚕️ Specialized Agents",
+    description: "Industry-specific AI solutions",
+    gradient: "from-pink-500 to-rose-600",
+    bgColor: "bg-pink-50/50 dark:bg-pink-950/20",
+    agents: [
+      {
+        title: "AI Healthcare Chatbot",
+        description: "Assists patients with symptoms, appointment scheduling, or FAQ handling for clinics and hospitals.",
+        icon: Heart,
+        features: ["Symptom assessment", "Appointment booking", "Medical FAQs", "Patient support"]
+      },
+      {
+        title: "AI Legal Document Drafting Agent",
+        description: "Drafts basic contracts, NDAs, and agreements from templates with custom user inputs.",
+        icon: Scale,
+        features: ["Contract drafting", "Legal templates", "Custom inputs", "Compliance checking"]
+      }
+    ]
+  },
+  {
+    id: "hr",
+    title: "💼 HR & Talent Agents",
+    description: "Streamline hiring and talent management",
+    gradient: "from-teal-500 to-cyan-600",
+    bgColor: "bg-teal-50/50 dark:bg-teal-950/20",
+    agents: [
+      {
+        title: "AI Resume Screener",
+        description: "Scans resumes and filters top candidates based on job role and company priorities.",
+        icon: UserCheck,
+        features: ["Resume parsing", "Candidate ranking", "Skill matching", "Bias reduction"]
+      },
+      {
+        title: "AI Interview Coach",
+        description: "Prepares candidates with mock interviews, feedback, and real-time tips.",
+        icon: Mic,
+        features: ["Mock interviews", "Real-time feedback", "Performance analytics", "Skill improvement"]
+      }
+    ]
   }
 ];
 
@@ -160,67 +217,70 @@ export default function Agents() {
           </div>
         </section>
 
-        {/* AI Solutions Grid */}
+        {/* AI Agents Categories */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                Our AI-Powered Solutions
+                Our Complete AI Agent Suite
               </h2>
               <p className="text-lg text-muted-foreground">
-                Choose from our suite of intelligent agents designed to transform your business operations
+                Discover specialized AI agents designed for every aspect of your business
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {aiSolutions.map((solution, index) => (
-                <Card key={solution.id} className={`${solution.bgColor} border-border/50 hover:shadow-xl transition-all duration-300 animate-fade-in`} style={{ animationDelay: `${index * 200}ms` }}>
-                  <CardHeader>
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white bg-gradient-to-r ${solution.gradient}`}>
-                        <solution.icon size={24} />
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl">{solution.title}</CardTitle>
-                      </div>
-                    </div>
-                    <CardDescription className="text-base leading-relaxed">
-                      {solution.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-6">
-                      <div>
-                        <h4 className="font-semibold mb-3 flex items-center">
-                          <Settings className="mr-2 h-4 w-4" />
-                          Key Features
-                        </h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                          {solution.features.map((feature, idx) => (
-                            <div key={idx} className="flex items-start text-sm text-muted-foreground">
-                              <CheckCircle className="mr-2 h-3 w-3 text-green-500 flex-shrink-0 mt-0.5" />
-                              {feature}
+            <div className="space-y-16">
+              {agentCategories.map((category, categoryIndex) => (
+                <div key={category.id} className="animate-fade-in" style={{ animationDelay: `${categoryIndex * 200}ms` }}>
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-2 text-gradient">
+                      {category.title}
+                    </h3>
+                    <p className="text-muted-foreground">{category.description}</p>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {category.agents.map((agent, agentIndex) => (
+                      <Card 
+                        key={agent.title} 
+                        className={`${category.bgColor} border-border/50 hover:shadow-xl transition-all duration-300 animate-fade-in group hover:scale-105`} 
+                        style={{ animationDelay: `${(categoryIndex * 200) + (agentIndex * 100)}ms` }}
+                      >
+                        <CardHeader>
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white bg-gradient-to-r ${category.gradient} group-hover:scale-110 transition-transform duration-300`}>
+                              <agent.icon size={24} />
                             </div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <h4 className="font-semibold mb-3 flex items-center">
-                          <BarChart3 className="mr-2 h-4 w-4" />
-                          Use Cases
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {solution.useCases.map((useCase, idx) => (
-                            <span key={idx} className="px-2 py-1 bg-background/80 rounded-md text-xs border">
-                              {useCase}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                            <div className="flex-1">
+                              <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
+                                {agent.title}
+                              </CardTitle>
+                            </div>
+                          </div>
+                          <CardDescription className="text-base leading-relaxed">
+                            {agent.description}
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                          <div>
+                            <h4 className="font-semibold mb-3 flex items-center">
+                              <Settings className="mr-2 h-4 w-4" />
+                              Key Features
+                            </h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                              {agent.features.map((feature, idx) => (
+                                <div key={idx} className="flex items-start text-sm text-muted-foreground">
+                                  <CheckCircle className="mr-2 h-3 w-3 text-green-500 flex-shrink-0 mt-0.5" />
+                                  {feature}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -238,7 +298,7 @@ export default function Agents() {
               </p>
               <div className="flex flex-wrap justify-center gap-6 mb-8">
                 {integrationLogos.map((integration, index) => (
-                  <div key={integration.name} className="flex flex-col items-center p-4 bg-background/60 rounded-lg border hover:shadow-md transition-all duration-300">
+                  <div key={integration.name} className="flex flex-col items-center p-4 bg-background/60 rounded-lg border hover:shadow-md transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                     <span className="text-2xl mb-2">{integration.icon}</span>
                     <span className="text-sm font-medium">{integration.name}</span>
                   </div>
@@ -247,6 +307,30 @@ export default function Agents() {
               <p className="text-sm text-muted-foreground">
                 And 500+ more integrations to power your workflows
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+              <div className="animate-fade-in">
+                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">500+</div>
+                <div className="text-muted-foreground">App Integrations</div>
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
+                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">24/7</div>
+                <div className="text-muted-foreground">Availability</div>
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
+                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">50+</div>
+                <div className="text-muted-foreground">Languages Supported</div>
+              </div>
+              <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
+                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">99.9%</div>
+                <div className="text-muted-foreground">Uptime Guarantee</div>
+              </div>
             </div>
           </div>
         </section>
