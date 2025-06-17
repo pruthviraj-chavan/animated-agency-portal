@@ -15,6 +15,9 @@ import MeetingBookingForm from "@/components/home/MeetingBookingForm";
 import { ReferralSection } from "@/components/home/ReferralSection";
 import { GalaxyVideoSection } from "@/components/home/GalaxyVideoSection";
 import { RobotAnimation } from "@/components/home/RobotAnimation";
+import { AIIntelligenceSection } from "@/components/home/AIIntelligenceSection";
+import { AIAgentProfilesSection } from "@/components/home/AIAgentProfilesSection";
+import { AIMissionSection } from "@/components/home/AIMissionSection";
 
 const AICodeSection = () => {
   return (
@@ -134,7 +137,10 @@ const Index = () => {
       <Header />
       <main className="flex-grow pt-16 relative z-10">
         <HeroSection />
+        <AIIntelligenceSection />
         <AIAgentsSection />
+        <AIAgentProfilesSection />
+        <AIMissionSection />
         <RobotAnimation />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
