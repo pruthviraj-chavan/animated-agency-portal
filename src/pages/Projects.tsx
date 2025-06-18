@@ -136,6 +136,26 @@ const projects = [
     url: "http://sspowertech.in/",
     completedDate: "2023-03",
     clientType: "Solar Company"
+  },
+  {
+    id: 14,
+    title: "Gurukrupa Events",
+    description: "Website made for an Event Management Company.",
+    technologies: ["React", "Events", "Green Tech"],
+    category: "Events",
+    url: "https://gurukrupaevents.in/",
+    completedDate: "2023-03",
+    clientType: "Event Company"
+  },
+  {
+    id: 15,
+    title: "Phonda Education Society",
+    description: "Website made for an College From Phonda.",
+    technologies: ["React", "College", "Green Tech"],
+    category: "Colleges",
+    url: "http://phondaeducationsociety.com/",
+    completedDate: "2023-03",
+    clientType: "College"
   }
 ];
 
