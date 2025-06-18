@@ -89,7 +89,20 @@ const projects: Project[] = [
     title: "Solar Infotech",
     description: "Website made for an Solar Company.",
     url: "http://sspowertech.in/"
-  }
+  },
+  {
+    id: 14,
+    title: "Gurukrupa Events",
+    description: "Website made for an Event Management Company.",
+    url: "https://gurukrupaevents.in/"
+  },
+  {
+    id: 15,
+    title: "Phonda College Platform",
+    description: "Website made for an College From Phonda",
+    url: "https://phondaeducationsociety.com/"
+  },
+  
 ];
 
 export function LatestProjectsSection() {
