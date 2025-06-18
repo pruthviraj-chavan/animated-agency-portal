@@ -11,13 +11,13 @@ import { GradientBackgroundEffect } from "@/components/GradientBackgroundEffect"
 import { AIChatBot } from "@/components/home/AIChatBot";
 import { LatestProjectsSection } from "@/components/home/LatestProjectsSection";
 import { TeamSection } from "@/components/home/TeamSection";
-import MeetingBookingForm from "@/components/home/MeetingBookingForm";
 import { ReferralSection } from "@/components/home/ReferralSection";
 import { GalaxyVideoSection } from "@/components/home/GalaxyVideoSection";
 import { RobotAnimation } from "@/components/home/RobotAnimation";
 import { AIIntelligenceSection } from "@/components/home/AIIntelligenceSection";
 import { AIAgentProfilesSection } from "@/components/home/AIAgentProfilesSection";
 import { AIMissionSection } from "@/components/home/AIMissionSection";
+import { ScheduleMeetingSection } from "@/components/home/ScheduleMeetingSection";
 
 const AICodeSection = () => {
   return (
@@ -163,8 +163,8 @@ const Index = () => {
         <TeamSection />
         <ReferralSection />
         <LatestProjectsSection />
+        <ScheduleMeetingSection />
         <CtaSection />
-        <MeetingBookingForm/>
       </main>
       <Footer />
       
