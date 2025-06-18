@@ -116,15 +116,15 @@ export function ScheduleMeetingSection() {
                 <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-2xl text-white shadow-lg transform transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: '300ms' }}>
                   <Phone className="w-6 h-6 mb-3" />
                   <h3 className="font-semibold mb-2">CALL US</h3>
-                  <p className="text-sm opacity-90">1 (234) 567-891</p>
-                  <p className="text-sm opacity-90">1 (234) 987-654</p>
+                  <p className="text-sm opacity-90">+91 9404895667</p>
+                  <p className="text-sm opacity-90">+91 7741802798</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-orange-500 to-red-600 p-6 rounded-2xl text-white shadow-lg transform transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: '400ms' }}>
                   <MessageSquare className="w-6 h-6 mb-3" />
                   <h3 className="font-semibold mb-2">LOCATION</h3>
-                  <p className="text-sm opacity-90">121 Rock Street, 21 Avenue</p>
-                  <p className="text-sm opacity-90">New York, NY 32103-9000</p>
+                  <p className="text-sm opacity-90">Near Bank of India , Radhanagari , Kolhapur</p>
+                  <p className="text-sm opacity-90">India , 416212</p>
                 </div>
 
                 <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-2xl text-white shadow-lg transform transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: '500ms' }}>
