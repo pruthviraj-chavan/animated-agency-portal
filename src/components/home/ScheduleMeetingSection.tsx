@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Calendar, Clock, User, Mail, Phone, MessageSquare } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function ScheduleMeetingSection() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,8 @@ export function ScheduleMeetingSection() {
     preferredTime: "",
     message: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -22,25 +25,70 @@ export function ScheduleMeetingSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Meeting scheduled:", formData);
-    // Handle form submission logic here
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          service_id: "service_8pd6z0e",
+          template_id: "template_4mkxe1g", 
+          user_id: "3FhUp3n8UpSEe_rpT",
+          template_params: {
+            to_email: "team.dievektor@gmail.com",
+            from_name: formData.name,
+            from_email: formData.email,
+            phone_number: formData.phone,
+            meeting_date: formData.preferredDate,
+            meeting_time: formData.preferredTime,
+            message: formData.message,
+          },
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Meeting Request Sent!",
+          description: "We'll get back to you within 24 hours to confirm your meeting.",
+        });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          preferredDate: "",
+          preferredTime: "",
+          message: ""
+        });
+      } else {
+        throw new Error("Failed to send email.");
+      }
+    } catch (error) {
+      console.error("Error sending meeting request:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send meeting request. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-purple-50 dark:from-slate-900 dark:to-purple-900 relative overflow-hidden">
       {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Main large blob */}
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2 w-96 h-64 bg-gradient-to-br from-orange-400 via-purple-500 to-pink-500 rounded-full opacity-20 animate-float blur-3xl"></div>
         
-        {/* Secondary blobs */}
         <div className="absolute top-20 right-10 w-32 h-32 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-30 animate-pulse-slow blur-2xl" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-20 left-10 w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full opacity-25 animate-float blur-2xl" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 right-20 w-20 h-20 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-30 animate-pulse-slow blur-xl" style={{ animationDelay: '0.5s' }}></div>
         
-        {/* Small floating elements */}
         <div className="absolute top-32 left-20 w-4 h-4 bg-orange-400 rounded-full animate-float opacity-60"></div>
         <div className="absolute bottom-32 right-32 w-3 h-3 bg-purple-500 rounded-full animate-float opacity-50" style={{ animationDelay: '1.5s' }}></div>
         <div className="absolute top-1/2 left-32 w-2 h-2 bg-pink-400 rounded-full animate-pulse-slow opacity-70"></div>
@@ -65,7 +113,6 @@ export function ScheduleMeetingSection() {
             {/* Contact Info Cards */}
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {/* Call Us Card */}
                 <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-2xl text-white shadow-lg transform transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: '300ms' }}>
                   <Phone className="w-6 h-6 mb-3" />
                   <h3 className="font-semibold mb-2">CALL US</h3>
@@ -73,7 +120,6 @@ export function ScheduleMeetingSection() {
                   <p className="text-sm opacity-90">1 (234) 987-654</p>
                 </div>
 
-                {/* Location Card */}
                 <div className="bg-gradient-to-br from-orange-500 to-red-600 p-6 rounded-2xl text-white shadow-lg transform transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: '400ms' }}>
                   <MessageSquare className="w-6 h-6 mb-3" />
                   <h3 className="font-semibold mb-2">LOCATION</h3>
@@ -81,7 +127,6 @@ export function ScheduleMeetingSection() {
                   <p className="text-sm opacity-90">New York, NY 32103-9000</p>
                 </div>
 
-                {/* Hours Card */}
                 <div className="bg-gradient-to-br from-blue-500 to-purple-600 p-6 rounded-2xl text-white shadow-lg transform transition-all hover:scale-105 animate-fade-in" style={{ animationDelay: '500ms' }}>
                   <Clock className="w-6 h-6 mb-3" />
                   <h3 className="font-semibold mb-2">HOURS</h3>
@@ -90,7 +135,6 @@ export function ScheduleMeetingSection() {
                 </div>
               </div>
 
-              {/* Additional Info */}
               <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg border border-purple-100 dark:border-purple-800 animate-fade-in" style={{ animationDelay: '600ms' }}>
                 <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">What to Expect</h3>
                 <ul className="space-y-3 text-gray-600 dark:text-gray-300">
@@ -114,7 +158,7 @@ export function ScheduleMeetingSection() {
               </div>
             </div>
 
-            {/* Meeting Form */}
+            {/* Meeting Form with EmailJS Integration */}
             <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-2xl border border-purple-100 dark:border-purple-800 animate-slide-in-bottom" style={{ animationDelay: '400ms' }}>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -217,9 +261,10 @@ export function ScheduleMeetingSection() {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                  disabled={isLoading}
+                  className="w-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:from-purple-700 hover:via-pink-700 hover:to-orange-600 text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Schedule Meeting
+                  {isLoading ? "Sending..." : "Schedule Meeting"}
                 </Button>
               </form>
             </div>
