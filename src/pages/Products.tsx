@@ -16,7 +16,10 @@ import {
   Clock,
   CheckCircle,
   Star,
-  ArrowRight
+  ArrowRight,
+  GraduationCap,
+  Network,
+  Briefcase
 } from "lucide-react";
 
 const Products = () => {
@@ -36,6 +39,15 @@ const Products = () => {
     "Automated Follow-ups",
     "Sales Pipeline",
     "Performance Analytics"
+  ];
+
+  const alumniFeatures = [
+    "Alumni Directory",
+    "Event Management",
+    "Job Board Integration",
+    "Donation Management",
+    "Networking Tools",
+    "Success Stories"
   ];
 
   return (
@@ -193,12 +205,81 @@ const Products = () => {
                 </div>
               </div>
             </div>
+
+            {/* Alumni Portal System */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div>
+                  <Badge className="mb-4 bg-purple-500/10 text-purple-600 border-purple-500/20">
+                    Higher Education
+                  </Badge>
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Alumni Portal Platform
+                  </h2>
+                  <p className="text-lg text-muted-foreground">
+                    Connect and engage your alumni community with our comprehensive portal solution. 
+                    Perfect for degree colleges and high schools to maintain lifelong connections.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  {alumniFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-500" />
+                      <span className="text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" className="bg-gradient hover:opacity-90">
+                    Get Started
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    View Demo
+                  </Button>
+                </div>
+              </div>
+
+              <Card className="bg-background/60 backdrop-blur-sm border-border/50 shadow-xl">
+                <CardHeader className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center">
+                    <GraduationCap className="w-8 h-8 text-white" />
+                  </div>
+                  <CardTitle>Alumni Features</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-background/40">
+                    <Network className="w-5 h-5 text-primary" />
+                    <div>
+                      <p className="font-medium">Alumni Network</p>
+                      <p className="text-sm text-muted-foreground">Connect graduates across batches</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-background/40">
+                    <Briefcase className="w-5 h-5 text-primary" />
+                    <div>
+                      <p className="font-medium">Career Services</p>
+                      <p className="text-sm text-muted-foreground">Job opportunities and mentorship</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 rounded-lg bg-background/40">
+                    <Star className="w-5 h-5 text-primary" />
+                    <div>
+                      <p className="font-medium">Achievement Tracking</p>
+                      <p className="text-sm text-muted-foreground">Showcase alumni success stories</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
 
           {/* Pricing Section */}
           <div className="mt-20 text-center">
             <h3 className="text-3xl font-bold mb-8">Simple, Transparent Pricing</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card className="relative overflow-hidden">
                 <CardHeader>
                   <CardTitle className="flex items-center justify-center gap-2">
@@ -227,6 +308,20 @@ const Products = () => {
                 </CardHeader>
                 <CardContent>
                   <Button className="w-full bg-gradient hover:opacity-90">Choose Plan</Button>
+                </CardContent>
+              </Card>
+
+              <Card className="relative overflow-hidden">
+                <CardHeader>
+                  <CardTitle className="flex items-center justify-center gap-2">
+                    <GraduationCap className="w-5 h-5" />
+                    Alumni Portal
+                  </CardTitle>
+                  <div className="text-3xl font-bold">$199<span className="text-sm font-normal">/month</span></div>
+                  <CardDescription>Connect your alumni community</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button className="w-full">Choose Plan</Button>
                 </CardContent>
               </Card>
             </div>
