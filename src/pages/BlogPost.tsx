@@ -228,7 +228,7 @@ const BlogPost = () => {
                 ))}
               </div>
             </div>
-          </section>
+          </div>
         )}
       </main>
       
