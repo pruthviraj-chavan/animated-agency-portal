@@ -70,14 +70,14 @@ const Blog = () => {
               </div>
               
               <div className="mt-6 flex flex-wrap gap-2 justify-center">
-                {allTags.map(tag => (
+                {allTags.map((tag, index) => (
                   <Badge 
-                    key={tag} 
+                    key={`${tag}-${index}`}
                     variant="outline" 
                     className="cursor-pointer bg-background/60 backdrop-blur-sm hover:bg-primary/10"
-                    onClick={() => setSearchTerm(tag)}
+                    onClick={() => setSearchTerm(String(tag))}
                   >
-                    {tag}
+                    {String(tag)}
                   </Badge>
                 ))}
               </div>

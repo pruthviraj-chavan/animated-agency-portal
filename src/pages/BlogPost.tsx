@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { blogPosts, BlogPost as BlogPostType } from '@/lib/blog-data';
+import { blogData, BlogPost as BlogPostType } from '@/lib/blog-data';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { Button } from '@/components/ui/button';
 import { CalendarDays, Clock, ArrowLeft, Share2, Tag, User } from 'lucide-react';
@@ -21,18 +21,18 @@ const BlogPost = () => {
   const [relatedPosts, setRelatedPosts] = useState<BlogPostType[]>([]);
   
   useEffect(() => {
-    const currentPost = blogPosts.find(p => p.slug === slug);
+    const currentPost = blogData.find(p => p.slug === slug);
     
     if (currentPost) {
       setPost(currentPost);
       
       // Get related posts
       if (currentPost.relatedPosts && currentPost.relatedPosts.length > 0) {
-        const related = blogPosts.filter(p => currentPost.relatedPosts?.includes(p.id));
+        const related = blogData.filter(p => currentPost.relatedPosts?.includes(p.id));
         setRelatedPosts(related);
       } else {
         // If no related posts specified, get posts with common tags
-        const postsWithCommonTags = blogPosts
+        const postsWithCommonTags = blogData
           .filter(p => p.id !== currentPost.id && p.tags.some(tag => currentPost.tags.includes(tag)))
           .slice(0, 3);
         setRelatedPosts(postsWithCommonTags);
@@ -89,8 +89,8 @@ const BlogPost = () => {
                 </Button>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post.tags.map((tag) => (
-                    <Link to={`/blog?tag=${tag}`} key={tag}>
+                  {post.tags.map((tag, index) => (
+                    <Link to={`/blog?tag=${tag}`} key={`${tag}-${index}`}>
                       <Badge variant="outline" className="bg-agency-blue/10 text-agency-blue border-agency-blue/20">
                         {tag}
                       </Badge>
@@ -179,8 +179,8 @@ const BlogPost = () => {
                   <div className="p-5">
                     <h3 className="text-xl font-semibold mb-4">Related Articles</h3>
                     <div className="space-y-4">
-                      {relatedPosts.map(relatedPost => (
-                        <div key={relatedPost.id} className="flex gap-3">
+                      {relatedPosts.map((relatedPost, index) => (
+                        <div key={`${relatedPost.id}-${index}`} className="flex gap-3">
                           <Link to={`/blog/${relatedPost.slug}`} className="shrink-0 w-16 h-16 overflow-hidden rounded-md">
                             <img 
                               src={relatedPost.coverImage} 
@@ -202,10 +202,10 @@ const BlogPost = () => {
                     
                     <h3 className="text-xl font-semibold mb-4">Popular Tags</h3>
                     <div className="flex flex-wrap gap-2">
-                      {Array.from(new Set(blogPosts.flatMap(p => p.tags))).slice(0, 10).map(tag => (
-                        <Link to={`/blog?tag=${tag}`} key={tag}>
+                      {Array.from(new Set(blogData.flatMap(p => p.tags))).slice(0, 10).map((tag, index) => (
+                        <Link to={`/blog?tag=${tag}`} key={`${tag}-${index}`}>
                           <Badge variant="outline" className="hover:bg-primary/10">
-                            {tag}
+                            {String(tag)}
                           </Badge>
                         </Link>
                       ))}
