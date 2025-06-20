@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { BlogCard } from '@/components/blog/BlogCard';
-import { blogPosts } from '@/lib/blog-data';
+import { blogData } from '@/lib/blog-data';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Helmet } from 'react-helmet';
@@ -12,18 +12,18 @@ const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   // Debug logging
-  console.log('Blog posts loaded:', blogPosts);
-  console.log('Number of blog posts:', blogPosts?.length || 0);
+  console.log('Blog posts loaded:', blogData);
+  console.log('Number of blog posts:', blogData?.length || 0);
   
   // Get all unique tags
   const allTags = Array.from(
-    new Set(blogPosts.flatMap(post => post.tags))
+    new Set(blogData.flatMap(post => post.tags))
   );
   
   console.log('All tags:', allTags);
   
   // Filter posts based on search term
-  const filteredPosts = blogPosts.filter(post => 
+  const filteredPosts = blogData.filter(post => 
     post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
     post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
@@ -91,7 +91,7 @@ const Blog = () => {
             {/* Debug info display */}
             <div className="mb-4 p-4 bg-yellow-100 border border-yellow-400 rounded">
               <p><strong>Debug Info:</strong></p>
-              <p>Total blog posts: {blogPosts?.length || 0}</p>
+              <p>Total blog posts: {blogData?.length || 0}</p>
               <p>Filtered posts: {filteredPosts?.length || 0}</p>
               <p>Search term: "{searchTerm}"</p>
             </div>
