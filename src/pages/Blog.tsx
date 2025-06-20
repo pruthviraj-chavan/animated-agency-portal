@@ -11,10 +11,16 @@ import { Helmet } from 'react-helmet';
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
+  // Debug logging
+  console.log('Blog posts loaded:', blogPosts);
+  console.log('Number of blog posts:', blogPosts?.length || 0);
+  
   // Get all unique tags
   const allTags = Array.from(
     new Set(blogPosts.flatMap(post => post.tags))
   );
+  
+  console.log('All tags:', allTags);
   
   // Filter posts based on search term
   const filteredPosts = blogPosts.filter(post => 
@@ -22,6 +28,9 @@ const Blog = () => {
     post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
     post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
   );
+  
+  console.log('Filtered posts:', filteredPosts);
+  console.log('Search term:', searchTerm);
   
   return (
     <div className="flex flex-col min-h-screen">
@@ -79,6 +88,14 @@ const Blog = () => {
         {/* Blog Grid */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
+            {/* Debug info display */}
+            <div className="mb-4 p-4 bg-yellow-100 border border-yellow-400 rounded">
+              <p><strong>Debug Info:</strong></p>
+              <p>Total blog posts: {blogPosts?.length || 0}</p>
+              <p>Filtered posts: {filteredPosts?.length || 0}</p>
+              <p>Search term: "{searchTerm}"</p>
+            </div>
+            
             {filteredPosts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredPosts.map((post, index) => (
