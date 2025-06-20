@@ -7,11 +7,11 @@ interface Client {
 }
 
 const clients: Client[] = [
-  { name: "Walster", logo: "Walster" },
-  { name: "JSAT", logo: "JSAT" },
-  { name: "Sequid", logo: "Sequid" },
+  { name: "Phonda-Society", logo: "Phonda" },
+  { name: "Axzora", logo: "Axzora" },
+  { name: "Sai Resort", logo: "Sai Resort" },
   { name: "Incite", logo: "Incite" },
-  { name: "Reapmind", logo: "Reapmind" },
+  { name: "Gurukrupa", logo: "Gurukrupa" },
 ];
 
 export function ClientsSection() {
