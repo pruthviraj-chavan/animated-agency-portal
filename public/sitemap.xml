@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home Page -->
@@ -52,7 +51,7 @@
   <!-- Blog Page -->
   <url>
     <loc>https://www.dievektor.tech/blog</loc>
-    <lastmod>2025-04-09</lastmod>
+    <lastmod>2025-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -137,34 +136,64 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- Blog Posts -->
+  <!-- Updated Blog Posts -->
   <url>
-    <loc>https://www.dievektor.tech/blog/ai-revolutionizing-web-development-2025</loc>
-    <lastmod>2025-04-05</lastmod>
+    <loc>https://www.dievektor.tech/blog/agentic-ai-revolution-autonomous-agents-business</loc>
+    <lastmod>2025-06-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/ultimate-guide-seo-optimization-2025</loc>
-    <lastmod>2025-03-22</lastmod>
+    <loc>https://www.dievektor.tech/blog/agi-development-artificial-general-intelligence-business</loc>
+    <lastmod>2025-06-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/rise-of-progressive-web-apps</loc>
-    <lastmod>2025-03-10</lastmod>
+    <loc>https://www.dievektor.tech/blog/multimodal-ai-future-human-computer-interaction</loc>
+    <lastmod>2025-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/accessibility-web-design-inclusive-experiences</loc>
-    <lastmod>2025-02-28</lastmod>
+    <loc>https://www.dievektor.tech/blog/edge-ai-computing-intelligence-data-sources</loc>
+    <lastmod>2025-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/jamstack-architecture-high-performance-websites</loc>
-    <lastmod>2025-02-15</lastmod>
+    <loc>https://www.dievektor.tech/blog/ai-ethics-governance-responsible-systems-enterprise</loc>
+    <lastmod>2025-06-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievektor.tech/blog/quantum-computing-ai-computational-intelligence-frontier</loc>
+    <lastmod>2025-06-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievektor.tech/blog/ai-powered-cybersecurity-next-generation-threats</loc>
+    <lastmod>2025-06-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievektor.tech/blog/digital-transformation-ai-reshaping-business-models</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievektor.tech/blog/future-work-human-ai-collaboration-modern-workplace</loc>
+    <lastmod>2025-05-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievektor.tech/blog/ai-driven-innovation-dievektor-accelerates-rd-product-development</loc>
+    <lastmod>2025-05-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
