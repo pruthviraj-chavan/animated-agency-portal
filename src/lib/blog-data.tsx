@@ -18,7 +18,7 @@ export interface BlogPost {
   relatedPosts?: number[];
 }
 
-export const blogPosts: BlogPost[] = [
+export const blogData: BlogPost[] = [
   {
     id: 1,
     title: "How AI is Revolutionizing Web Development in 2025",
