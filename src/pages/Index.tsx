@@ -158,12 +158,13 @@ const Index = () => {
         </section>
         <GalaxyVideoSection />
         <AICodeSection />
+        <ScheduleMeetingSection />
         <TestimonialsSection />
         <ClientsSection />
         <TeamSection />
         <ReferralSection />
         <LatestProjectsSection />
-        <ScheduleMeetingSection />
+        
         <CtaSection />
       </main>
       <Footer />
