@@ -9,6 +9,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isAgentsDropdownOpen, setIsAgentsDropdownOpen] = useState(false);
 
   // Track scroll position for sticky header
   useEffect(() => {
@@ -27,7 +28,14 @@ export function Header() {
   const navigationLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Agents", path: "/agents" },
+    {
+      name: "Agents",
+      path: "/agents",
+      subPages: [
+        { name: "AI Agents Overview", path: "/agents" },
+        { name: "AI Agents Library", path: "/ai-agents-library" },
+      ],
+    },
     {
       name: "Services",
       path: "/services",
@@ -65,6 +73,10 @@ export function Header() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const toggleAgentsDropdown = () => {
+    setIsAgentsDropdownOpen(!isAgentsDropdownOpen);
+  };
+
   return (
     <header
       className={cn(
@@ -96,22 +108,26 @@ export function Header() {
                 <>
                   <div
                     className="flex items-center cursor-pointer text-foreground hover:text-primary transition-colors duration-300 py-1"
-                    onClick={toggleDropdown}
+                    onClick={link.name === "Services" ? toggleDropdown : toggleAgentsDropdown}
                   >
                     <Link to={link.path} className="mr-1">
                       {link.name}
                     </Link>
-                    {isDropdownOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                    {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) ? 
+                      <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </div>
 
-                  {isDropdownOpen && (
+                  {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) && (
                     <div className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10">
                       {link.subPages.map((subPage) => (
                         <Link
                           key={subPage.name}
                           to={subPage.path}
                           className="block text-foreground hover:text-primary py-2 transition-colors duration-300"
-                          onClick={() => setIsDropdownOpen(false)}
+                          onClick={() => {
+                            setIsDropdownOpen(false);
+                            setIsAgentsDropdownOpen(false);
+                          }}
                         >
                           {subPage.name}
                         </Link>
@@ -164,24 +180,29 @@ export function Header() {
                 <>
                   <div
                     className="flex items-center justify-between cursor-pointer text-lg font-medium py-2 hover:text-primary transition-colors duration-300"
-                    onClick={() => link.name === "Services" && toggleDropdown()}
+                    onClick={() => {
+                      if (link.name === "Services") {
+                        toggleDropdown();
+                      } else if (link.name === "Agents") {
+                        toggleAgentsDropdown();
+                      }
+                    }}
                   >
                     <Link 
                       to={link.path}
                       onClick={() => {
-                        if (link.name !== "Services") {
+                        if (link.name !== "Services" && link.name !== "Agents") {
                           setMobileMenuOpen(false);
                         }
                       }}
                     >
                       {link.name}
                     </Link>
-                    {link.name === "Services" && (
-                      isDropdownOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />
-                    )}
+                    {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) ? 
+                      <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
                   </div>
                   
-                  {link.name === "Services" && isDropdownOpen && (
+                  {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) && (
                     <div className="pl-4 mt-1 space-y-1">
                       {link.subPages.map((subPage) => (
                         <Link
@@ -191,6 +212,7 @@ export function Header() {
                           onClick={() => {
                             setMobileMenuOpen(false);
                             setIsDropdownOpen(false);
+                            setIsAgentsDropdownOpen(false);
                           }}
                         >
                           {subPage.name}

@@ -9,9 +9,10 @@ import { Input } from '@/components/ui/input';
 import { 
   Mail, Users, Share2, Calendar, Database, UserPlus, FileText, 
   MessageSquare, Search, BookOpen, FileSpreadsheet, BarChart3, 
-  Mic, Phone, Twitter, Bot, Sparkles, Settings, Zap
+  Mic, Phone, Twitter, Bot, Sparkles, Settings, Zap, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const aiAgents = [
   {
@@ -165,41 +166,32 @@ export default function AIAgentsLibrary() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-gradient-to-r from-blue-400/20 to-cyan-400/20 animate-pulse"></div>
-        <div className="absolute top-1/4 right-1/4 w-24 h-24 rounded-full bg-gradient-to-r from-purple-400/20 to-pink-400/20 animate-bounce"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-28 h-28 rounded-full bg-gradient-to-r from-green-400/20 to-blue-400/20 animate-pulse"></div>
-        <div className="absolute bottom-10 right-10 w-20 h-20 rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-400/20 animate-bounce"></div>
-        
-        {/* Floating Circuit Lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-5" viewBox="0 0 1000 1000">
-          <defs>
-            <pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-              <path d="M10,10 L90,10 L90,90 L10,90 Z" fill="none" stroke="currentColor" strokeWidth="1"/>
-              <circle cx="50" cy="50" r="3" fill="currentColor"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#circuit)"/>
-        </svg>
-      </div>
+    <div className="flex flex-col min-h-screen">
+      <Helmet>
+        <title>AI Agents Library - Dievektor - Web Development & Digital Agency</title>
+        <meta name="description" content="Ready-to-deploy AI automation agents to simplify your work. Browse our collection of 15+ intelligent agents for business automation." />
+        <meta name="keywords" content="AI agents, automation, business intelligence, workflow automation" />
+        <link rel="canonical" href="https://yourdomain.com/ai-agents-library" />
+      </Helmet>
 
       <Header />
       
-      <main className="flex-grow pt-24 relative z-10">
+      <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-background/95 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/5 via-agency-blue/5 to-agency-pink/5"></div>
+        <section className="relative py-20 bg-muted/30 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/10 animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-primary/5 animate-float"></div>
+          </div>
           
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center max-w-4xl mx-auto">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center mb-6">
-                <Bot className="w-16 h-16 text-agency-blue mr-4 animate-pulse" />
-                <Sparkles className="w-12 h-12 text-agency-purple animate-bounce" />
+                <Bot className="w-16 h-16 text-primary mr-4" />
+                <Sparkles className="w-12 h-12 text-primary/70" />
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-agency-purple via-agency-blue to-agency-pink bg-clip-text text-transparent animate-scale-in">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient animate-scale-in">
                 AI Agents Library
               </h1>
               
@@ -214,7 +206,7 @@ export default function AIAgentsLibrary() {
                   placeholder="Search AI agents..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="bg-background/80 backdrop-blur-sm border-agency-blue/20 h-12 text-lg"
+                  className="bg-background/80 backdrop-blur-sm border-primary/20 h-12 text-lg"
                 />
                 
                 <div className="flex flex-wrap gap-2 justify-center">
@@ -224,7 +216,7 @@ export default function AIAgentsLibrary() {
                       variant={selectedCategory === category ? "default" : "outline"}
                       className={`cursor-pointer px-4 py-2 text-sm transition-all hover:scale-105 ${
                         selectedCategory === category 
-                          ? "bg-gradient-to-r from-agency-purple to-agency-blue text-white" 
+                          ? "bg-primary text-primary-foreground" 
                           : "bg-background/60 backdrop-blur-sm hover:bg-primary/10"
                       }`}
                       onClick={() => setSelectedCategory(category)}
@@ -239,26 +231,19 @@ export default function AIAgentsLibrary() {
         </section>
 
         {/* Agents Grid */}
-        <section className="py-16 bg-background/50 backdrop-blur-sm">
+        <section className="py-16 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredAgents.map((agent, index) => (
                 <Card 
                   key={agent.id}
-                  className="group relative overflow-hidden bg-gradient-to-br from-white/90 via-white/80 to-white/70 backdrop-blur-sm border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in"
+                  className="group relative overflow-hidden bg-card border hover:shadow-lg transition-all duration-300 hover:scale-105 animate-fade-in"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {/* Glassmorphism overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Floating elements */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-agency-blue to-agency-purple rounded-full opacity-20 group-hover:animate-bounce"></div>
-                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-agency-pink to-agency-purple rounded-full opacity-20 group-hover:animate-pulse"></div>
-                  
-                  <CardHeader className="relative z-10">
+                  <CardHeader>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-14 h-14 rounded-xl bg-gradient-to-r from-agency-purple/20 to-agency-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <agent.icon size={28} className="text-agency-blue group-hover:text-agency-purple transition-colors duration-300" />
+                      <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                        <agent.icon size={28} className="text-primary" />
                       </div>
                       {agent.freeTier && (
                         <Badge className="bg-green-100 text-green-800 border-green-200">
@@ -267,7 +252,7 @@ export default function AIAgentsLibrary() {
                       )}
                     </div>
                     
-                    <CardTitle className="text-xl mb-2 group-hover:text-agency-purple transition-colors duration-300">
+                    <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors duration-300">
                       {agent.name}
                     </CardTitle>
                     
@@ -276,13 +261,13 @@ export default function AIAgentsLibrary() {
                     </CardDescription>
                     
                     <div className="flex items-center mt-4">
-                      <Badge variant="outline" className="bg-agency-blue/10 text-agency-blue border-agency-blue/20">
+                      <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
                         {agent.category}
                       </Badge>
                     </div>
                   </CardHeader>
                   
-                  <CardContent className="relative z-10">
+                  <CardContent>
                     <div className="mb-4">
                       <h4 className="text-sm font-semibold mb-2 flex items-center">
                         <Settings className="w-4 h-4 mr-2" />
@@ -290,7 +275,7 @@ export default function AIAgentsLibrary() {
                       </h4>
                       <div className="flex flex-wrap gap-1">
                         {agent.tools.map((tool, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs bg-background/60">
+                          <Badge key={idx} variant="outline" className="text-xs bg-muted">
                             {tool}
                           </Badge>
                         ))}
@@ -300,13 +285,13 @@ export default function AIAgentsLibrary() {
                     <div className="flex gap-2">
                       <Button 
                         size="sm" 
-                        className="flex-1 bg-gradient-to-r from-agency-purple to-agency-blue hover:opacity-90 text-white"
+                        className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
                       >
                         <Zap className="w-4 h-4 mr-2" />
                         Activate Agent
                       </Button>
                       <Button size="sm" variant="outline" className="px-3">
-                        View Details
+                        <ArrowRight className="w-4 h-4" />
                       </Button>
                     </div>
                   </CardContent>
@@ -325,12 +310,8 @@ export default function AIAgentsLibrary() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-white/5 to-transparent"></div>
-          </div>
-          
-          <div className="container mx-auto px-4 text-center relative z-10">
+        <section className="py-20 bg-muted/30 relative overflow-hidden">
+          <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">
               Ready to Automate Your Workflow?
             </h2>
@@ -340,7 +321,7 @@ export default function AIAgentsLibrary() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-agency-purple to-agency-blue hover:opacity-90 text-white">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Bot className="mr-2 h-5 w-5" />
                 Add New Agent
               </Button>
