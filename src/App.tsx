@@ -29,7 +29,7 @@ const queryClient = new QueryClient()
 function App() {
   return (
     <BrowserRouter>
-      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="light">
         <QueryClientProvider client={queryClient}>
           <Routes>
             <Route path="/" element={<Index />} />
