@@ -34,6 +34,7 @@ export function Header() {
       subPages: [
         { name: "AI Agents Overview", path: "/agents" },
         { name: "AI Agents Library", path: "/ai-agents-library" },
+        { name: "Agentic AI Training", path: "/services/agentic-ai-training" },
       ],
     },
     {

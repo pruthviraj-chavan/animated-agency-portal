@@ -21,6 +21,7 @@ import WordPressDevelopment from './pages/services/WordpressDevelopment'
 import MobileAppDevelopment from './pages/services/MobileAppDevelopment'
 import APIDevelopment from './pages/services/ApiDevelopment'
 import Referral from './pages/services/Refer'
+import AgenticAITraining from './pages/services/AgenticAITraining'
 import { ThemeProvider } from "@/components/ThemeProvider"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import AIAgentsLibrary from "@/pages/AIAgentsLibrary";
@@ -55,6 +56,7 @@ function App() {
             <Route path="/services/mobile-app-development" element={<MobileAppDevelopment />} />
             <Route path="/services/api-development" element={<APIDevelopment />} />
             <Route path="/services/refer" element={<Referral />} />
+            <Route path="/services/agentic-ai-training" element={<AgenticAITraining />} />
 
             <Route path="/ai-agents-library" element={<AIAgentsLibrary />} />
           </Routes>
