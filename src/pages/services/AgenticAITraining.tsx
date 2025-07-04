@@ -26,24 +26,24 @@ const AgenticAITraining = () => {
   const upcomingBatches = [
     {
       name: "Agentic AI Fundamentals",
-      date: "March 15, 2025",
+      date: "August 15, 2025",
       duration: "4 weeks",
       mode: "Online",
-      price: "$299"
+      price: "$99"
     },
     {
       name: "Vibe Coding Masterclass",
-      date: "March 22, 2025", 
+      date: "August 22, 2025", 
       duration: "3 weeks",
       mode: "Hybrid",
-      price: "$199"
+      price: "$99"
     },
     {
       name: "Complete AI Automation Bundle",
-      date: "April 1, 2025",
+      date: "September 1, 2025",
       duration: "8 weeks",
       mode: "Online",
-      price: "$499"
+      price: "$199"
     }
   ];
 
