@@ -10,6 +10,7 @@ import Jobs from './pages/Jobs'
 import Projects from './pages/Projects'
 import Products from './pages/Products'
 import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 import Agents from './pages/Agents'
 import CustomWebsiteDevelopment from './pages/services/CustomWebsiteDevelopment'
 import ECommerceSolutions from './pages/services/EcommerceSolutions'
@@ -41,6 +42,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/products" element={<Products />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/agents" element={<Agents />} />
 
             {/* Subpages under Services */}
