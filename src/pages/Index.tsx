@@ -141,11 +141,12 @@ const Index = () => {
       <Header />
       <main className="flex-grow pt-16 relative z-10">
         <HeroSection />
-        <AIIntelligenceSection />
+        
         <AIAutomationSection />
         <AITrustSection />
         <AICreativitySection />
         <AICommunitySection />
+        <AIIntelligenceSection />
         <AIAgentsSection />
         <AIAgentProfilesSection />
         <AIMissionSection />
