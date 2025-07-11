@@ -151,7 +151,7 @@ const Index = () => {
         <AITrustSection />
         <AIIntelligenceSection />
         <AICreativitySection />
-        <AICommunitySection />
+        
         <RobotAnimation />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
