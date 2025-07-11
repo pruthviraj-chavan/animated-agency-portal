@@ -18,6 +18,10 @@ import { AIIntelligenceSection } from "@/components/home/AIIntelligenceSection";
 import { AIAgentProfilesSection } from "@/components/home/AIAgentProfilesSection";
 import { AIMissionSection } from "@/components/home/AIMissionSection";
 import { ScheduleMeetingSection } from "@/components/home/ScheduleMeetingSection";
+import { AIAutomationSection } from "@/components/home/AIAutomationSection";
+import { AITrustSection } from "@/components/home/AITrustSection";
+import { AICreativitySection } from "@/components/home/AICreativitySection";
+import { AICommunitySection } from "@/components/home/AICommunitySection";
 
 const AICodeSection = () => {
   return (
@@ -138,6 +142,10 @@ const Index = () => {
       <main className="flex-grow pt-16 relative z-10">
         <HeroSection />
         <AIIntelligenceSection />
+        <AIAutomationSection />
+        <AITrustSection />
+        <AICreativitySection />
+        <AICommunitySection />
         <AIAgentsSection />
         <AIAgentProfilesSection />
         <AIMissionSection />
