@@ -142,14 +142,16 @@ const Index = () => {
       <main className="flex-grow pt-16 relative z-10">
         <HeroSection />
         
-        <AIAutomationSection />
-        <AITrustSection />
-        <AICreativitySection />
-        <AICommunitySection />
-        <AIIntelligenceSection />
+        
+        
         <AIAgentsSection />
         <AIAgentProfilesSection />
         <AIMissionSection />
+        <AIAutomationSection />
+        <AITrustSection />
+        <AIIntelligenceSection />
+        <AICreativitySection />
+        <AICommunitySection />
         <RobotAnimation />
         <ServicesSection />
         <section className="py-20 bg-background/90 relative overflow-hidden">
