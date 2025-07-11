@@ -168,10 +168,11 @@ const Index = () => {
         <AICodeSection />
         <ScheduleMeetingSection />
         <TestimonialsSection />
-        <ClientsSection />
-        <TeamSection />
+        
+       
         <ReferralSection />
-        <LatestProjectsSection />
+         <TeamSection />
+        <ClientsSection />
         
         <CtaSection />
       </main>
