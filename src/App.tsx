@@ -24,6 +24,7 @@ import Referral from './pages/services/Refer'
 import AgenticAITraining from './pages/services/AgenticAITraining'
 import { ThemeProvider } from "@/components/ThemeProvider"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { JotformChatbot } from "@/components/JotformChatbot"
 import AIAgentsLibrary from "@/pages/AIAgentsLibrary";
 
 const queryClient = new QueryClient()
@@ -60,6 +61,7 @@ function App() {
 
             <Route path="/ai-agents-library" element={<AIAgentsLibrary />} />
           </Routes>
+          <JotformChatbot />
         </QueryClientProvider>
       </ThemeProvider>
     </BrowserRouter>
