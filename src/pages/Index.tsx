@@ -150,7 +150,7 @@ const Index = () => {
         <AIAutomationSection />
         <AITrustSection />
         
-        <AICreativitySection />
+        
         
         <RobotAnimation />
         <ServicesSection />
