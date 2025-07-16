@@ -1,6 +1,6 @@
 
 
-# Step 3: Install the necessary dependencies.
+# Step 3: Install the necessary dependencies. j
 npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
