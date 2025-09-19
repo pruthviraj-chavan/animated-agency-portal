@@ -8,7 +8,7 @@ const teamMembers = [
   {
     name: "Rupesh Mundhra",
     role: "Founder & CEO",
-    bio: "Computer Science Engineering With Data Science Specialisation. Experience at Infomatics & Intellipaat.",
+    bio: "Founder Evolution In Sight LLp",
     image: "",
     socialLinks: {
       linkedin: "https://linkedin.com",
