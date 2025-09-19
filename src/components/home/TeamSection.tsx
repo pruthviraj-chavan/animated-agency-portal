@@ -6,10 +6,10 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 // Team member data
 const teamMembers = [
   {
-    name: "Pruthviraj Chavan",
+    name: "Athrv SUnpakl",
     role: "Founder & CEO",
     bio: "Computer Science Engineering With Data Science Specialisation. Experience at Infomatics & Intellipaat.",
-    image: "/me1.png",
+    image: "",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
