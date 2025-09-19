@@ -6,7 +6,7 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 // Team member data
 const teamMembers = [
   {
-    name: "Athrv SUnpakl",
+    name: "Rupesh Mundhra
     role: "Founder & CEO",
     bio: "Computer Science Engineering With Data Science Specialisation. Experience at Infomatics & Intellipaat.",
     image: "",
