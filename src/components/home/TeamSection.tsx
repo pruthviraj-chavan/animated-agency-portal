@@ -6,10 +6,10 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 // Team member data
 const teamMembers = [
   {
-    name: "Rupesh Mundhra",
+    name: "Pruthviraj Chavan",
     role: "Founder & CEO",
-    bio: "Founder Evolution In Sight LLp",
-    image: "",
+    bio: "Software Engineer",
+    image: "/me1.png",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
