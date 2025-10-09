@@ -6,10 +6,10 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 // Team member data
 const teamMembers = [
   {
-    name: "Pruthviraj Chavan",
-    role: "Founder & CEO",
-    bio: "Software Engineer",
-    image: "/me1.png",
+    name: "Rupesh Mundhra",
+    role: "Founder & CEO Evolution In Sight ",
+    bio: "Founder",
+    image: "",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
@@ -28,10 +28,10 @@ const teamMembers = [
     }
   },
   {
-    name: "Ketaki Mulik",
+    name: "Ketan Shetty",
     role: "Co-founder & CMO",
-    bio: "MBA at York St John University UK , Expertise in Sales & Markettting Operations",
-    image: "/kk.jpeg",
+    bio: "Expertise in Sales & Markettting Operations",
+    image: "",
     socialLinks: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com"
