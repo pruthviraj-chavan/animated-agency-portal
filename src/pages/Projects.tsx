@@ -39,26 +39,6 @@ const projects = [
   },
   {
     id: 4,
-    title: "Heal's Way",
-    description: "Website made for a luxury furniture brand through dieVektor.",
-    technologies: ["React", "E-commerce", "Luxury Brand"],
-    category: "Furniture",
-    url: "https://healsway.in/",
-    completedDate: "2023-12",
-    clientType: "Luxury Furniture Brand"
-  },
-  {
-    id: 5,
-    title: "Open House Cafe",
-    description: "Website made for a cafe through dieVektor.",
-    technologies: ["React", "Restaurant", "Modern Design"],
-    category: "Food & Beverage",
-    url: "https://openhousecafe.in/",
-    completedDate: "2023-11",
-    clientType: "Cafe"
-  },
-  {
-    id: 6,
     title: "Lagori Foundation Kolhapur",
     description: "An elegant portfolio website for a renowned NGO.",
     technologies: ["React", "NGO Website", "Portfolio"],
@@ -68,27 +48,7 @@ const projects = [
     clientType: "NGO"
   },
   {
-    id: 7,
-    title: "Kolhapur Incubation Centre",
-    description: "A platform designed to foster innovation and entrepreneurship, providing resources for startups and businesses.",
-    technologies: ["React", "Business Platform", "Startup Hub"],
-    category: "Business",
-    url: "https://kolhapurincubation.com/",
-    completedDate: "2023-09",
-    clientType: "Incubation Center"
-  },
-  {
-    id: 8,
-    title: "Kaksha Live",
-    description: "Website made for an educational platform through dieVektor.",
-    technologies: ["React", "Educational Platform", "Live Learning"],
-    category: "Education",
-    url: "https://kaksha.live/",
-    completedDate: "2023-08",
-    clientType: "Educational Platform"
-  },
-  {
-    id: 9,
+    id: 5,
     title: "Incite Computers (Radhanagri)",
     description: "A professional website for a leading IT solutions provider, built with a responsive and user-friendly design.",
     technologies: ["React", "IT Services", "Professional"],
@@ -98,17 +58,7 @@ const projects = [
     clientType: "IT Solutions Provider"
   },
   {
-    id: 10,
-    title: "Rotorooter",
-    description: "Website made for a plumber association through dieVektor.",
-    technologies: ["React", "Service Provider", "Professional"],
-    category: "Services",
-    url: "https://rotorooter.com/",
-    completedDate: "2023-06",
-    clientType: "Plumber Association"
-  },
-  {
-    id: 11,
+    id: 6,
     title: "Samarth Infotech",
     description: "Website made for an Computer Training Institute.",
     technologies: ["React", "Training Institute", "Educational"],
@@ -118,17 +68,7 @@ const projects = [
     clientType: "Computer Training Institute"
   },
   {
-    id: 12,
-    title: "Cardtonic",
-    description: "Website made for an online banking firm through dieVektor.",
-    technologies: ["React", "FinTech", "Banking"],
-    category: "Finance",
-    url: "https://cardtonic.com/",
-    completedDate: "2023-04",
-    clientType: "Online Banking Firm"
-  },
-  {
-    id: 13,
+    id: 7,
     title: "Solar Infotech",
     description: "Website made for an Solar Company.",
     technologies: ["React", "Solar Energy", "Green Tech"],
@@ -138,24 +78,34 @@ const projects = [
     clientType: "Solar Company"
   },
   {
-    id: 14,
-    title: "Gurukrupa Events",
-    description: "Website made for an Event Management Company.",
-    technologies: ["React", "Events", "Green Tech"],
-    category: "Events",
-    url: "https://gurukrupaevents.in/",
-    completedDate: "2023-03",
-    clientType: "Event Company"
-  },
-  {
-    id: 15,
+    id: 8,
     title: "Phonda Education Society",
     description: "Website made for an College From Phonda.",
-    technologies: ["React", "College", "Green Tech"],
+    technologies: ["React", "College", "Education"],
     category: "Colleges",
     url: "http://phondaeducationsociety.com/",
     completedDate: "2023-03",
     clientType: "College"
+  },
+  {
+    id: 9,
+    title: "Jaihind Electricals",
+    description: "Professional website for a leading electrical equipment and appliances retailer with comprehensive product catalog.",
+    technologies: ["React", "E-commerce", "Retail"],
+    category: "Retail",
+    url: "https://www.jaihindelectricals.co.in/",
+    completedDate: "2024-06",
+    clientType: "Electrical Store"
+  },
+  {
+    id: 10,
+    title: "Incite Computer Phondaghat",
+    description: "Website for a computer training and IT services center providing quality education and technical solutions.",
+    technologies: ["React", "Educational", "IT Services"],
+    category: "Education",
+    url: "http://incitecomputerphondaghat.co.in/",
+    completedDate: "2024-05",
+    clientType: "Computer Training Center"
   }
 ];
 
