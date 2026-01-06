@@ -4,10 +4,38 @@ import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { Facebook, Instagram, Linkedin, Twitter, Code, CreditCard, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export function Footer() {
   const [email, setEmail] = useState("");
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!videoRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoRef.current?.play();
+          } else {
+            videoRef.current?.pause();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+    
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,29 +82,48 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-background via-background/95 to-background/90 overflow-hidden">
-      {/* Space background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10">
-        {/* Stars effect */}
-        <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-primary/30 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 2}s`,
-              }}
-            />
-          ))}
-        </div>
+    <footer className="relative overflow-hidden">
+      {/* Space Video Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background/60 z-[1]" />
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover opacity-60"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/space-footer.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      {/* Overlay gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-transparent z-[2]" />
+
+      {/* Floating cosmic elements */}
+      <div className="absolute inset-0 z-[3] pointer-events-none">
+        {/* Animated stars */}
+        {[...Array(40)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`,
+              opacity: 0.3 + Math.random() * 0.5,
+            }}
+          />
+        ))}
         
-        {/* Floating orbs */}
-        <div className="absolute top-20 right-20 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-40 left-10 w-24 h-24 bg-secondary/10 rounded-full blur-2xl animate-float" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-accent/20 rounded-full blur-xl animate-float" style={{ animationDelay: "2s" }} />
+        {/* Floating planets/orbs */}
+        <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/10 blur-xl animate-float" />
+        <div className="absolute bottom-40 left-10 w-24 h-24 rounded-full bg-gradient-to-br from-pink-500/20 to-orange-500/10 blur-xl animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/3 w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/10 blur-lg animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-1/4 right-1/4 w-20 h-20 rounded-full bg-gradient-to-br from-amber-500/15 to-red-500/10 blur-xl animate-float" style={{ animationDelay: "3s" }} />
       </div>
 
       <div className="relative z-10">
