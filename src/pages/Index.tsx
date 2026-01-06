@@ -22,6 +22,9 @@ import { AIAutomationSection } from "@/components/home/AIAutomationSection";
 import { AITrustSection } from "@/components/home/AITrustSection";
 import { AICreativitySection } from "@/components/home/AICreativitySection";
 import { AICommunitySection } from "@/components/home/AICommunitySection";
+import { AIFeaturesGridSection } from "@/components/home/AIFeaturesGridSection";
+import { IntegrateAutomateSection } from "@/components/home/IntegrateAutomateSection";
+import { ChatBotServiceSection } from "@/components/home/ChatBotServiceSection";
 
 const AICodeSection = () => {
   return (
@@ -172,6 +175,9 @@ const Index = () => {
         <ScheduleMeetingSection />
         <TestimonialsSection />
         
+        <AIFeaturesGridSection />
+        <IntegrateAutomateSection />
+        <ChatBotServiceSection />
        
         <ReferralSection />
          <TeamSection />
