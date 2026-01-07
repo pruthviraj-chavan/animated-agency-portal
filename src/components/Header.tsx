@@ -49,6 +49,7 @@ export function Header() {
         { name: "WordPress Development", path: "/services/wordpress-development" },
         { name: "Mobile App Development", path: "/services/mobile-app-development" },
         { name: "API Development & Integration", path: "/services/api-development" },
+        { name: "AI Training & Workshops", path: "/services/ai-training-workshops" },
         { name: "Refer & Earn", path: "/services/refer" },
       ],
     },
