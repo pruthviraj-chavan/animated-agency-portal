@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Calendar, Users } from "lucide-react";
+import { useState } from "react";
 
 const projects = [
   {
@@ -16,16 +17,6 @@ const projects = [
     url: "https://maguireshoes.com/",
     completedDate: "2024-03",
     clientType: "E-commerce Store"
-  },
-  {
-    id: 2,
-    title: "Fortune Technology",
-    description: "Website made for an institution through dieVektor.",
-    technologies: ["React", "Institutional Website", "Modern UI"],
-    category: "Education",
-    url: "https://fortunekolhapur.com/",
-    completedDate: "2024-02",
-    clientType: "Educational Institution"
   },
   {
     id: 3,
@@ -68,16 +59,6 @@ const projects = [
     clientType: "Computer Training Institute"
   },
   {
-    id: 7,
-    title: "Solar Infotech",
-    description: "Website made for an Solar Company.",
-    technologies: ["React", "Solar Energy", "Green Tech"],
-    category: "Energy",
-    url: "http://sspowertech.in/",
-    completedDate: "2023-03",
-    clientType: "Solar Company"
-  },
-  {
     id: 8,
     title: "Phonda Education Society",
     description: "Website made for an College From Phonda.",
@@ -109,6 +90,57 @@ const projects = [
   }
 ];
 
+// Generate screenshot URL using a screenshot service
+const getScreenshotUrl = (url: string) => {
+  // Using microlink.io for website screenshots
+  const encodedUrl = encodeURIComponent(url);
+  return `https://api.microlink.io/?url=${encodedUrl}&screenshot=true&meta=false&embed=screenshot.url`;
+};
+
+const ProjectImage = ({ url, title }: { url: string; title: string }) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  
+  // Direct screenshot approach using screenshot API
+  const screenshotUrl = `https://image.thum.io/get/width/600/crop/400/noanimate/${url}`;
+  
+  return (
+    <div className="relative overflow-hidden rounded-t-lg h-48 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
+      {!imageError ? (
+        <>
+          {!imageLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 bg-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold animate-pulse">
+                {title.charAt(0)}
+              </div>
+            </div>
+          )}
+          <img
+            src={screenshotUrl}
+            alt={`${title} website preview`}
+            className={`w-full h-full object-cover object-top transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+          />
+        </>
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-16 h-16 bg-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto">
+              {title.charAt(0)}
+            </div>
+          </div>
+        </div>
+      )}
+      <div className="absolute top-3 right-3">
+        <Badge variant="secondary" className="bg-primary/90 text-primary-foreground backdrop-blur-sm">
+          {projects.find(p => p.title === title)?.category}
+        </Badge>
+      </div>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
     <div className="flex flex-col min-h-screen">
@@ -129,17 +161,8 @@ const Projects = () => {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
-              <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-background/60 backdrop-blur-sm border-border/50">
-                <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-primary/10 via-primary/5 to-background p-8 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto">
-                      {project.title.charAt(0)}
-                    </div>
-                    <Badge variant="secondary" className="bg-primary/90 text-primary-foreground">
-                      {project.category}
-                    </Badge>
-                  </div>
-                </div>
+              <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-background/60 backdrop-blur-sm border-border/50 overflow-hidden">
+                <ProjectImage url={project.url} title={project.title} />
                 
                 <CardHeader>
                   <CardTitle className="flex items-center justify-between">
