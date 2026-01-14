@@ -25,49 +25,148 @@ import { Link } from "react-router-dom";
 
 const schoolsData = [
   {
-    name: "St. Xavier's High School",
+    name: "Jagruti High School",
     location: "Kolhapur, Maharashtra",
-    students: 120,
-    teachers: 15,
-    date: "October 2024",
-    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=400",
+    students: 85,
+    teachers: 10,
+    date: "December 2024",
+    image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&h=400",
     topics: ["Introduction to AI", "ChatGPT Basics", "AI in Daily Life"]
   },
   {
-    name: "DAV Public School",
-    location: "Sangli, Maharashtra",
-    students: 85,
-    teachers: 12,
-    date: "September 2024",
-    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&h=400",
+    name: "Radhanagri High School and Jr College",
+    location: "Radhanagari, Maharashtra",
+    students: 120,
+    teachers: 15,
+    date: "November 2024",
+    image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600&h=400",
     topics: ["Machine Learning Basics", "AI Tools for Students", "Future of AI"]
   },
   {
-    name: "Shivaji Vidyalaya",
-    location: "Satara, Maharashtra",
+    name: "New English Medium School",
+    location: "Kolhapur, Maharashtra",
     students: 95,
-    teachers: 10,
-    date: "August 2024",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&h=400",
+    teachers: 12,
+    date: "October 2024",
+    image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&h=400",
     topics: ["AI for Education", "Prompt Engineering", "AI Ethics"]
   },
   {
-    name: "Kendriya Vidyalaya",
-    location: "Pune, Maharashtra",
-    students: 150,
-    teachers: 20,
-    date: "July 2024",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&h=400",
+    name: "राजर्षी शाहू विद्या मंदिर (कुमार विद्या मंदिर)",
+    location: "Kolhapur, Maharashtra",
+    students: 110,
+    teachers: 14,
+    date: "September 2024",
+    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&h=400",
     topics: ["Advanced AI Concepts", "AI Projects", "Career in AI"]
   },
   {
-    name: "Modern English School",
-    location: "Ichalkaranji, Maharashtra",
+    name: "महाराणी राधाबाई कन्या विद्यामंदिर",
+    location: "Kolhapur, Maharashtra",
+    students: 90,
+    teachers: 11,
+    date: "August 2024",
+    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI Fundamentals", "Coding with AI", "AI Applications"]
+  },
+  {
+    name: "अंगनवाडी शेटकेवाडी",
+    location: "Shetkewadi, Maharashtra",
+    students: 45,
+    teachers: 5,
+    date: "July 2024",
+    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&h=400",
+    topics: ["Introduction to AI", "AI for Kids", "Fun with AI"]
+  },
+  {
+    name: "Vidya Mandir Banachiwadi",
+    location: "Banachiwadi, Maharashtra",
     students: 75,
     teachers: 8,
     date: "June 2024",
-    image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&h=400",
-    topics: ["AI Fundamentals", "Coding with AI", "AI Applications"]
+    image: "https://images.unsplash.com/photo-1594608661623-aa0bd3a69d98?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI Basics", "ChatGPT Usage", "Digital Literacy"]
+  },
+  {
+    name: "डॉ. बाबासाहेब आंबेडकर शासकीय निवासी शाळा",
+    location: "Radhanagari, Maharashtra",
+    students: 130,
+    teachers: 18,
+    date: "May 2024",
+    image: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI for Education", "Machine Learning", "Future Skills"]
+  },
+  {
+    name: "New English School Kasarputale",
+    location: "Kasarputale, Maharashtra",
+    students: 65,
+    teachers: 7,
+    date: "April 2024",
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&h=400",
+    topics: ["Introduction to AI", "AI Tools", "Practical Applications"]
+  },
+  {
+    name: "Madhyamik Vidyalay Piral",
+    location: "Piral, Maharashtra",
+    students: 80,
+    teachers: 9,
+    date: "March 2024",
+    image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI Fundamentals", "Digital Skills", "AI Ethics"]
+  },
+  {
+    name: "Central School Durgmanvad",
+    location: "Durgmanvad, Maharashtra",
+    students: 70,
+    teachers: 8,
+    date: "February 2024",
+    image: "https://images.unsplash.com/photo-1604134967494-8a9ed3adea0d?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI Basics", "Prompt Writing", "AI in Daily Life"]
+  },
+  {
+    name: "Vidya Mandir Chougulewadi",
+    location: "Chougulewadi, Maharashtra",
+    students: 55,
+    teachers: 6,
+    date: "January 2024",
+    image: "https://images.unsplash.com/photo-1613896527026-f195d5c818ed?auto=format&fit=crop&w=600&h=400",
+    topics: ["Introduction to AI", "Creative AI", "Future of Technology"]
+  },
+  {
+    name: "Kaka Athavale Vidyalaya (VHP Nivasi Shala)",
+    location: "Kolhapur, Maharashtra",
+    students: 100,
+    teachers: 12,
+    date: "December 2023",
+    image: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI for Students", "ChatGPT Workshop", "AI Projects"]
+  },
+  {
+    name: "Swaraj Chavan Primary School",
+    location: "Kolhapur, Maharashtra",
+    students: 60,
+    teachers: 7,
+    date: "November 2023",
+    image: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI for Kids", "Fun with Technology", "Basic AI Concepts"]
+  },
+  {
+    name: "Central School Tarale Khurd",
+    location: "Tarale Khurd, Maharashtra",
+    students: 50,
+    teachers: 5,
+    date: "October 2023",
+    image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&h=400",
+    topics: ["Introduction to AI", "Digital Literacy", "AI Applications"]
+  },
+  {
+    name: "Vidya Mandir Duval Katrewadi",
+    location: "Duval Katrewadi, Maharashtra",
+    students: 65,
+    teachers: 6,
+    date: "September 2023",
+    image: "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&fit=crop&w=600&h=400",
+    topics: ["AI Basics", "Coding Introduction", "Future Skills"]
   }
 ];
 
