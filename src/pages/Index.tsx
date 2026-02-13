@@ -160,13 +160,13 @@ const Index = () => {
         
         <RobotAnimation />
         <ServicesSection />
-        <section className="py-20 bg-background/90 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10"></div>
+        <section className="py-20 bg-[hsl(235,30%,10%)] relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-indigo-500/5 via-transparent to-purple-500/5"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-gradient animate-scale-in">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center text-indigo-100">
               AI-Powered Technology Stack
             </h2>
-            <p className="text-lg text-center text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
+            <p className="text-base text-center text-indigo-200/60 mb-12 max-w-2xl mx-auto">
               Our AI systems are built on cutting-edge technologies that enable us to deliver intelligent, 
               scalable solutions that drive your business forward.
             </p>

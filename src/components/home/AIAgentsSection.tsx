@@ -1,132 +1,178 @@
+import { motion } from "framer-motion";
 import { Bot, Brain, MessageSquare, Zap, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { AIWorkflowAnimation } from "./AIWorkflowAnimation";
 
-const aiAgents = [
+const agents = [
   {
-    id: 1,
-    title: "Smart Customer Support Bot",
-    description: "24/7 automated customer service with intelligent responses and seamless handoff to human agents.",
+    name: "Maya",
+    role: "Customer Support AI",
+    detail: "Handles **24/7 inquiries**",
     icon: MessageSquare,
-    features: ["Multi-language support", "Real-time analytics", "CRM integration"],
-    gradient: "from-blue-500 to-cyan-600",
+    position: { top: "58%", left: "8%" },
+    mobilePosition: { top: "52%", left: "4%" },
   },
   {
-    id: 2,
-    title: "AI Data Analytics Agent",
-    description: "Transform your business data into actionable insights with our intelligent analytics AI.",
+    name: "Atlas",
+    role: "Data Analytics Agent",
+    detail: "Interested in **Business Intelligence**",
     icon: Brain,
-    features: ["Predictive analytics", "Custom dashboards", "Auto-reporting"],
-    gradient: "from-purple-500 to-indigo-600",
+    position: { top: "62%", right: "6%" },
+    mobilePosition: { top: "72%", right: "4%" },
   },
-  {
-    id: 3,
-    title: "Workflow Automation Bot",
-    description: "Streamline your business processes with AI-powered automation and smart integrations.",
-    icon: Zap,
-    features: ["500+ integrations", "Custom workflows", "Real-time monitoring"],
-    gradient: "from-orange-500 to-red-600",
-  },
-  {
-    id: 4,
-    title: "AI Content Creator",
-    description: "Generate high-quality content, copy, and marketing materials with advanced AI models.",
-    icon: Sparkles,
-    features: ["SEO optimized", "Brand voice training", "Multi-format output"],
-    gradient: "from-green-500 to-emerald-600",
-  },
+];
+
+const floatingBadges = [
+  { label: "Shared", sub: "Maya's insight", top: "48%", left: "42%", delay: 0.6 },
+  { label: "Recommended", sub: "Atlas", top: "68%", left: "48%", delay: 0.9 },
+];
+
+const avatars = [
+  { top: "38%", left: "36%", delay: 0.2, color: "from-blue-400 to-cyan-400" },
+  { top: "36%", right: "38%", delay: 0.4, color: "from-purple-400 to-pink-400" },
+  { top: "56%", left: "52%", delay: 0.5, color: "from-orange-400 to-amber-400" },
+  { top: "70%", left: "38%", delay: 0.7, color: "from-emerald-400 to-teal-400" },
 ];
 
 export function AIAgentsSection() {
   return (
-    <section className="py-20 bg-background/50 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/5 via-agency-blue/5 to-agency-pink/5"></div>
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden opacity-10 pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <div 
-            key={i} 
-            className="absolute w-2 h-2 bg-primary rounded-full animate-pulse-slow"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-        ))}
+    <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-orange-50/40 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
+      {/* Warm gradient blobs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-amber-200/50 via-orange-200/40 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-blue-200/40 via-purple-200/30 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 left-1/2 w-[350px] h-[350px] bg-gradient-to-br from-pink-200/30 via-rose-200/20 to-transparent rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient animate-scale-in">
-            AI Agents & Chatbots
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-8"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white leading-tight tracking-tight">
+            Find incredible AI agents,{" "}
+            <br className="hidden md:block" />
+            <span className="italic">through solutions you trust.</span>
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 animate-fade-in">
-            Plug AI into your own data & over <span className="text-agency-blue font-semibold">500 integrations</span>
-          </p>
-          <p className="text-base text-muted-foreground animate-fade-in" style={{ animationDelay: "200ms" }}>
-            Empower your business with intelligent automation that learns, adapts, and delivers results 24/7.
-          </p>
-        </div>
+        </motion.div>
 
-        {/* AI Workflow Animation */}
-        <div className="mb-16 animate-fade-in" style={{ animationDelay: "400ms" }}>
-          <AIWorkflowAnimation />
-        </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-6"
+        >
+          An AI platform where exceptional agents connect — and start automating your business together.
+        </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {aiAgents.map((agent, index) => (
-            <div 
-              key={agent.id}
-              className="group bg-background/80 backdrop-blur-sm rounded-xl p-6 border border-border/50 hover:border-primary/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-y-[-5px] animate-fade-in"
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4 bg-gradient-to-r ${agent.gradient} group-hover:scale-110 transition-transform duration-300`}>
-                <agent.icon size={24} />
-              </div>
-              
-              <h3 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors duration-300">
-                {agent.title}
-              </h3>
-              
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
-                {agent.description}
-              </p>
-              
-              <div className="space-y-2 mb-4">
-                {agent.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center text-xs text-muted-foreground">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 mr-2"></div>
-                    {feature}
-                  </div>
-                ))}
-              </div>
-              
-              <Button 
-                asChild 
-                variant="outline" 
-                size="sm" 
-                className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
-              >
-                <Link to="/agents" className="flex items-center justify-center">
-                  <span>Learn More</span>
-                  <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform duration-300" />
-                </Link>
-              </Button>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-          <Button asChild size="lg" className="bg-gradient hover:opacity-90 button-pop">
-            <Link to="/agents" className="flex items-center">
-              <Bot className="mr-2 h-5 w-5" />
-              <span>Explore All AI Solutions</span>
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-16"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-full px-8 py-6 text-base font-semibold hover:bg-slate-800 dark:hover:bg-slate-100"
+          >
+            <Link to="/agents">
+              Explore AI Agents
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
+        </motion.div>
+
+        {/* Interactive card area */}
+        <div className="relative w-full max-w-4xl mx-auto h-[340px] md:h-[420px]">
+          {/* Agent Cards */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-5 w-[260px] md:w-[300px] z-10"
+            style={{ top: agents[0].position.top, left: agents[0].position.left }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white">
+                <MessageSquare className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="font-bold text-slate-900 dark:text-white text-sm">Maya</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">Customer Support AI</p>
+              </div>
+            </div>
+            <p className="text-sm text-slate-700 dark:text-slate-300">
+              Handles <span className="font-bold">24/7 Customer Inquiries</span>
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-5 w-[260px] md:w-[300px] z-10"
+            style={{ top: agents[1].position.top, right: agents[1].position.right }}
+          >
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white">
+                <Brain className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="font-bold text-slate-900 dark:text-white text-sm">Atlas</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">Data Analytics Agent</p>
+              </div>
+            </div>
+            <p className="text-sm text-slate-700 dark:text-slate-300">
+              Interested in <span className="font-bold">Business Intelligence</span>
+            </p>
+          </motion.div>
+
+          {/* Floating badges */}
+          {floatingBadges.map((badge, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: badge.delay }}
+              viewport={{ once: true }}
+              className="absolute z-20"
+              style={{ top: badge.top, left: badge.left }}
+            >
+              <div className="bg-orange-100 dark:bg-orange-900/40 text-orange-800 dark:text-orange-200 rounded-xl px-4 py-2 shadow-md flex items-center gap-2">
+                <span className="text-orange-500">→</span>
+                <div>
+                  <p className="text-xs font-bold">{badge.label}</p>
+                  <p className="text-[10px] text-orange-600 dark:text-orange-300">{badge.sub}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Floating avatar circles */}
+          {avatars.map((av, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: av.delay }}
+              viewport={{ once: true }}
+              className="absolute z-10"
+              style={{ top: av.top, left: av.left, right: (av as any).right }}
+            >
+              <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br ${av.color} shadow-lg flex items-center justify-center`}>
+                <Bot className="w-4 h-4 md:w-5 md:h-5 text-white" />
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
