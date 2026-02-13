@@ -26,6 +26,7 @@ import { AIFeaturesGridSection } from "@/components/home/AIFeaturesGridSection";
 import { IntegrateAutomateSection } from "@/components/home/IntegrateAutomateSection";
 import { ChatBotServiceSection } from "@/components/home/ChatBotServiceSection";
 import { AITrainingSection } from "@/components/home/AITrainingSection";
+import { AIServicesSuiteSection } from "@/components/home/AIServicesSuiteSection";
 
 const AICodeSection = () => {
   return (
@@ -147,6 +148,7 @@ const Index = () => {
         <HeroSection />
         
         
+        <AIServicesSuiteSection />
         
         <AIAgentsSection />
         <AIAgentProfilesSection />
