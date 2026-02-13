@@ -9,29 +9,27 @@ const agents = [
     role: "Customer Support AI",
     detail: "Handles **24/7 inquiries**",
     icon: MessageSquare,
-    position: { top: "58%", left: "8%" },
-    mobilePosition: { top: "52%", left: "4%" },
+    position: { top: "45%", left: "2%" },
   },
   {
     name: "Atlas",
     role: "Data Analytics Agent",
     detail: "Interested in **Business Intelligence**",
     icon: Brain,
-    position: { top: "62%", right: "6%" },
-    mobilePosition: { top: "72%", right: "4%" },
+    position: { top: "65%", right: "2%" },
   },
 ];
 
 const floatingBadges = [
-  { label: "Shared", sub: "Maya's insight", top: "48%", left: "42%", delay: 0.6 },
-  { label: "Recommended", sub: "Atlas", top: "68%", left: "48%", delay: 0.9 },
+  { label: "Shared", sub: "Maya's insight", top: "35%", left: "50%", delay: 0.6, transform: "translateX(-50%)" },
+  { label: "Recommended", sub: "Atlas", top: "55%", left: "50%", delay: 0.9, transform: "translateX(-50%)" },
 ];
 
 const avatars = [
-  { top: "38%", left: "36%", delay: 0.2, color: "from-blue-400 to-cyan-400" },
-  { top: "36%", right: "38%", delay: 0.4, color: "from-purple-400 to-pink-400" },
-  { top: "56%", left: "52%", delay: 0.5, color: "from-orange-400 to-amber-400" },
-  { top: "70%", left: "38%", delay: 0.7, color: "from-emerald-400 to-teal-400" },
+  { top: "25%", left: "50%", delay: 0.2, color: "from-blue-400 to-cyan-400", transform: "translateX(-50%)" },
+  { top: "28%", left: "75%", delay: 0.4, color: "from-purple-400 to-pink-400" },
+  { top: "50%", left: "50%", delay: 0.5, color: "from-orange-400 to-amber-400", transform: "translateX(-50%)" },
+  { top: "72%", left: "25%", delay: 0.7, color: "from-emerald-400 to-teal-400" },
 ];
 
 export function AIAgentsSection() {
@@ -90,27 +88,27 @@ export function AIAgentsSection() {
         </motion.div>
 
         {/* Interactive card area */}
-        <div className="relative w-full max-w-4xl mx-auto h-[340px] md:h-[420px]">
+        <div className="relative w-full max-w-4xl mx-auto h-[280px] sm:h-[340px] md:h-[420px]">
           {/* Agent Cards */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-5 w-[260px] md:w-[300px] z-10"
+            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 sm:p-5 w-[220px] sm:w-[260px] md:w-[300px] z-10 text-xs sm:text-sm"
             style={{ top: agents[0].position.top, left: agents[0].position.left }}
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white">
-                <MessageSquare className="w-5 h-5" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex-shrink-0 flex items-center justify-center text-white">
+                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <div>
-                <p className="font-bold text-slate-900 dark:text-white text-sm">Maya</p>
-                <p className="text-xs text-slate-500 dark:text-slate-400">Customer Support AI</p>
+              <div className="min-w-0">
+                <p className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm truncate">Maya</p>
+                <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 truncate">Support AI</p>
               </div>
             </div>
-            <p className="text-sm text-slate-700 dark:text-slate-300">
-              Handles <span className="font-bold">24/7 Customer Inquiries</span>
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              Handles <span className="font-bold">24/7 Inquiries</span>
             </p>
           </motion.div>
 
@@ -119,20 +117,20 @@ export function AIAgentsSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
-            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-5 w-[260px] md:w-[300px] z-10"
+            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 sm:p-5 w-[220px] sm:w-[260px] md:w-[300px] z-10 text-xs sm:text-sm"
             style={{ top: agents[1].position.top, right: agents[1].position.right }}
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center text-white">
-                <Brain className="w-5 h-5" />
+            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex-shrink-0 flex items-center justify-center text-white">
+                <Brain className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
-              <div>
-                <p className="font-bold text-slate-900 dark:text-white text-sm">Atlas</p>
-                <p className="text-xs text-slate-500 dark:text-slate-400">Data Analytics Agent</p>
+              <div className="min-w-0">
+                <p className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm truncate">Atlas</p>
+                <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 truncate">Analytics AI</p>
               </div>
             </div>
-            <p className="text-sm text-slate-700 dark:text-slate-300">
-              Interested in <span className="font-bold">Business Intelligence</span>
+            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+              Interested in <span className="font-bold">Intelligence</span>
             </p>
           </motion.div>
 
@@ -144,11 +142,11 @@ export function AIAgentsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: badge.delay }}
               viewport={{ once: true }}
-              className="absolute z-20"
-              style={{ top: badge.top, left: badge.left }}
+              className="absolute z-20 hidden sm:block"
+              style={{ top: badge.top, left: badge.left, transform: badge.transform }}
             >
-              <div className="bg-orange-100 dark:bg-orange-900/40 text-orange-800 dark:text-orange-200 rounded-xl px-4 py-2 shadow-md flex items-center gap-2">
-                <span className="text-orange-500">→</span>
+              <div className="bg-orange-100 dark:bg-orange-900/40 text-orange-800 dark:text-orange-200 rounded-xl px-3 py-2 shadow-md flex items-center gap-2 whitespace-nowrap">
+                <span className="text-orange-500 text-sm">→</span>
                 <div>
                   <p className="text-xs font-bold">{badge.label}</p>
                   <p className="text-[10px] text-orange-600 dark:text-orange-300">{badge.sub}</p>
@@ -165,10 +163,10 @@ export function AIAgentsSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: av.delay }}
               viewport={{ once: true }}
-              className="absolute z-10"
-              style={{ top: av.top, left: av.left, right: (av as any).right }}
+              className="absolute z-10 hidden sm:flex"
+              style={{ top: av.top, left: av.left, transform: av.transform }}
             >
-              <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br ${av.color} shadow-lg flex items-center justify-center`}>
+              <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br ${av.color} shadow-lg flex items-center justify-center flex-shrink-0`}>
                 <Bot className="w-4 h-4 md:w-5 md:h-5 text-white" />
               </div>
             </motion.div>
