@@ -14,13 +14,11 @@ interface AlgoState {
 export function RateLimiterLabTool() {
   const [windowSize, setWindowSize] = useState(10);
   const [limit, setLimit] = useState(5);
-  const [algos, setAlgos] = useState<AlgoState[]>(() => init());
   const countersRef = useRef({ fixed: 0, sliding: [] as number[], token: 5, leaky: 0 });
   const tickRef = useRef(0);
+  const [algos, setAlgos] = useState<AlgoState[]>(() => initAlgos());
 
-  function init(): AlgoState[] {
-    countersRef.current = { fixed: 0, sliding: [], token: 5, leaky: 0 };
-    tickRef.current = 0;
+  function initAlgos(): AlgoState[] {
     return [
       { name: "Fixed Window", color: "hsl(200,70%,55%)", allowed: 0, blocked: 0, history: [] },
       { name: "Sliding Window", color: "hsl(140,60%,50%)", allowed: 0, blocked: 0, history: [] },
@@ -83,7 +81,7 @@ export function RateLimiterLabTool() {
       <div className="flex gap-2">
         <Button onClick={sendRequest} className="bg-[hsl(250,50%,45%)] hover:bg-[hsl(250,50%,40%)] text-white">Send Request</Button>
         <Button onClick={burst} className="bg-[hsl(40,70%,45%)] hover:bg-[hsl(40,70%,40%)] text-white"><Zap className="h-4 w-4 mr-1" />Burst (8)</Button>
-        <Button onClick={() => setAlgos(init())} variant="outline" className="border-[hsl(230,20%,25%)] text-[hsl(0,0%,60%)]"><RotateCcw className="h-4 w-4" /></Button>
+        <Button onClick={() => { countersRef.current = { fixed: 0, sliding: [], token: 5, leaky: 0 }; tickRef.current = 0; setAlgos(initAlgos()); }} variant="outline" className="border-[hsl(230,20%,25%)] text-[hsl(0,0%,60%)]"><RotateCcw className="h-4 w-4" /></Button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
