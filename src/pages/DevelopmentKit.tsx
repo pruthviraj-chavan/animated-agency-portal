@@ -13,6 +13,19 @@ import { JwtDecoderTool } from "@/components/devkit/tools/JwtDecoderTool";
 import { RegexTesterTool } from "@/components/devkit/tools/RegexTesterTool";
 import { TimestampTool } from "@/components/devkit/tools/TimestampTool";
 import { PasswordGeneratorTool } from "@/components/devkit/tools/PasswordGeneratorTool";
+import { JsonValidatorTool } from "@/components/devkit/tools/JsonValidatorTool";
+import { YamlJsonTool } from "@/components/devkit/tools/YamlJsonTool";
+import { TextDiffTool } from "@/components/devkit/tools/TextDiffTool";
+import { SqlFormatterTool } from "@/components/devkit/tools/SqlFormatterTool";
+import { CurlBuilderTool } from "@/components/devkit/tools/CurlBuilderTool";
+import { ChmodCalculatorTool } from "@/components/devkit/tools/ChmodCalculatorTool";
+import { CronParserTool } from "@/components/devkit/tools/CronParserTool";
+import { CidrCalculatorTool } from "@/components/devkit/tools/CidrCalculatorTool";
+import { UrlEncoderTool } from "@/components/devkit/tools/UrlEncoderTool";
+import { LruCacheSimulator } from "@/components/devkit/tools/LruCacheSimulator";
+import { LoadBalancerSimulator } from "@/components/devkit/tools/LoadBalancerSimulator";
+import { RateLimiterSimulator } from "@/components/devkit/tools/RateLimiterSimulator";
+import { CircuitBreakerSimulator } from "@/components/devkit/tools/CircuitBreakerSimulator";
 import { motion } from "framer-motion";
 import {
   Search, Braces, Fingerprint, Binary, Hash, KeyRound, Regex, Clock, Lock,
@@ -40,26 +53,26 @@ const tools: Tool[] = [
   { id: "regex-tester", name: "Regex Tester", description: "Live regex matching & testing", icon: Regex, category: "Popular Tools", component: RegexTesterTool, color: "hsl(320,60%,60%)" },
   { id: "timestamp", name: "Timestamp Converter", description: "Unix ↔ human-readable dates", icon: Clock, category: "Popular Tools", component: TimestampTool, color: "hsl(30,70%,55%)" },
   { id: "password", name: "Password Generator", description: "Secure password with options", icon: Lock, category: "Popular Tools", component: PasswordGeneratorTool, color: "hsl(160,60%,50%)" },
-  // Data Tools (coming soon)
-  { id: "json-validator", name: "JSON Validator", description: "Validate JSON with error details", icon: FileJson, category: "Data Tools", color: "hsl(140,50%,50%)" },
-  { id: "yaml-json", name: "YAML ↔ JSON", description: "Convert between YAML and JSON", icon: GitCompare, category: "Data Tools", color: "hsl(50,70%,55%)" },
-  { id: "text-diff", name: "Text Diff", description: "Compare two texts side by side", icon: GitCompare, category: "Data Tools", color: "hsl(200,50%,55%)" },
-  { id: "sql-formatter", name: "SQL Formatter", description: "Format & beautify SQL queries", icon: Database, category: "Data Tools", color: "hsl(210,60%,55%)" },
-  // Developer Tools (coming soon)
-  { id: "curl-builder", name: "cURL Builder", description: "Build cURL commands visually", icon: Terminal, category: "Developer Tools", color: "hsl(160,50%,50%)" },
-  { id: "chmod-calc", name: "Chmod Calculator", description: "Unix permission calculator", icon: Calculator, category: "Developer Tools", color: "hsl(30,60%,55%)" },
-  { id: "cron-parser", name: "Cron Parser", description: "Parse & explain cron expressions", icon: Clock, category: "Developer Tools", color: "hsl(270,50%,60%)" },
-  // Network Tools (coming soon)
+  // Data Tools
+  { id: "json-validator", name: "JSON Validator", description: "Validate JSON with error details", icon: FileJson, category: "Data Tools", component: JsonValidatorTool, color: "hsl(140,50%,50%)" },
+  { id: "yaml-json", name: "YAML ↔ JSON", description: "Convert between YAML and JSON", icon: GitCompare, category: "Data Tools", component: YamlJsonTool, color: "hsl(50,70%,55%)" },
+  { id: "text-diff", name: "Text Diff", description: "Compare two texts side by side", icon: GitCompare, category: "Data Tools", component: TextDiffTool, color: "hsl(200,50%,55%)" },
+  { id: "sql-formatter", name: "SQL Formatter", description: "Format & beautify SQL queries", icon: Database, category: "Data Tools", component: SqlFormatterTool, color: "hsl(210,60%,55%)" },
+  // Developer Tools
+  { id: "curl-builder", name: "cURL Builder", description: "Build cURL commands visually", icon: Terminal, category: "Developer Tools", component: CurlBuilderTool, color: "hsl(160,50%,50%)" },
+  { id: "chmod-calc", name: "Chmod Calculator", description: "Unix permission calculator", icon: Calculator, category: "Developer Tools", component: ChmodCalculatorTool, color: "hsl(30,60%,55%)" },
+  { id: "cron-parser", name: "Cron Parser", description: "Parse & explain cron expressions", icon: Clock, category: "Developer Tools", component: CronParserTool, color: "hsl(270,50%,60%)" },
+  // Network Tools
   { id: "dns-lookup", name: "DNS Lookup", description: "Query DNS records for domains", icon: Globe, category: "Network Tools", color: "hsl(200,70%,55%)" },
   { id: "ip-lookup", name: "IP Lookup", description: "Get geolocation from IP", icon: Network, category: "Network Tools", color: "hsl(220,60%,55%)" },
-  { id: "cidr-calc", name: "CIDR Calculator", description: "Calculate IP ranges from CIDR", icon: Wifi, category: "Network Tools", color: "hsl(180,50%,50%)" },
-  // Security (coming soon)
-  { id: "url-encoder", name: "URL Encoder", description: "Encode & decode URLs", icon: Shield, category: "Security Tools", color: "hsl(350,60%,55%)" },
-  // Simulators (coming soon)
-  { id: "lru-cache", name: "LRU Cache Visualizer", description: "Interactive LRU cache simulation", icon: Layers, category: "Simulators", color: "hsl(260,60%,60%)" },
-  { id: "load-balancer", name: "Load Balancer Sim", description: "Round-robin load balancer", icon: Server, category: "Simulators", color: "hsl(190,60%,50%)" },
-  { id: "rate-limiter", name: "Rate Limiter Sim", description: "Token bucket rate limiter", icon: Activity, category: "Simulators", color: "hsl(20,70%,55%)" },
-  { id: "circuit-breaker", name: "Circuit Breaker", description: "Circuit breaker state machine", icon: Cpu, category: "Simulators", color: "hsl(0,60%,55%)" },
+  { id: "cidr-calc", name: "CIDR Calculator", description: "Calculate IP ranges from CIDR", icon: Wifi, category: "Network Tools", component: CidrCalculatorTool, color: "hsl(180,50%,50%)" },
+  // Security Tools
+  { id: "url-encoder", name: "URL Encoder", description: "Encode & decode URLs", icon: Shield, category: "Security Tools", component: UrlEncoderTool, color: "hsl(350,60%,55%)" },
+  // Simulators
+  { id: "lru-cache", name: "LRU Cache Visualizer", description: "Interactive LRU cache simulation", icon: Layers, category: "Simulators", component: LruCacheSimulator, color: "hsl(260,60%,60%)" },
+  { id: "load-balancer", name: "Load Balancer Sim", description: "Round-robin load balancer", icon: Server, category: "Simulators", component: LoadBalancerSimulator, color: "hsl(190,60%,50%)" },
+  { id: "rate-limiter", name: "Rate Limiter Sim", description: "Token bucket rate limiter", icon: Activity, category: "Simulators", component: RateLimiterSimulator, color: "hsl(20,70%,55%)" },
+  { id: "circuit-breaker", name: "Circuit Breaker", description: "Circuit breaker state machine", icon: Cpu, category: "Simulators", component: CircuitBreakerSimulator, color: "hsl(0,60%,55%)" },
 ];
 
 const categories = ["All", "Popular Tools", "Data Tools", "Developer Tools", "Network Tools", "Security Tools", "Simulators"];
