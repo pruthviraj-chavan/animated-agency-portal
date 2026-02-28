@@ -55,6 +55,7 @@ export function Header() {
     },
     { name: "Projects", path: "/projects" },
     { name: "Products", path: "/products" },
+    { name: "Dev Kit", path: "/development-kit" },
     { name: "Blog", path: "/blog" },
     { name: "Jobs", path: "/jobs" },
     { name: "Fun Page", path: "/fun" },
