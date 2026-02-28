@@ -27,6 +27,7 @@ import { ThemeProvider } from "@/components/ThemeProvider"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { JotformChatbot } from "@/components/JotformChatbot"
 import AIAgentsLibrary from "@/pages/AIAgentsLibrary";
+import DevelopmentKit from "@/pages/DevelopmentKit";
 
 const queryClient = new QueryClient()
 
@@ -62,6 +63,7 @@ function App() {
             <Route path="/services/ai-training-workshops" element={<AITrainingWorkshops />} />
 
             <Route path="/ai-agents-library" element={<AIAgentsLibrary />} />
+            <Route path="/development-kit" element={<DevelopmentKit />} />
           </Routes>
           <JotformChatbot />
         </QueryClientProvider>
