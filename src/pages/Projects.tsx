@@ -74,7 +74,7 @@ const projects = [
     description: "Website made for an College From Phonda.",
     technologies: ["React", "College", "Education"],
     category: "Colleges",
-    url: "http://phondaeducationsociety.com/",
+    url: "https://phondaeducationsociety.com/",
     completedDate: "2023-03",
     clientType: "College"
   },
