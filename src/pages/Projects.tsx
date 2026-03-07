@@ -128,6 +128,8 @@ const ProjectImage = ({ url, title }: { url: string; title: string }) => {
           <img
             src={screenshotUrl}
             alt={`${title} website preview`}
+            loading="lazy"
+            decoding="async"
             className={`w-full h-full object-cover object-top transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}

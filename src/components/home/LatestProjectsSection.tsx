@@ -19,12 +19,6 @@ const projects: Project[] = [
     url: "https://inspiregym.vercel.app"
   },
   {
-    id: 2,
-    title: "Fortune Technology",
-    description: "Website made for an institution through dieVektor.",
-    url: "https://fortunekolhapur.com/   "
-  },
-  {
     id: 3,
     title: "VFA Gym",
     description: "Professional gym and fitness training center with online workout programs.",
