@@ -69,7 +69,7 @@ const projects = [
     clientType: "IT Solutions Provider"
   },
   {
-    id: 6,
+    id: 7,
     title: "Samarth Infotech",
     description: "Website made for an Computer Training Institute.",
     technologies: ["React", "Training Institute", "Educational"],
