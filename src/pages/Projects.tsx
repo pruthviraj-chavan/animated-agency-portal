@@ -10,26 +10,46 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "Maguire Shoes",
-    description: "Website made for an e-commerce store through dieVektor.",
-    technologies: ["React", "E-commerce", "Responsive Design"],
-    category: "E-commerce",
-    url: "https://maguireshoes.com/",
-    completedDate: "2024-03",
-    clientType: "E-commerce Store"
+    title: "InspireGym",
+    description: "Modern fitness facility website with class booking and membership management.",
+    technologies: ["React", "Fitness", "Responsive Design"],
+    category: "Fitness & Health",
+    url: "https://inspiregym.vercel.app",
+    completedDate: "2024-08",
+    clientType: "Fitness Center"
+  },
+  {
+    id: 2,
+    title: "Fortune Technology",
+    description: "Website made for an institution through dieVektor.",
+    technologies: ["React", "Education", "Institutional"],
+    category: "Education",
+    url: "https://fortunekolhapur.com/",
+    completedDate: "2024-01",
+    clientType: "Educational Institution"
   },
   {
     id: 3,
-    title: "Linda Cars",
-    description: "Website made for a car dealership through dieVektor.",
-    technologies: ["React", "Automotive", "Business Website"],
-    category: "Automotive",
-    url: "https://lindacars.com/",
-    completedDate: "2024-01",
-    clientType: "Car Dealership"
+    title: "VFA Gym",
+    description: "Professional gym and fitness training center with online workout programs.",
+    technologies: ["React", "Fitness", "E-commerce"],
+    category: "Fitness & Health",
+    url: "https://vfagym.vercel.app",
+    completedDate: "2024-07",
+    clientType: "Gym & Fitness Center"
   },
   {
     id: 4,
+    title: "DieVektor Tech",
+    description: "Modern portfolio and services showcase for a tech and design agency.",
+    technologies: ["React", "Portfolio", "Agency Website"],
+    category: "Agency",
+    url: "https://dievektor-tech.vercel.app",
+    completedDate: "2024-09",
+    clientType: "Design & Tech Agency"
+  },
+  {
+    id: 5,
     title: "Lagori Foundation Kolhapur",
     description: "An elegant portfolio website for a renowned NGO.",
     technologies: ["React", "NGO Website", "Portfolio"],
@@ -39,17 +59,17 @@ const projects = [
     clientType: "NGO"
   },
   {
-    id: 5,
-    title: "Incite Computers (Radhanagri)",
-    description: "A professional website for a leading IT solutions provider, built with a responsive and user-friendly design.",
+    id: 6,
+    title: "Incite Computer",
+    description: "Professional IT solutions and computer training center with service offerings.",
     technologies: ["React", "IT Services", "Professional"],
     category: "Technology",
-    url: "https://www.incitecomputer.com",
-    completedDate: "2023-07",
+    url: "https://incite-computer.vercel.app",
+    completedDate: "2024-06",
     clientType: "IT Solutions Provider"
   },
   {
-    id: 6,
+    id: 7,
     title: "Samarth Infotech",
     description: "Website made for an Computer Training Institute.",
     technologies: ["React", "Training Institute", "Educational"],

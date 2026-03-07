@@ -14,9 +14,9 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Maguire Shoes",
-    description: "Website made for an e-commerce store through dieVektor.",
-    url: "https://maguireshoes.com/   "
+    title: "InspireGym",
+    description: "Modern fitness facility website with class booking and membership management.",
+    url: "https://inspiregym.vercel.app"
   },
   {
     id: 2,
@@ -26,9 +26,9 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: "Linda Cars",
-    description: "Website made for a car dealership through dieVektor.",
-    url: "https://lindacars.com/   "
+    title: "VFA Gym",
+    description: "Professional gym and fitness training center with online workout programs.",
+    url: "https://vfagym.vercel.app"
   },
   {
     id: 4,
