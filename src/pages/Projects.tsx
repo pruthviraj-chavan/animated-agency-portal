@@ -19,16 +19,6 @@ const projects = [
     clientType: "Fitness Center"
   },
   {
-    id: 2,
-    title: "Fortune Technology",
-    description: "Website made for an institution through dieVektor.",
-    technologies: ["React", "Education", "Institutional"],
-    category: "Education",
-    url: "https://fortunekolhapur.com/",
-    completedDate: "2024-01",
-    clientType: "Educational Institution"
-  },
-  {
     id: 3,
     title: "VFA Gym",
     description: "Professional gym and fitness training center with online workout programs.",
@@ -138,6 +128,8 @@ const ProjectImage = ({ url, title }: { url: string; title: string }) => {
           <img
             src={screenshotUrl}
             alt={`${title} website preview`}
+            loading="lazy"
+            decoding="async"
             className={`w-full h-full object-cover object-top transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
