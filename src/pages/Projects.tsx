@@ -10,23 +10,33 @@ import { useState } from "react";
 const projects = [
   {
     id: 1,
-    title: "Maguire Shoes",
-    description: "Website made for an e-commerce store through dieVektor.",
-    technologies: ["React", "E-commerce", "Responsive Design"],
-    category: "E-commerce",
-    url: "https://maguireshoes.com/",
-    completedDate: "2024-03",
-    clientType: "E-commerce Store"
+    title: "InspireGym",
+    description: "Modern fitness facility website with class booking and membership management.",
+    technologies: ["React", "Fitness", "Responsive Design"],
+    category: "Fitness & Health",
+    url: "https://inspiregym.vercel.app",
+    completedDate: "2024-08",
+    clientType: "Fitness Center"
+  },
+  {
+    id: 2,
+    title: "Fortune Technology",
+    description: "Website made for an institution through dieVektor.",
+    technologies: ["React", "Education", "Institutional"],
+    category: "Education",
+    url: "https://fortunekolhapur.com/",
+    completedDate: "2024-01",
+    clientType: "Educational Institution"
   },
   {
     id: 3,
-    title: "Linda Cars",
-    description: "Website made for a car dealership through dieVektor.",
-    technologies: ["React", "Automotive", "Business Website"],
-    category: "Automotive",
-    url: "https://lindacars.com/",
-    completedDate: "2024-01",
-    clientType: "Car Dealership"
+    title: "VFA Gym",
+    description: "Professional gym and fitness training center with online workout programs.",
+    technologies: ["React", "Fitness", "E-commerce"],
+    category: "Fitness & Health",
+    url: "https://vfagym.vercel.app",
+    completedDate: "2024-07",
+    clientType: "Gym & Fitness Center"
   },
   {
     id: 4,
