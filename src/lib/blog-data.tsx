@@ -802,7 +802,7 @@ Creative and analytical positions are enhanced through AI tools that provide ins
 
 ### Dievektor's Approach to Workplace AI Integration
 
-At Dievektor.tech, we help organizations implement AI systems that enhance human capabilities while maintaining job satisfaction and career development opportunities for employees. Our approach prioritizes human-centric design that improves rather than threatens workplace experiences.
+At Dievekter.tech, we help organizations implement AI systems that enhance human capabilities while maintaining job satisfaction and career development opportunities for employees. Our approach prioritizes human-centric design that improves rather than threatens workplace experiences.
 
 We design AI systems with intuitive interfaces and clear value propositions that make adoption natural and beneficial for end users. Employee feedback and iterative improvement ensure that AI tools genuinely enhance productivity and job satisfaction.
 
