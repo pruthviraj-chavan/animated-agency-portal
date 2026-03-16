@@ -1400,7 +1400,7 @@ Contact dieVekter to bring AI education to your school.
     content: `
 ## Teacher AI Training Programs: Empowering Educators with Artificial Intelligence Skills
 
-The role of teachers is evolving in the age of artificial intelligence. Educators are no longer just knowledge transmitters—they're guides helping students navigate an increasingly AI-powered world. At dieVektor, our teacher training programs are designed to empower educators with the skills they need to thrive in this new landscape.
+The role of teachers is evolving in the age of artificial intelligence. Educators are no longer just knowledge transmitters—they're guides helping students navigate an increasingly AI-powered world. At dieVekter, our teacher training programs are designed to empower educators with the skills they need to thrive in this new landscape.
 
 ### The AI Challenge for Educators
 
