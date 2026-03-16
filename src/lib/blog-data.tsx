@@ -360,7 +360,7 @@ Accountability requires clear responsibility structures for AI system performanc
 
 Privacy protection ensures that AI systems respect individual privacy rights and handle personal data responsibly. This includes implementing data minimization principles, obtaining appropriate consent, and providing individuals with control over their information.
 
-### Dievektor's Approach to Ethical AI
+### Dievekter's Approach to Ethical AI
 
 At Dievekter.tech, we integrate ethical considerations into every aspect of AI development and deployment. Our approach begins with comprehensive stakeholder analysis to understand the potential impacts of AI systems on different groups and individuals.
 
