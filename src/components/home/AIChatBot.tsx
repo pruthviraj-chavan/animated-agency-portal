@@ -193,7 +193,7 @@ const AI_RESPONSES = [
     "answer": "Our mission is to deliver high-quality, scalable, and secure digital solutions that help businesses thrive in the digital landscape."
   },
   {
-    "question": "What technologies does dieVektor specialize in?",
+    "question": "What technologies does dieVekter specialize in?",
     "answer": "We specialize in React, Next.js, Node.js, Python, Go, Flutter, AWS, Google Cloud, and WordPress for custom digital solutions."
   },
   {
