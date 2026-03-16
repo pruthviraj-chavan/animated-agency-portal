@@ -760,7 +760,7 @@ We maintain long-term relationships with clients to ensure that transformation b
 
 Our track record of successful AI transformation projects across industries provides valuable insights and best practices that accelerate client success while avoiding common pitfalls.
 
-The future belongs to organizations that successfully integrate AI into their core business operations and strategic decision-making processes. Dievektor's expertise in AI-driven digital transformation positions our clients to thrive in an increasingly AI-enabled business landscape.
+The future belongs to organizations that successfully integrate AI into their core business operations and strategic decision-making processes. Dievekter's expertise in AI-driven digital transformation positions our clients to thrive in an increasingly AI-enabled business landscape.
     `,
     author: {
       name: "Maria Gonzalez",
