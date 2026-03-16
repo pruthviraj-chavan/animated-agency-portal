@@ -165,8 +165,8 @@ const AI_RESPONSES = [
     "answer": "dieVekter was founded by Pruthviraj Chavan with a team of passionate tech enthusiasts with a vision to revolutionize digital experiences through innovative and scalable solutions."
   },
   {
-    "question": "When was dieVektor founded?",
-    "answer": "dieVektor was established in 2024, with a mission to provide high-quality digital solutions to businesses of all sizes."
+    "question": "When was dieVekter founded?",
+    "answer": "dieVekter was established in 2024, with a mission to provide high-quality digital solutions to businesses of all sizes."
   },
   {
     "question": "What is the vision of dieVektor?",
