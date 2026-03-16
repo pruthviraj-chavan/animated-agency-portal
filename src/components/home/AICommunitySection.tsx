@@ -127,7 +127,7 @@ export const AICommunitySection = () => {
             <div className="w-8 h-8 bg-gradient-to-br from-agency-purple to-agency-blue rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-sm">D</span>
             </div>
-            <span className="font-semibold text-lg">Dievektor</span>
+            <span className="font-semibold text-lg">Dievekter</span>
           </div>
         </div>
       </div>

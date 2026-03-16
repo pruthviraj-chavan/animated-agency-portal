@@ -105,7 +105,7 @@ export function HeroSection() {
                   <Play className="w-5 h-5 ml-0.5" />
                 </Link>
                 <div className="w-24 h-12 rounded-full bg-muted overflow-hidden flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground font-medium">dieVektor</span>
+                  <span className="text-xs text-muted-foreground font-medium">dieVekter</span>
                 </div>
               </div>
             </div>

@@ -70,7 +70,7 @@ export const AIFeaturesGridSection = () => {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From building intelligent websites to automating workflows, 
-            dieVektor simplifies complex business tasks.
+            dieVekter simplifies complex business tasks.
           </p>
         </motion.div>
 

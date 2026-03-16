@@ -545,7 +545,7 @@ export default function AIAgentsLibrary() {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>AI Agents Library - Powerful AI Tools - Dievektor</title>
+        <title>AI Agents Library - Powerful AI Tools - Dievekter</title>
         <meta name="description" content="Access powerful AI agents with your own API keys. Generate content, validate ideas, create brands, and automate tasks with Claude, GPT, and Gemini." />
         <meta name="keywords" content="AI agents, API integration, content generation, business automation, AI tools" />
       </Helmet>

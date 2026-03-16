@@ -176,7 +176,7 @@ const About = () => {
               <div className="animate-slide-in-bottom" style={{ animationDelay: "100ms" }}>
                 <h2 className="text-3xl font-bold mb-6 text-gradient">Our Story</h2>
                 <p className="text-muted-foreground mb-4">
-                  Founded in 2024, Dievektor was born from a vision to bridge the gap between technology and creativity. We believed that exceptional digital experiences could transform businesses and connect them with their audiences in meaningful ways.
+                  Founded in 2024, Dievekter was born from a vision to bridge the gap between technology and creativity. We believed that exceptional digital experiences could transform businesses and connect them with their audiences in meaningful ways.
                 </p>
                 <p className="text-muted-foreground mb-4">
                   What started as a small team of passionate innovators has grown into a full-service digital agency with a reputation for excellence. Our journey has been defined by our commitment to quality, innovation, and client success.

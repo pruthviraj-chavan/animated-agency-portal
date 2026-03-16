@@ -467,7 +467,7 @@ joinInternship(you);`}
                     
                     <div className="space-y-2 md:col-span-2">
                       <label htmlFor="message" className="text-sm font-medium">
-                        Why do you want to join dieVektor?
+                        Why do you want to join dieVekter?
                       </label>
                       <Textarea
                         id="message"

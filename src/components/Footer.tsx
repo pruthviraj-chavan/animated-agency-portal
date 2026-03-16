@@ -248,10 +248,10 @@ export function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t border-border/30">
             <p className="text-sm text-muted-foreground">
-              Designed by dieVektor, Powered by AI
+              Designed by dieVekter, Powered by AI
             </p>
             <p className="text-sm text-muted-foreground mt-2 sm:mt-0">
-              © {new Date().getFullYear()} dieVektor. All rights reserved.
+              © {new Date().getFullYear()} dieVekter. All rights reserved.
             </p>
           </div>
         </div>
