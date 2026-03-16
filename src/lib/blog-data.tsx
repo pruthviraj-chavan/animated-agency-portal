@@ -536,7 +536,7 @@ The quantum-AI future promises unprecedented computational power that will resha
     },
     date: "June 5, 2025",
     readTime: "9 min read",
-    tags: ["Quantum Computing", "Quantum AI", "Computational Intelligence", "Future Technology", "Dievektor"],
+    tags: ["Quantum Computing", "Quantum AI", "Computational Intelligence", "Future Technology", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [7, 10, 12]
   },
