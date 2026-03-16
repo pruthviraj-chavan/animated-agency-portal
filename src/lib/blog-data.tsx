@@ -1334,7 +1334,7 @@ Contact Dievekter for your Slack backup and export requirements.
     content: `
 ## AI Training in Schools: Preparing Students for the Future with Artificial Intelligence Education
 
-The integration of artificial intelligence into education is no longer a futuristic concept—it's happening now. At dieVektor, we've been at the forefront of this transformation, conducting AI training workshops in over 20 schools and empowering more than 2000 students with essential AI literacy skills.
+The integration of artificial intelligence into education is no longer a futuristic concept—it's happening now. At dieVekter, we've been at the forefront of this transformation, conducting AI training workshops in over 20 schools and empowering more than 2000 students with essential AI literacy skills.
 
 ### Why AI Education Matters for Students
 
