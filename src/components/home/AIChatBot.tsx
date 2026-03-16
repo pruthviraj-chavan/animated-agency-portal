@@ -229,7 +229,7 @@ const AI_RESPONSES = [
     "answer": "We work with startups, SMEs, and enterprises across various industries, providing tailored digital solutions."
   },
   {
-    "question": "What values does dieVektor stand for?",
+    "question": "What values does dieVekter stand for?",
     "answer": "We stand for innovation, transparency, excellence, and customer-centric solutions that drive real business impact."
   },
   {
