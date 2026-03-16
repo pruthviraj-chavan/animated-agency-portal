@@ -46,7 +46,7 @@ Financial operations benefit from AI agents that can analyze market conditions, 
 
 ### Dievektor's Approach to Agentic AI
 
-At Dievektor.tech, we understand that successful agentic AI implementation requires more than just deploying advanced algorithms. Our approach focuses on creating AI agents that align with your business objectives while maintaining transparency and accountability.
+At Dievekter.tech, we understand that successful agentic AI implementation requires more than just deploying advanced algorithms. Our approach focuses on creating AI agents that align with your business objectives while maintaining transparency and accountability.
 
 We design autonomous agents with built-in safeguards and monitoring systems that ensure actions remain within acceptable parameters. Our agents are trained on industry-specific data and customized to understand your unique business context, making them more effective than generic solutions.
 
