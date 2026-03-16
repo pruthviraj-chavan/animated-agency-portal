@@ -642,7 +642,7 @@ At Dievekter, we help organizations build comprehensive cyber resilience through
 
 We provide training and support services that help security teams effectively utilize AI-powered tools while maintaining the human judgment and oversight necessary for effective cybersecurity operations.
 
-The future of cybersecurity lies in intelligent systems that can match the sophistication and speed of AI-powered attacks. Dievektor's expertise in AI cybersecurity solutions positions our clients to defend effectively against next-generation threats while maintaining operational efficiency and regulatory compliance.
+The future of cybersecurity lies in intelligent systems that can match the sophistication and speed of AI-powered attacks. Dievekter's expertise in AI cybersecurity solutions positions our clients to defend effectively against next-generation threats while maintaining operational efficiency and regulatory compliance.
     `,
     author: {
       name: "Captain Lisa Chen",
