@@ -189,7 +189,7 @@ const AI_RESPONSES = [
     "answer": "We offer web development, mobile app development, UI/UX design, SEO optimization, cloud solutions, and API integrations."
   },
   {
-    "question": "What is the mission of dieVektor?",
+    "question": "What is the mission of dieVekter?",
     "answer": "Our mission is to deliver high-quality, scalable, and secure digital solutions that help businesses thrive in the digital landscape."
   },
   {
