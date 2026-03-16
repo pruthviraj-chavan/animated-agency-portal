@@ -51,7 +51,7 @@ const projects: Project[] = [
   {
     id: 8,
     title: "Kaksha Live",
-    description: "Website made for an educational platform through dieVektor.",
+    description: "Website made for an educational platform through dieVekter.",
     url: "https://kaksha.live/   "
   },
   {
