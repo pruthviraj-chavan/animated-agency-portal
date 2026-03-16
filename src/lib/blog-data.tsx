@@ -1467,7 +1467,7 @@ We envision classrooms where AI handles routine tasks, freeing teachers to focus
 
 With over 100 teachers trained across 20+ schools, we're creating a network of AI-literate educators ready to prepare the next generation for an AI-driven world.
 
-Ready to transform your teaching with AI? Contact dieVektor to schedule a teacher training session.
+Ready to transform your teaching with AI? Contact dieVekter to schedule a teacher training session.
     `,
     author: {
       name: "Ketaki Patil",
