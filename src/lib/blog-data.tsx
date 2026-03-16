@@ -1018,7 +1018,7 @@ Our implementation approach includes pilot projects that demonstrate value and b
 
 We provide ongoing support and optimization services that help organizations continuously improve their AI innovation capabilities as technology evolves and organizational needs change.
 
-The future of innovation lies in the effective combination of human creativity and AI-powered analysis and generation capabilities. Dievektor's expertise in AI innovation platforms positions our clients to lead in their industries through accelerated discovery and development of breakthrough products and solutions.
+The future of innovation lies in the effective combination of human creativity and AI-powered analysis and generation capabilities. Dievekter's expertise in AI innovation platforms positions our clients to lead in their industries through accelerated discovery and development of breakthrough products and solutions.
     `,
     author: {
       name: "Dr. Jennifer Walsh",
