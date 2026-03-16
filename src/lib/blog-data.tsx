@@ -1330,7 +1330,7 @@ Contact Dievekter for your Slack backup and export requirements.
     id: 16,
     title: "AI Training in Schools: Preparing Students for the Future with Artificial Intelligence Education",
     slug: "ai-training-schools-preparing-students-future-artificial-intelligence-education",
-    excerpt: "Discover how dieVektor is transforming education by providing hands-on AI training workshops in schools, empowering over 2000+ students with future-ready skills.",
+    excerpt: "Discover how dieVekter is transforming education by providing hands-on AI training workshops in schools, empowering over 2000+ students with future-ready skills.",
     content: `
 ## AI Training in Schools: Preparing Students for the Future with Artificial Intelligence Education
 
