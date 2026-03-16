@@ -1380,7 +1380,7 @@ As AI technology continues to evolve, so does our commitment to education. We're
 
 Our goal is to reach 100 schools and 10,000 students in the next two years, spreading AI literacy across the region and preparing the next generation for an AI-driven future.
 
-Contact dieVektor to bring AI education to your school.
+Contact dieVekter to bring AI education to your school.
     `,
     author: {
       name: "Akshay Kale",
