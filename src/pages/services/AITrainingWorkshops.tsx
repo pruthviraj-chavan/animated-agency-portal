@@ -241,9 +241,9 @@ export default function AITrainingWorkshops() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>AI Training & Workshops for Schools | dieVektor</title>
+        <title>AI Training & Workshops for Schools | dieVekter</title>
         <meta name="description" content="We provide AI training workshops for students and teachers. Over 20+ schools trained with 2000+ students and 100+ teachers equipped with AI skills." />
-        <meta name="keywords" content="AI training schools, AI workshops students, teacher AI training, artificial intelligence education, AI curriculum schools, dieVektor AI training" />
+        <meta name="keywords" content="AI training schools, AI workshops students, teacher AI training, artificial intelligence education, AI curriculum schools, dieVekter AI training" />
       </Helmet>
       
       <Header />
