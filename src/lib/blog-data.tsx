@@ -1314,7 +1314,7 @@ When platform migration time comes:
 - Complete metadata preservation
 - Validation reports
 
-Contact Dievektor for your Slack backup and export requirements.
+Contact Dievekter for your Slack backup and export requirements.
     `,
     author: {
       name: "James Wilson",
