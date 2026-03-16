@@ -44,7 +44,7 @@ Supply chain management has been transformed through autonomous agents that moni
 
 Financial operations benefit from AI agents that can analyze market conditions, execute trades, manage risk portfolios, and generate compliance reports while adhering to regulatory requirements and organizational policies.
 
-### Dievektor's Approach to Agentic AI
+### Dievekter's Approach to Agentic AI
 
 At Dievekter.tech, we understand that successful agentic AI implementation requires more than just deploying advanced algorithms. Our approach focuses on creating AI agents that align with your business objectives while maintaining transparency and accountability.
 
