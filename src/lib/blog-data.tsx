@@ -684,7 +684,7 @@ Process redesign and optimization leverage AI capabilities to eliminate ineffici
 
 ### Dievektor's Transformation Methodology
 
-At Dievektor.tech, we guide organizations through comprehensive AI-driven digital transformation using proven methodologies that address technical, organizational, and strategic dimensions simultaneously. Our approach ensures sustainable transformation that delivers measurable business value.
+At Dievekter.tech, we guide organizations through comprehensive AI-driven digital transformation using proven methodologies that address technical, organizational, and strategic dimensions simultaneously. Our approach ensures sustainable transformation that delivers measurable business value.
 
 We begin with thorough assessment and strategy development that identifies transformation opportunities, prioritizes initiatives based on business impact, and creates roadmaps that align technology investments with organizational objectives.
 
