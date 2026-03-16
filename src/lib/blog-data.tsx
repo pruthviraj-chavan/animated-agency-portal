@@ -226,7 +226,7 @@ At Dievekter, we understand that successful multimodal AI implementation require
 
 Our team provides comprehensive training and support to ensure that organizations can effectively utilize and maintain multimodal AI systems. We establish monitoring and optimization protocols that ensure continued performance improvements over time.
 
-The future of human-computer interaction lies in multimodal AI systems that understand and respond to the full spectrum of human communication. Dievektor's expertise in this rapidly evolving field positions our clients at the forefront of this technological revolution.
+The future of human-computer interaction lies in multimodal AI systems that understand and respond to the full spectrum of human communication. Dievekter's expertise in this rapidly evolving field positions our clients at the forefront of this technological revolution.
     `,
     author: {
       name: "Dr. Aisha Patel",
