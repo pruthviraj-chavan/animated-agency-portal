@@ -242,10 +242,10 @@ const Internship = () => {
             <div className="max-w-lg mx-auto rounded-lg p-4 bg-background/80 border border-border backdrop-blur-sm code-highlight overflow-hidden">
               <pre className="text-xs md:text-sm font-mono overflow-x-auto animate-typing">
                 <code>
-{`// dieVektor Internship Program
+{`// dieVekter Internship Program
 const joinInternship = async (you) => {
   const skills = await you.learn(["realWorldSkills", "teamwork"]);
-  const experience = await dieVektor.provide(["mentorship", "projects"]);
+  const experience = await dieVekter.provide(["mentorship", "projects"]);
   
   return {
     career: "launched",
