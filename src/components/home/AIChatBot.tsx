@@ -221,7 +221,7 @@ const AI_RESPONSES = [
     "answer": "Yes, we work with clients worldwide and provide remote digital solutions tailored to their needs."
   },
   {
-    "question": "What is dieVektor's approach to problem-solving?",
+    "question": "What is dieVekter's approach to problem-solving?",
     "answer": "We use a strategic and data-driven approach, ensuring that our solutions are efficient, scalable, and future-proof."
   },
   {
