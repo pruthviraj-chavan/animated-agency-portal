@@ -242,7 +242,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Founder",
-    "answer": "dieVektor was founded by Pruthviraj Chavan, a team of passionate tech enthusiasts with a vision to revolutionize digital experiences."
+    "answer": "dieVekter was founded by Pruthviraj Chavan, a team of passionate tech enthusiasts with a vision to revolutionize digital experiences."
   },
   {
     "question": "Established",
