@@ -185,7 +185,7 @@ const AI_RESPONSES = [
     "answer": "Our commitment to innovation, user-centric design, and cutting-edge technology sets us apart in the digital solutions industry."
   },
   {
-    "question": "What services does dieVektor provide?",
+    "question": "What services does dieVekter provide?",
     "answer": "We offer web development, mobile app development, UI/UX design, SEO optimization, cloud solutions, and API integrations."
   },
   {
