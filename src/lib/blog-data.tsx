@@ -362,7 +362,7 @@ Privacy protection ensures that AI systems respect individual privacy rights and
 
 ### Dievektor's Approach to Ethical AI
 
-At Dievektor.tech, we integrate ethical considerations into every aspect of AI development and deployment. Our approach begins with comprehensive stakeholder analysis to understand the potential impacts of AI systems on different groups and individuals.
+At Dievekter.tech, we integrate ethical considerations into every aspect of AI development and deployment. Our approach begins with comprehensive stakeholder analysis to understand the potential impacts of AI systems on different groups and individuals.
 
 We implement bias detection and mitigation strategies throughout the AI development lifecycle, using diverse datasets, representative testing procedures, and ongoing monitoring systems to ensure fair outcomes across different populations and use cases.
 
