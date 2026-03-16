@@ -161,8 +161,8 @@ const AI_RESPONSES = [
     "answer": "Simply contact us via our website, email, or phone, and we'll discuss your project requirements and get started!"
   },
   {
-    "question": "Who is the founder of dieVektor?",
-    "answer": "dieVektor was founded by Pruthviraj Chavan with a team of passionate tech enthusiasts with a vision to revolutionize digital experiences through innovative and scalable solutions."
+    "question": "Who is the founder of dieVekter?",
+    "answer": "dieVekter was founded by Pruthviraj Chavan with a team of passionate tech enthusiasts with a vision to revolutionize digital experiences through innovative and scalable solutions."
   },
   {
     "question": "When was dieVektor founded?",
