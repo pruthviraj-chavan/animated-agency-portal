@@ -184,7 +184,7 @@ Healthcare applications utilize multimodal AI for comprehensive patient assessme
 
 ### Dievektor's Multimodal AI Expertise
 
-At Dievektor.tech, we specialize in developing custom multimodal AI solutions that address specific business challenges through integrated sensory processing. Our approach combines state-of-the-art models with practical implementation strategies that deliver measurable results.
+At Dievekter.tech, we specialize in developing custom multimodal AI solutions that address specific business challenges through integrated sensory processing. Our approach combines state-of-the-art models with practical implementation strategies that deliver measurable results.
 
 We design multimodal systems that understand the unique communication patterns and requirements of different industries. Our solutions can process industry-specific visual elements, technical terminology, and domain-specific audio patterns to provide more accurate and relevant responses.
 
