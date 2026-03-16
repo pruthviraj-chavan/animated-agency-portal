@@ -1247,7 +1247,7 @@ Our solution delivers:
 - 20% improvement in inventory turnover
 - 50% reduction in inventory management time
 
-Contact Dievektor for a demonstration.
+Contact Dievekter for a demonstration.
     `,
     author: {
       name: "Emily Chen",
