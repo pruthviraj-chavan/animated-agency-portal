@@ -22,7 +22,7 @@ const AI_RESPONSES = [
   },
   {
     question: "contact",
-    answer: "You can reach our team through our contact page or by emailing dievektor@gmail.com. We're also available via phone at +919404895667 during regular business hours. We'd love to discuss your project requirements!"
+    answer: "You can reach our team through our contact page or by emailing dievekter@gmail.com. We're also available via phone at +919404895667 during regular business hours. We'd love to discuss your project requirements!"
   },
   {
     question: "pricing",
