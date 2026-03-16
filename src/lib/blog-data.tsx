@@ -1026,7 +1026,7 @@ The future of innovation lies in the effective combination of human creativity a
     },
     date: "May 28, 2025",
     readTime: "11 min read",
-    tags: ["AI Innovation", "R&D Acceleration", "Product Development", "Research Technology", "Dievektor"],
+    tags: ["AI Innovation", "R&D Acceleration", "Product Development", "Research Technology", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [6, 7, 14]
   },
