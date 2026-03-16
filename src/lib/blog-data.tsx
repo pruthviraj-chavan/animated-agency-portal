@@ -336,7 +336,7 @@ Edge AI computing represents a fundamental shift toward more responsive, private
     id: 5,
     title: "AI Ethics and Governance: Building Responsible AI Systems for Enterprise",
     slug: "ai-ethics-governance-responsible-systems-enterprise",
-    excerpt: "Discover how Dievektor helps organizations implement ethical AI frameworks and governance structures for responsible artificial intelligence deployment.",
+    excerpt: "Discover how Dievekter helps organizations implement ethical AI frameworks and governance structures for responsible artificial intelligence deployment.",
     content: `
 ## AI Ethics and Governance: Building Responsible AI Systems for Enterprise
 
