@@ -27,13 +27,13 @@ const projects: Project[] = [
   {
     id: 4,
     title: "Heal's Way",
-    description: "Website made for a luxury furniture brand through dieVektor.",
+    description: "Website made for a luxury furniture brand through dieVekter.",
     url: "https://healsway.in/   "
   },
   {
     id: 5,
     title: "Open House Cafe",
-    description: "Website made for a cafe through dieVektor.",
+    description: "Website made for a cafe through dieVekter.",
     url: "https://openhousecafe.in/   "
   },
   {
@@ -51,7 +51,7 @@ const projects: Project[] = [
   {
     id: 8,
     title: "Kaksha Live",
-    description: "Website made for an educational platform through dieVektor.",
+    description: "Website made for an educational platform through dieVekter.",
     url: "https://kaksha.live/   "
   },
   {
@@ -63,7 +63,7 @@ const projects: Project[] = [
   {
     id: 10,
     title: "Rotorooter",
-    description: "Website made for a plumber association through dieVektor.",
+    description: "Website made for a plumber association through dieVekter.",
     url: "https://rotorooter.com/   "
   },
   {
@@ -75,7 +75,7 @@ const projects: Project[] = [
   {
     id: 12,
     title: "Cardtonic",
-    description: "Website made for an online banking firm through dieVektor.",
+    description: "Website made for an online banking firm through dieVekter.",
     url: "https://cardtonic.com/   "
   },
   {

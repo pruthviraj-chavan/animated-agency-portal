@@ -30,7 +30,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "DieVektor Tech",
+    title: "DieVekter Tech",
     description: "Modern portfolio and services showcase for a tech and design agency.",
     technologies: ["React", "Portfolio", "Agency Website"],
     category: "Agency",

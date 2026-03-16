@@ -176,7 +176,7 @@ export function Footer() {
                 <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground">
                   <Code size={20} />
                 </div>
-                <span className="text-primary">dieVektor</span>
+                <span className="text-primary">dieVekter</span>
               </Link>
               
               <div className="flex space-x-3 mt-6">
@@ -248,10 +248,10 @@ export function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row justify-between items-center mt-12 pt-8 border-t border-border/30">
             <p className="text-sm text-muted-foreground">
-              Designed by dieVektor, Powered by AI
+              Designed by dieVekter, Powered by AI
             </p>
             <p className="text-sm text-muted-foreground mt-2 sm:mt-0">
-              © {new Date().getFullYear()} dieVektor. All rights reserved.
+              © {new Date().getFullYear()} dieVekter. All rights reserved.
             </p>
           </div>
         </div>

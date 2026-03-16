@@ -34,7 +34,7 @@ const features = [
   {
     icon: Target,
     title: "Bring Any Imagination to Life",
-    description: "From creative designs to practical solutions, dieVektor transforms your imagination into tangible results with ease.",
+    description: "From creative designs to practical solutions, dieVekter transforms your imagination into tangible results with ease.",
     gradient: "from-orange-500 to-amber-400",
     delay: 0.4,
   },
@@ -70,7 +70,7 @@ export const AIFeaturesGridSection = () => {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From building intelligent websites to automating workflows, 
-            dieVektor simplifies complex business tasks.
+            dieVekter simplifies complex business tasks.
           </p>
         </motion.div>
 

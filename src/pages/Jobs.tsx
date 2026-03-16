@@ -139,7 +139,7 @@ const Jobs = () => {
 
   const handleApply = (jobTitle: string) => {
     const whatsappNumber = "9404895667";
-    const message = `I'm interested in applying for the ${jobTitle} position at dieVektor.`;
+    const message = `I'm interested in applying for the ${jobTitle} position at dieVekter.`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');

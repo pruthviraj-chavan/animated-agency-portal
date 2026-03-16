@@ -40,7 +40,7 @@ export function ScheduleMeetingSection() {
           template_id: "template_4mkxe1g", 
           user_id: "3FhUp3n8UpSEe_rpT",
           template_params: {
-            to_email: "team.dievektor@gmail.com",
+            to_email: "team.dievekter@gmail.com",
             from_name: formData.name,
             from_email: formData.email,
             phone_number: formData.phone,

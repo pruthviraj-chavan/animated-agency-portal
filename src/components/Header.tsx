@@ -97,10 +97,10 @@ export function Header() {
           <div className="flex items-center gap-2">
             <img 
               src="/lovable-uploads/a7887b9e-e8f5-4fe6-87a2-9579a5b7d12f.png" 
-              alt="dieVektor Logo" 
+              alt="dieVekter Logo" 
               className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain"
             />
-            <span className="text-gradient text-lg sm:text-xl md:text-2xl">dieVektor</span>
+            <span className="text-gradient text-lg sm:text-xl md:text-2xl">dieVekter</span>
           </div>
         </Link>
 

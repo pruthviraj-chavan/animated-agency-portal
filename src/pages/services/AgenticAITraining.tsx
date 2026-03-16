@@ -50,7 +50,7 @@ const AgenticAITraining = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>Agentic AI Training - Master AI Automation & Vibe Coding - Dievektor</title>
+        <title>Agentic AI Training - Master AI Automation & Vibe Coding - Dievekter</title>
         <meta name="description" content="Learn to build intelligent agents, automate workflows, and master AI-powered coding with our comprehensive Agentic AI and Vibe Coding training programs." />
         <meta name="keywords" content="Agentic AI, AI automation, Vibe Coding, AI training, LangChain, AutoGen, CrewAI" />
       </Helmet>

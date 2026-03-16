@@ -58,7 +58,7 @@ export const IntegrateAutomateSection = () => {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From connecting with your favorite tools to automating workflows, 
-            dieVektor simplifies business tasks.
+            dieVekter simplifies business tasks.
           </p>
         </motion.div>
 

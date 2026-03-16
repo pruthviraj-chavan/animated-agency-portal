@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 // Predefined responses for the AI chatbot
 const AI_RESPONSES = [
   {
-    question: "what is dievektor",
+    question: "what is dievekter",
     answer: "A digital agency is a business that specializes in creating, designing, and managing digital solutions for clients. We offer services like web development, app creation, UI/UX design, and digital marketing to help businesses establish and grow their online presence."
   },
   {
@@ -22,7 +22,7 @@ const AI_RESPONSES = [
   },
   {
     question: "contact",
-    answer: "You can reach our team through our contact page or by emailing dievektor@gmail.com. We're also available via phone at +919404895667 during regular business hours. We'd love to discuss your project requirements!"
+    answer: "You can reach our team through our contact page or by emailing dievekter@gmail.com. We're also available via phone at +919404895667 during regular business hours. We'd love to discuss your project requirements!"
   },
   {
     question: "pricing",
@@ -161,92 +161,92 @@ const AI_RESPONSES = [
     "answer": "Simply contact us via our website, email, or phone, and we'll discuss your project requirements and get started!"
   },
   {
-    "question": "Who is the founder of dieVektor?",
-    "answer": "dieVektor was founded by Pruthviraj Chavan with a team of passionate tech enthusiasts with a vision to revolutionize digital experiences through innovative and scalable solutions."
+    "question": "Who is the founder of dieVekter?",
+    "answer": "dieVekter was founded by Pruthviraj Chavan with a team of passionate tech enthusiasts with a vision to revolutionize digital experiences through innovative and scalable solutions."
   },
   {
-    "question": "When was dieVektor founded?",
-    "answer": "dieVektor was established in 2024, with a mission to provide high-quality digital solutions to businesses of all sizes."
+    "question": "When was dieVekter founded?",
+    "answer": "dieVekter was established in 2024, with a mission to provide high-quality digital solutions to businesses of all sizes."
   },
   {
-    "question": "What is the vision of dieVektor?",
+    "question": "What is the vision of dieVekter?",
     "answer": "Our vision is to empower businesses with cutting-edge digital solutions, driving growth and innovation through technology."
   },
   {
-    "question": "What industries does dieVektor serve?",
+    "question": "What industries does dieVekter serve?",
     "answer": "We serve a diverse range of industries, including finance, healthcare, e-commerce, education, and technology."
   },
   {
-    "question": "Where is dieVektor located?",
-    "answer": "dieVektor is headquartered in Kolhapur, but we work with clients globally, providing digital solutions tailored to their needs."
+    "question": "Where is dieVekter located?",
+    "answer": "dieVekter is headquartered in Kolhapur, but we work with clients globally, providing digital solutions tailored to their needs."
   },
   {
-    "question": "What makes dieVektor unique?",
+    "question": "What makes dieVekter unique?",
     "answer": "Our commitment to innovation, user-centric design, and cutting-edge technology sets us apart in the digital solutions industry."
   },
   {
-    "question": "What services does dieVektor provide?",
+    "question": "What services does dieVekter provide?",
     "answer": "We offer web development, mobile app development, UI/UX design, SEO optimization, cloud solutions, and API integrations."
   },
   {
-    "question": "What is the mission of dieVektor?",
+    "question": "What is the mission of dieVekter?",
     "answer": "Our mission is to deliver high-quality, scalable, and secure digital solutions that help businesses thrive in the digital landscape."
   },
   {
-    "question": "What technologies does dieVektor specialize in?",
+    "question": "What technologies does dieVekter specialize in?",
     "answer": "We specialize in React, Next.js, Node.js, Python, Go, Flutter, AWS, Google Cloud, and WordPress for custom digital solutions."
   },
   {
-    "question": "How does dieVektor ensure project quality?",
+    "question": "How does dieVekter ensure project quality?",
     "answer": "We follow industry best practices, rigorous testing, and agile methodologies to ensure the highest quality in every project."
   },
   {
-    "question": "Does dieVektor work with startups?",
+    "question": "Does dieVekter work with startups?",
     "answer": "Yes, we love working with startups, helping them build a strong digital foundation with innovative and cost-effective solutions."
   },
   {
-    "question": "How does dieVektor approach customer satisfaction?",
+    "question": "How does dieVekter approach customer satisfaction?",
     "answer": "We prioritize transparent communication, personalized solutions, and ongoing support to ensure complete customer satisfaction."
   },
   {
-    "question": "How can I contact dieVektor?",
+    "question": "How can I contact dieVekter?",
     "answer": "You can reach us through our website, email, or phone. Visit our contact page for more details."
   },
   {
-    "question": "What is dieVektor's work culture like?",
+    "question": "What is dieVekter's work culture like?",
     "answer": "Our work culture is innovation-driven, collaborative, and focused on continuous learning and growth."
   },
   {
-    "question": "Does dieVektor offer remote services?",
+    "question": "Does dieVekter offer remote services?",
     "answer": "Yes, we work with clients worldwide and provide remote digital solutions tailored to their needs."
   },
   {
-    "question": "What is dieVektor's approach to problem-solving?",
+    "question": "What is dieVekter's approach to problem-solving?",
     "answer": "We use a strategic and data-driven approach, ensuring that our solutions are efficient, scalable, and future-proof."
   },
   {
-    "question": "What kind of clients does dieVektor work with?",
+    "question": "What kind of clients does dieVekter work with?",
     "answer": "We work with startups, SMEs, and enterprises across various industries, providing tailored digital solutions."
   },
   {
-    "question": "What values does dieVektor stand for?",
+    "question": "What values does dieVekter stand for?",
     "answer": "We stand for innovation, transparency, excellence, and customer-centric solutions that drive real business impact."
   },
   {
-    "question": "Does dieVektor have any partnerships?",
+    "question": "Does dieVekter have any partnerships?",
     "answer": "Yes, we collaborate with leading technology providers, cloud platforms, and industry experts to deliver the best solutions."
   },
   {
-    "question": "What is dieVektor's future goal?",
+    "question": "What is dieVekter's future goal?",
     "answer": "Our goal is to continue pushing the boundaries of technology, helping businesses succeed in an ever-evolving digital world."
   },
   {
     "question": "Founder",
-    "answer": "dieVektor was founded by Pruthviraj Chavan, a team of passionate tech enthusiasts with a vision to revolutionize digital experiences."
+    "answer": "dieVekter was founded by Pruthviraj Chavan, a team of passionate tech enthusiasts with a vision to revolutionize digital experiences."
   },
   {
     "question": "Established",
-    "answer": "dieVektor was established in 2024 with a mission to provide high-quality digital solutions."
+    "answer": "dieVekter was established in 2024 with a mission to provide high-quality digital solutions."
   },
   {
     "question": "Vision",
@@ -258,7 +258,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Location",
-    "answer": "dieVektor is headquartered in Kolhapur but works with global clients."
+    "answer": "dieVekter is headquartered in Kolhapur but works with global clients."
   },
   {
     "question": "Uniqueness",
@@ -322,11 +322,11 @@ const AI_RESPONSES = [
   },
   {
     "question": "Founder | CEO",
-    "answer": "dieVektor was founded by Pruthviraj Chavan"
+    "answer": "dieVekter was founded by Pruthviraj Chavan"
   },
   {
     "question": "Established | Year",
-    "answer": "dieVektor was established in 2024 with a mission to provide high-quality digital solutions."
+    "answer": "dieVekter was established in 2024 with a mission to provide high-quality digital solutions."
   },
   {
     "question": "Vision | Goal",
@@ -338,7 +338,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Location | Office",
-    "answer": "dieVektor is headquartered in Kolhapur but works with global clients."
+    "answer": "dieVekter is headquartered in Kolhapur but works with global clients."
   },
   {
     "question": "Uniqueness | Speciality",
@@ -563,11 +563,11 @@ const AI_RESPONSES = [
   },
   {
     "question": "Who is Pruthviraj Chavan?",
-    "answer": "Pruthviraj Chavan is the Founder & CEO of dieVektor. He is a Computer Science Engineer from DYP Salokhenagar with professional experience in software engineering at Infomatics & Intellipaat."
+    "answer": "Pruthviraj Chavan is the Founder & CEO of dieVekter. He is a Computer Science Engineer from DYP Salokhenagar with professional experience in software engineering at Infomatics & Intellipaat."
   },
   {
     "question": "Who is Atharva Sankpal?",
-    "answer": "Atharva Sankpal is the Co-founder of dieVektor and also the Founder of Market Media. He brings extensive marketing expertise to our digital solutions."
+    "answer": "Atharva Sankpal is the Co-founder of dieVekter and also the Founder of Market Media. He brings extensive marketing expertise to our digital solutions."
   },
   {
     "question": "Who is Ketaki Mulik?",
@@ -629,7 +629,7 @@ export function AIChatBot() {
     if (isOpen && messages.length === 0) {
       setMessages([{
         id: 'welcome',
-        content: "👋 Hi there! I'm your dievektor assistant. How can I help you today?",
+        content: "👋 Hi there! I'm your dieVekter assistant. How can I help you today?",
         sender: 'ai',
         timestamp: new Date()
       }]);

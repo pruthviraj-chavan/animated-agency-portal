@@ -50,7 +50,7 @@ const BlogPost = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>{post.title} - Dievektor Blog</title>
+        <title>{post.title} - Dievekter Blog</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags.join(', ')} />
         <link rel="canonical" href={`https://yourdomain.com/blog/${post.slug}`} />

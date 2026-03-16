@@ -26,7 +26,7 @@ const Blog = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>Blog - Dievektor - Web Development & Digital Agency</title>
+        <title>Blog - Dievekter - Web Development & Digital Agency</title>
         <meta name="description" content="Read our latest articles on web development, design trends, SEO optimization and technology advancements." />
         <meta name="keywords" content="web development blog, design trends, SEO tips, AI in web design, progressive web apps" />
         <link rel="canonical" href="https://yourdomain.com/blog" />

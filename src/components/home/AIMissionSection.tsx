@@ -167,7 +167,7 @@ export function AIMissionSection() {
             className="text-base md:text-lg text-indigo-200/70 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
             <span className="text-indigo-100 font-semibold">Our mission is to revolutionize your business.</span>{" "}
-            Dievektor redefines automation with self-learning AI, real-time optimization, and strategic intelligence.
+            Dievekter redefines automation with self-learning AI, real-time optimization, and strategic intelligence.
           </motion.p>
 
           <motion.div
