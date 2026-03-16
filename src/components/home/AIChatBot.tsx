@@ -225,7 +225,7 @@ const AI_RESPONSES = [
     "answer": "We use a strategic and data-driven approach, ensuring that our solutions are efficient, scalable, and future-proof."
   },
   {
-    "question": "What kind of clients does dieVektor work with?",
+    "question": "What kind of clients does dieVekter work with?",
     "answer": "We work with startups, SMEs, and enterprises across various industries, providing tailored digital solutions."
   },
   {
