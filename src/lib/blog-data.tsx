@@ -896,7 +896,7 @@ The future of work lies in thoughtful human-AI collaboration that amplifies huma
     },
     date: "May 30, 2025",
     readTime: "10 min read",
-    tags: ["Future of Work", "Human-AI Collaboration", "Workplace Innovation", "AI Integration", "Dievektor"],
+    tags: ["Future of Work", "Human-AI Collaboration", "Workplace Innovation", "AI Integration", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [6, 13, 15]
   },
