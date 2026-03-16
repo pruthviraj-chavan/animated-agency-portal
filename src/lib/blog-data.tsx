@@ -526,7 +526,7 @@ Intellectual property considerations become important as quantum-AI algorithms a
 
 The convergence of quantum computing and AI represents a paradigm shift toward computational capabilities that could exceed human cognitive abilities across many domains. This transformation will require new approaches to AI development, deployment, and governance.
 
-At Dievektor, we're committed to helping our clients navigate the transition to quantum-AI systems successfully. Our expertise in both AI development and emerging technologies positions us to guide organizations through this revolutionary technological transformation.
+At Dievekter, we're committed to helping our clients navigate the transition to quantum-AI systems successfully. Our expertise in both AI development and emerging technologies positions us to guide organizations through this revolutionary technological transformation.
 
 The quantum-AI future promises unprecedented computational power that will reshape industries, accelerate scientific discovery, and create new possibilities for human achievement. Organizations that prepare strategically for this transition will be best positioned to harness these revolutionary capabilities.
     `,
