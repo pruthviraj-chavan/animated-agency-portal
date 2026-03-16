@@ -221,7 +221,7 @@ const Internship = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h1 className="text-3xl md:text-5xl font-bold mb-6 animate-fade-in">
-                <span className="text-gradient">Launch Your Career</span> with dieVektor
+                <span className="text-gradient">Launch Your Career</span> with dieVekter
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 Join our team as an intern and work on cutting-edge projects in a collaborative environment.
