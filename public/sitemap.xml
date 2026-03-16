@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home Page -->
   <url>
-    <loc>https://www.dievektor.tech/</loc>
+    <loc>https://www.dievekter.tech/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -10,7 +10,7 @@
 
   <!-- About Us Page -->
   <url>
-    <loc>https://www.dievektor.tech/about</loc>
+    <loc>https://www.dievekter.tech/about</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -18,7 +18,7 @@
 
   <!-- Services Page -->
   <url>
-    <loc>https://www.dievektor.tech/services</loc>
+    <loc>https://www.dievekter.tech/services</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -26,7 +26,7 @@
   
   <!-- agents Page -->
   <url>
-    <loc>https://www.dievektor.tech/agents</loc>
+    <loc>https://www.dievekter.tech/agents</loc>
     <lastmod>2025-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -34,7 +34,7 @@
 
   <!-- Projects Page -->
   <url>
-    <loc>https://www.dievektor.tech/projects</loc>
+    <loc>https://www.dievekter.tech/projects</loc>
     <lastmod>2025-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -42,7 +42,7 @@
 
   <!-- Products Page -->
   <url>
-    <loc>https://www.dievektor.tech/products</loc>
+    <loc>https://www.dievekter.tech/products</loc>
     <lastmod>2025-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -50,7 +50,7 @@
 
   <!-- Blog Page -->
   <url>
-    <loc>https://www.dievektor.tech/blog</loc>
+    <loc>https://www.dievekter.tech/blog</loc>
     <lastmod>2025-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -58,7 +58,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://www.dievektor.tech/contact</loc>
+    <loc>https://www.dievekter.tech/contact</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -66,7 +66,7 @@
 
   <!-- Fun Page -->
   <url>
-    <loc>https://www.dievektor.tech/fun</loc>
+    <loc>https://www.dievekter.tech/fun</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -74,7 +74,7 @@
 
   <!-- Jobs Page -->
   <url>
-    <loc>https://www.dievektor.tech/jobs</loc>
+    <loc>https://www.dievekter.tech/jobs</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -82,55 +82,55 @@
 
   <!-- Subpages under Services -->
   <url>
-    <loc>https://www.dievektor.tech/services/custom-website-development</loc>
+    <loc>https://www.dievekter.tech/services/custom-website-development</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/ecommerce-solutions</loc>
+    <loc>https://www.dievekter.tech/services/ecommerce-solutions</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/seo-optimization</loc>
+    <loc>https://www.dievekter.tech/services/seo-optimization</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/ui-ux-design</loc>
+    <loc>https://www.dievekter.tech/services/ui-ux-design</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/web-hosting</loc>
+    <loc>https://www.dievekter.tech/services/web-hosting</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/wordpress-development</loc>
+    <loc>https://www.dievekter.tech/services/wordpress-development</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/mobile-app-development</loc>
+    <loc>https://www.dievekter.tech/services/mobile-app-development</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/api-development</loc>
+    <loc>https://www.dievekter.tech/services/api-development</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/services/refer</loc>
+    <loc>https://www.dievekter.tech/services/refer</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -138,61 +138,61 @@
 
   <!-- Updated Blog Posts -->
   <url>
-    <loc>https://www.dievektor.tech/blog/agentic-ai-revolution-autonomous-agents-business</loc>
+    <loc>https://www.dievekter.tech/blog/agentic-ai-revolution-autonomous-agents-business</loc>
     <lastmod>2025-06-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/agi-development-artificial-general-intelligence-business</loc>
+    <loc>https://www.dievekter.tech/blog/agi-development-artificial-general-intelligence-business</loc>
     <lastmod>2025-06-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/multimodal-ai-future-human-computer-interaction</loc>
+    <loc>https://www.dievekter.tech/blog/multimodal-ai-future-human-computer-interaction</loc>
     <lastmod>2025-06-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/edge-ai-computing-intelligence-data-sources</loc>
+    <loc>https://www.dievekter.tech/blog/edge-ai-computing-intelligence-data-sources</loc>
     <lastmod>2025-06-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/ai-ethics-governance-responsible-systems-enterprise</loc>
+    <loc>https://www.dievekter.tech/blog/ai-ethics-governance-responsible-systems-enterprise</loc>
     <lastmod>2025-06-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/quantum-computing-ai-computational-intelligence-frontier</loc>
+    <loc>https://www.dievekter.tech/blog/quantum-computing-ai-computational-intelligence-frontier</loc>
     <lastmod>2025-06-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/ai-powered-cybersecurity-next-generation-threats</loc>
+    <loc>https://www.dievekter.tech/blog/ai-powered-cybersecurity-next-generation-threats</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/digital-transformation-ai-reshaping-business-models</loc>
+    <loc>https://www.dievekter.tech/blog/digital-transformation-ai-reshaping-business-models</loc>
     <lastmod>2025-06-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/future-work-human-ai-collaboration-modern-workplace</loc>
+    <loc>https://www.dievekter.tech/blog/future-work-human-ai-collaboration-modern-workplace</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievektor.tech/blog/ai-driven-innovation-dievektor-accelerates-rd-product-development</loc>
+    <loc>https://www.dievekter.tech/blog/ai-driven-innovation-dievektor-accelerates-rd-product-development</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

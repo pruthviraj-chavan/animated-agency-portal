@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.dievektor.tech/sitemap.xml
+Sitemap: https://www.dievekter.tech/sitemap.xml
 
 # Specify service pages for better indexing
 Allow: /services/
