@@ -233,7 +233,7 @@ const AI_RESPONSES = [
     "answer": "We stand for innovation, transparency, excellence, and customer-centric solutions that drive real business impact."
   },
   {
-    "question": "Does dieVektor have any partnerships?",
+    "question": "Does dieVekter have any partnerships?",
     "answer": "Yes, we collaborate with leading technology providers, cloud platforms, and industry experts to deliver the best solutions."
   },
   {
