@@ -629,7 +629,7 @@ export function AIChatBot() {
     if (isOpen && messages.length === 0) {
       setMessages([{
         id: 'welcome',
-        content: "👋 Hi there! I'm your dievektor assistant. How can I help you today?",
+        content: "👋 Hi there! I'm your dieVekter assistant. How can I help you today?",
         sender: 'ai',
         timestamp: new Date()
       }]);
