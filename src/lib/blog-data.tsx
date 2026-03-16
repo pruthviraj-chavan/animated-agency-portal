@@ -158,7 +158,7 @@ The path to AGI represents one of the most significant technological transitions
     id: 3,
     title: "Multimodal AI: The Future of Human-Computer Interaction",
     slug: "multimodal-ai-future-human-computer-interaction",
-    excerpt: "Discover how Dievektor's multimodal AI solutions are creating more natural and intuitive interfaces by combining vision, language, and audio processing.",
+    excerpt: "Discover how Dievekter's multimodal AI solutions are creating more natural and intuitive interfaces by combining vision, language, and audio processing.",
     content: `
 ## Multimodal AI: The Future of Human-Computer Interaction
 
