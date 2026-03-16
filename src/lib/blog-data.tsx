@@ -658,7 +658,7 @@ The future of cybersecurity lies in intelligent systems that can match the sophi
     id: 8,
     title: "Digital Transformation with AI: Reshaping Business Models for the Future",
     slug: "digital-transformation-ai-reshaping-business-models",
-    excerpt: "Discover how Dievektor guides organizations through AI-driven digital transformation that revolutionizes operations, customer experiences, and competitive positioning.",
+    excerpt: "Discover how Dievekter guides organizations through AI-driven digital transformation that revolutionizes operations, customer experiences, and competitive positioning.",
     content: `
 ## Digital Transformation with AI: Reshaping Business Models for the Future
 
