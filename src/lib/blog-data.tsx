@@ -888,7 +888,7 @@ Our change management expertise ensures smooth transitions that maintain employe
 
 We provide ongoing support and optimization services that help organizations continuously improve human-AI collaboration as technology evolves and organizational needs change.
 
-The future of work lies in thoughtful human-AI collaboration that amplifies human potential while maintaining the human elements that make work meaningful and fulfilling. Dievektor's expertise in workplace AI integration helps organizations achieve this balance successfully.
+The future of work lies in thoughtful human-AI collaboration that amplifies human potential while maintaining the human elements that make work meaningful and fulfilling. Dievekter's expertise in workplace AI integration helps organizations achieve this balance successfully.
     `,
     author: {
       name: "Dr. Alex Johnson",
