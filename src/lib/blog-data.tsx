@@ -1130,7 +1130,7 @@ Currently operational in three clothing stores with demonstrated results:
 - 25% improvement in inventory turnover
 - 40% faster checkout times
 
-Contact Dievektor for a demonstration and free trial.
+Contact Dievekter for a demonstration and free trial.
     `,
     author: {
       name: "Sarah Mitchell",
