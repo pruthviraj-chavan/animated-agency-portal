@@ -33,7 +33,7 @@ const projects: Project[] = [
   {
     id: 5,
     title: "Open House Cafe",
-    description: "Website made for a cafe through dieVektor.",
+    description: "Website made for a cafe through dieVekter.",
     url: "https://openhousecafe.in/   "
   },
   {
