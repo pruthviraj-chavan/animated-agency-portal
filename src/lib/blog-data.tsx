@@ -650,7 +650,7 @@ The future of cybersecurity lies in intelligent systems that can match the sophi
     },
     date: "June 3, 2025",
     readTime: "9 min read",
-    tags: ["AI Cybersecurity", "Threat Detection", "Security Analytics", "Cyber Defense", "Dievektor"],
+    tags: ["AI Cybersecurity", "Threat Detection", "Security Analytics", "Cyber Defense", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [9, 11, 14]
   },
