@@ -1072,7 +1072,7 @@ Our zero data loss guarantee is built on multiple verification layers with compr
 
 All Slack data migrations are conducted with enterprise-grade security protocols complying with GDPR, HIPAA, and other regulatory requirements.
 
-Contact Dievektor for your Slack migration needs.
+Contact Dievekter for your Slack migration needs.
     `,
     author: {
       name: "Michael Torres",
