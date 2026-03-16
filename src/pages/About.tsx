@@ -156,7 +156,7 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient animate-scale-in glitch">
-                About Dievektor
+                About Dievekter
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
                 We're a team of passionate designers, developers, and digital marketers dedicated to creating exceptional digital experiences.
