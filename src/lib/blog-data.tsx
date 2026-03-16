@@ -880,9 +880,9 @@ Innovation cultures flourish when AI handles routine tasks and provides analytic
 
 Results-oriented cultures benefit from AI-enhanced measurement and optimization capabilities while maintaining human judgment about priorities, values, and strategic direction.
 
-### Strategic Implementation with Dievektor
+### Strategic Implementation with Dievekter
 
-At Dievektor, we help organizations navigate the transition to human-AI collaborative workplaces through comprehensive planning, implementation, and support services that prioritize human welfare alongside business objectives.
+At Dievekter, we help organizations navigate the transition to human-AI collaborative workplaces through comprehensive planning, implementation, and support services that prioritize human welfare alongside business objectives.
 
 Our change management expertise ensures smooth transitions that maintain employee morale and productivity while building capabilities for long-term success in AI-enhanced work environments.
 
