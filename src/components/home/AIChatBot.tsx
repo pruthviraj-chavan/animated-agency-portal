@@ -173,7 +173,7 @@ const AI_RESPONSES = [
     "answer": "Our vision is to empower businesses with cutting-edge digital solutions, driving growth and innovation through technology."
   },
   {
-    "question": "What industries does dieVektor serve?",
+    "question": "What industries does dieVekter serve?",
     "answer": "We serve a diverse range of industries, including finance, healthcare, e-commerce, education, and technology."
   },
   {
