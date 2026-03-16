@@ -75,7 +75,7 @@ const projects: Project[] = [
   {
     id: 12,
     title: "Cardtonic",
-    description: "Website made for an online banking firm through dieVektor.",
+    description: "Website made for an online banking firm through dieVekter.",
     url: "https://cardtonic.com/   "
   },
   {
