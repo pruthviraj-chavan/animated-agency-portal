@@ -1092,7 +1092,7 @@ Contact Dievekter for your Slack migration needs.
     content: `
 ## AI-Powered Billing Software for Retail Stores: Revolutionizing Point of Sale Systems
 
-The retail industry is undergoing significant transformation with AI-powered billing and stock management software. At Dievektor, we've developed a comprehensive retail management solution currently deployed across multiple clothing stores.
+The retail industry is undergoing significant transformation with AI-powered billing and stock management software. At Dievekter, we've developed a comprehensive retail management solution currently deployed across multiple clothing stores.
 
 ### The Evolution of Retail Billing Systems
 
