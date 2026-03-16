@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 // Predefined responses for the AI chatbot
 const AI_RESPONSES = [
   {
-    question: "what is dievektor",
+    question: "what is dievekter",
     answer: "A digital agency is a business that specializes in creating, designing, and managing digital solutions for clients. We offer services like web development, app creation, UI/UX design, and digital marketing to help businesses establish and grow their online presence."
   },
   {
