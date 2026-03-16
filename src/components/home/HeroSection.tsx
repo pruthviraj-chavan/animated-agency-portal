@@ -83,7 +83,7 @@ export function HeroSection() {
           >
             <img
               src={aiFaceHero}
-              alt="AI Robot Face - dieVektor AI Technology"
+              alt="AI Robot Face - dieVekter AI Technology"
               className="w-[280px] sm:w-[360px] md:w-[420px] lg:w-[500px] xl:w-[560px] h-auto object-contain drop-shadow-2xl"
             />
           </motion.div>
