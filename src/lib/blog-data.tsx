@@ -182,7 +182,7 @@ Educational technology leverages multimodal AI to create personalized learning e
 
 Healthcare applications utilize multimodal AI for comprehensive patient assessment, combining medical imaging, patient history, symptom descriptions, and real-time monitoring data to support clinical decision-making.
 
-### Dievektor's Multimodal AI Expertise
+### Dievekter's Multimodal AI Expertise
 
 At Dievekter.tech, we specialize in developing custom multimodal AI solutions that address specific business challenges through integrated sensory processing. Our approach combines state-of-the-art models with practical implementation strategies that deliver measurable results.
 
