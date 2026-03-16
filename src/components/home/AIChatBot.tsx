@@ -258,7 +258,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Location",
-    "answer": "dieVektor is headquartered in Kolhapur but works with global clients."
+    "answer": "dieVekter is headquartered in Kolhapur but works with global clients."
   },
   {
     "question": "Uniqueness",
