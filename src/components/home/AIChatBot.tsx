@@ -237,7 +237,7 @@ const AI_RESPONSES = [
     "answer": "Yes, we collaborate with leading technology providers, cloud platforms, and industry experts to deliver the best solutions."
   },
   {
-    "question": "What is dieVektor's future goal?",
+    "question": "What is dieVekter's future goal?",
     "answer": "Our goal is to continue pushing the boundaries of technology, helping businesses succeed in an ever-evolving digital world."
   },
   {
