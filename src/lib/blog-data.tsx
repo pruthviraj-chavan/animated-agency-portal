@@ -140,7 +140,7 @@ Partnerships with AI research institutions and technology companies can provide 
 
 Organizations that successfully prepare for AGI will gain unprecedented competitive advantages through superior decision-making speed, comprehensive market analysis, and adaptive strategy development. AGI systems will enable businesses to operate with efficiency and intelligence that surpasses traditional operational models.
 
-At Dievektor, we're committed to helping our clients navigate the transition toward AGI successfully. Our expertise in AI strategy and implementation ensures that businesses are well-positioned to leverage AGI capabilities as they become available, maintaining competitive advantages in an AGI-enabled future.
+At Dievekter, we're committed to helping our clients navigate the transition toward AGI successfully. Our expertise in AI strategy and implementation ensures that businesses are well-positioned to leverage AGI capabilities as they become available, maintaining competitive advantages in an AGI-enabled future.
 
 The path to AGI represents one of the most significant technological transitions in human history. Organizations that begin preparing now will be best positioned to harness the transformative power of artificial general intelligence.
     `,
