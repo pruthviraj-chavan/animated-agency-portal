@@ -268,7 +268,7 @@ Financial services implement edge AI for fraud detection systems that can analyz
 
 ### Dievektor's Edge AI Solutions
 
-At Dievektor.tech, we specialize in developing custom edge AI solutions that optimize performance for specific hardware constraints and use cases. Our approach balances computational requirements with power consumption and processing capabilities to deliver practical, deployable systems.
+At Dievekter.tech, we specialize in developing custom edge AI solutions that optimize performance for specific hardware constraints and use cases. Our approach balances computational requirements with power consumption and processing capabilities to deliver practical, deployable systems.
 
 We design edge AI architectures that can operate independently while maintaining synchronization with central systems when connectivity is available. This hybrid approach provides the benefits of edge processing with the comprehensive capabilities of cloud-based AI systems.
 
