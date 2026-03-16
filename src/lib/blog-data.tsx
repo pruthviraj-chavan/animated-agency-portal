@@ -106,7 +106,7 @@ The transition period toward AGI offers unique opportunities for businesses to d
 
 Investment in AI infrastructure and talent development becomes crucial for long-term success. Organizations need to cultivate AI literacy across all levels and departments to effectively leverage AGI capabilities when they become available.
 
-### Dievektor's AGI Readiness Strategy
+### Dievekter's AGI Readiness Strategy
 
 At Dievekter.tech, we help organizations prepare for the AGI future through strategic AI implementation and infrastructure development. Our approach focuses on building scalable AI systems that can evolve toward AGI capabilities as they become available.
 
