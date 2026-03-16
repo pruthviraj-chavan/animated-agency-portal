@@ -768,7 +768,7 @@ The future belongs to organizations that successfully integrate AI into their co
     },
     date: "June 1, 2025",
     readTime: "10 min read",
-    tags: ["Digital Transformation", "AI Strategy", "Business Innovation", "Change Management", "Dievektor"],
+    tags: ["Digital Transformation", "AI Strategy", "Business Innovation", "Change Management", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [6, 10, 14]
   },
