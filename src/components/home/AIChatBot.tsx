@@ -201,7 +201,7 @@ const AI_RESPONSES = [
     "answer": "We follow industry best practices, rigorous testing, and agile methodologies to ensure the highest quality in every project."
   },
   {
-    "question": "Does dieVektor work with startups?",
+    "question": "Does dieVekter work with startups?",
     "answer": "Yes, we love working with startups, helping them build a strong digital foundation with innovative and cost-effective solutions."
   },
   {
