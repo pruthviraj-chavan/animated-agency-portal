@@ -638,7 +638,7 @@ Continuous learning and adaptation ensure that AI security systems remain effect
 
 ### Building Cyber Resilience with AI
 
-At Dievektor, we help organizations build comprehensive cyber resilience through strategic AI security implementation that addresses current threats while preparing for future challenges. Our approach includes assessment, design, deployment, and ongoing optimization of AI-powered security solutions.
+At Dievekter, we help organizations build comprehensive cyber resilience through strategic AI security implementation that addresses current threats while preparing for future challenges. Our approach includes assessment, design, deployment, and ongoing optimization of AI-powered security solutions.
 
 We provide training and support services that help security teams effectively utilize AI-powered tools while maintaining the human judgment and oversight necessary for effective cybersecurity operations.
 
