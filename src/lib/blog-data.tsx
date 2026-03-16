@@ -22,7 +22,7 @@ export const blogData: BlogPost[] = [
     id: 1,
     title: "Agentic AI Revolution: How Autonomous AI Agents Are Transforming Business Operations",
     slug: "agentic-ai-revolution-autonomous-agents-business",
-    excerpt: "Discover how Dievektor's agentic AI solutions are revolutionizing business automation through autonomous AI agents that think, learn, and act independently.",
+    excerpt: "Discover how Dievekter's agentic AI solutions are revolutionizing business automation through autonomous AI agents that think, learn, and act independently.",
     content: `
 ## Agentic AI Revolution: How Autonomous AI Agents Are Transforming Business Operations
 
