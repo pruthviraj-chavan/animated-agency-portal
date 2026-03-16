@@ -572,7 +572,7 @@ Computer vision applications in cybersecurity can analyze network traffic patter
 
 ### Dievektor's AI Cybersecurity Solutions
 
-At Dievektor.tech, we develop comprehensive AI-powered cybersecurity solutions that integrate seamlessly with existing security infrastructure while providing advanced threat detection and response capabilities. Our approach combines multiple AI technologies to create layered defense systems.
+At Dievekter.tech, we develop comprehensive AI-powered cybersecurity solutions that integrate seamlessly with existing security infrastructure while providing advanced threat detection and response capabilities. Our approach combines multiple AI technologies to create layered defense systems.
 
 We design adaptive security systems that learn from each security incident and continuously improve their detection capabilities. These systems become more effective over time as they accumulate knowledge about organizational environments and threat patterns.
 
