@@ -242,7 +242,7 @@ The future of human-computer interaction lies in multimodal AI systems that unde
     id: 4,
     title: "Edge AI Computing: Bringing Intelligence Closer to Data Sources",
     slug: "edge-ai-computing-intelligence-data-sources",
-    excerpt: "Learn how Dievektor's edge AI solutions reduce latency and improve privacy by processing artificial intelligence directly at data sources.",
+    excerpt: "Learn how Dievekter's edge AI solutions reduce latency and improve privacy by processing artificial intelligence directly at data sources.",
     content: `
 ## Edge AI Computing: Bringing Intelligence Closer to Data Sources
 
