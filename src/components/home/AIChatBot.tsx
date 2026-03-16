@@ -177,8 +177,8 @@ const AI_RESPONSES = [
     "answer": "We serve a diverse range of industries, including finance, healthcare, e-commerce, education, and technology."
   },
   {
-    "question": "Where is dieVektor located?",
-    "answer": "dieVektor is headquartered in Kolhapur, but we work with clients globally, providing digital solutions tailored to their needs."
+    "question": "Where is dieVekter located?",
+    "answer": "dieVekter is headquartered in Kolhapur, but we work with clients globally, providing digital solutions tailored to their needs."
   },
   {
     "question": "What makes dieVektor unique?",
