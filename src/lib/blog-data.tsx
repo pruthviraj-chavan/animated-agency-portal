@@ -234,7 +234,7 @@ The future of human-computer interaction lies in multimodal AI systems that unde
     },
     date: "June 12, 2025",
     readTime: "8 min read",
-    tags: ["Multimodal AI", "Human-Computer Interaction", "AI Technology", "User Experience", "Dievektor"],
+    tags: ["Multimodal AI", "Human-Computer Interaction", "AI Technology", "User Experience", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [6, 7, 11]
   },
