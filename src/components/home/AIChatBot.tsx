@@ -567,7 +567,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Who is Atharva Sankpal?",
-    "answer": "Atharva Sankpal is the Co-founder of dieVektor and also the Founder of Market Media. He brings extensive marketing expertise to our digital solutions."
+    "answer": "Atharva Sankpal is the Co-founder of dieVekter and also the Founder of Market Media. He brings extensive marketing expertise to our digital solutions."
   },
   {
     "question": "Who is Ketaki Mulik?",
