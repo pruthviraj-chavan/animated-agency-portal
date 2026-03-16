@@ -181,7 +181,7 @@ const AI_RESPONSES = [
     "answer": "dieVekter is headquartered in Kolhapur, but we work with clients globally, providing digital solutions tailored to their needs."
   },
   {
-    "question": "What makes dieVektor unique?",
+    "question": "What makes dieVekter unique?",
     "answer": "Our commitment to innovation, user-centric design, and cutting-edge technology sets us apart in the digital solutions industry."
   },
   {
