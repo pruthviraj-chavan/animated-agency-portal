@@ -26,7 +26,7 @@ export const blogData: BlogPost[] = [
     content: `
 ## Agentic AI Revolution: How Autonomous AI Agents Are Transforming Business Operations
 
-The emergence of agentic AI represents a paradigm shift from traditional AI systems to autonomous agents capable of independent decision-making and task execution. At Dievektor, we're pioneering the integration of agentic AI solutions that transform how businesses operate in the digital age.
+The emergence of agentic AI represents a paradigm shift from traditional AI systems to autonomous agents capable of independent decision-making and task execution. At Dievekter, we're pioneering the integration of agentic AI solutions that transform how businesses operate in the digital age.
 
 ### Understanding Agentic AI
 
