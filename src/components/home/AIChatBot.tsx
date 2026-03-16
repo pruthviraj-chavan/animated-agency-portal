@@ -322,7 +322,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Founder | CEO",
-    "answer": "dieVektor was founded by Pruthviraj Chavan"
+    "answer": "dieVekter was founded by Pruthviraj Chavan"
   },
   {
     "question": "Established | Year",
