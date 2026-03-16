@@ -544,7 +544,7 @@ The quantum-AI future promises unprecedented computational power that will resha
     id: 7,
     title: "AI-Powered Cybersecurity: Defending Against Next-Generation Threats",
     slug: "ai-powered-cybersecurity-next-generation-threats",
-    excerpt: "Learn how Dievektor's AI-driven cybersecurity solutions provide advanced threat detection and response capabilities for modern digital environments.",
+    excerpt: "Learn how Dievekter's AI-driven cybersecurity solutions provide advanced threat detection and response capabilities for modern digital environments.",
     content: `
 ## AI-Powered Cybersecurity: Defending Against Next-Generation Threats
 
