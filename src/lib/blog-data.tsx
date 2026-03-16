@@ -266,7 +266,7 @@ Healthcare applications leverage edge AI for patient monitoring systems that can
 
 Financial services implement edge AI for fraud detection systems that can analyze transactions instantly at the point of sale, preventing fraudulent activities before they complete rather than detecting them after the fact.
 
-### Dievektor's Edge AI Solutions
+### Dievekter's Edge AI Solutions
 
 At Dievekter.tech, we specialize in developing custom edge AI solutions that optimize performance for specific hardware constraints and use cases. Our approach balances computational requirements with power consumption and processing capabilities to deliver practical, deployable systems.
 
