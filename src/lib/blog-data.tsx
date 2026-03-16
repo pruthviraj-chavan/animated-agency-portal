@@ -776,7 +776,7 @@ The future belongs to organizations that successfully integrate AI into their co
     id: 9,
     title: "The Future of Work: Human-AI Collaboration in the Modern Workplace",
     slug: "future-work-human-ai-collaboration-modern-workplace",
-    excerpt: "Explore how Dievektor helps organizations create synergistic human-AI partnerships that enhance productivity, creativity, and job satisfaction.",
+    excerpt: "Explore how Dievekter helps organizations create synergistic human-AI partnerships that enhance productivity, creativity, and job satisfaction.",
     content: `
 ## The Future of Work: Human-AI Collaboration in the Modern Workplace
 
