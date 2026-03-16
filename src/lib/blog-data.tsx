@@ -1388,7 +1388,7 @@ Contact dieVekter to bring AI education to your school.
     },
     date: "January 5, 2026",
     readTime: "8 min read",
-    tags: ["AI Training", "Education", "Schools", "Student Training", "AI Workshops", "dieVektor"],
+    tags: ["AI Training", "Education", "Schools", "Student Training", "AI Workshops", "dieVekter"],
     coverImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [1, 7, 8]
   },
