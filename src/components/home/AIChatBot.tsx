@@ -169,7 +169,7 @@ const AI_RESPONSES = [
     "answer": "dieVekter was established in 2024, with a mission to provide high-quality digital solutions to businesses of all sizes."
   },
   {
-    "question": "What is the vision of dieVektor?",
+    "question": "What is the vision of dieVekter?",
     "answer": "Our vision is to empower businesses with cutting-edge digital solutions, driving growth and innovation through technology."
   },
   {
