@@ -63,7 +63,7 @@ const projects: Project[] = [
   {
     id: 10,
     title: "Rotorooter",
-    description: "Website made for a plumber association through dieVektor.",
+    description: "Website made for a plumber association through dieVekter.",
     url: "https://rotorooter.com/   "
   },
   {
