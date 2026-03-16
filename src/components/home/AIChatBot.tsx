@@ -205,7 +205,7 @@ const AI_RESPONSES = [
     "answer": "Yes, we love working with startups, helping them build a strong digital foundation with innovative and cost-effective solutions."
   },
   {
-    "question": "How does dieVektor approach customer satisfaction?",
+    "question": "How does dieVekter approach customer satisfaction?",
     "answer": "We prioritize transparent communication, personalized solutions, and ongoing support to ensure complete customer satisfaction."
   },
   {
