@@ -76,7 +76,7 @@ The transition to agentic AI represents more than a technological upgrade—it's
     },
     date: "June 18, 2025",
     readTime: "8 min read",
-    tags: ["Agentic AI", "Business Automation", "AI Agents", "Digital Transformation", "Dievektor"],
+    tags: ["Agentic AI", "Business Automation", "AI Agents", "Digital Transformation", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [7, 8, 9]
   },
