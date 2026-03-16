@@ -197,7 +197,7 @@ const AI_RESPONSES = [
     "answer": "We specialize in React, Next.js, Node.js, Python, Go, Flutter, AWS, Google Cloud, and WordPress for custom digital solutions."
   },
   {
-    "question": "How does dieVektor ensure project quality?",
+    "question": "How does dieVekter ensure project quality?",
     "answer": "We follow industry best practices, rigorous testing, and agile methodologies to ensure the highest quality in every project."
   },
   {
