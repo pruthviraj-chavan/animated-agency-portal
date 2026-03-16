@@ -1138,7 +1138,7 @@ Contact Dievekter for a demonstration and free trial.
     },
     date: "December 5, 2025",
     readTime: "8 min read",
-    tags: ["Retail Software", "Billing System", "Inventory Management", "AI for Retail", "POS System", "Dievektor"],
+    tags: ["Retail Software", "Billing System", "Inventory Management", "AI for Retail", "POS System", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [1, 8, 10]
   },
