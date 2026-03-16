@@ -27,7 +27,7 @@ const projects: Project[] = [
   {
     id: 4,
     title: "Heal's Way",
-    description: "Website made for a luxury furniture brand through dieVektor.",
+    description: "Website made for a luxury furniture brand through dieVekter.",
     url: "https://healsway.in/   "
   },
   {
