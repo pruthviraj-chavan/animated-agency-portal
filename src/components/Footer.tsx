@@ -176,7 +176,7 @@ export function Footer() {
                 <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground">
                   <Code size={20} />
                 </div>
-                <span className="text-primary">dieVektor</span>
+                <span className="text-primary">dieVekter</span>
               </Link>
               
               <div className="flex space-x-3 mt-6">
