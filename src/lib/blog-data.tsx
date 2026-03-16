@@ -426,7 +426,7 @@ Ethical AI development represents both a moral imperative and a business necessi
     },
     date: "June 8, 2025",
     readTime: "10 min read",
-    tags: ["AI Ethics", "AI Governance", "Responsible AI", "Enterprise AI", "Dievektor"],
+    tags: ["AI Ethics", "AI Governance", "Responsible AI", "Enterprise AI", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [7, 11, 13]
   },
