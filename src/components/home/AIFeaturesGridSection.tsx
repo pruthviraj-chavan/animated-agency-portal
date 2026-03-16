@@ -34,7 +34,7 @@ const features = [
   {
     icon: Target,
     title: "Bring Any Imagination to Life",
-    description: "From creative designs to practical solutions, dieVektor transforms your imagination into tangible results with ease.",
+    description: "From creative designs to practical solutions, dieVekter transforms your imagination into tangible results with ease.",
     gradient: "from-orange-500 to-amber-400",
     delay: 0.4,
   },
