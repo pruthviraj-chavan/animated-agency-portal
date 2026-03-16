@@ -213,7 +213,7 @@ const AI_RESPONSES = [
     "answer": "You can reach us through our website, email, or phone. Visit our contact page for more details."
   },
   {
-    "question": "What is dieVektor's work culture like?",
+    "question": "What is dieVekter's work culture like?",
     "answer": "Our work culture is innovation-driven, collaborative, and focused on continuous learning and growth."
   },
   {
