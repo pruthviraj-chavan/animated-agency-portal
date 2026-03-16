@@ -800,7 +800,7 @@ Customer-facing roles evolve to focus on complex problem-solving and relationshi
 
 Creative and analytical positions are enhanced through AI tools that provide inspiration, generate alternatives, and handle technical implementation, allowing human workers to focus on conceptual development and strategic direction.
 
-### Dievektor's Approach to Workplace AI Integration
+### Dievekter's Approach to Workplace AI Integration
 
 At Dievekter.tech, we help organizations implement AI systems that enhance human capabilities while maintaining job satisfaction and career development opportunities for employees. Our approach prioritizes human-centric design that improves rather than threatens workplace experiences.
 
