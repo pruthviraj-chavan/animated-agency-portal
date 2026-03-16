@@ -320,7 +320,7 @@ At Dievekter, we help organizations develop comprehensive edge AI strategies tha
 
 We provide ongoing support and optimization services that ensure edge AI systems continue to perform effectively as requirements evolve and new capabilities become available. Our team monitors system performance and implements improvements that maximize return on investment.
 
-Edge AI computing represents a fundamental shift toward more responsive, private, and reliable artificial intelligence systems. Dievektor's expertise in edge AI development positions our clients to harness these advantages effectively.
+Edge AI computing represents a fundamental shift toward more responsive, private, and reliable artificial intelligence systems. Dievekter's expertise in edge AI development positions our clients to harness these advantages effectively.
     `,
     author: {
       name: "James Rodriguez",
