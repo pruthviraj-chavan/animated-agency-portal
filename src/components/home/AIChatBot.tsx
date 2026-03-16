@@ -209,7 +209,7 @@ const AI_RESPONSES = [
     "answer": "We prioritize transparent communication, personalized solutions, and ongoing support to ensure complete customer satisfaction."
   },
   {
-    "question": "How can I contact dieVektor?",
+    "question": "How can I contact dieVekter?",
     "answer": "You can reach us through our website, email, or phone. Visit our contact page for more details."
   },
   {
