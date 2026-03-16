@@ -752,9 +752,9 @@ Skills gaps and talent shortage issues are addressed through training programs, 
 
 Budget and resource constraints require prioritization frameworks that focus investments on highest-impact initiatives while building capabilities for future expansion.
 
-### Strategic Partnership with Dievektor
+### Strategic Partnership with Dievekter
 
-At Dievektor, we serve as strategic partners for organizations undertaking AI-driven digital transformation, providing expertise, tools, and support throughout the entire transformation journey. Our comprehensive approach addresses all aspects of transformation success.
+At Dievekter, we serve as strategic partners for organizations undertaking AI-driven digital transformation, providing expertise, tools, and support throughout the entire transformation journey. Our comprehensive approach addresses all aspects of transformation success.
 
 We maintain long-term relationships with clients to ensure that transformation benefits are sustained and enhanced over time as technologies evolve and business requirements change.
 
