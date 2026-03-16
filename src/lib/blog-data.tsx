@@ -434,7 +434,7 @@ Ethical AI development represents both a moral imperative and a business necessi
     id: 6,
     title: "Quantum Computing and AI: The Next Frontier in Computational Intelligence",
     slug: "quantum-computing-ai-computational-intelligence-frontier",
-    excerpt: "Explore how Dievektor is preparing for the quantum-AI convergence that will revolutionize computational capabilities and unlock unprecedented AI potential.",
+    excerpt: "Explore how Dievekter is preparing for the quantum-AI convergence that will revolutionize computational capabilities and unlock unprecedented AI potential.",
     content: `
 ## Quantum Computing and AI: The Next Frontier in Computational Intelligence
 
