@@ -468,7 +468,7 @@ Cybersecurity applications of quantum-AI include both enhanced encryption method
 
 ### Dievektor's Quantum-AI Strategy
 
-At Dievektor.tech, we're actively preparing for the quantum-AI revolution through research partnerships, algorithm development, and infrastructure planning. Our approach focuses on understanding quantum-AI applications that will provide the greatest business value for our clients.
+At Dievekter.tech, we're actively preparing for the quantum-AI revolution through research partnerships, algorithm development, and infrastructure planning. Our approach focuses on understanding quantum-AI applications that will provide the greatest business value for our clients.
 
 We're developing quantum-classical hybrid algorithms that can leverage current quantum systems while preparing for more advanced quantum computers. This approach ensures that organizations can benefit from quantum-AI advances as they become available.
 
