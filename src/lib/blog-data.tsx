@@ -1168,7 +1168,7 @@ As organizations evaluate collaboration platforms, many consider migrating from 
 
 **File Storage**: Files must be migrated while maintaining associations with conversations.
 
-### Dievektor's Migration Methodology
+### Dievekter's Migration Methodology
 
 **1. Discovery Phase**: Analysis of current Slack workspace structure and data volumes.
 
