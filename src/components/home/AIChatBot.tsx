@@ -217,7 +217,7 @@ const AI_RESPONSES = [
     "answer": "Our work culture is innovation-driven, collaborative, and focused on continuous learning and growth."
   },
   {
-    "question": "Does dieVektor offer remote services?",
+    "question": "Does dieVekter offer remote services?",
     "answer": "Yes, we work with clients worldwide and provide remote digital solutions tailored to their needs."
   },
   {
