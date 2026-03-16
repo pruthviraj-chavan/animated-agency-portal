@@ -1475,7 +1475,7 @@ Ready to transform your teaching with AI? Contact dieVekter to schedule a teache
     },
     date: "January 3, 2026",
     readTime: "7 min read",
-    tags: ["Teacher Training", "AI Education", "Professional Development", "EdTech", "AI for Teachers", "dieVektor"],
+    tags: ["Teacher Training", "AI Education", "Professional Development", "EdTech", "AI for Teachers", "dieVekter"],
     coverImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [16, 1, 10]
   }
