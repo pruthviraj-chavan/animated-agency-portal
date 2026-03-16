@@ -563,7 +563,7 @@ const AI_RESPONSES = [
   },
   {
     "question": "Who is Pruthviraj Chavan?",
-    "answer": "Pruthviraj Chavan is the Founder & CEO of dieVektor. He is a Computer Science Engineer from DYP Salokhenagar with professional experience in software engineering at Infomatics & Intellipaat."
+    "answer": "Pruthviraj Chavan is the Founder & CEO of dieVekter. He is a Computer Science Engineer from DYP Salokhenagar with professional experience in software engineering at Infomatics & Intellipaat."
   },
   {
     "question": "Who is Atharva Sankpal?",
