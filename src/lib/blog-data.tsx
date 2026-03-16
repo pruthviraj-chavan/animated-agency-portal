@@ -1080,7 +1080,7 @@ Contact Dievekter for your Slack migration needs.
     },
     date: "December 8, 2025",
     readTime: "7 min read",
-    tags: ["Slack Migration", "Data Migration", "Enterprise Communication", "Workspace Transfer", "Dievektor"],
+    tags: ["Slack Migration", "Data Migration", "Enterprise Communication", "Workspace Transfer", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [8, 9, 10]
   },
