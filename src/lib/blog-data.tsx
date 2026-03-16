@@ -84,7 +84,7 @@ The transition to agentic AI represents more than a technological upgrade—it's
     id: 2,
     title: "AGI Development: The Path to Artificial General Intelligence and Its Business Implications",
     slug: "agi-development-artificial-general-intelligence-business",
-    excerpt: "Explore the journey toward AGI and how Dievektor is preparing businesses for the artificial general intelligence revolution through strategic AI implementation.",
+    excerpt: "Explore the journey toward AGI and how Dievekter is preparing businesses for the artificial general intelligence revolution through strategic AI implementation.",
     content: `
 ## AGI Development: The Path to Artificial General Intelligence and Its Business Implications
 
