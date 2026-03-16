@@ -150,7 +150,7 @@ The path to AGI represents one of the most significant technological transitions
     },
     date: "June 15, 2025",
     readTime: "9 min read",
-    tags: ["AGI", "Artificial General Intelligence", "AI Strategy", "Future Technology", "Dievektor"],
+    tags: ["AGI", "Artificial General Intelligence", "AI Strategy", "Future Technology", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [6, 8, 10]
   },
