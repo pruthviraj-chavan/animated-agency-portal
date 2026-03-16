@@ -328,7 +328,7 @@ Edge AI computing represents a fundamental shift toward more responsive, private
     },
     date: "June 10, 2025",
     readTime: "8 min read",
-    tags: ["Edge AI", "Distributed Computing", "AI Performance", "Data Privacy", "Dievektor"],
+    tags: ["Edge AI", "Distributed Computing", "AI Performance", "Data Privacy", "Dievekter"],
     coverImage: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [6, 8, 12]
   },
