@@ -1348,7 +1348,7 @@ Today's students will enter a workforce fundamentally transformed by artificial 
 
 ### Our Approach to AI Education
 
-At dieVektor, we believe AI education should be accessible, engaging, and practical. Our workshops are designed to demystify AI for students of all ages:
+At dieVekter, we believe AI education should be accessible, engaging, and practical. Our workshops are designed to demystify AI for students of all ages:
 
 **Hands-On Learning**: Students don't just learn about AI—they interact with it. From using ChatGPT to creating simple AI projects, every session includes practical exercises.
 
