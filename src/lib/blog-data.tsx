@@ -418,7 +418,7 @@ At Dievekter, we help organizations develop comprehensive ethical AI strategies 
 
 We provide training and consulting services that help organizations build internal capabilities for ethical AI development and governance. Our team works with clients to establish sustainable practices that evolve with changing technology and regulatory landscapes.
 
-Ethical AI development represents both a moral imperative and a business necessity in the modern technology landscape. Dievektor's expertise in ethical AI frameworks and governance structures helps organizations navigate this complex terrain successfully while maintaining competitive advantages through responsible innovation.
+Ethical AI development represents both a moral imperative and a business necessity in the modern technology landscape. Dievekter's expertise in ethical AI frameworks and governance structures helps organizations navigate this complex terrain successfully while maintaining competitive advantages through responsible innovation.
     `,
     author: {
       name: "Dr. Sarah Thompson",
