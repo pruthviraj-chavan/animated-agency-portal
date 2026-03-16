@@ -66,7 +66,7 @@ As agentic AI technology continues to evolve, we anticipate even more sophistica
 
 The convergence of agentic AI with other emerging technologies like quantum computing and edge computing will further enhance the capabilities of autonomous agents, enabling real-time decision-making with unprecedented speed and accuracy.
 
-At Dievektor, we're committed to staying at the forefront of agentic AI development, ensuring our clients benefit from the latest advancements in autonomous intelligence. Our expertise in developing custom agentic AI solutions positions businesses for success in an increasingly automated future.
+At Dievekter, we're committed to staying at the forefront of agentic AI development, ensuring our clients benefit from the latest advancements in autonomous intelligence. Our expertise in developing custom agentic AI solutions positions businesses for success in an increasingly automated future.
 
 The transition to agentic AI represents more than a technological upgrade—it's a fundamental reimagining of how businesses can operate with intelligence, efficiency, and adaptability that scales with growth and evolves with market demands.
     `,
