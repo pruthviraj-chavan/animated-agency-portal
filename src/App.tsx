@@ -37,6 +37,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider defaultTheme="light">
         <QueryClientProvider client={queryClient}>
+          <CanonicalUrl />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
