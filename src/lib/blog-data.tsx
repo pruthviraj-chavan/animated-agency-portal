@@ -903,7 +903,7 @@ The future of work lies in thoughtful human-AI collaboration that amplifies huma
   {
     id: 10,
     title: "AI-Driven Innovation: How Dievekter Accelerates R&D and Product Development",
-    slug: "ai-driven-innovation-dievektor-accelerates-rd-product-development",
+    slug: "ai-driven-innovation-dievekter-accelerates-rd-product-development",
     excerpt: "Learn how Dievekter's AI-powered innovation platforms transform research and development processes, accelerating breakthrough discoveries and product launches.",
     content: `
 ## AI-Driven Innovation: How Dievekter Accelerates R&D and Product Development

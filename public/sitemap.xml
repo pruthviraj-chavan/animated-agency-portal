@@ -186,8 +186,82 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.dievekter.tech/blog/ai-driven-innovation-dievektor-accelerates-rd-product-development</loc>
+    <loc>https://www.dievekter.tech/blog/ai-driven-innovation-dievekter-accelerates-rd-product-development</loc>
     <lastmod>2025-05-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- New Blog Posts -->
+  <url>
+    <loc>https://www.dievekter.tech/blog/slack-data-migration-enterprise-workspace-transfer-guide</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/ai-billing-software-retail-stores-pos-systems</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/slack-microsoft-teams-migration-data-transfer-strategies</loc>
+    <lastmod>2025-12-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/stock-management-software-small-business-features-benefits</loc>
+    <lastmod>2025-11-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/enterprise-slack-export-backup-solutions-communication-data</loc>
+    <lastmod>2025-11-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/ai-training-schools-preparing-students-future-artificial-intelligence-education</loc>
+    <lastmod>2026-01-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/teacher-ai-training-programs-empowering-educators-artificial-intelligence-skills</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/custom-website-development-small-business-growth-strategies</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/ecommerce-website-development-trends-online-store-optimization</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/mobile-app-development-react-native-flutter-cross-platform</loc>
+    <lastmod>2026-03-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/seo-optimization-strategies-small-business-google-ranking</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.dievekter.tech/blog/api-integration-development-connecting-business-systems-automation</loc>
+    <lastmod>2026-02-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
