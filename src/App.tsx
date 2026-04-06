@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { CanonicalUrl } from './components/CanonicalUrl'
 import Index from './pages/Index'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -36,6 +37,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider defaultTheme="light">
         <QueryClientProvider client={queryClient}>
+          <CanonicalUrl />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
