@@ -53,7 +53,6 @@ export function Header() {
         { name: "Refer & Earn", path: "/services/refer" },
       ],
     },
-    { name: "Projects", path: "/projects" },
     { name: "Products", path: "/products" },
     { name: "Dev Kit", path: "/development-kit" },
     { name: "Blog", path: "/blog" },
