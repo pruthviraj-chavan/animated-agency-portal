@@ -26,10 +26,8 @@ export function Header() {
   }, []);
 
   const navigationLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
     {
-      name: "Agents",
+      name: "AI Agents",
       path: "/agents",
       subPages: [
         { name: "AI Agents Overview", path: "/agents" },
@@ -38,26 +36,22 @@ export function Header() {
       ],
     },
     {
-      name: "Services",
+      name: "Solutions",
       path: "/services",
       subPages: [
-        { name: "Custom Website Development", path: "/services/custom-website-development" },
-        { name: "E-commerce Solutions", path: "/services/ecommerce-solutions" },
-        { name: "SEO Optimization", path: "/services/seo-optimization" },
-        { name: "UI/UX Design", path: "/services/ui-ux-design" },
-        { name: "Web Hosting & Maintenance", path: "/services/web-hosting" },
-        { name: "WordPress Development", path: "/services/wordpress-development" },
-        { name: "Mobile App Development", path: "/services/mobile-app-development" },
-        { name: "API Development & Integration", path: "/services/api-development" },
         { name: "AI Training & Workshops", path: "/services/ai-training-workshops" },
-        { name: "Refer & Earn", path: "/services/refer" },
+        { name: "API Development & Integration", path: "/services/api-development" },
+        { name: "Custom Website Development", path: "/services/custom-website-development" },
+        { name: "Mobile App Development", path: "/services/mobile-app-development" },
+        { name: "UI/UX Design", path: "/services/ui-ux-design" },
+        { name: "E-commerce Solutions", path: "/services/ecommerce-solutions" },
+        { name: "All Services", path: "/services" },
       ],
     },
-    { name: "Products", path: "/products" },
-    { name: "Dev Kit", path: "/development-kit" },
+    { name: "Technology", path: "/products" },
+    { name: "Projects", path: "/portfolio" },
+    { name: "About", path: "/about" },
     { name: "Blog", path: "/blog" },
-    { name: "Jobs", path: "/jobs" },
-    { name: "Fun Page", path: "/fun" },
     { name: "Contact", path: "/contact" },
   ];
 
