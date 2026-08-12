@@ -104,16 +104,16 @@ export function Header() {
                 <>
                   <div
                     className="flex items-center cursor-pointer text-foreground hover:text-primary transition-colors duration-300 py-1"
-                    onClick={link.name === "Services" ? toggleDropdown : toggleAgentsDropdown}
+                    onClick={link.name === "Solutions" ? toggleDropdown : toggleAgentsDropdown}
                   >
                     <Link to={link.path} className="mr-1">
                       {link.name}
                     </Link>
-                    {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) ? 
+                    {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) ? 
                       <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </div>
 
-                  {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) && (
+                  {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) && (
                     <div className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10">
                       {link.subPages.map((subPage) => (
                         <Link
@@ -177,9 +177,9 @@ export function Header() {
                   <div
                     className="flex items-center justify-between cursor-pointer text-lg font-medium py-2 hover:text-primary transition-colors duration-300"
                     onClick={() => {
-                      if (link.name === "Services") {
+                      if (link.name === "Solutions") {
                         toggleDropdown();
-                      } else if (link.name === "Agents") {
+                      } else if (link.name === "AI Agents") {
                         toggleAgentsDropdown();
                       }
                     }}
@@ -194,11 +194,11 @@ export function Header() {
                     >
                       {link.name}
                     </Link>
-                    {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) ? 
+                    {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) ? 
                       <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
                   </div>
                   
-                  {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) && (
+                  {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) && (
                     <div className="pl-4 mt-1 space-y-1">
                       {link.subPages.map((subPage) => (
                         <Link
