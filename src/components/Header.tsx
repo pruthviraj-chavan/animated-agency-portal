@@ -58,7 +58,7 @@ export function Header() {
   const handleGetQuote = () => {
     // Create WhatsApp message
     const whatsappNumber = "9404895667";
-    const message = `Hi, I'm interested in getting a quote for your services.`;
+    const message = `Hi, I'd like to book a demo of your AI agents.`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     // Open WhatsApp in a new tab
@@ -149,7 +149,7 @@ export function Header() {
             className="bg-gradient hover:opacity-90 button-pop hidden sm:flex"
             onClick={handleGetQuote}
           >
-            Get a Quote!
+            Book a Demo
           </Button>
 
           <Button
@@ -235,7 +235,7 @@ export function Header() {
               setMobileMenuOpen(false);
             }}
           >
-            Get a Quote!
+            Book a Demo
           </Button>
         </div>
       </div>
