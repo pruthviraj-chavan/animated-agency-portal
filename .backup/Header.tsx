@@ -26,8 +26,10 @@ export function Header() {
   }, []);
 
   const navigationLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
     {
-      name: "AI Agents",
+      name: "Agents",
       path: "/agents",
       subPages: [
         { name: "AI Agents Overview", path: "/agents" },
@@ -36,29 +38,33 @@ export function Header() {
       ],
     },
     {
-      name: "Solutions",
+      name: "Services",
       path: "/services",
       subPages: [
-        { name: "AI Training & Workshops", path: "/services/ai-training-workshops" },
-        { name: "API Development & Integration", path: "/services/api-development" },
         { name: "Custom Website Development", path: "/services/custom-website-development" },
-        { name: "Mobile App Development", path: "/services/mobile-app-development" },
-        { name: "UI/UX Design", path: "/services/ui-ux-design" },
         { name: "E-commerce Solutions", path: "/services/ecommerce-solutions" },
-        { name: "All Services", path: "/services" },
+        { name: "SEO Optimization", path: "/services/seo-optimization" },
+        { name: "UI/UX Design", path: "/services/ui-ux-design" },
+        { name: "Web Hosting & Maintenance", path: "/services/web-hosting" },
+        { name: "WordPress Development", path: "/services/wordpress-development" },
+        { name: "Mobile App Development", path: "/services/mobile-app-development" },
+        { name: "API Development & Integration", path: "/services/api-development" },
+        { name: "AI Training & Workshops", path: "/services/ai-training-workshops" },
+        { name: "Refer & Earn", path: "/services/refer" },
       ],
     },
-    { name: "Technology", path: "/products" },
-    { name: "Projects", path: "/portfolio" },
-    { name: "About", path: "/about" },
+    { name: "Products", path: "/products" },
+    { name: "Dev Kit", path: "/development-kit" },
     { name: "Blog", path: "/blog" },
+    { name: "Jobs", path: "/jobs" },
+    { name: "Fun Page", path: "/fun" },
     { name: "Contact", path: "/contact" },
   ];
 
   const handleGetQuote = () => {
     // Create WhatsApp message
     const whatsappNumber = "9404895667";
-    const message = `Hi, I'd like to book a demo of your AI agents.`;
+    const message = `Hi, I'm interested in getting a quote for your services.`;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     // Open WhatsApp in a new tab
@@ -104,16 +110,16 @@ export function Header() {
                 <>
                   <div
                     className="flex items-center cursor-pointer text-foreground hover:text-primary transition-colors duration-300 py-1"
-                    onClick={link.name === "Solutions" ? toggleDropdown : toggleAgentsDropdown}
+                    onClick={link.name === "Services" ? toggleDropdown : toggleAgentsDropdown}
                   >
                     <Link to={link.path} className="mr-1">
                       {link.name}
                     </Link>
-                    {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) ? 
+                    {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) ? 
                       <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                   </div>
 
-                  {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) && (
+                  {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) && (
                     <div className="absolute top-full left-0 mt-2 bg-background border border-border rounded-lg shadow-lg p-4 w-64 z-10">
                       {link.subPages.map((subPage) => (
                         <Link
@@ -149,7 +155,7 @@ export function Header() {
             className="bg-gradient hover:opacity-90 button-pop hidden sm:flex"
             onClick={handleGetQuote}
           >
-            Book a Demo
+            Get a Quote!
           </Button>
 
           <Button
@@ -177,9 +183,9 @@ export function Header() {
                   <div
                     className="flex items-center justify-between cursor-pointer text-lg font-medium py-2 hover:text-primary transition-colors duration-300"
                     onClick={() => {
-                      if (link.name === "Solutions") {
+                      if (link.name === "Services") {
                         toggleDropdown();
-                      } else if (link.name === "AI Agents") {
+                      } else if (link.name === "Agents") {
                         toggleAgentsDropdown();
                       }
                     }}
@@ -194,11 +200,11 @@ export function Header() {
                     >
                       {link.name}
                     </Link>
-                    {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) ? 
+                    {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) ? 
                       <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
                   </div>
                   
-                  {((link.name === "Solutions" && isDropdownOpen) || (link.name === "AI Agents" && isAgentsDropdownOpen)) && (
+                  {((link.name === "Services" && isDropdownOpen) || (link.name === "Agents" && isAgentsDropdownOpen)) && (
                     <div className="pl-4 mt-1 space-y-1">
                       {link.subPages.map((subPage) => (
                         <Link
@@ -235,7 +241,7 @@ export function Header() {
               setMobileMenuOpen(false);
             }}
           >
-            Book a Demo
+            Get a Quote!
           </Button>
         </div>
       </div>

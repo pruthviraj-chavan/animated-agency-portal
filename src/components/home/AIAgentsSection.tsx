@@ -1,174 +1,98 @@
 import { motion } from "framer-motion";
-import { Bot, Brain, MessageSquare, Zap, ArrowRight, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { PhoneCall, Target, Headphones, Workflow, Mic, MessageSquare, ArrowRight } from "lucide-react";
 
 const agents = [
   {
-    name: "Maya",
-    role: "Customer Support AI",
-    detail: "Handles **24/7 inquiries**",
-    icon: MessageSquare,
-    position: { top: "45%", left: "2%" },
+    title: "AI Voice Receptionist",
+    icon: PhoneCall,
+    mode: "Voice",
+    modeIcon: Mic,
+    outcome: "Never miss an inbound call or enquiry.",
+    desc: "Handles inbound calls, FAQs, enquiries and customer support.",
+    flow: "Call received → intent understood → answer or route → enquiry logged",
   },
   {
-    name: "Atlas",
-    role: "Data Analytics Agent",
-    detail: "Interested in **Business Intelligence**",
-    icon: Brain,
-    position: { top: "65%", right: "2%" },
+    title: "AI Lead Qualification Agent",
+    icon: Target,
+    mode: "Voice + Chat",
+    modeIcon: Mic,
+    outcome: "Sales teams only talk to qualified prospects.",
+    desc: "Talks to prospects, understands requirements, qualifies leads and sends structured information to the sales team.",
+    flow: "Conversation → requirement captured → scored → structured lead to CRM",
   },
-];
-
-const floatingBadges = [
-  { label: "Shared", sub: "Maya's insight", top: "35%", left: "50%", delay: 0.6, transform: "translateX(-50%)" },
-  { label: "Recommended", sub: "Atlas", top: "55%", left: "50%", delay: 0.9, transform: "translateX(-50%)" },
-];
-
-const avatars = [
-  { top: "25%", left: "50%", delay: 0.2, color: "from-blue-400 to-cyan-400", transform: "translateX(-50%)" },
-  { top: "28%", left: "75%", delay: 0.4, color: "from-purple-400 to-pink-400" },
-  { top: "50%", left: "50%", delay: 0.5, color: "from-orange-400 to-amber-400", transform: "translateX(-50%)" },
-  { top: "72%", left: "25%", delay: 0.7, color: "from-emerald-400 to-teal-400" },
+  {
+    title: "AI Customer Support Agent",
+    icon: Headphones,
+    mode: "Chat",
+    modeIcon: MessageSquare,
+    outcome: "Repetitive questions answered without human effort.",
+    desc: "Answers repetitive questions and handles multilingual conversations 24/7.",
+    flow: "Question → knowledge lookup → multilingual answer → escalate if needed",
+  },
+  {
+    title: "AI Workflow Agent",
+    icon: Workflow,
+    mode: "Chat + API",
+    modeIcon: MessageSquare,
+    outcome: "Conversations turn into completed business actions.",
+    desc: "Connects conversations to CRM, APIs, bookings, notifications and internal workflows.",
+    flow: "Intent → validation → API/CRM call → confirmation back to customer",
+  },
 ];
 
 export function AIAgentsSection() {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden bg-gradient-to-b from-orange-50/40 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
-      {/* Warm gradient blobs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-amber-200/50 via-orange-200/40 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-gradient-to-br from-blue-200/40 via-purple-200/30 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/2 w-[350px] h-[350px] bg-gradient-to-br from-pink-200/30 via-rose-200/20 to-transparent rounded-full blur-3xl" />
-      </div>
-
+    <section className="py-20 md:py-28 bg-[hsl(232,32%,7%)] relative overflow-hidden">
+      <div className="absolute -top-24 left-1/3 w-[420px] h-[420px] rounded-full bg-indigo-500/10 blur-[130px] pointer-events-none" />
       <div className="container mx-auto px-4 relative z-10">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-8"
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-slate-900 dark:text-white leading-tight tracking-tight">
-            Find incredible AI agents,{" "}
-            <br className="hidden md:block" />
-            <span className="italic">through solutions you trust.</span>
+        <div className="max-w-2xl mb-12">
+          <p className="text-xs font-semibold tracking-[0.18em] uppercase text-cyan-300 mb-3">AI Agents</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+            AI Agents Built for Real Business Work
           </h2>
-        </motion.div>
+          <p className="mt-4 text-slate-400 text-lg">
+            Move beyond chatbots. Deploy agents that understand conversations and take action.
+          </p>
+        </div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-center text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-6"
-        >
-          An AI platform where exceptional agents connect — and start automating your business together.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-16"
-        >
-          <Button
-            asChild
-            size="lg"
-            className="bg-slate-900 dark:bg-white dark:text-slate-900 text-white rounded-full px-8 py-6 text-base font-semibold hover:bg-slate-800 dark:hover:bg-slate-100"
-          >
-            <Link to="/agents">
-              Explore AI Agents
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        </motion.div>
-
-        {/* Interactive card area */}
-        <div className="relative w-full max-w-4xl mx-auto h-[280px] sm:h-[340px] md:h-[420px]">
-          {/* Agent Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 sm:p-5 w-[220px] sm:w-[260px] md:w-[300px] z-10 text-xs sm:text-sm"
-            style={{ top: agents[0].position.top, left: agents[0].position.left }}
-          >
-            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex-shrink-0 flex items-center justify-center text-white">
-                <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <div className="min-w-0">
-                <p className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm truncate">Maya</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 truncate">Support AI</p>
-              </div>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-              Handles <span className="font-bold">24/7 Inquiries</span>
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="absolute bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 sm:p-5 w-[220px] sm:w-[260px] md:w-[300px] z-10 text-xs sm:text-sm"
-            style={{ top: agents[1].position.top, right: agents[1].position.right }}
-          >
-            <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex-shrink-0 flex items-center justify-center text-white">
-                <Brain className="w-4 h-4 sm:w-5 sm:h-5" />
-              </div>
-              <div className="min-w-0">
-                <p className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm truncate">Atlas</p>
-                <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 truncate">Analytics AI</p>
-              </div>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-              Interested in <span className="font-bold">Intelligence</span>
-            </p>
-          </motion.div>
-
-          {/* Floating badges */}
-          {floatingBadges.map((badge, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {agents.map((a, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: badge.delay }}
+              key={a.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="absolute z-20 hidden sm:block"
-              style={{ top: badge.top, left: badge.left, transform: badge.transform }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
+              className="group rounded-3xl border border-white/10 bg-white/[0.035] p-6 sm:p-7 hover:border-cyan-300/30 transition-colors"
             >
-              <div className="bg-orange-100 dark:bg-orange-900/40 text-orange-800 dark:text-orange-200 rounded-xl px-3 py-2 shadow-md flex items-center gap-2 whitespace-nowrap">
-                <span className="text-orange-500 text-sm">→</span>
-                <div>
-                  <p className="text-xs font-bold">{badge.label}</p>
-                  <p className="text-[10px] text-orange-600 dark:text-orange-300">{badge.sub}</p>
+              <div className="flex items-start justify-between gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-cyan-400/10 border border-cyan-300/20 flex items-center justify-center text-cyan-300 flex-shrink-0">
+                  <a.icon className="w-5 h-5" />
                 </div>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-semibold text-slate-300 uppercase tracking-wider flex-shrink-0">
+                  <a.modeIcon className="w-3 h-3" />
+                  {a.mode}
+                </span>
               </div>
-            </motion.div>
-          ))}
 
-          {/* Floating avatar circles */}
-          {avatars.map((av, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: av.delay }}
-              viewport={{ once: true }}
-              className="absolute z-10 hidden sm:flex"
-              style={{ top: av.top, left: av.left, transform: av.transform }}
-            >
-              <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br ${av.color} shadow-lg flex items-center justify-center flex-shrink-0`}>
-                <Bot className="w-4 h-4 md:w-5 md:h-5 text-white" />
+              <h3 className="mt-5 text-xl font-semibold text-white">{a.title}</h3>
+              <p className="mt-2 text-sm text-slate-400 leading-relaxed">{a.desc}</p>
+
+              <p className="mt-4 text-sm text-cyan-200/90 font-medium">{a.outcome}</p>
+
+              <div className="mt-4 rounded-xl border border-white/10 bg-black/30 px-3.5 py-2.5">
+                <p className="text-[10px] uppercase tracking-wider text-slate-500 mb-1">Example workflow</p>
+                <p className="text-xs font-mono text-slate-300 break-words">{a.flow}</p>
               </div>
+
+              <Link
+                to="/agents"
+                className="mt-5 inline-flex items-center text-sm font-semibold text-cyan-300 hover:text-cyan-200"
+              >
+                Explore Agent
+                <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </motion.div>
           ))}
         </div>
