@@ -123,9 +123,9 @@ export function HeroSection() {
                   <motion.span
                     key={i}
                     className="flex-1 rounded-full bg-gradient-to-t from-cyan-500/40 to-cyan-300"
-                    animate={{ height: [`${h * 0.35}%`, `${h * 1.4}%`, `${h * 0.5}%`] }}
+                    animate={{ height: [`${Math.max(6, h * 0.4)}px`, `${h}px`, `${Math.max(6, h * 0.55)}px`] }}
                     transition={{ duration: 1.2 + (i % 5) * 0.15, repeat: Infinity, ease: "easeInOut" }}
-                    style={{ height: `${h}%` }}
+                    style={{ height: `${h}px` }}
                   />
                 ))}
               </div>
