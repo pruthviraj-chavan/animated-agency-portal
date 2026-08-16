@@ -20,6 +20,17 @@ export default {
 		},
 		extend: {
 			colors: {
+				dv: {
+					bg: 'hsl(var(--dv-bg))',
+					surface: 'hsl(var(--dv-surface))',
+					elevated: 'hsl(var(--dv-elevated))',
+					line: 'hsl(var(--dv-line))',
+					fg: 'hsl(var(--dv-fg))',
+					muted: 'hsl(var(--dv-muted))',
+					dim: 'hsl(var(--dv-dim))',
+					accent: 'hsl(var(--dv-accent))',
+					'accent-2': 'hsl(var(--dv-accent-2))',
+				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
