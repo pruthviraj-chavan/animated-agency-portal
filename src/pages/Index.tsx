@@ -1,40 +1,28 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { HeroSection } from "@/components/home/HeroSection";
-import { TrustStrip } from "@/components/home/TrustStrip";
-import { ConversationToActionSection } from "@/components/home/ConversationToActionSection";
-import { AIAgentsSection } from "@/components/home/AIAgentsSection";
-import { IndianLanguageSection } from "@/components/home/IndianLanguageSection";
-import { VoiceArchitectureSection } from "@/components/home/VoiceArchitectureSection";
-import { WhyDieVektorSection } from "@/components/home/WhyDieVektorSection";
-import { RealWorldWorkSection } from "@/components/home/RealWorldWorkSection";
-import { TechStackSection } from "@/components/home/TechStackSection";
-import { RoadmapSection } from "@/components/home/RoadmapSection";
-import { SecondaryServicesSection } from "@/components/home/SecondaryServicesSection";
-import { TalkToAgentSection } from "@/components/home/TalkToAgentSection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import { SiteNav } from "@/components/dv/SiteNav";
+import { SiteFooter } from "@/components/dv/SiteFooter";
+import { Hero } from "@/components/home2/Hero";
+import { Capabilities } from "@/components/home2/Capabilities";
+import { Process } from "@/components/home2/Process";
+import { Industries } from "@/components/home2/Industries";
+import { TechStack } from "@/components/home2/TechStack";
+import { Proof } from "@/components/home2/Proof";
+import { CtaBand } from "@/components/home2/CtaBand";
 import { AIChatBot } from "@/components/home/AIChatBot";
 
 const Index = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[hsl(232,32%,7%)] overflow-x-hidden">
-      <Header />
-      <main className="flex-grow pt-16">
-        <HeroSection />
-        <TrustStrip />
-        <ConversationToActionSection />
-        <AIAgentsSection />
-        <IndianLanguageSection />
-        <VoiceArchitectureSection />
-        <WhyDieVektorSection />
-        <RealWorldWorkSection />
-        <TechStackSection />
-        <RoadmapSection />
-        <SecondaryServicesSection />
-        <TestimonialsSection />
-        <TalkToAgentSection />
+    <div className="dv-root flex min-h-screen flex-col overflow-x-hidden">
+      <SiteNav />
+      <main className="flex-grow">
+        <Hero />
+        <Capabilities />
+        <Proof />
+        <Process />
+        <Industries />
+        <TechStack />
+        <CtaBand />
       </main>
-      <Footer />
+      <SiteFooter />
       <AIChatBot />
     </div>
   );
