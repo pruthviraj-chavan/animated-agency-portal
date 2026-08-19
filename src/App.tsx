@@ -29,6 +29,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { JotformChatbot } from "@/components/JotformChatbot"
 import AIAgentsLibrary from "@/pages/AIAgentsLibrary";
 import DevelopmentKit from "@/pages/DevelopmentKit";
+import Solutions from "@/pages/Solutions";
+import AISolutions from "@/pages/solutions/AISolutions";
+import SoftwareSolutions from "@/pages/solutions/SoftwareSolutions";
+import AutomationSolutions from "@/pages/solutions/AutomationSolutions";
+import Portfolio from "@/pages/Portfolio";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient()
 
@@ -66,6 +72,13 @@ function App() {
 
             <Route path="/ai-agents-library" element={<AIAgentsLibrary />} />
             <Route path="/development-kit" element={<DevelopmentKit />} />
+
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/ai" element={<AISolutions />} />
+            <Route path="/solutions/software" element={<SoftwareSolutions />} />
+            <Route path="/solutions/automation" element={<AutomationSolutions />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <JotformChatbot />
         </QueryClientProvider>
