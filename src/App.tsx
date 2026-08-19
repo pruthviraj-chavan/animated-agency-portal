@@ -29,6 +29,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { JotformChatbot } from "@/components/JotformChatbot"
 import AIAgentsLibrary from "@/pages/AIAgentsLibrary";
 import DevelopmentKit from "@/pages/DevelopmentKit";
+import Solutions from "@/pages/Solutions";
+import AISolutions from "@/pages/solutions/AISolutions";
+import SoftwareSolutions from "@/pages/solutions/SoftwareSolutions";
+import AutomationSolutions from "@/pages/solutions/AutomationSolutions";
+import Portfolio from "@/pages/Portfolio";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient()
 
