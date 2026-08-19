@@ -72,6 +72,13 @@ function App() {
 
             <Route path="/ai-agents-library" element={<AIAgentsLibrary />} />
             <Route path="/development-kit" element={<DevelopmentKit />} />
+
+            <Route path="/solutions" element={<Solutions />} />
+            <Route path="/solutions/ai" element={<AISolutions />} />
+            <Route path="/solutions/software" element={<SoftwareSolutions />} />
+            <Route path="/solutions/automation" element={<AutomationSolutions />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <JotformChatbot />
         </QueryClientProvider>
