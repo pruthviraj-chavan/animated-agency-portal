@@ -191,7 +191,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[118svh] min-h-[760px] bg-dv-bg sm:h-[140svh] sm:min-h-[900px]"
+      className="relative h-[145svh] min-h-[920px] bg-dv-bg sm:h-[140svh] sm:min-h-[900px]"
       aria-label="dieVektor technology overview"
     >
       <div
