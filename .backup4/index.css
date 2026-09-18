@@ -250,12 +250,6 @@
   --dv-dim: 220 10% 48%;
   --dv-accent: 187 92% 55%;
   --dv-accent-2: 246 84% 68%;
-  --dv-hero-base: 244 46% 20%;
-  --dv-hero-mid: 250 50% 28%;
-  --dv-hero-violet: 272 54% 31%;
-  --dv-hero-blue: 217 62% 28%;
-  --dv-hero-card: 238 30% 14%;
-  --dv-hero-line: 226 55% 88%;
 
   --dv-gradient-accent: linear-gradient(100deg, hsl(var(--dv-accent)), hsl(var(--dv-accent-2)));
   --dv-glow: 0 0 60px -12px hsl(var(--dv-accent) / 0.45);
@@ -272,23 +266,6 @@
     linear-gradient(to right, hsl(var(--dv-fg) / 0.045) 1px, transparent 1px),
     linear-gradient(to bottom, hsl(var(--dv-fg) / 0.045) 1px, transparent 1px);
   background-size: 64px 64px;
-}
-
-.dv-hero-mesh {
-  background-color: hsl(var(--dv-hero-base));
-  background-image:
-    linear-gradient(128deg, hsl(var(--dv-hero-blue) / 0.82) 0%, transparent 42%),
-    linear-gradient(232deg, hsl(var(--dv-hero-violet) / 0.82) 0%, transparent 46%),
-    linear-gradient(180deg, hsl(var(--dv-hero-mid)) 0%, hsl(var(--dv-hero-base)) 74%);
-}
-
-.dv-hero-grid {
-  background-image:
-    linear-gradient(to right, hsl(var(--dv-hero-line) / 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, hsl(var(--dv-hero-line) / 0.08) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: linear-gradient(to bottom, black, transparent 88%);
-  mask-image: linear-gradient(to bottom, black, transparent 88%);
 }
 
 .dv-text-gradient {

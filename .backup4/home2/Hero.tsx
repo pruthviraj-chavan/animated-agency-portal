@@ -71,7 +71,7 @@ function CapabilityCard({
   return (
     <motion.div
       animate={target}
-      transition={{ type: "spring", stiffness: 26, damping: 24, mass: 1.2 }}
+      transition={{ type: "spring", stiffness: 48, damping: 18, mass: 0.85 }}
       className="group absolute left-1/2 top-1/2 cursor-pointer"
       style={{
         width: compact ? 62 : 86,
@@ -91,7 +91,7 @@ function CapabilityCard({
           style={{ transformStyle: "preserve-3d" }}
         >
           <span
-            className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-xl border border-dv-fg/15 bg-[hsl(var(--dv-hero-card)/0.88)] p-2.5 shadow-[var(--dv-shadow)] backdrop-blur-xl"
+            className="absolute inset-0 flex flex-col justify-between overflow-hidden rounded-xl border border-dv-line bg-dv-elevated/95 p-2.5 shadow-[var(--dv-shadow)] backdrop-blur-md"
             style={{ backfaceVisibility: "hidden" }}
           >
             <span className="flex h-7 w-7 items-center justify-center rounded-lg border border-dv-accent/25 bg-dv-accent/10 text-dv-accent">
@@ -107,7 +107,7 @@ function CapabilityCard({
           </span>
 
           <span
-            className="absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-dv-accent/35 bg-[hsl(var(--dv-hero-card)/0.94)] p-2 text-center shadow-[var(--dv-glow)] backdrop-blur-xl"
+            className="absolute inset-0 flex flex-col items-center justify-center rounded-xl border border-dv-accent/30 bg-dv-surface p-2 text-center shadow-[var(--dv-glow)]"
             style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
           >
             <span className="text-[8px] font-semibold uppercase text-dv-accent">Explore</span>
@@ -138,7 +138,7 @@ export function Hero() {
     damping: 24,
   });
   const mouseX = useMotionValue(0);
-  const smoothMouseX = useSpring(mouseX, { stiffness: 18, damping: 26, mass: 1.4 });
+  const smoothMouseX = useSpring(mouseX, { stiffness: 45, damping: 24 });
 
   useEffect(() => {
     const stage = stageRef.current;
@@ -191,7 +191,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="dv-hero-mesh relative h-[145svh] min-h-[920px] sm:h-[140svh] sm:min-h-[900px]"
+      className="relative h-[145svh] min-h-[920px] bg-dv-bg sm:h-[140svh] sm:min-h-[900px]"
       aria-label="dieVektor technology overview"
     >
       <div
@@ -199,13 +199,12 @@ export function Hero() {
         onMouseMove={(event) => {
           if (compact || reduceMotion) return;
           const rect = event.currentTarget.getBoundingClientRect();
-          mouseX.set(((event.clientX - rect.left) / rect.width - 0.5) * 28);
+          mouseX.set(((event.clientX - rect.left) / rect.width - 0.5) * 70);
         }}
         onMouseLeave={() => mouseX.set(0)}
-        className="dv-hero-mesh sticky top-0 h-[100svh] min-h-[640px] overflow-hidden"
+        className="sticky top-0 h-[100svh] min-h-[640px] overflow-hidden bg-dv-bg"
       >
-        <div className="dv-hero-grid pointer-events-none absolute inset-0" aria-hidden />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-b from-transparent to-dv-bg/45" aria-hidden />
+        <div className="dv-grid pointer-events-none absolute inset-0 opacity-30" aria-hidden />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px dv-hairline" aria-hidden />
 
         <motion.div
