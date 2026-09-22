@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, type CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight, Mic, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -28,23 +28,23 @@ export function Hero() {
 
       <div className="dv-jungle-hero__inner">
         <div className="dv-jungle-stage">
-          <div className="dv-jungle-badge dv-jungle-rise" style={{ "--i": 8 } as React.CSSProperties}>
+          <div className="dv-jungle-badge dv-jungle-rise" style={{ "--i": 8 } as CSSProperties}>
             <span className="dv-jungle-badge__tag">Now</span>
             dieVektor AI Agents are here
           </div>
 
-          <h1 className="dv-jungle-headline dv-jungle-rise" style={{ "--i": 10 } as React.CSSProperties}>
+          <h1 className="dv-jungle-headline dv-jungle-rise" style={{ "--i": 10 } as CSSProperties}>
             Build intelligent systems.<span className="dv-jungle-brk"><br /></span> Not just software.
           </h1>
 
-          <p className="dv-jungle-sub dv-jungle-rise" style={{ "--i": 12 } as React.CSSProperties}>
+          <p className="dv-jungle-sub dv-jungle-rise" style={{ "--i": 12 } as CSSProperties}>
             dieVektor builds AI agents that reason, converse, and act across your business.<span className="dv-jungle-brk"><br /></span>{" "}
             Combine multilingual AI, product engineering, and automation to move from idea to impact.
           </p>
 
           <form
             className="dv-jungle-prompt dv-jungle-rise"
-            style={{ "--i": 14 } as React.CSSProperties}
+            style={{ "--i": 14 } as CSSProperties}
             onSubmit={submitBrief}
           >
             <label className="sr-only" htmlFor="dv-hero-brief">Tell dieVektor what you want to build</label>
@@ -61,7 +61,7 @@ export function Hero() {
                 variant="ghost"
                 size="icon"
                 className="dv-jungle-icon-btn dv-jungle-rise"
-                style={{ "--i": 16 } as React.CSSProperties}
+                style={{ "--i": 16 } as CSSProperties}
                 aria-label="Add attachment"
               >
                 <Plus aria-hidden="true" />
@@ -72,7 +72,7 @@ export function Hero() {
                   variant="ghost"
                   size="icon"
                   className="dv-jungle-icon-btn dv-jungle-icon-btn--bare dv-jungle-rise"
-                  style={{ "--i": 17 } as React.CSSProperties}
+                  style={{ "--i": 17 } as CSSProperties}
                   aria-label="Use microphone"
                 >
                   <Mic aria-hidden="true" />
@@ -81,7 +81,7 @@ export function Hero() {
                   type="submit"
                   size="icon"
                   className="dv-jungle-icon-btn dv-jungle-icon-btn--send dv-jungle-rise"
-                  style={{ "--i": 18 } as React.CSSProperties}
+                  style={{ "--i": 18 } as CSSProperties}
                   aria-label="Start your project"
                 >
                   <ArrowRight aria-hidden="true" />
