@@ -13,6 +13,7 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/dv/primitives";
@@ -72,7 +73,7 @@ export function IntelligentSystemsShowcase() {
                   <article
                     className="dv-systems__orbit-card"
                     key={item.label}
-                    style={{ "--card-index": index } as React.CSSProperties}
+                    style={{ "--card-index": index } as CSSProperties}
                   >
                     <Icon />
                     <strong>{item.label}</strong>
