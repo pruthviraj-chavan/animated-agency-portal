@@ -1,6 +1,7 @@
 import { SiteNav } from "@/components/dv/SiteNav";
 import { SiteFooter } from "@/components/dv/SiteFooter";
 import { Hero } from "@/components/home2/Hero";
+import { IntelligentSystemsShowcase } from "@/components/home2/IntelligentSystemsShowcase";
 import { Capabilities } from "@/components/home2/Capabilities";
 import { Process } from "@/components/home2/Process";
 import { Industries } from "@/components/home2/Industries";
@@ -15,6 +16,7 @@ const Index = () => {
       <SiteNav />
       <main className="flex-grow">
         <Hero />
+        <IntelligentSystemsShowcase />
         <Capabilities />
         <Proof />
         <Process />
