@@ -88,7 +88,7 @@ export function IntelligentSystemsShowcase() {
             <div className="dv-systems__console-bar">
               <span className="dv-systems__dots"><i /><i /><i /></span>
               <span className="dv-systems__console-title">dieVekter Agent Operations</span>
-              <span className="dv-systems__live"><i /> Live</span>
+              <span className="dv-systems__live">Concept preview</span>
             </div>
 
             <div className="dv-systems__console-body">
@@ -105,7 +105,7 @@ export function IntelligentSystemsShowcase() {
                     <p>Customer operations</p>
                     <h3>Multilingual sales agent</h3>
                   </div>
-                  <span className="dv-systems__status"><i /> Running</span>
+                  <span className="dv-systems__status"><i /> Connected</span>
                 </header>
 
                 <div className="dv-systems__metrics">
@@ -116,8 +116,8 @@ export function IntelligentSystemsShowcase() {
 
                 <div className="dv-systems__flow">
                   <div className="dv-systems__flow-head">
-                    <div><MessageSquareText /><span><strong>Live customer intent</strong><small>Hindi + English detected</small></span></div>
-                    <span>Just now</span>
+                    <div><MessageSquareText /><span><strong>Customer intent</strong><small>Hindi + English detected</small></span></div>
+                    <span>Example</span>
                   </div>
                   <blockquote>“Mujhe team ke liye AI support setup karna hai. Can someone call tomorrow?”</blockquote>
                   <div className="dv-systems__steps">
