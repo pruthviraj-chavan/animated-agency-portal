@@ -7,6 +7,7 @@ import { Process } from "@/components/home2/Process";
 import { Industries } from "@/components/home2/Industries";
 import { TechStack } from "@/components/home2/TechStack";
 import { Proof } from "@/components/home2/Proof";
+import { AIVideoService } from "@/components/home2/AIVideoService";
 import { CtaBand } from "@/components/home2/CtaBand";
 import { AIChatBot } from "@/components/home/AIChatBot";
 
@@ -22,6 +23,7 @@ const Index = () => {
         <Process />
         <Industries />
         <TechStack />
+        <AIVideoService />
         <CtaBand />
       </main>
       <SiteFooter />
