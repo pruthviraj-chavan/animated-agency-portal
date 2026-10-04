@@ -109,9 +109,9 @@ export function IntelligentSystemsShowcase() {
                 </header>
 
                 <div className="dv-systems__metrics">
-                  <article><small>Conversations</small><strong>1,284</strong><span>+18.6%</span></article>
-                  <article><small>Qualified leads</small><strong>327</strong><span>25.5% rate</span></article>
-                  <article><small>Tasks completed</small><strong>846</strong><span>98.2% success</span></article>
+                  <article><small>Connect</small><strong>Voice + chat</strong><span>Multilingual</span></article>
+                  <article><small>Understand</small><strong>Intent</strong><span>Context aware</span></article>
+                  <article><small>Act</small><strong>Workflows</strong><span>Tool connected</span></article>
                 </div>
 
                 <div className="dv-systems__flow">
