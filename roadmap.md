@@ -1,0 +1,2 @@
+- [x] Add an AI video generation service section to the homepage.
+- [x] Include Pruthviraj C.'s supplied Upwork details and profile link.

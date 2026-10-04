@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowUpRight, AudioLines, BadgeCheck, Clapperboard, Film, Play, Sparkles } from "lucide-react";
+import { ArrowUpRight, AudioLines, BadgeCheck, Clapperboard, Film, Sparkles } from "lucide-react";
 import { Reveal, Section } from "@/components/dv/primitives";
 
 const stages = [
@@ -41,7 +41,7 @@ export function AIVideoService() {
                 <div className="bg-dv-accent/20" /><div className="bg-dv-accent-2/20" /><div className="bg-dv-accent/10" />
               </div>
               <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-dv-accent/40 bg-dv-surface text-dv-accent shadow-[var(--dv-glow)]">
-                <Play className="h-6 w-6 fill-current" aria-hidden="true" />
+                <Film className="h-6 w-6" aria-hidden="true" />
               </span>
               <span className="absolute bottom-4 left-4 z-10 text-xs font-medium text-dv-fg">An idea, in motion.</span>
             </div>
