@@ -10,7 +10,7 @@ const stages = [
 
 export function AIVideoService() {
   return (
-    <Section id="ai-video" className="border-y border-dv-line">
+    <Section id="ai-video" className="scroll-mt-24 border-y border-dv-line">
       <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
         <Reveal>
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-dv-accent">
