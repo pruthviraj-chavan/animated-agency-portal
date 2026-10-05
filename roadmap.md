@@ -1,2 +1,3 @@
 - [x] Add an AI video generation service section to the homepage.
 - [x] Include Pruthviraj C.'s supplied Upwork details and profile link.
+- [x] Build the Business Credentials & Trust section (Udyam + D-U-N-S glass cards, liquid background, floating certificate).
