@@ -130,9 +130,14 @@ export function CredentialsSection() {
                   <dd>Dun & Bradstreet business identifier</dd>
                 </div>
               </dl>
-              <button type="button" className="dv-cred__btn">
+              <a
+                href="https://www.dnb.com/duns-number/lookup.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dv-cred__btn"
+              >
                 View D-U-N-S Details <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </button>
+              </a>
             </article>
           </Reveal>
         </div>
