@@ -95,9 +95,14 @@ export function CredentialsSection() {
                   <dd>05/10/2026</dd>
                 </div>
               </dl>
-              <button type="button" className="dv-cred__btn dv-cred__btn--solid">
+              <a
+                href="https://udyamregistration.gov.in/Udyam_Verify.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="dv-cred__btn dv-cred__btn--solid"
+              >
                 View Udyam Certificate <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </button>
+              </a>
             </article>
           </Reveal>
 
