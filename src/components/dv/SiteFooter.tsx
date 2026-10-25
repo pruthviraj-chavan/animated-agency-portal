@@ -28,6 +28,7 @@ const groups = [
       { name: "Blog", path: "/blog" },
       { name: "Careers", path: "/jobs" },
       { name: "Contact", path: "/contact" },
+      { name: "Privacy Policy", path: "/privacy" },
     ],
   },
 ];
