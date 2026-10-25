@@ -34,6 +34,7 @@ import AISolutions from "@/pages/solutions/AISolutions";
 import SoftwareSolutions from "@/pages/solutions/SoftwareSolutions";
 import AutomationSolutions from "@/pages/solutions/AutomationSolutions";
 import Portfolio from "@/pages/Portfolio";
+import Privacy from "@/pages/Privacy";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient()
@@ -78,6 +79,7 @@ function App() {
             <Route path="/solutions/software" element={<SoftwareSolutions />} />
             <Route path="/solutions/automation" element={<AutomationSolutions />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <JotformChatbot />
