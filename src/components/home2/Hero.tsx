@@ -19,7 +19,7 @@ export function Hero() {
   };
 
   return (
-    <section className="dv-jungle-hero" aria-label="dieVektor intelligent technology">
+    <section className="dv-jungle-hero" aria-label="dieVekter intelligent technology">
       <div className="dv-jungle-hero__bg" aria-hidden="true">
         <video autoPlay muted loop playsInline preload="auto" poster={POSTER_URL}>
           <source src={VIDEO_URL} type="video/mp4" />
@@ -30,7 +30,7 @@ export function Hero() {
         <div className="dv-jungle-stage">
           <div className="dv-jungle-badge dv-jungle-rise" style={{ "--i": 8 } as CSSProperties}>
             <span className="dv-jungle-badge__tag">Now</span>
-            dieVektor AI Agents are here
+            dieVekter AI Agents are here
           </div>
 
           <h1 className="dv-jungle-headline dv-jungle-rise" style={{ "--i": 10 } as CSSProperties}>
@@ -38,7 +38,7 @@ export function Hero() {
           </h1>
 
           <p className="dv-jungle-sub dv-jungle-rise" style={{ "--i": 12 } as CSSProperties}>
-            dieVektor builds AI agents that reason, converse, and act across your business.<span className="dv-jungle-brk"><br /></span>{" "}
+            dieVekter builds AI agents that reason, converse, and act across your business.<span className="dv-jungle-brk"><br /></span>{" "}
             Combine multilingual AI, product engineering, and automation to move from idea to impact.
           </p>
 
@@ -47,7 +47,7 @@ export function Hero() {
             style={{ "--i": 14 } as CSSProperties}
             onSubmit={submitBrief}
           >
-            <label className="sr-only" htmlFor="dv-hero-brief">Tell dieVektor what you want to build</label>
+            <label className="sr-only" htmlFor="dv-hero-brief">Tell dieVekter what you want to build</label>
             <textarea
               id="dv-hero-brief"
               className="dv-jungle-prompt__input"

@@ -7,17 +7,18 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { name: "AI Agents", path: "/agents" },
   { name: "Solutions", path: "/solutions" },
-  { name: "Products", path: "/products" },
+  { name: "Technology", path: "/#technology" },
   { name: "Projects", path: "/portfolio" },
-  { name: "Company", path: "/about" },
+  { name: "About", path: "/about" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const MOBILE_EXTRA = [
-  { name: "AI", path: "/solutions/ai" },
+  { name: "AI Solutions", path: "/solutions/ai" },
   { name: "Software", path: "/solutions/software" },
   { name: "Automation", path: "/solutions/automation" },
-  { name: "Blog", path: "/blog" },
-  { name: "Contact", path: "/contact" },
+  { name: "Products", path: "/products" },
 ];
 
 export function SiteNav() {
@@ -41,6 +42,10 @@ export function SiteNav() {
     };
   }, [open]);
 
+  // The homepage hero is a bright video, so the fixed nav needs ink-colored
+  // text while it sits transparently on top of it.
+  const onLightHero = location.pathname === "/" && !scrolled && !open;
+
   return (
     <>
       <header
@@ -53,11 +58,28 @@ export function SiteNav() {
       >
         <div className="container mx-auto px-5 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
           <Link to="/" className="flex items-center gap-2.5 min-w-0">
-            <span className="relative flex h-8 w-8 items-center justify-center rounded-lg border border-dv-line bg-dv-elevated">
-              <span className="h-2.5 w-2.5 rounded-[3px] bg-dv-accent shadow-[0_0_14px_hsl(var(--dv-accent))]" />
+            <span
+              className={cn(
+                "relative flex h-9 w-9 items-center justify-center rounded-lg border",
+                onLightHero
+                  ? "border-[hsl(var(--dv-jungle-ink)/0.12)] bg-[hsl(var(--dv-jungle-paper)/0.9)] backdrop-blur-sm shadow-sm"
+                  : "border-dv-line bg-dv-elevated",
+              )}
+            >
+              <img
+                src="/dievektor_logo.png"
+                alt="dieVekter logo"
+                className="h-6 w-6 object-contain"
+                loading="eager"
+              />
             </span>
-            <span className="text-lg font-semibold tracking-tight text-dv-fg">
-              die<span className="dv-text-gradient">Vektor</span>
+            <span
+              className={cn(
+                "text-lg font-semibold tracking-tight",
+                onLightHero ? "text-[hsl(var(--dv-jungle-ink))]" : "text-dv-fg",
+              )}
+            >
+              die<span className="dv-text-gradient">Vekter</span>
             </span>
           </Link>
 
@@ -66,7 +88,12 @@ export function SiteNav() {
               <Link
                 key={l.name}
                 to={l.path}
-                className="relative px-3.5 py-2 text-sm font-medium text-dv-muted hover:text-dv-fg transition-colors rounded-lg hover:bg-dv-fg/[0.04]"
+                className={cn(
+                  "relative px-3.5 py-2 text-sm font-medium transition-colors rounded-lg",
+                  onLightHero
+                    ? "text-[hsl(var(--dv-jungle-ink)/0.72)] hover:text-[hsl(var(--dv-jungle-ink))] hover:bg-[hsl(var(--dv-jungle-ink)/0.07)]"
+                    : "text-dv-muted hover:text-dv-fg hover:bg-dv-fg/[0.04]",
+                )}
               >
                 {l.name}
               </Link>
@@ -76,7 +103,12 @@ export function SiteNav() {
           <div className="flex items-center gap-2">
             <Link
               to="/contact"
-              className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-dv-fg px-4 py-2 text-sm font-semibold text-dv-bg hover:opacity-90 transition-opacity"
+              className={cn(
+                "hidden sm:inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition-all hover:-translate-y-px",
+                onLightHero
+                  ? "bg-[hsl(var(--dv-jungle-ink))] text-dv-fg hover:opacity-90"
+                  : "bg-dv-fg px-4 py-2 text-dv-bg hover:opacity-90",
+              )}
             >
               Start a Project
               <ArrowUpRight className="h-4 w-4" />
@@ -86,7 +118,12 @@ export function SiteNav() {
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-dv-line bg-dv-surface text-dv-fg"
+              className={cn(
+                "lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border",
+                onLightHero
+                  ? "border-[hsl(var(--dv-jungle-ink)/0.15)] bg-[hsl(var(--dv-jungle-paper)/0.85)] text-[hsl(var(--dv-jungle-ink))] backdrop-blur-sm"
+                  : "border-dv-line bg-dv-surface text-dv-fg",
+              )}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>

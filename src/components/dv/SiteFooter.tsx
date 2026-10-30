@@ -47,11 +47,16 @@ export function SiteFooter() {
         <div className="grid gap-10 lg:grid-cols-[1.3fr_2fr]">
           <div>
             <Link to="/" className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-dv-line bg-dv-elevated">
-                <span className="h-2.5 w-2.5 rounded-[3px] bg-dv-accent" />
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-dv-line bg-dv-elevated">
+                <img
+                  src="/dievektor_logo.png"
+                  alt="dieVekter logo"
+                  className="h-6 w-6 object-contain"
+                  loading="lazy"
+                />
               </span>
               <span className="text-lg font-semibold tracking-tight text-dv-fg">
-                die<span className="dv-text-gradient">Vektor</span>
+                die<span className="dv-text-gradient">Vekter</span>
               </span>
             </Link>
             <p className="mt-4 text-xs font-semibold uppercase tracking-[0.22em] text-dv-dim">
@@ -128,7 +133,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-dv-line pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-dv-dim">
-            © {new Date().getFullYear()} dieVektor. All rights reserved.
+            © {new Date().getFullYear()} dieVekter. All rights reserved.
           </p>
           <p className="text-xs text-dv-dim">Built in India · Engineered for the real world.</p>
         </div>
