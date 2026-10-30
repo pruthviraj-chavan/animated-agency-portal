@@ -8,7 +8,15 @@ export function CtaBand() {
       <div className="dv-grid absolute inset-0 opacity-25" aria-hidden />
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-dv-accent/10 blur-[150px]"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[620px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-dv-accent/12 blur-[150px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-[22%] top-[58%] h-[300px] w-[420px] -translate-y-1/2 rounded-full bg-dv-accent-2/12 blur-[140px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-[18%] top-[36%] h-[240px] w-[340px] rounded-full bg-[hsl(158_84%_45%/0.1)] blur-[130px]"
       />
       <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8">
         <Reveal className="mx-auto max-w-3xl text-center">
