@@ -8,3 +8,9 @@
 - [x] Main nav: AI Agents, Solutions, Technology (→ /#technology), Projects (→ /portfolio), About, Blog, Contact; private /projects page stays unlinked
 - [x] Colorful section effects: gradient headings, colored icon tiles/chips/dots, per-card accent glows + hover lift in Capabilities, Proof, Process, Industries, TechStack, CtaBand
 - [x] Verified: build OK, desktop 1280 + mobile 390 no overflow, no console errors
+
+## Nov 24 2026 — Homepage reference redesign (in progress)
+- [ ] Rebuild the homepage hero and sections around the supplied bright, dotted, coral-accented 3D studio reference while keeping dieVekter content.
+- [ ] Restyle homepage navigation and footer to match the reference; preserve existing routes and privacy links.
+- [ ] Add the supplied scroll-linked motion patterns, reduced-motion support, and responsive behavior.
+- [ ] Verify homepage at desktop and mobile widths; check build and browser errors.

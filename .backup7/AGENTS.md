@@ -1,0 +1,1 @@
+- Keep homepage business verticals in focused components under `src/components/home2/` and compose them in `src/pages/Index.tsx`, so sections remain easy to reorder independently.

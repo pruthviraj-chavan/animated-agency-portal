@@ -1,1 +1,2 @@
 - Keep homepage business verticals in focused components under `src/components/home2/` and compose them in `src/pages/Index.tsx`, so sections remain easy to reorder independently.
+- Keep homepage-only editorial styles scoped to its wrapper and reuse scroll-driven effects from `home2/ScrollEffects.tsx`, so the reference redesign does not restyle other routes.
