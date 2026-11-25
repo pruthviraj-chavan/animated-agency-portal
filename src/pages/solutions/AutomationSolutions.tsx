@@ -2,6 +2,8 @@ import { SolutionPage } from "@/components/dv/SolutionPage";
 
 const AutomationSolutions = () => (
   <SolutionPage
+    path="/solutions/automation"
+    serviceType="Workflow & Business Automation Solutions"
     eyebrow="Automation"
     title={<>Remove the <span className="dv-text-gradient">manual steps</span> from your operations</>}
     intro="We map how work actually flows through your business, then automate the repetitive parts — reliably, with visibility and fallbacks when something goes wrong."

@@ -1,6 +1,5 @@
-import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
 import { ArrowUpRight, BadgeCheck, Building2, ShieldCheck } from "lucide-react";
-import { Reveal } from "@/components/dv/primitives";
+import { motion } from "framer-motion";
 
 const trustItems = [
   "Government Registered Enterprise",
@@ -9,166 +8,157 @@ const trustItems = [
   "Technology Services",
 ];
 
-const dots = [
-  { top: "12%", left: "8%", delay: "0s" },
-  { top: "30%", left: "22%", delay: "1.2s" },
-  { top: "16%", left: "58%", delay: "2s" },
-  { top: "64%", left: "12%", delay: "0.6s" },
-  { top: "72%", left: "48%", delay: "1.8s" },
-  { top: "26%", left: "84%", delay: "2.6s" },
-  { top: "80%", left: "78%", delay: "0.3s" },
-  { top: "52%", left: "70%", delay: "1.5s" },
-];
-
 export function CredentialsSection() {
-  const reduce = useReducedMotion();
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-
-  const blobAX = useTransform(mx, (v) => v * 26);
-  const blobAY = useTransform(my, (v) => v * 20);
-  const blobBX = useTransform(mx, (v) => v * -18);
-  const blobBY = useTransform(my, (v) => v * -14);
-  const certX = useTransform(mx, (v) => v * 14);
-  const certY = useTransform(my, (v) => v * 10);
-
   return (
     <section
       id="credentials"
-      className="dv-cred"
-      onMouseMove={(e) => {
-        if (reduce) return;
-        const r = e.currentTarget.getBoundingClientRect();
-        mx.set((e.clientX - r.left) / r.width - 0.5);
-        my.set((e.clientY - r.top) / r.height - 0.5);
-      }}
+      className="relative overflow-hidden border-t border-stone-100 bg-white py-20 sm:py-24"
     >
-      <div aria-hidden className="dv-cred__bg">
-        <motion.div className="dv-cred__blob dv-cred__blob--a" style={{ x: blobAX, y: blobAY }} />
-        <motion.div className="dv-cred__blob dv-cred__blob--b" style={{ x: blobBX, y: blobBY }} />
-        <motion.div className="dv-cred__blob dv-cred__blob--c" style={{ x: blobBX, y: blobBY }} />
-        {dots.map((d, i) => (
-          <span key={i} className="dv-cred__dot" style={{ top: d.top, left: d.left, animationDelay: d.delay }} />
-        ))}
-      </div>
+      {/* Soft peach ambient accent */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-24 right-0 h-80 w-80 rounded-full bg-[#FF5422]/10 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-24 left-0 h-80 w-80 rounded-full bg-orange-200/30 blur-3xl"
+      />
 
       <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8">
-        <Reveal className="max-w-3xl">
-          <p className="dv-cred__eyebrow">
-            <Building2 className="h-4 w-4" aria-hidden="true" /> Our business identity
+        <div className="max-w-3xl">
+          <p className="inline-flex items-center gap-2 rounded-full bg-[#FF5422] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+            <Building2 className="h-3.5 w-3.5" aria-hidden="true" /> Business Credentials
           </p>
-          <h2>
-            Registered. Recognized. <span className="dv-cred__accent">Ready to Build.</span>
+          <h2
+            className="mt-5 font-bold tracking-tight text-[#141210]"
+            style={{ fontSize: "clamp(28px, 4vw, 48px)", lineHeight: 1.06 }}
+          >
+            Registered. Recognized.{" "}
+            <span className="text-[#FF5422]">Ready to Build.</span>
           </h2>
-          <p className="dv-cred__sub">
-            DIEVEKTER is a registered Indian Micro Enterprise with verified business credentials and
-            technology service registrations.
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-stone-500">
+            DIEVEKTER is a registered Indian Micro Enterprise with verified government and commercial
+            business identifiers.
           </p>
-        </Reveal>
+        </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <Reveal delay={0.05} className="h-full">
-            <article className="dv-cred__card">
+          <motion.article
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="flex h-full flex-col justify-between rounded-2xl border border-[#FBE0D4] bg-[#FFF6F2] p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow"
+          >
+            <div>
               <div className="flex items-center justify-between gap-4">
-                <span className="dv-cred__tag">01 · Udyam Registration</span>
-                <span className="dv-cred__seal">
-                  <BadgeCheck aria-hidden="true" />
+                <span className="rounded-full border border-[#FF5422]/25 bg-white px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#FF5422]">
+                  01 · Udyam Registration
+                </span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF5422] text-white">
+                  <BadgeCheck className="h-5 w-5" aria-hidden="true" />
                 </span>
               </div>
-              <p className="dv-cred__label">Udyam Registration Number</p>
-              <p className="dv-cred__num">UDYAM-MH-15-0320983</p>
-              <dl className="dv-cred__fields">
-                <div>
-                  <dt>Enterprise</dt>
-                  <dd>DIEVEKTER</dd>
-                </div>
-                <div>
-                  <dt>Enterprise Type</dt>
-                  <dd>Micro</dd>
-                </div>
-                <div>
-                  <dt>Classification Year</dt>
-                  <dd>2026–27</dd>
-                </div>
-                <div>
-                  <dt>Registration Date</dt>
-                  <dd>05/10/2026</dd>
-                </div>
-              </dl>
-              <a
-                href="https://udyamregistration.gov.in/Udyam_Verify.aspx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dv-cred__btn dv-cred__btn--solid"
-              >
-                View Udyam Certificate <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </article>
-          </Reveal>
 
-          <Reveal delay={0.12} className="h-full">
-            <article className="dv-cred__card">
-              <div className="flex items-center justify-between gap-4">
-                <span className="dv-cred__tag">02 · D-U-N-S Identifier</span>
-                <span className="dv-cred__seal dv-cred__seal--blue">
-                  <BadgeCheck aria-hidden="true" />
-                </span>
-              </div>
-              <p className="dv-cred__label">D-U-N-S Number</p>
-              <p className="dv-cred__num">312163123</p>
-              <dl className="dv-cred__fields">
+              <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-400">
+                Udyam Registration Number
+              </p>
+              <p className="mt-1.5 text-2xl sm:text-3xl font-bold tracking-tight text-[#141210]">
+                UDYAM-MH-15-0320983
+              </p>
+
+              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-[#F5D6C8] pt-5">
                 <div>
-                  <dt>Company</dt>
-                  <dd>DIEVEKTER</dd>
+                  <dt className="text-xs text-stone-400">Enterprise</dt>
+                  <dd className="mt-0.5 text-sm font-semibold text-[#141210]">DIEVEKTER</dd>
                 </div>
                 <div>
-                  <dt>Registry</dt>
-                  <dd>Dun & Bradstreet</dd>
+                  <dt className="text-xs text-stone-400">Enterprise Type</dt>
+                  <dd className="mt-0.5 text-sm font-semibold text-[#141210]">Micro</dd>
                 </div>
-                <div className="dv-cred__fields--wide">
-                  <dt>Identifier</dt>
-                  <dd>Dun & Bradstreet business identifier</dd>
+                <div>
+                  <dt className="text-xs text-stone-400">Classification Year</dt>
+                  <dd className="mt-0.5 text-sm font-semibold text-[#141210]">2026–27</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-stone-400">Registration Date</dt>
+                  <dd className="mt-0.5 text-sm font-semibold text-[#141210]">05/10/2026</dd>
                 </div>
               </dl>
-              <a
-                href="https://www.dnb.com/duns-number/lookup.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="dv-cred__btn"
-              >
-                View D-U-N-S Details <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </article>
-          </Reveal>
+            </div>
+
+            <a
+              href="https://udyamregistration.gov.in/Udyam_Verify.aspx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex w-fit items-center gap-2 rounded-full bg-[#FF5422] px-5 py-2.5 text-xs font-semibold text-white transition-all hover:bg-[#e8460e]"
+            >
+              View Udyam Certificate <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          </motion.article>
+
+          <motion.article
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.08 }}
+            className="flex h-full flex-col justify-between rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 shadow-sm hover:shadow-lg transition-shadow"
+          >
+            <div>
+              <div className="flex items-center justify-between gap-4">
+                <span className="rounded-full border border-stone-200 bg-stone-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.14em] text-stone-700">
+                  02 · D-U-N-S Identifier
+                </span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#141210] text-white">
+                  <BadgeCheck className="h-5 w-5 text-[#FF5422]" aria-hidden="true" />
+                </span>
+              </div>
+
+              <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-400">
+                D-U-N-S Number
+              </p>
+              <p className="mt-1.5 text-2xl sm:text-3xl font-bold tracking-tight text-[#141210]">
+                312163123
+              </p>
+
+              <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-stone-100 pt-5">
+                <div>
+                  <dt className="text-xs text-stone-400">Company</dt>
+                  <dd className="mt-0.5 text-sm font-semibold text-[#141210]">DIEVEKTER</dd>
+                </div>
+                <div>
+                  <dt className="text-xs text-stone-400">Registry</dt>
+                  <dd className="mt-0.5 text-sm font-semibold text-[#141210]">Dun &amp; Bradstreet</dd>
+                </div>
+                <div className="col-span-2">
+                  <dt className="text-xs text-stone-400">Identifier</dt>
+                  <dd className="mt-0.5 text-sm font-semibold text-[#141210]">
+                    Dun &amp; Bradstreet global commercial identifier
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
+            <a
+              href="https://www.dnb.com/duns-number/lookup.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex w-fit items-center gap-2 rounded-full border border-stone-200 bg-white px-5 py-2.5 text-xs font-semibold text-[#141210] transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
+            >
+              View D-U-N-S Details <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+          </motion.article>
         </div>
 
-        <Reveal delay={0.18}>
-          <ul className="dv-cred__strip">
-            {trustItems.map((t) => (
-              <li key={t}>
-                <ShieldCheck aria-hidden="true" /> {t}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+        <ul className="mt-10 flex flex-wrap gap-x-8 gap-y-3 border-t border-stone-100 pt-6">
+          {trustItems.map((t) => (
+            <li key={t} className="inline-flex items-center gap-2 text-xs font-medium text-stone-500">
+              <ShieldCheck className="h-4 w-4 text-[#FF5422]" aria-hidden="true" />
+              {t}
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <motion.div aria-hidden className="dv-cred__cert" style={{ x: certX, y: certY }}>
-        <div className="dv-cred__cert-panel">
-          <span className="dv-cred__cert-emblem">
-            <BadgeCheck />
-          </span>
-          <p>
-            UDYAM
-            <br />
-            REGISTRATION
-            <br />
-            CERTIFICATE
-          </p>
-          <span className="dv-cred__cert-bar" />
-          <span className="dv-cred__cert-bar dv-cred__cert-bar--short" />
-        </div>
-      </motion.div>
     </section>
   );
 }

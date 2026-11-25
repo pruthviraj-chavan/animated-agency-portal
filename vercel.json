@@ -1,4 +1,3 @@
-
 {
   "redirects": [
     {
@@ -11,12 +10,36 @@
       ],
       "destination": "https://www.dievekter.tech/$1",
       "permanent": true
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/services/custom-website-development",
+      "destination": "/services/website-development",
+      "permanent": true
+    },
+    {
+      "source": "/services/ecommerce-solutions",
+      "destination": "/services/ecommerce-development",
+      "permanent": true
+    },
+    {
+      "source": "/services/api-development",
+      "destination": "/services/api-integration",
+      "permanent": true
+    },
+    {
+      "source": "/services/web-hosting",
+      "destination": "/services/cloud-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
     }
   ],
   "headers": [
@@ -26,8 +49,7 @@
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
         { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Content-Type, Accept" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Robots-Tag", "value": "index, follow" }
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
       ]
     },
     {

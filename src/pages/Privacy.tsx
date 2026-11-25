@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import { SiteNav } from "@/components/dv/SiteNav";
 import { SiteFooter } from "@/components/dv/SiteFooter";
 import { Reveal } from "@/components/dv/primitives";
 import { AlertTriangle, ExternalLink, Mail, MapPin, ShieldCheck } from "lucide-react";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 const sections = [
   { id: "info-we-collect", title: "Information we collect" },
@@ -62,19 +62,15 @@ const useItems = [
 ];
 
 export const Privacy = () => {
-  useEffect(() => {
-    document.title = "Privacy Policy | dieVekter";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute(
-        "content",
-        "Privacy policy for dieVekter — how we collect, use and protect your information, plus our disclaimer of non-affiliation with any government entity.",
-      );
-    }
-  }, []);
-
   return (
     <div className="dv-root flex min-h-screen flex-col overflow-x-hidden">
+      <SeoHead
+        path="/privacy"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy" },
+        ]}
+      />
       <SiteNav />
       <main className="flex-grow pt-24 sm:pt-28">
         {/* Header */}

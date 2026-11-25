@@ -1,271 +1,376 @@
-
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, ShoppingCart, Search, PenTool, Server, Layers, Smartphone, Link as LinkIcon, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { ArrowUpRight, Compass, Search, Send, TrendingUp } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { SiteNav } from "@/components/dv/SiteNav";
+import { SiteFooter } from "@/components/dv/SiteFooter";
+import { SeoHead } from "@/components/seo/SeoHead";
+import {
+  Sculptural3DBurst,
+  Sculptural3DCapsules,
+  Sculptural3DCross,
+  Sculptural3DKnot,
+  Sculptural3DStack,
+  Sculptural3DTorus,
+} from "@/components/dv/Sculptural3DIcons";
+import { withDriftX, withWidthGrow } from "@/components/home2/ScrollEffects";
+import { buildServiceSchema } from "@/data/seoConfig";
+import { trackServiceCta } from "@/lib/analytics";
 
-// Defining a service type for better type checking
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-  icon: React.ElementType;
-  color: string;
-  features: string[];
-}
+const DriftWatermark = withDriftX(motion.div);
+const GrowBanner = withWidthGrow(motion.div);
 
-const Services = () => {
-  const [activeServiceId, setActiveServiceId] = useState<number | null>(null);
+const coreServices = [
+  {
+    id: "website-dev",
+    title: "Website development",
+    desc: "Fast, search-ready React websites and bespoke web platforms crafted to convert visitors.",
+    path: "/services/website-development",
+    Sculpture: Sculptural3DTorus,
+  },
+  {
+    id: "ai-agents",
+    title: "AI agents & voicebots",
+    desc: "Multilingual voice and autonomous AI assistants wired into your real docs and CRM.",
+    path: "/services/ai-agents",
+    Sculpture: Sculptural3DCapsules,
+  },
+  {
+    id: "automation",
+    title: "Workflow automation",
+    desc: "From CRM routing to notifications and reporting, eliminate repetitive manual busywork.",
+    path: "/services/business-automation",
+    Sculpture: Sculptural3DBurst,
+  },
+  {
+    id: "ecommerce",
+    title: "E-commerce solutions",
+    desc: "Online storefronts with Razorpay/UPI checkout, live stock sync and mobile speed.",
+    path: "/services/ecommerce-development",
+    Sculpture: Sculptural3DCross,
+  },
+  {
+    id: "mobile-apps",
+    title: "Mobile app engineering",
+    desc: "Cross-platform Android and iOS applications engineered with reliable APIs and clean UX.",
+    path: "/services/mobile-app-development",
+    Sculpture: Sculptural3DKnot,
+  },
+  {
+    id: "study-abroad",
+    title: "Study Abroad consultancy",
+    desc: "Structured admissions counselling, Study in Germany checklists and student visa documentation support.",
+    path: "/study-abroad",
+    Sculpture: Sculptural3DStack,
+  },
+];
 
-  const services: Service[] = [
-    {
-      id: 1,
-      title: "Custom Website Development",
-      description: "We build tailor-made websites that perfectly align with your brand and business goals, focusing on user experience and conversion optimization.",
-      icon: Code,
-      color: "from-purple-500 to-indigo-600",
-      features: [
-        "Responsive design for all devices",
-        "Custom CMS integration",
-        "Performance optimization",
-        "Cross-browser compatibility",
-        "Accessibility compliance"
-      ]
-    },
-    {
-      id: 2,
-      title: "E-commerce Solutions",
-      description: "Create powerful online stores that drive sales and deliver exceptional shopping experiences with secure payment processing and inventory management.",
-      icon: ShoppingCart,
-      color: "from-blue-500 to-cyan-600",
-      features: [
-        "Shopping cart functionality",
-        "Secure payment gateways",
-        "Inventory management",
-        "Customer account management",
-        "Order processing & tracking"
-      ]
-    },
-    {
-      id: 3,
-      title: "SEO Optimization",
-      description: "Improve your visibility in search engines and drive more organic traffic to your website with our comprehensive SEO strategies.",
-      icon: Search,
-      color: "from-green-500 to-emerald-600",
-      features: [
-        "Keyword research & optimization",
-        "On-page SEO implementation",
-        "Technical SEO audits",
-        "Link building strategies",
-        "Analytics & reporting"
-      ]
-    },
-    {
-      id: 4,
-      title: "UI/UX Design",
-      description: "User-centered design that creates intuitive, engaging and conversion-optimized interfaces that delight your users and achieve business goals.",
-      icon: PenTool,
-      color: "from-pink-500 to-rose-600",
-      features: [
-        "User research & personas",
-        "Wireframing & prototyping",
-        "Interactive design mockups",
-        "Usability testing",
-        "Design system creation"
-      ]
-    },
-    {
-      id: 5,
-      title: "Web Hosting & Maintenance",
-      description: "Reliable hosting solutions and ongoing maintenance to keep your website secure, fast, and up-to-date with the latest technologies.",
-      icon: Server,
-      color: "from-amber-500 to-yellow-600",
-      features: [
-        "Secure cloud hosting",
-        "Regular backups & updates",
-        "Performance monitoring",
-        "24/7 technical support",
-        "Security scanning & protection"
-      ]
-    },
-    {
-      id: 6,
-      title: "WordPress Development",
-      description: "Custom WordPress solutions from blogs to complex applications and e-commerce stores, with tailored themes and plugins for your specific needs.",
-      icon: Layers,
-      color: "from-sky-500 to-blue-600",
-      features: [
-        "Custom theme development",
-        "Plugin integration & customization",
-        "WooCommerce integration",
-        "Performance optimization",
-        "Security hardening"
-      ]
-    },
-    {
-      id: 7,
-      title: "Mobile App Development",
-      description: "Native and cross-platform mobile applications that work flawlessly across all devices, delivering exceptional user experiences to your audience.",
-      icon: Smartphone,
-      color: "from-violet-500 to-purple-600",
-      features: [
-        "iOS & Android development",
-        "Cross-platform solutions",
-        "UI/UX design for mobile",
-        "App store optimization",
-        "Ongoing maintenance & updates"
-      ]
-    },
-    {
-      id: 8,
-      title: "API Development & Integration",
-      description: "Connect your systems and applications to streamline operations and improve efficiency with custom API development and third-party integrations.",
-      icon: LinkIcon,
-      color: "from-red-500 to-orange-600",
-      features: [
-        "Custom API development",
-        "Third-party API integration",
-        "API documentation",
-        "Authentication & security",
-        "Performance optimization"
-      ]
-    },
-  ];
+const additionalServices = [
+  { label: "Custom Software", path: "/services/custom-software-development" },
+  { label: "AI Chatbots", path: "/services/ai-chatbots" },
+  { label: "CRM Automation", path: "/services/crm-automation" },
+  { label: "API Integration", path: "/services/api-integration" },
+  { label: "Cloud Solutions", path: "/services/cloud-solutions" },
+  { label: "UI/UX Design", path: "/services/ui-ux-design" },
+  { label: "SEO Optimization", path: "/services/seo-optimization" },
+  { label: "WordPress Dev", path: "/services/wordpress-development" },
+  { label: "AI Workshops", path: "/services/ai-training-workshops" },
+];
+
+const ORANGE_TICKER = [
+  "Software engineered to convert and endure.",
+  "Multilingual AI agents built for real business work.",
+  "Global Study Abroad checklists tailored cleanly.",
+  "Workflows automated with clarity and speed.",
+];
+
+const GRAY_TICKER = [
+  "Custom web platforms, mobile apps & APIs.",
+  "Ideas built cleanly from first wireframe to production.",
+  "From customer conversation to completed action.",
+  "Trusted in Kolhapur, Pune, India & beyond.",
+];
+
+const processSteps = [
+  {
+    icon: Search,
+    title: "Research and positioning",
+    desc: "We audit workflows, audience intent and constraints so every technical decision starts from real signal.",
+  },
+  {
+    icon: Compass,
+    title: "Shape the architecture",
+    desc: "We structure the UX flow, data schemas and integrations that keep systems straightforward to run.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Build all the details",
+    desc: "We implement production code, responsive polish, SEO foundations and test edge cases end to end.",
+  },
+  {
+    icon: Send,
+    title: "Launch and support",
+    desc: "We deploy cleanly to production with analytics, backups and responsive iteration as usage grows.",
+  },
+];
+
+export default function Services() {
+  const reduceMotion = Boolean(useReducedMotion());
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow pt-24">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-muted/30 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-agency-purple/10 animate-pulse-slow"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-agency-pink/10 animate-float"></div>
-          </div>
-          
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient animate-scale-in">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-[#141210]">
+      <SeoHead
+        path="/services"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ]}
+        schemas={[
+          buildServiceSchema({
+            name: "Technology & Software Development Services",
+            description:
+              "Custom websites, mobile apps, custom software, AI agents, chatbots, CRM & process automation, API integrations and cloud engineering.",
+            path: "/services",
+            serviceType: "Software Engineering & AI Development",
+          }),
+        ]}
+      />
+
+      <SiteNav />
+
+      <main className="dv-dot-bg flex-grow pt-24 sm:pt-28">
+        {/* 1. Editorial Left-Aligned Hero Header (matching Agenciex Services visual hierarchy) */}
+        <section className="relative pt-8 sm:pt-12 pb-4">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-6xl">
+            <div className="relative mx-auto max-w-xl">
+              <span className="inline-block rounded-full bg-[#FF5422] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
                 Our Services
+              </span>
+
+              <h1
+                className="mt-4 font-bold tracking-tight text-[#141210]"
+                style={{ fontSize: "clamp(30px, 4.3vw, 50px)", lineHeight: 1.06 }}
+              >
+                Websites, AI agents and
+                <br />
+                software with a
+                <br />
+                point of view.
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
-                We offer a comprehensive range of digital services to help your business thrive in the digital landscape.
+
+              <p className="mt-4 max-w-xs text-xs sm:text-sm leading-relaxed text-stone-500">
+                We engineer resilient websites, apps, AI assistants and Study Abroad guidance that
+                deliver measurable outcomes.
               </p>
+
+              {/* Discreet right orange target dot accent */}
+              <div
+                aria-hidden="true"
+                className="hidden sm:flex absolute right-0 top-1/2 -translate-y-1/2 h-4 w-4 items-center justify-center rounded-full border border-[#FF5422]/45 bg-white/85"
+              >
+                <span className="h-1 w-1 rounded-full bg-[#FF5422]" />
+              </div>
             </div>
+          </div>
+
+          {/* 2. Drifting Watermark + Stepped Centerpiece Image */}
+          <div
+            className="pointer-events-none select-none overflow-hidden pt-8 sm:pt-10"
+            aria-hidden="true"
+          >
+            <DriftWatermark className="whitespace-nowrap text-center font-bold tracking-tight text-stone-200/75 text-[50px] sm:text-[92px] lg:text-[134px] leading-none">
+              engineering with a point of view
+            </DriftWatermark>
+          </div>
+
+          <div className="mt-2 sm:mt-4 flex justify-center px-0 lg:px-6">
+            <GrowBanner className="relative overflow-hidden bg-white aspect-[16/8.2] sm:aspect-[16/7.2] shadow-lg">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&h=820"
+                alt="dieVekter engineering team collaborating on software and AI products"
+                className="h-full w-full object-cover"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"
+              />
+              {/* Iconic stepped architectural corner cutouts matching reference */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute top-0 left-0 h-[40%] w-[10%] bg-white"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute top-0 right-0 h-[40%] w-[10%] bg-white"
+              />
+            </GrowBanner>
           </div>
         </section>
 
-        {/* Services Grid */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {services.map((service, index) => (
-                <div 
-                  key={service.id}
-                  className={cn(
-                    "bg-background rounded-lg border border-border p-6 transition-all duration-300 cursor-pointer animate-fade-in",
-                    activeServiceId === service.id ? "shadow-lg scale-[1.02] border-primary" : "hover-scale hover:shadow-md",
-                  )}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                  onClick={() => setActiveServiceId(activeServiceId === service.id ? null : service.id)}
+        {/* 3. Centered 6-Card Blush-Peach 3D Sculpture Grid */}
+        <section className="py-16 sm:py-24">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-5xl">
+            <div className="text-center mb-12">
+              <span className="inline-block rounded-full bg-[#FF5422] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+                Capabilities
+              </span>
+              <h2
+                className="mt-4 mx-auto max-w-md font-bold tracking-tight text-[#141210]"
+                style={{ fontSize: "clamp(24px, 3.3vw, 38px)", lineHeight: 1.1 }}
+              >
+                We help businesses launch,
+                <br />
+                stand out and scale faster.
+              </h2>
+            </div>
+
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {coreServices.map((s, i) => (
+                <motion.div
+                  key={s.id}
+                  initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06, duration: 0.4 }}
                 >
-                  <div className={cn(
-                    "w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4 transition-all duration-300 bg-gradient-to-r",
-                    service.color
-                  )}>
-                    <service.icon size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    {service.description}
-                  </p>
-                  
-                  <div className={cn(
-                    "overflow-hidden transition-all duration-500 ease-in-out",
-                    activeServiceId === service.id ? "max-h-[400px] opacity-100 mt-4" : "max-h-0 opacity-0"
-                  )}>
-                    <h4 className="font-semibold mb-2 text-primary">Key Features:</h4>
-                    <ul className="space-y-2 mb-4">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-2 animate-slide-in-bottom" style={{ animationDelay: `${idx * 100}ms` }}>
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button asChild size="sm" className="w-full bg-gradient hover:opacity-90 button-pop mt-2">
-                      <Link to="/contact">
-                        Get Started <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
+                  <Link
+                    to={s.path}
+                    onClick={() => trackServiceCta(s.path, "/services")}
+                    className="group relative flex h-full min-h-[268px] flex-col overflow-hidden rounded-2xl border border-[#FBE0D4] bg-[#FFF5F1] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF5422]/45 hover:shadow-[0_24px_48px_-20px_rgba(255,84,34,0.22)]"
+                  >
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -right-10 -bottom-10 h-52 w-52 rounded-full bg-[#FFEAE1]/80 transition-transform duration-500 group-hover:scale-110"
+                    />
+
+                    <div className="relative z-10">
+                      <h3 className="text-base sm:text-lg font-bold tracking-tight text-[#141210]">
+                        {s.title}
+                      </h3>
+                      <p className="mt-2 text-xs sm:text-[13px] leading-relaxed text-stone-600 max-w-[28ch]">
+                        {s.desc}
+                      </p>
+                    </div>
+
+                    <div className="relative z-10 mt-auto pt-6 flex items-end justify-between">
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#FF5422] text-white shadow-sm transition-transform duration-300 group-hover:scale-110">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                      <div className="transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-3">
+                        <s.Sculpture />
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
               ))}
             </div>
-          </div>
-        </section>
 
-        {/* Process Section */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center text-gradient animate-scale-in">
-              Our Process
-            </h2>
-            
-            <div className="max-w-4xl mx-auto">
-              {["Discovery", "Strategy", "Design", "Development", "Testing", "Launch", "Support"].map((step, index) => (
-                <div 
-                  key={step} 
-                  className="flex items-center mb-8 animate-slide-in-bottom"
-                  style={{ animationDelay: `${index * 150}ms` }}
+            {/* Compact directory pills preserving all internal service links */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+              {additionalServices.map((srv) => (
+                <Link
+                  key={srv.path}
+                  to={srv.path}
+                  onClick={() => trackServiceCta(srv.path, "/services")}
+                  className="rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-[11px] font-medium text-stone-600 transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
                 >
-                  <div className={`flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center text-white font-bold text-xl bg-gradient-to-br 
-                    ${index % 2 === 0 ? 'from-agency-purple to-agency-blue' : 'from-agency-blue to-agency-pink'}`}>
-                    {index + 1}
-                  </div>
-                  <div className="ml-6">
-                    <h3 className="text-xl font-bold mb-1">{step}</h3>
-                    <p className="text-muted-foreground">
-                      {index === 0 && "We get to know your business, goals, and target audience."}
-                      {index === 1 && "We develop a tailored strategy to meet your specific needs."}
-                      {index === 2 && "Our designers create intuitive, engaging interfaces."}
-                      {index === 3 && "Our developers bring the designs to life with clean code."}
-                      {index === 4 && "Rigorous testing ensures everything works flawlessly."}
-                      {index === 5 && "We deploy your project and ensure a smooth rollout."}
-                      {index === 6 && "Ongoing support and maintenance keep everything running smoothly."}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="bg-gradient-to-br from-agency-purple/20 via-agency-blue/20 to-agency-pink/20 rounded-xl p-12 text-center max-w-4xl mx-auto animate-fade-in">
-              <h2 className="text-3xl font-bold mb-4 text-gradient">Ready to Transform Your Digital Presence?</h2>
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Let's discuss how our services can help your business grow. Contact us today for a free consultation.
-              </p>
-              <Button asChild size="lg" className="bg-gradient hover:opacity-90 button-pop animate-pulse-slow">
-                <Link to="/contact">
-                  Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                  {srv.label}
                 </Link>
-              </Button>
+              ))}
             </div>
+
+            <p className="mt-8 text-center text-xs sm:text-sm text-stone-500">
+              Let&apos;s make great work together.{" "}
+              <Link
+                to="/contact"
+                className="font-semibold text-[#141210] underline underline-offset-4 hover:text-[#FF5422] transition-colors"
+              >
+                Start a project.
+              </Link>
+            </p>
+          </div>
+        </section>
+
+        {/* 4. Crossed Diagonal Ticker Ribbons */}
+        <section className="relative overflow-hidden py-12 sm:py-16 bg-white" aria-hidden="true">
+          <div className="-mx-6 rotate-[-1.8deg] bg-[#F4F3F1] border-y border-stone-200/80 py-3.5 shadow-sm">
+            <div className="dv-ribbon-track dv-ribbon-track--reverse">
+              {[...GRAY_TICKER, ...GRAY_TICKER, ...GRAY_TICKER].map((text, idx) => (
+                <span
+                  key={`sg-${idx}`}
+                  className="inline-flex items-center gap-6 px-4 text-sm sm:text-lg font-semibold text-[#141210]"
+                >
+                  {text}
+                  <span className="h-1.5 w-1.5 rounded-full bg-stone-400" />
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="-mx-6 -mt-4 rotate-[1.8deg] bg-[#FF5422] py-3.5 shadow-lg">
+            <div className="dv-ribbon-track">
+              {[...ORANGE_TICKER, ...ORANGE_TICKER, ...ORANGE_TICKER].map((text, idx) => (
+                <span
+                  key={`so-${idx}`}
+                  className="inline-flex items-center gap-6 px-4 text-sm sm:text-lg font-semibold text-white"
+                >
+                  {text}
+                  <span className="h-1.5 w-1.5 rounded-full bg-white/75" />
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 5. 4-Column Horizontal Process Row (matching "We craft digital experiences people remember.") */}
+        <section className="dv-dot-bg pt-14 sm:pt-20 pb-8">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-5xl">
+            <div className="max-w-lg">
+              <span className="inline-block rounded-full bg-[#FF5422] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
+                Our Process
+              </span>
+              <h2
+                className="mt-4 font-bold tracking-tight text-[#141210]"
+                style={{ fontSize: "clamp(24px, 3.2vw, 38px)", lineHeight: 1.08 }}
+              >
+                We engineer digital systems teams remember and rely on.
+              </h2>
+              <Link
+                to="/contact"
+                className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-4 py-1.5 text-xs font-medium text-[#141210] shadow-sm transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
+              >
+                Book a consultation <ArrowUpRight className="h-3.5 w-3.5 text-[#FF5422]" />
+              </Link>
+            </div>
+
+            <div className="mt-10 border-t border-stone-200 pt-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {processSteps.map((step) => {
+                const Icon = step.icon;
+                return (
+                  <div key={step.title}>
+                    <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-[#FBE0D4] bg-[#FFF5F1] text-[#FF5422]">
+                      <Icon className="h-4 w-4" />
+                    </div>
+                    <h3 className="text-sm font-bold text-[#141210] mb-2">{step.title}</h3>
+                    <p className="text-xs leading-relaxed text-stone-500">{step.desc}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Bottom full-width watermark flowing cleanly into dark footer */}
+          <div
+            className="pointer-events-none select-none overflow-hidden pt-12 sm:pt-16 pb-2"
+            aria-hidden="true"
+          >
+            <DriftWatermark className="whitespace-nowrap text-center font-bold tracking-tight text-stone-200/75 text-[52px] sm:text-[96px] lg:text-[138px] leading-none">
+              dieVekter technology &amp; study abroad
+            </DriftWatermark>
           </div>
         </section>
       </main>
-      <Footer />
+
+      <SiteFooter />
     </div>
   );
-};
-
-export default Services;
+}

@@ -1,242 +1,114 @@
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { SiteNav } from "@/components/dv/SiteNav";
+import { SiteFooter } from "@/components/dv/SiteFooter";
+import { CtaBand } from "@/components/home2/CtaBand";
+import {
+  AnimatedProjectsShowcase,
+  ProjectDomainMarquee,
+} from "@/components/dv/AnimatedProjectsShowcase";
+import { withDriftX, withScaleUp } from "@/components/home2/ScrollEffects";
+import { STUDIO_PROJECTS } from "@/data/projects";
+import { SeoHead } from "@/components/seo/SeoHead";
 
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Calendar, Users } from "lucide-react";
-import { useState } from "react";
+const DriftWatermark = withDriftX(motion.div);
+const ScaleGlow = withScaleUp(motion.div);
 
-const projects = [
-  {
-    id: 1,
-    title: "InspireGym",
-    description: "Modern fitness facility website with class booking and membership management.",
-    technologies: ["React", "Fitness", "Responsive Design"],
-    category: "Fitness & Health",
-    url: "https://inspiregym.vercel.app",
-    completedDate: "2024-08",
-    clientType: "Fitness Center"
-  },
-  {
-    id: 3,
-    title: "VFA Gym",
-    description: "Professional gym and fitness training center with online workout programs.",
-    technologies: ["React", "Fitness", "E-commerce"],
-    category: "Fitness & Health",
-    url: "https://vfagym.vercel.app",
-    completedDate: "2024-07",
-    clientType: "Gym & Fitness Center"
-  },
-  {
-    id: 4,
-    title: "DieVekter Tech",
-    description: "Modern portfolio and services showcase for a tech and design agency.",
-    technologies: ["React", "Portfolio", "Agency Website"],
-    category: "Agency",
-    url: "https://dievektor-tech.vercel.app",
-    completedDate: "2024-09",
-    clientType: "Design & Tech Agency"
-  },
-  {
-    id: 5,
-    title: "Lagori Foundation Kolhapur",
-    description: "An elegant portfolio website for a renowned NGO.",
-    technologies: ["React", "NGO Website", "Portfolio"],
-    category: "Non-Profit",
-    url: "https://www.lagorifoundation.in/",
-    completedDate: "2023-10",
-    clientType: "NGO"
-  },
-  {
-    id: 6,
-    title: "Incite Computer",
-    description: "Professional IT solutions and computer training center with service offerings.",
-    technologies: ["React", "IT Services", "Professional"],
-    category: "Technology",
-    url: "https://incite-computer.vercel.app",
-    completedDate: "2024-06",
-    clientType: "IT Solutions Provider"
-  },
-  {
-    id: 7,
-    title: "Samarth Infotech",
-    description: "Website made for an Computer Training Institute.",
-    technologies: ["React", "Training Institute", "Educational"],
-    category: "Education",
-    url: "https://mscit.ssitindia.com/",
-    completedDate: "2023-05",
-    clientType: "Computer Training Institute"
-  },
-  {
-    id: 8,
-    title: "Phonda Education Society",
-    description: "Website made for an College From Phonda.",
-    technologies: ["React", "College", "Education"],
-    category: "Colleges",
-    url: "https://phondaeducationsociety.com/",
-    completedDate: "2023-03",
-    clientType: "College"
-  },
-  {
-    id: 9,
-    title: "Jaihind Electricals",
-    description: "Professional website for a leading electrical equipment and appliances retailer with comprehensive product catalog.",
-    technologies: ["React", "E-commerce", "Retail"],
-    category: "Retail",
-    url: "https://www.jaihindelectricals.co.in/",
-    completedDate: "2024-06",
-    clientType: "Electrical Store"
-  },
-  {
-    id: 10,
-    title: "Incite Computer Phondaghat",
-    description: "Website for a computer training and IT services center providing quality education and technical solutions.",
-    technologies: ["React", "Educational", "IT Services"],
-    category: "Education",
-    url: "http://incitecomputerphondaghat.co.in/",
-    completedDate: "2024-05",
-    clientType: "Computer Training Center"
-  }
-];
+export default function Projects() {
+  const reduceMotion = Boolean(useReducedMotion());
 
-// Generate screenshot URL using a screenshot service
-const getScreenshotUrl = (url: string) => {
-  // Using microlink.io for website screenshots
-  const encodedUrl = encodeURIComponent(url);
-  return `https://api.microlink.io/?url=${encodedUrl}&screenshot=true&meta=false&embed=screenshot.url`;
-};
-
-const ProjectImage = ({ url, title }: { url: string; title: string }) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [imageError, setImageError] = useState(false);
-  
-  // Direct screenshot approach using screenshot API
-  const screenshotUrl = `https://image.thum.io/get/width/600/crop/400/noanimate/${url}`;
-  
   return (
-    <div className="relative overflow-hidden rounded-t-lg h-48 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
-      {!imageError ? (
-        <>
-          {!imageLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 bg-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold animate-pulse">
-                {title.charAt(0)}
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-[#141210]">
+      <SeoHead
+        path="/projects"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Projects", path: "/projects" },
+        ]}
+      />
+      <SiteNav />
+      <main className="flex-grow pt-24">
+        <section className="dv-dot-bg relative overflow-hidden pt-16 sm:pt-20 pb-8">
+          <ScaleGlow
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-24 left-1/3 h-72 w-72 rounded-full bg-[#FF5422]/12 blur-3xl"
+          />
+
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 text-center max-w-3xl relative z-10">
+            <motion.span
+              initial={reduceMotion ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35 }}
+              className="inline-block rounded-full bg-[#FF5422] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white mb-5"
+            >
+              Dievekter Tech · Live Websites
+            </motion.span>
+            <motion.h1
+              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.05 }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141210] mb-5"
+            >
+              Our Shipped <span className="text-[#FF5422]">Projects.</span>
+            </motion.h1>
+            <motion.p
+              initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.1 }}
+              className="text-base sm:text-lg text-stone-600 leading-relaxed"
+            >
+              Explore {STUDIO_PROJECTS.length} live client websites and web platforms crafted by
+              Dievekter Tech across technology, education, real estate, fitness, events, and digital
+              media.
+            </motion.p>
+          </div>
+
+          <div className="pointer-events-none select-none overflow-hidden pt-8" aria-hidden="true">
+            <DriftWatermark className="whitespace-nowrap text-center font-bold tracking-tight text-stone-200/75 text-[46px] sm:text-[84px] lg:text-[118px] leading-none">
+              live websites · custom web engineering
+            </DriftWatermark>
+          </div>
+        </section>
+
+        {/* Continuous clickable domain marquee ribbon */}
+        <ProjectDomainMarquee className="border-y" />
+
+        <section className="dv-dot-bg py-16 sm:py-20">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+            <AnimatedProjectsShowcase showFilters showSpotlight />
+
+            <div className="text-center mt-20">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-[#141210]">
+                Want Us to Build Your Website or App?
+              </h2>
+              <p className="text-stone-600 mb-6 max-w-xl mx-auto text-sm sm:text-base">
+                Let&apos;s design, engineer, and launch a high-converting digital platform tailored to
+                your business goals.
+              </p>
+              <div className="flex flex-wrap justify-center gap-3.5">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#FF5422] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#e8460e]"
+                >
+                  Start Your Project <ArrowUpRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href="https://wa.me/919404895667?text=Hi%20Dievekter%20Tech!%20I%20would%20like%20to%20start%20a%20website%20or%20app%20project."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-7 py-3.5 text-sm font-semibold text-[#141210] transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
+                >
+                  WhatsApp (+91 94048 95667) <ArrowUpRight className="h-4 w-4 text-[#FF5422]" />
+                </a>
               </div>
             </div>
-          )}
-          <img
-            src={screenshotUrl}
-            alt={`${title} website preview`}
-            loading="lazy"
-            decoding="async"
-            className={`w-full h-full object-cover object-top transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            onLoad={() => setImageLoaded(true)}
-            onError={() => setImageError(true)}
-          />
-        </>
-      ) : (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-gradient rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4 mx-auto">
-              {title.charAt(0)}
-            </div>
           </div>
-        </div>
-      )}
-      <div className="absolute top-3 right-3">
-        <Badge variant="secondary" className="bg-primary/90 text-primary-foreground backdrop-blur-sm">
-          {projects.find(p => p.title === title)?.category}
-        </Badge>
-      </div>
-    </div>
-  );
-};
+        </section>
 
-const Projects = () => {
-  return (
-    <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">
-              Our Projects
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Explore our portfolio of successful projects across various industries. 
-              Each project showcases our commitment to delivering innovative, scalable solutions.
-            </p>
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-background/60 backdrop-blur-sm border-border/50 overflow-hidden">
-                <ProjectImage url={project.url} title={project.title} />
-                
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-between">
-                    <span className="text-xl">{project.title}</span>
-                    <div className="flex gap-2">
-                      <a 
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button size="sm" variant="ghost" className="p-2">
-                          <ExternalLink className="w-4 h-4" />
-                        </Button>
-                      </a>
-                    </div>
-                  </CardTitle>
-                  <CardDescription className="text-sm">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{project.completedDate}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Users className="w-4 h-4" />
-                        <span>{project.clientType}</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-16">
-            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Project?</h3>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's collaborate to bring your vision to life with cutting-edge technology and innovative solutions.
-            </p>
-            <Button size="lg" className="bg-gradient hover:opacity-90">
-              Start Your Project
-            </Button>
-          </div>
-        </div>
+        <CtaBand />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
-};
-
-export default Projects;
+}

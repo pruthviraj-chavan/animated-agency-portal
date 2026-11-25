@@ -1,48 +1,50 @@
-import type { CSSProperties } from "react";
-import { Reveal, Section, SectionHeading } from "@/components/dv/primitives";
+import { motion } from "framer-motion";
 
 const steps = [
-  { n: "01", t: "Discover", ca: "199 95% 60%", ca2: "217 90% 62%", d: "We map the workflow, the data and the outcome that matters before writing a line of code." },
-  { n: "02", t: "Design", ca: "246 84% 68%", ca2: "280 70% 66%", d: "Architecture, interfaces and guardrails defined up front — so the system stays maintainable." },
-  { n: "03", t: "Build", ca: "38 92% 58%", ca2: "26 90% 60%", d: "Short iterative cycles with working software you can review every week." },
-  { n: "04", t: "Deploy", ca: "330 85% 62%", ca2: "300 80% 64%", d: "Production rollout with monitoring, fallbacks and clear ownership handover." },
-  { n: "05", t: "Improve", ca: "158 84% 45%", ca2: "187 92% 55%", d: "Measure, tune and extend — systems get better with usage, not worse." },
+  { n: "01", t: "Discover", d: "We map the workflow, data and outcome that matter before writing a line of code." },
+  { n: "02", t: "Design", d: "Architecture, interfaces and guardrails defined up front so systems stay maintainable." },
+  { n: "03", t: "Build", d: "Short iterative cycles with working software and live demos you review every week." },
+  { n: "04", t: "Deploy", d: "Production rollout with monitoring, fallbacks and complete ownership handover." },
+  { n: "05", t: "Improve", d: "Measure, tune and extend — systems get smarter and faster with real usage." },
 ];
 
 export function Process() {
   return (
-    <Section id="process">
-      <div
-        aria-hidden
-        className="dv-sec-glow top-[-4rem] left-1/3 h-72 w-[520px]"
-        style={{ "--ca": "246 84% 68%" } as CSSProperties}
-      />
+    <section className="dv-dot-bg py-20 sm:py-24" id="process">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="flex justify-center mb-5">
+          <span className="inline-block rounded-full bg-[#FF5422] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+            How we work
+          </span>
+        </div>
 
-      <SectionHeading
-        eyebrow="How we work"
-        title={
-          <>
-            An engineering process,{" "}
-            <span className="dv-text-gradient">not a project queue</span>
-          </>
-        }
-        subtitle="Every engagement follows the same disciplined path from problem to production."
-      />
+        <h2
+          className="text-center font-bold tracking-tight text-[#141210] mb-12"
+          style={{ fontSize: "clamp(26px, 3.6vw, 42px)", lineHeight: 1.08 }}
+        >
+          An engineering process,{" "}
+          <span className="text-[#FF5422]">not a project queue.</span>
+        </h2>
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        {steps.map((s, i) => (
-          <Reveal key={s.n} delay={i * 0.07}>
-            <div
-              className="dv-cardx relative h-full rounded-2xl border border-dv-line bg-dv-surface/60 p-6"
-              style={{ "--ca": s.ca, "--ca2": s.ca2 } as CSSProperties}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {steps.map((s, i) => (
+            <motion.div
+              key={s.n}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06, duration: 0.4 }}
+              className="rounded-2xl border border-[#FBE0D4] bg-[#FFF7F4] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF5422]/40 hover:shadow-md"
             >
-              <span className="dv-num-grad text-sm font-semibold tracking-[0.2em]">{s.n}</span>
-              <h3 className="mt-3 text-lg font-semibold text-dv-fg">{s.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-dv-muted">{s.d}</p>
-            </div>
-          </Reveal>
-        ))}
+              <span className="text-sm font-black tracking-[0.16em] text-[#FF5422]">
+                {s.n}
+              </span>
+              <h3 className="mt-3 text-lg font-bold text-[#141210]">{s.t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-stone-600">{s.d}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

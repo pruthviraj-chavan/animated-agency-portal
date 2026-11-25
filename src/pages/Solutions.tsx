@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/dv/SiteFooter";
 import { Reveal, Section, SectionHeading } from "@/components/dv/primitives";
 import { Process } from "@/components/home2/Process";
 import { CtaBand } from "@/components/home2/CtaBand";
+import { SeoHead } from "@/components/seo/SeoHead";
 
 const verticals = [
   {
@@ -29,23 +30,30 @@ const verticals = [
 
 const Solutions = () => {
   return (
-    <div className="dv-root flex min-h-screen flex-col overflow-x-hidden">
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-[#141210]">
+      <SeoHead
+        path="/solutions"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions" },
+        ]}
+      />
       <SiteNav />
       <main className="flex-grow">
-        <section className="relative overflow-hidden bg-dv-bg pt-32 pb-16 sm:pt-40 sm:pb-20">
-          <div className="dv-grid absolute inset-0 opacity-30" aria-hidden />
+        <section className="dv-dot-bg relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
           <div
-            aria-hidden
-            className="pointer-events-none absolute -top-32 left-1/3 h-[420px] w-[420px] rounded-full bg-dv-accent-2/10 blur-[150px]"
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-28 left-1/3 h-[380px] w-[380px] rounded-full bg-[#FF5422]/10 blur-[130px]"
           />
           <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-dv-accent">
+            <span className="inline-block rounded-full bg-[#FF5422] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
               Solutions
-            </p>
-            <h1 className="mt-5 max-w-3xl text-[2.2rem] leading-[1.08] sm:text-5xl lg:text-[3.6rem] font-semibold tracking-tight text-dv-fg">
-              Systems that think, ship and <span className="dv-text-gradient">run themselves</span>
+            </span>
+            <h1 className="mt-5 max-w-3xl text-[2.2rem] leading-[1.06] sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-[#141210]">
+              Systems that think, ship and{" "}
+              <span className="text-[#FF5422]">run themselves</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-dv-muted sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-stone-600 sm:text-lg">
               Three connected practices — AI, software engineering and automation — combined into
               production systems for growing businesses.
             </p>
@@ -59,14 +67,14 @@ const Solutions = () => {
               <Reveal key={v.title} delay={i * 0.08}>
                 <Link
                   to={v.path}
-                  className="group flex h-full flex-col rounded-2xl border border-dv-line bg-dv-bg/60 p-7 transition-all hover:-translate-y-1 hover:border-dv-accent/40 hover:shadow-[var(--dv-glow)]"
+                  className="group flex h-full flex-col rounded-2xl border border-[#FBE0D4] bg-white p-7 transition-all hover:-translate-y-1 hover:border-[#FF5422]/50 hover:shadow-[0_24px_48px_-20px_rgba(255,84,34,0.2)]"
                 >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-dv-line bg-dv-elevated text-dv-accent">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#FF5422] text-white">
                     <v.icon className="h-5 w-5" />
                   </span>
-                  <h2 className="mt-5 text-xl font-semibold text-dv-fg">{v.title}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-dv-muted">{v.desc}</p>
-                  <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-dv-fg">
+                  <h2 className="mt-5 text-xl font-bold text-[#141210]">{v.title}</h2>
+                  <p className="mt-3 text-sm leading-relaxed text-stone-600">{v.desc}</p>
+                  <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#FF5422]">
                     Explore
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </span>

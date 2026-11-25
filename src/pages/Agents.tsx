@@ -1,368 +1,339 @@
-
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { GradientBackgroundEffect } from "@/components/GradientBackgroundEffect";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bot, Brain, MessageSquare, Zap, Sparkles, Users, BarChart3, Settings, ArrowRight, CheckCircle, MessageCircle, Calendar, Mail, FileText, TrendingUp, Search, Database, ShoppingCart, Star, Heart, Scale, UserCheck, Mic, Target, Clock, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
-import { AIWorkflowAnimation } from "@/components/home/AIWorkflowAnimation";
+import {
+  ArrowUpRight,
+  Bot,
+  Calendar,
+  CheckCircle,
+  Database,
+  FileText,
+  Heart,
+  Mail,
+  MessageCircle,
+  MessageSquare,
+  Mic,
+  Scale,
+  Search,
+  Settings,
+  ShoppingCart,
+  Star,
+  Target,
+  TrendingUp,
+  UserCheck,
+} from "lucide-react";
+import { SiteNav } from "@/components/dv/SiteNav";
+import { SiteFooter } from "@/components/dv/SiteFooter";
+import { AIWorkflowDiagram } from "@/components/dv/AIWorkflowDiagram";
+import { CtaBand } from "@/components/home2/CtaBand";
+import { SeoHead } from "@/components/seo/SeoHead";
+import { buildServiceSchema } from "@/data/seoConfig";
 
 const agentCategories = [
   {
     id: "business",
-    title: "🔧 Business & Productivity Agents",
-    description: "Streamline operations and boost productivity",
-    gradient: "from-blue-500 to-cyan-600",
-    bgColor: "bg-blue-50/50 dark:bg-blue-950/20",
+    title: "Business & Productivity Agents",
+    description: "Streamline operations and automate customer workflows.",
     agents: [
       {
         title: "AI Customer Support Agent",
-        description: "Instantly answers customer queries across chat, email, and support tickets, reducing response time and support costs.",
+        description:
+          "Instantly answers customer queries across chat, email, and support tickets, reducing response time and support costs.",
         icon: MessageCircle,
-        features: ["24/7 instant responses", "Multi-channel support", "Ticket auto-routing", "Sentiment analysis"]
+        features: ["24/7 instant responses", "Multi-channel support", "Ticket auto-routing", "Sentiment analysis"],
       },
       {
         title: "AI Sales Assistant",
-        description: "Engages leads on your site or via email, qualifies them, and books meetings automatically with your sales team.",
+        description:
+          "Engages leads on your site or WhatsApp, qualifies them, and books meetings automatically with your sales team.",
         icon: Target,
-        features: ["Lead qualification", "Meeting scheduling", "CRM integration", "Follow-up automation"]
+        features: ["Lead qualification", "Meeting scheduling", "CRM integration", "Follow-up automation"],
       },
       {
         title: "AI Meeting Summarizer",
-        description: "Joins Zoom/Meet calls, transcribes discussions, and sends smart summaries and next steps to all participants.",
+        description:
+          "Transcribes discussions and sends smart summaries and action items to all participants.",
         icon: Calendar,
-        features: ["Auto transcription", "Smart summaries", "Action item extraction", "Meeting insights"]
+        features: ["Auto transcription", "Smart summaries", "Action item extraction", "Meeting insights"],
       },
       {
         title: "AI Email Responder",
-        description: "Automatically drafts and sends email replies based on context and tone, perfect for busy professionals and teams.",
+        description:
+          "Automatically drafts and sends context-aware email replies tailored to your tone.",
         icon: Mail,
-        features: ["Context-aware replies", "Tone matching", "Auto-scheduling", "Priority filtering"]
-      }
-    ]
+        features: ["Context-aware replies", "Tone matching", "Auto-scheduling", "Priority filtering"],
+      },
+    ],
   },
   {
     id: "marketing",
-    title: "📊 Marketing & Content Agents",
-    description: "Amplify your marketing efforts with AI",
-    gradient: "from-purple-500 to-indigo-600",
-    bgColor: "bg-purple-50/50 dark:bg-purple-950/20",
+    title: "Marketing & Content Agents",
+    description: "Amplify content workflows with AI tailored to your brand.",
     agents: [
       {
         title: "AI Content Creator",
-        description: "Generates SEO blogs, social media posts, and ad copy tailored to brand voice and current trends.",
+        description:
+          "Generates SEO blogs, social media posts, and product copy aligned to your brand voice.",
         icon: FileText,
-        features: ["SEO optimization", "Brand voice matching", "Trend analysis", "Multi-format content"]
+        features: ["SEO optimization", "Brand voice matching", "Trend analysis", "Multi-format content"],
       },
       {
         title: "AI Social Media Manager",
-        description: "Plans, schedules, and posts content while analyzing engagement for optimal growth strategies.",
+        description: "Plans, schedules, and analyzes engagement for consistent growth.",
         icon: TrendingUp,
-        features: ["Content scheduling", "Engagement analytics", "Growth strategies", "Hashtag optimization"]
+        features: ["Content scheduling", "Engagement analytics", "Growth strategies", "Hashtag optimization"],
       },
       {
         title: "AI Ad Optimizer",
-        description: "Creates, tests, and optimizes ad campaigns (Google/Facebook) using data to improve ROI.",
+        description: "Creates, tests, and refines ad campaigns to improve campaign ROI.",
         icon: Target,
-        features: ["A/B testing", "ROI optimization", "Audience targeting", "Budget allocation"]
-      }
-    ]
+        features: ["A/B testing", "ROI optimization", "Audience targeting", "Budget allocation"],
+      },
+    ],
   },
   {
     id: "knowledge",
-    title: "🧠 Knowledge & Research Agents",
-    description: "Transform data into actionable insights",
-    gradient: "from-green-500 to-emerald-600",
-    bgColor: "bg-green-50/50 dark:bg-green-950/20",
+    title: "Knowledge & Research Agents",
+    description: "Turn documents and spreadsheets into instant answers.",
     agents: [
       {
         title: "AI Research Assistant",
-        description: "Gathers and summarizes information from academic papers, blogs, or web pages for any topic or niche.",
+        description: "Synthesizes reports, papers, and documentation with cited takeaways.",
         icon: Search,
-        features: ["Academic research", "Web scraping", "Content summarization", "Citation management"]
+        features: ["Deep research", "Document parsing", "Content summarization", "Source citation"],
       },
       {
         title: "AI Data Analyst Agent",
-        description: "Accepts spreadsheets and dashboards, then explains trends, anomalies, or creates insights in plain language.",
+        description: "Explains trends, anomalies, and metrics from spreadsheets in plain language.",
         icon: Database,
-        features: ["Trend analysis", "Anomaly detection", "Visual insights", "Plain language reports"]
-      }
-    ]
+        features: ["Trend analysis", "Anomaly detection", "Visual insights", "Plain language reports"],
+      },
+    ],
   },
   {
     id: "ecommerce",
-    title: "🛒 E-Commerce Agents",
-    description: "Boost sales and customer experience",
-    gradient: "from-orange-500 to-red-600",
-    bgColor: "bg-orange-50/50 dark:bg-orange-950/20",
+    title: "E-Commerce Agents",
+    description: "Boost store conversion and reduce cart abandonment.",
     agents: [
       {
         title: "AI Shopping Assistant",
-        description: "Helps users find products based on preferences and FAQs, boosting conversion and reducing cart abandonment.",
+        description: "Helps shoppers discover products based on preferences and sizing.",
         icon: ShoppingCart,
-        features: ["Product recommendations", "Preference matching", "FAQ automation", "Cart recovery"]
+        features: ["Product recommendations", "Preference matching", "FAQ automation", "Cart recovery"],
       },
       {
-        title: "AI Review Generator",
-        description: "Creates believable customer reviews based on product details or usage patterns.",
+        title: "AI Review Insights",
+        description: "Summarizes customer feedback trends to surface product improvements.",
         icon: Star,
-        features: ["Authentic reviews", "Product analysis", "Usage patterns", "Review optimization"]
-      }
-    ]
+        features: ["Feedback clustering", "Product analysis", "Sentiment tracking", "Conversion insights"],
+      },
+    ],
   },
   {
     id: "specialized",
-    title: "👩‍⚕️ Specialized Agents",
-    description: "Industry-specific AI solutions",
-    gradient: "from-pink-500 to-rose-600",
-    bgColor: "bg-pink-50/50 dark:bg-pink-950/20",
+    title: "Specialized Industry Agents",
+    description: "Purpose-built assistants for healthcare, legal, and talent teams.",
     agents: [
       {
-        title: "AI Healthcare Chatbot",
-        description: "Assists patients with symptoms, appointment scheduling, or FAQ handling for clinics and hospitals.",
+        title: "AI Healthcare Assistant",
+        description: "Handles clinic appointments, triage FAQs, and patient reminders.",
         icon: Heart,
-        features: ["Symptom assessment", "Appointment booking", "Medical FAQs", "Patient support"]
+        features: ["Symptom guidance", "Appointment booking", "Medical FAQs", "Patient support"],
       },
       {
-        title: "AI Legal Document Drafting Agent",
-        description: "Drafts basic contracts, NDAs, and agreements from templates with custom user inputs.",
+        title: "AI Legal Document Assistant",
+        description: "Drafts standard contracts, NDAs, and checklists from vetted templates.",
         icon: Scale,
-        features: ["Contract drafting", "Legal templates", "Custom inputs", "Compliance checking"]
-      }
-    ]
-  },
-  {
-    id: "hr",
-    title: "💼 HR & Talent Agents",
-    description: "Streamline hiring and talent management",
-    gradient: "from-teal-500 to-cyan-600",
-    bgColor: "bg-teal-50/50 dark:bg-teal-950/20",
-    agents: [
+        features: ["Contract drafting", "Legal templates", "Custom inputs", "Clause checks"],
+      },
       {
         title: "AI Resume Screener",
-        description: "Scans resumes and filters top candidates based on job role and company priorities.",
+        description: "Filters candidates transparently against role requirements.",
         icon: UserCheck,
-        features: ["Resume parsing", "Candidate ranking", "Skill matching", "Bias reduction"]
+        features: ["Resume parsing", "Candidate ranking", "Skill matching", "Structured scorecards"],
       },
       {
-        title: "AI Interview Coach",
-        description: "Prepares candidates with mock interviews, feedback, and real-time tips.",
+        title: "Multilingual Voice Coach",
+        description: "Natural voice conversations across Hindi, Marathi, Hinglish, and English.",
         icon: Mic,
-        features: ["Mock interviews", "Real-time feedback", "Performance analytics", "Skill improvement"]
-      }
-    ]
-  }
+        features: ["Low-latency voice", "Regional accents", "Escalation handoff", "Call summaries"],
+      },
+    ],
+  },
 ];
 
-const integrationLogos = [
-  { name: "Slack", icon: "💬" },
-  { name: "Salesforce", icon: "☁️" },
-  { name: "HubSpot", icon: "🔶" },
-  { name: "Zapier", icon: "⚡" },
-  { name: "Google Analytics", icon: "📊" },
-  { name: "WordPress", icon: "📝" },
-  { name: "Shopify", icon: "🛒" },
-  { name: "Microsoft Teams", icon: "👥" }
+const integrations = [
+  "WhatsApp Business",
+  "Slack",
+  "Salesforce",
+  "HubSpot",
+  "Zapier",
+  "Google Workspace",
+  "Shopify",
+  "Microsoft Teams",
 ];
 
 export default function Agents() {
   return (
-    <div className="flex flex-col min-h-screen relative">
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <GradientBackgroundEffect />
-      </div>
-      
-      <Header />
-      <main className="flex-grow pt-16 relative z-10">
-        {/* Hero Section */}
-        <section className="py-20 bg-background/80 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10"></div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gradient animate-scale-in">
-                AI Agents & Chatbots
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 animate-fade-in">
-                Automation for your customers with access to 500+ app integrations to automate their own workflows. 
-                Your branding. Our cutting-edge AI technology.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-bottom">
-                <Button size="lg" className="bg-gradient hover:opacity-90 button-pop">
-                  <MessageSquare className="mr-2 h-5 w-5" />
-                  Get Started Today
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link to="/contact">Schedule Demo</Link>
-                </Button>
-              </div>
+    <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-[#141210]">
+      <SeoHead
+        path="/agents"
+        breadcrumbs={[
+          { name: "Home", path: "/" },
+          { name: "AI Agents", path: "/agents" },
+        ]}
+        schemas={[
+          buildServiceSchema({
+            name: "AI Agents & Voice Assistants Suite",
+            description:
+              "Domain-specific AI sales, support, voice and workflow agents built by DieVekter Tech.",
+            path: "/agents",
+            serviceType: "AI Agent Development",
+          }),
+        ]}
+      />
+      <SiteNav />
+      <main className="flex-grow pt-24">
+        {/* Hero */}
+        <section className="dv-dot-bg relative overflow-hidden py-16 sm:py-24">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-24 left-1/3 h-72 w-72 rounded-full bg-[#FF5422]/10 blur-3xl"
+          />
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 text-center max-w-4xl relative z-10">
+            <span className="inline-block rounded-full bg-[#FF5422] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white mb-5">
+              AI Agents Suite
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#141210] mb-5">
+              AI Agents &amp;{" "}
+              <span className="text-[#FF5422]">Voice Assistants</span>
+            </h1>
+            <p className="text-base sm:text-lg text-stone-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+              Multilingual automation wired into 500+ business tools — built under your brand with
+              dieVekter engineering.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3.5 justify-center">
+              <Link
+                to="/ai-agents-library"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF5422] px-7 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-[#e8460e] transition-colors"
+              >
+                <MessageSquare className="h-4 w-4" /> Explore Interactive Library
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-200 bg-white px-7 py-3.5 text-sm font-semibold text-[#141210] hover:border-[#FF5422] hover:text-[#FF5422] transition-colors"
+              >
+                Schedule Demo <ArrowUpRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* AI Workflow Animation */}
-        <section className="py-12 bg-muted/20">
-          <div className="container mx-auto px-4">
+        {/* Interactive Collaboration Diagram */}
+        <section className="border-y border-stone-100 bg-[#FFF8F5] py-14 sm:py-16">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8">
             <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gradient">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#141210] mb-2">
                 How Our AI Agents Work Together
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Watch our intelligent agents collaborate in real-time to process and deliver results
+              <p className="text-stone-600 text-sm sm:text-base">
+                Coordinated agents routing intent, knowledge, and action in real time
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
-              <AIWorkflowAnimation />
+              <AIWorkflowDiagram />
             </div>
           </div>
         </section>
 
-        {/* AI Agents Categories */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                Our Complete AI Agent Suite
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Discover specialized AI agents designed for every aspect of your business
-              </p>
+        {/* Agent Categories */}
+        <section className="dv-dot-bg py-16 sm:py-24">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 space-y-16">
+            {agentCategories.map((cat) => (
+              <div key={cat.id}>
+                <div className="mb-8">
+                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#FF5422]">
+                    Category
+                  </span>
+                  <h2 className="mt-1 text-2xl sm:text-3xl font-bold text-[#141210]">
+                    {cat.title}
+                  </h2>
+                  <p className="mt-1 text-sm text-stone-600">{cat.description}</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {cat.agents.map((agent) => (
+                    <div
+                      key={agent.title}
+                      className="rounded-2xl border border-[#FBE0D4] bg-white p-6 shadow-sm hover:-translate-y-1 hover:border-[#FF5422]/40 hover:shadow-md transition-all"
+                    >
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FF5422] text-white">
+                          <agent.icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="text-lg font-bold text-[#141210]">{agent.title}</h3>
+                      </div>
+                      <p className="text-sm text-stone-600 leading-relaxed mb-5">
+                        {agent.description}
+                      </p>
+                      <div className="border-t border-stone-100 pt-4">
+                        <p className="text-xs font-semibold uppercase tracking-wider text-stone-500 mb-3 flex items-center gap-1.5">
+                          <Settings className="h-3.5 w-3.5 text-[#FF5422]" /> Key Capabilities
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {agent.features.map((f) => (
+                            <div key={f} className="flex items-center gap-2 text-xs text-stone-600">
+                              <CheckCircle className="h-3.5 w-3.5 text-[#FF5422] shrink-0" />
+                              {f}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Integrations & Metrics */}
+        <section className="border-t border-stone-100 bg-[#FFF8F5] py-16">
+          <div className="container mx-auto px-5 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#141210] mb-3">
+              Seamless Integrations
+            </h2>
+            <p className="text-stone-600 mb-8 max-w-xl mx-auto text-sm sm:text-base">
+              Connect your agents directly with your existing CRM, support desk, and commerce stack.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mb-12">
+              {integrations.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-[#FBE0D4] bg-white px-4 py-2 text-xs font-semibold text-[#141210] shadow-sm"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
 
-            <div className="space-y-16">
-              {agentCategories.map((category, categoryIndex) => (
-                <div key={category.id} className="animate-fade-in" style={{ animationDelay: `${categoryIndex * 200}ms` }}>
-                  <div className="text-center mb-8">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2 text-gradient">
-                      {category.title}
-                    </h3>
-                    <p className="text-muted-foreground">{category.description}</p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {category.agents.map((agent, agentIndex) => (
-                      <Card 
-                        key={agent.title} 
-                        className={`${category.bgColor} border-border/50 hover:shadow-xl transition-all duration-300 animate-fade-in group hover:scale-105`} 
-                        style={{ animationDelay: `${(categoryIndex * 200) + (agentIndex * 100)}ms` }}
-                      >
-                        <CardHeader>
-                          <div className="flex items-center gap-4 mb-4">
-                            <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white bg-gradient-to-r ${category.gradient} group-hover:scale-110 transition-transform duration-300`}>
-                              <agent.icon size={24} />
-                            </div>
-                            <div className="flex-1">
-                              <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300">
-                                {agent.title}
-                              </CardTitle>
-                            </div>
-                          </div>
-                          <CardDescription className="text-base leading-relaxed">
-                            {agent.description}
-                          </CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                          <div>
-                            <h4 className="font-semibold mb-3 flex items-center">
-                              <Settings className="mr-2 h-4 w-4" />
-                              Key Features
-                            </h4>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                              {agent.features.map((feature, idx) => (
-                                <div key={idx} className="flex items-start text-sm text-muted-foreground">
-                                  <CheckCircle className="mr-2 h-3 w-3 text-green-500 flex-shrink-0 mt-0.5" />
-                                  {feature}
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { v: "500+", l: "App Integrations" },
+                { v: "24/7", l: "Availability" },
+                { v: "50+", l: "Languages Supported" },
+                { v: "99.9%", l: "Target Uptime" },
+              ].map((s) => (
+                <div key={s.l} className="dv-dot-orange rounded-2xl p-6 shadow-sm">
+                  <div className="text-3xl font-black text-[#141210]">{s.v}</div>
+                  <div className="text-xs font-medium text-[#141210]/85 mt-1">{s.l}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Integration Section */}
-        <section className="py-20 bg-background/80">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
-                Seamless Integrations
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Connect with your favorite tools and platforms
-              </p>
-              <div className="flex flex-wrap justify-center gap-6 mb-8">
-                {integrationLogos.map((integration, index) => (
-                  <div key={integration.name} className="flex flex-col items-center p-4 bg-background/60 rounded-lg border hover:shadow-md transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                    <span className="text-2xl mb-2">{integration.icon}</span>
-                    <span className="text-sm font-medium">{integration.name}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground">
-                And 500+ more integrations to power your workflows
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-16 bg-muted/20">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-              <div className="animate-fade-in">
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">500+</div>
-                <div className="text-muted-foreground">App Integrations</div>
-              </div>
-              <div className="animate-fade-in" style={{ animationDelay: '200ms' }}>
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">24/7</div>
-                <div className="text-muted-foreground">Availability</div>
-              </div>
-              <div className="animate-fade-in" style={{ animationDelay: '400ms' }}>
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">50+</div>
-                <div className="text-muted-foreground">Languages Supported</div>
-              </div>
-              <div className="animate-fade-in" style={{ animationDelay: '600ms' }}>
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">99.9%</div>
-                <div className="text-muted-foreground">Uptime Guarantee</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-agency-purple/10 via-agency-blue/10 to-agency-pink/10">
-          <div className="container mx-auto px-4">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Join thousands of businesses already using our AI agents to automate workflows, 
-                enhance customer experience, and drive growth.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-gradient hover:opacity-90 button-pop" asChild>
-                  <Link to="/contact" className="flex items-center">
-                    <Bot className="mr-2 h-5 w-5" />
-                    <span>Start Your AI Journey</span>
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline">
-                  Watch Demo
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CtaBand />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }

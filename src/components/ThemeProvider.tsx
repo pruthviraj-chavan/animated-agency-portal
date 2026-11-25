@@ -1,7 +1,6 @@
+import { createContext, useContext, useEffect } from "react";
 
-import { createContext, useContext, useEffect, useState } from "react";
-
-type Theme = "dark" | "light" | "system";
+type Theme = "light";
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -13,31 +12,17 @@ type ThemeProviderState = {
   setTheme: (theme: Theme) => void;
 };
 
-const ThemeProviderContext = createContext<ThemeProviderState | undefined>(
-  undefined
-);
+const ThemeProviderContext = createContext<ThemeProviderState | undefined>(undefined);
 
-export function ThemeProvider({
-  children,
-  defaultTheme = "dark", // Changed from 'system' to 'dark'
-}: ThemeProviderProps) {
-  // Force dark mode
-  const [theme] = useState<Theme>("dark");
-
+export function ThemeProvider({ children }: ThemeProviderProps) {
   useEffect(() => {
     const root = window.document.documentElement;
-    root.classList.remove("light", "dark");
-    root.classList.add("dark");
+    root.classList.remove("dark");
+    root.classList.add("light");
   }, []);
 
-  const value = {
-    theme,
-    // This is a no-op now since we always want dark mode
-    setTheme: () => {},
-  };
-
   return (
-    <ThemeProviderContext.Provider value={value}>
+    <ThemeProviderContext.Provider value={{ theme: "light", setTheme: () => {} }}>
       {children}
     </ThemeProviderContext.Provider>
   );

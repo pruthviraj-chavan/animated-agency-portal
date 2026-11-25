@@ -3,21 +3,29 @@ import { useLocation } from "react-router-dom";
 import { SiteNav } from "@/components/dv/SiteNav";
 import { SiteFooter } from "@/components/dv/SiteFooter";
 import { Hero } from "@/components/home2/Hero";
-import { IntelligentSystemsShowcase } from "@/components/home2/IntelligentSystemsShowcase";
+import { AboutStudio } from "@/components/home2/AboutStudio";
 import { Capabilities } from "@/components/home2/Capabilities";
-import { Process } from "@/components/home2/Process";
 import { Industries } from "@/components/home2/Industries";
-import { TechStack } from "@/components/home2/TechStack";
+import { StudyAbroadShowcase } from "@/components/home2/StudyAbroadShowcase";
+import { ProjectsShowcase } from "@/components/home2/ProjectsShowcase";
 import { Proof } from "@/components/home2/Proof";
+import { Process } from "@/components/home2/Process";
+import { TechStack } from "@/components/home2/TechStack";
 import { AIVideoService } from "@/components/home2/AIVideoService";
 import { CredentialsSection } from "@/components/home2/CredentialsSection";
+import { FaqSection, HOME_FAQS } from "@/components/home2/FaqSection";
 import { CtaBand } from "@/components/home2/CtaBand";
-import { AIChatBot } from "@/components/home/AIChatBot";
+import { SeoHead } from "@/components/seo/SeoHead";
+import {
+  buildFaqSchema,
+  buildLocalBusinessSchema,
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+} from "@/data/seoConfig";
 
 const Index = () => {
   const location = useLocation();
 
-  // Scroll to in-page targets linked from the main nav (e.g. /#technology).
   useEffect(() => {
     if (!location.hash) return;
     const el = document.getElementById(location.hash.slice(1));
@@ -27,22 +35,33 @@ const Index = () => {
   }, [location]);
 
   return (
-    <div className="dv-root flex min-h-screen flex-col overflow-x-hidden">
+    <div className="dv-home flex min-h-screen flex-col overflow-x-hidden bg-white">
+      <SeoHead
+        path="/"
+        schemas={[
+          buildOrganizationSchema(),
+          buildLocalBusinessSchema(),
+          buildWebSiteSchema(),
+          buildFaqSchema(HOME_FAQS),
+        ]}
+      />
       <SiteNav />
       <main className="flex-grow">
         <Hero />
-        <IntelligentSystemsShowcase />
+        <AboutStudio />
         <Capabilities />
+        <Industries />
+        <StudyAbroadShowcase />
+        <ProjectsShowcase />
         <Proof />
         <Process />
-        <Industries />
         <TechStack />
         <AIVideoService />
         <CredentialsSection />
+        <FaqSection />
         <CtaBand />
       </main>
       <SiteFooter />
-      <AIChatBot />
     </div>
   );
 };

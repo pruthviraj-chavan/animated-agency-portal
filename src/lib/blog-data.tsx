@@ -1,4 +1,62 @@
-import { CalendarDays, Clock, Tag, User } from "lucide-react";
+export type BlogCategorySlug =
+  | "technology"
+  | "website-development"
+  | "mobile-app-development"
+  | "artificial-intelligence"
+  | "business-automation"
+  | "study-abroad"
+  | "study-in-germany";
+
+export interface BlogCategoryInfo {
+  slug: BlogCategorySlug;
+  label: string;
+  description: string;
+}
+
+export const BLOG_CATEGORIES: BlogCategoryInfo[] = [
+  {
+    slug: "study-in-germany",
+    label: "Study in Germany",
+    description:
+      "Public university guides, APS India preparation, uni-assist steps and student visa documentation checklists.",
+  },
+  {
+    slug: "study-abroad",
+    label: "Study Abroad",
+    description:
+      "Profile evaluation, university shortlisting, SOP preparation and pre-departure readiness guides.",
+  },
+  {
+    slug: "artificial-intelligence",
+    label: "Artificial Intelligence",
+    description:
+      "Guides on agentic AI systems, voice assistants, RAG chatbots and AI literacy programs.",
+  },
+  {
+    slug: "website-development",
+    label: "Website Development",
+    description:
+      "Custom web architecture, technical SEO foundations, performance optimization and conversion engineering.",
+  },
+  {
+    slug: "mobile-app-development",
+    label: "Mobile App Development",
+    description:
+      "Cross-platform React Native and Flutter engineering practices for reliable Android & iOS apps.",
+  },
+  {
+    slug: "business-automation",
+    label: "Business Automation",
+    description:
+      "Workflow orchestration, CRM pipelines, API integrations, retail stock systems and cloud migrations.",
+  },
+  {
+    slug: "technology",
+    label: "Technology",
+    description:
+      "Broad software architecture, product engineering and digital transformation insights.",
+  },
+];
 
 export interface BlogPost {
   id: number;
@@ -6,15 +64,45 @@ export interface BlogPost {
   slug: string;
   excerpt: string;
   content: string;
+  category?: BlogCategorySlug;
   author: {
     name: string;
     avatar?: string;
   };
   date: string;
+  updatedDate?: string;
   readTime: string;
   tags: string[];
   coverImage: string;
   relatedPosts?: number[];
+  relatedServices?: { label: string; path: string }[];
+  officialReferences?: { name: string; url: string }[];
+}
+
+export function inferBlogCategory(post: BlogPost): BlogCategorySlug {
+  if (post.category) return post.category;
+  const hay = `${post.slug} ${post.title} ${post.tags.join(" ")}`.toLowerCase();
+  if (hay.includes("germany")) return "study-in-germany";
+  if (hay.includes("study abroad") || hay.includes("overseas")) return "study-abroad";
+  if (hay.includes("mobile app") || hay.includes("react native") || hay.includes("flutter")) {
+    return "mobile-app-development";
+  }
+  if (hay.includes("website") || hay.includes("e-commerce") || hay.includes("ecommerce") || hay.includes("seo")) {
+    return "website-development";
+  }
+  if (hay.includes("automation") || hay.includes("slack") || hay.includes("api") || hay.includes("billing") || hay.includes("stock")) {
+    return "business-automation";
+  }
+  if (hay.includes("ai") || hay.includes("agentic") || hay.includes("agi") || hay.includes("multimodal")) {
+    return "artificial-intelligence";
+  }
+  return "technology";
+}
+
+export function toIsoDateString(humanDate: string): string {
+  const parsed = Date.parse(humanDate);
+  if (Number.isNaN(parsed)) return "2026-10-01";
+  return new Date(parsed).toISOString().split("T")[0];
 }
 
 export const blogData: BlogPost[] = [
@@ -1827,5 +1915,157 @@ Connect your business systems with dieVekter. Contact team.dievekter@gmail.com f
     tags: ["API Development", "System Integration", "Business Automation", "REST API", "Workflow Automation", "dieVekter"],
     coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=630",
     relatedPosts: [8, 10, 18]
+  },
+  {
+    id: 23,
+    title: "Study in Germany for Indian Students: Universities, APS Certificate, Applications & Visa Checklist",
+    slug: "study-in-germany-complete-guide-indian-students",
+    category: "study-in-germany",
+    excerpt: "A factual roadmap for Indian students planning Bachelor's or Master's studies in Germany — covering DAAD shortlisting, APS India verification, uni-assist vs direct portals, blocked accounts and official visa steps.",
+    content: `
+## Study in Germany: Planning With Official Sources First
+
+Germany remains one of the strongest international education destinations for Indian students pursuing engineering, computer science, data analytics, applied sciences and management. Because public higher education regulations, credential checks and visa rules update periodically, starting your plan around primary official sources saves months of avoidable rework.
+
+### 1. Public Universities vs Universities of Applied Sciences (FH / Hochschule)
+
+Higher education in Germany broadly splits into research-focused **Universität** institutions and practice-oriented **Fachhochschule (Hochschule für angewandte Wissenschaften)** campuses, alongside state-recognized private institutions.
+
+- Many state-funded public universities in most German federal states charge low administrative semester contributions rather than high international tuition, though state exceptions (such as Baden-Württemberg) and specialized continuing-education Master's programs can levy tuition fees.
+- Always confirm current per-semester fees and credit prerequisites directly on the official university page and [DAAD Program Database](https://www.daad.de/en/).
+
+### 2. English-Taught vs German-Taught Tracks
+
+- Hundreds of English-taught Master's degrees and a selective range of English-taught Bachelor's tracks are listed across DAAD.
+- German-taught tracks widen university choices substantially and generally require recognized proficiency certificates such as TestDaF or Goethe-Zertifikat.
+- Even when studying in English, learning foundational German (A1–B1) helps with part-time internships, accommodation contracts and everyday city registration.
+
+### 3. APS Certificate Verification for Indian Students
+
+For most Indian applicants applying with Indian school or university qualifications, verification via [APS India](https://aps-india.de/) is mandatory for German student visa filing and frequently requested at the admission stage. Because APS processing queues fluctuate near major intakes, gather transcripts, degree certificates and required identity records well ahead of application deadlines.
+
+### 4. uni-assist vs Direct University Applications
+
+Depending on institutional rules, German universities require applications either through [uni-assist](https://www.uni-assist.de/en/) (including VPD — preliminary review documentation) or through the university's own application portal. Starting preparation early allows buffer time for certified translations or module descriptions.
+
+### 5. Blocked Account (Sperrkonto) & Student Visa Documentation
+
+National (Type D) student visa filings require demonstrating sufficient financial resources alongside admission proof, APS confirmation and valid travel/health insurance. Verify statutory financial amounts, recognized blocked account rules and consular jurisdiction rules strictly on [German Missions in India](https://india.diplo.de/in-en) before funding transfers or booking visa slots.
+
+### Transparent Advisory Note
+
+DIEVEKTER provides general guidance, shortlisting checklists and documentation organization. Final admission decisions stay exclusively with the respective universities, and visa decisions rest solely with the concerned diplomatic missions. Always book your [Study in Germany consultation](/study-abroad/germany) early in your timeline.
+    `,
+    author: {
+      name: "Pruthviraj Chavan"
+    },
+    date: "October 18, 2026",
+    updatedDate: "October 25, 2026",
+    readTime: "8 min read",
+    tags: ["Study in Germany", "Study Abroad", "APS India", "DAAD", "Student Visa"],
+    coverImage: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&h=630",
+    relatedPosts: [24, 16, 17],
+    relatedServices: [
+      { label: "Study in Germany Guide", path: "/study-abroad/germany" },
+      { label: "Visa & Pre-Departure Guidance", path: "/study-abroad/visa-guidance" },
+      { label: "Book Counselling", path: "/contact?vertical=study-abroad" }
+    ],
+    officialReferences: [
+      { name: "DAAD Course Database", url: "https://www.daad.de/en/" },
+      { name: "DAAD India", url: "https://www.daad.in/en/" },
+      { name: "APS India", url: "https://aps-india.de/" },
+      { name: "German Missions in India", url: "https://india.diplo.de/in-en" },
+      { name: "uni-assist", url: "https://www.uni-assist.de/en/" },
+      { name: "Federal Foreign Office", url: "https://www.auswaertiges-amt.de/en" }
+    ]
+  },
+  {
+    id: 24,
+    title: "How to Shortlist Overseas Universities: Profile Matching, Intakes & Document Readiness",
+    slug: "how-to-shortlist-overseas-universities-document-readiness",
+    category: "study-abroad",
+    excerpt: "A structured method for students evaluating countries, course syllabi, application portals and intake windows without commission bias.",
+    content: `
+## Building a Realistic Shortlist Before Applying Abroad
+
+Choosing overseas universities begins with honest alignment across curriculum prerequisites, language proficiency and intake timelines — rather than guessing from generic leaderboard lists.
+
+### 1. Match Module Credits and Core Subjects Early
+
+In technical fields such as computer science, mechanical engineering and quantitative business programs, European and public German faculties evaluate specific undergraduate credit distributions alongside aggregate percentages. Check course module handbooks directly on institutional portals.
+
+### 2. Map Intake Windows Backward
+
+- **Winter Intake (approx. September/October start)**: Most international applications close between March and July depending on portal processing.
+- **Summer Intake (approx. March/April start)**: Fewer courses open in summer, often closing between September and January.
+- Build a balanced 6-to-8 university list combining ambitious, target and practical public/recognized options.
+
+### 3. Prepare Reusable Core Folders
+
+- Clean high-resolution PDF scans of mark sheets, degree/provisional certificates and syllabus summaries.
+- Concise chronological CV (Europass or clean academic format).
+- Customized Statement of Purpose reflecting genuine coursework and technical projects.
+- Early coordination for academic or employer Letters of Recommendation.
+
+Need structured 1-on-1 counselling from Kolhapur, Pune or remotely? Explore [University Selection Counselling](/study-abroad/university-selection) or our [Study Abroad Consultancy hub](/study-abroad).
+    `,
+    author: {
+      name: "Pruthviraj Chavan"
+    },
+    date: "October 14, 2026",
+    updatedDate: "October 22, 2026",
+    readTime: "6 min read",
+    tags: ["Study Abroad", "University Selection", "Admissions", "SOP", "Kolhapur"],
+    coverImage: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&h=630",
+    relatedPosts: [23, 25],
+    relatedServices: [
+      { label: "Study Abroad Hub", path: "/study-abroad" },
+      { label: "Admission Assistance", path: "/study-abroad/admission-assistance" },
+      { label: "Student Resources", path: "/study-abroad/student-resources" }
+    ],
+    officialReferences: [
+      { name: "DAAD Program Search", url: "https://www.daad.de/en/" },
+      { name: "German Missions in India", url: "https://india.diplo.de/in-en" }
+    ]
+  },
+  {
+    id: 25,
+    title: "Custom React Websites vs Templates: Performance, Technical SEO & Lead Conversion for Indian Businesses",
+    slug: "custom-react-websites-vs-templates-technical-seo-indian-businesses",
+    category: "website-development",
+    excerpt: "When small and growing businesses in Maharashtra and India benefit from custom static-prerendered React sites instead of bloated multi-purpose themes.",
+    content: `
+## Why Website Architecture Shapes Both Organic Traffic and Enquiry Rate
+
+Many business websites launch with heavy off-the-shelf themes bundled with dozens of unused scripts, causing sluggish mobile loads, confusing page structure and poor search engine indexing.
+
+### 1. Initial HTML Crawlability & Prerendering
+
+Client-only single-page applications (SPAs) often ship an empty root container until JavaScript executes. Pairing React and Vite with static prerendering outputs complete semantic HTML, unique titles, descriptions, canonical links and JSON-LD structured data for every service page right inside initial responses.
+
+### 2. Core Web Vitals on Real Mobile Connections
+
+In Kolhapur, Pune and across India, customers evaluate agencies and retail brands primarily over mobile 4G/5G connections. Splitting interactive tool routes lazily, sizing media cleanly and eliminating unused libraries directly reduces Total Blocking Time and layout shifts.
+
+### 3. Frictionless Lead Routing
+
+Rather than burying visitors in multi-page generic contact templates, structured landing pages pair social proof with direct WhatsApp, phone and vertical-tagged form submissions.
+
+Looking to upgrade an existing site or build from scratch? Explore our [Custom Website Development](/services/website-development), [Technical SEO Services](/services/seo-optimization) and [Live Client Projects](/projects).
+    `,
+    author: {
+      name: "Pruthviraj Chavan"
+    },
+    date: "October 10, 2026",
+    updatedDate: "October 20, 2026",
+    readTime: "6 min read",
+    tags: ["Website Development", "Technical SEO", "React", "Small Business", "Kolhapur"],
+    coverImage: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&h=630",
+    relatedPosts: [18, 21, 22],
+    relatedServices: [
+      { label: "Website Development", path: "/services/website-development" },
+      { label: "SEO Optimization", path: "/services/seo-optimization" },
+      { label: "Shipped Websites", path: "/projects" }
+    ]
   }
 ];

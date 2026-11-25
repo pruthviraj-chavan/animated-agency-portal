@@ -6,7 +6,7 @@ export function Reveal({
   children,
   delay = 0,
   className,
-  y = 22,
+  y = 18,
 }: {
   children: ReactNode;
   delay?: number;
@@ -20,7 +20,7 @@ export function Reveal({
       initial={reduce ? { opacity: 0 } : { opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -42,8 +42,8 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative overflow-hidden py-20 sm:py-24 lg:py-32",
-        tone === "raised" ? "bg-dv-surface" : "bg-dv-bg",
+        "relative overflow-hidden py-16 sm:py-20 lg:py-24",
+        tone === "raised" ? "bg-[#FFF8F5] border-y border-[#FBE0D4]/60" : "dv-dot-bg",
         className,
       )}
     >
@@ -54,9 +54,9 @@ export function Section({
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-dv-accent">
+    <span className="inline-block rounded-full bg-[#FF5422] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
       {children}
-    </p>
+    </span>
   );
 }
 
@@ -76,11 +76,11 @@ export function SectionHeading({
   return (
     <Reveal className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="mt-3 text-[1.9rem] leading-[1.1] sm:text-4xl lg:text-[3.1rem] font-semibold tracking-tight text-dv-fg">
+      <h2 className="mt-4 text-[1.9rem] leading-[1.08] sm:text-4xl lg:text-[2.9rem] font-bold tracking-tight text-[#141210]">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base sm:text-lg leading-relaxed text-dv-muted">{subtitle}</p>
+        <p className="mt-4 text-base sm:text-lg leading-relaxed text-stone-500">{subtitle}</p>
       )}
     </Reveal>
   );
@@ -90,7 +90,7 @@ export function Panel({ children, className }: { children: ReactNode; className?
   return (
     <div
       className={cn(
-        "rounded-2xl border border-dv-line bg-dv-surface/70 backdrop-blur-sm",
+        "rounded-2xl border border-[#FBE0D4] bg-[#FFF5F1]",
         className,
       )}
     >
@@ -102,9 +102,9 @@ export function Panel({ children, className }: { children: ReactNode; className?
 export function Glow({ className }: { className?: string }) {
   return (
     <div
-      aria-hidden
+      aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute rounded-full blur-[140px] opacity-40",
+        "pointer-events-none absolute rounded-full blur-[120px] opacity-30",
         className,
       )}
     />

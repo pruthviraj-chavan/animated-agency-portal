@@ -1,24 +1,40 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Mail, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { name: "AI Agents", path: "/agents" },
-  { name: "Solutions", path: "/solutions" },
-  { name: "Technology", path: "/#technology" },
-  { name: "Projects", path: "/portfolio" },
-  { name: "About", path: "/about" },
-  { name: "Blog", path: "/blog" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/", match: (p: string) => p === "/" },
+  { name: "About", path: "/about", match: (p: string) => p === "/about" },
+  {
+    name: "Services",
+    path: "/services",
+    match: (p: string) => p.startsWith("/services") || p.startsWith("/solutions") || p === "/agents",
+  },
+  {
+    name: "Study Abroad",
+    path: "/study-abroad",
+    match: (p: string) => p.startsWith("/study-abroad"),
+  },
+  {
+    name: "Projects",
+    path: "/projects",
+    match: (p: string) => p === "/projects" || p === "/portfolio" || p === "/products",
+  },
+  { name: "Blog", path: "/blog", match: (p: string) => p.startsWith("/blog") },
+  { name: "Contact", path: "/contact", match: (p: string) => p === "/contact" },
 ];
 
 const MOBILE_EXTRA = [
-  { name: "AI Solutions", path: "/solutions/ai" },
-  { name: "Software", path: "/solutions/software" },
-  { name: "Automation", path: "/solutions/automation" },
+  { name: "Study in Germany", path: "/study-abroad/germany" },
+  { name: "AI Agents", path: "/services/ai-agents" },
+  { name: "Website Dev", path: "/services/website-development" },
+  { name: "Solutions", path: "/solutions" },
+  { name: "Portfolio", path: "/portfolio" },
   { name: "Products", path: "/products" },
+  { name: "Internships", path: "/internship" },
+  { name: "Terms & Legal", path: "/terms" },
 ];
 
 export function SiteNav() {
@@ -27,7 +43,7 @@ export function SiteNav() {
   const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -42,90 +58,73 @@ export function SiteNav() {
     };
   }, [open]);
 
-  // The homepage hero is a bright video, so the fixed nav needs ink-colored
-  // text while it sits transparently on top of it.
-  const onLightHero = location.pathname === "/" && !scrolled && !open;
-
   return (
     <>
       <header
         className={cn(
           "fixed top-0 inset-x-0 z-50 transition-all duration-300",
           scrolled
-            ? "bg-dv-bg/70 backdrop-blur-xl border-b border-dv-line py-3"
+            ? "bg-white/90 backdrop-blur-xl border-b border-stone-200/80 py-2.5 shadow-[0_4px_24px_rgba(0,0,0,0.03)]"
             : "bg-transparent py-4 sm:py-5",
         )}
       >
-        <div className="container mx-auto px-5 sm:px-6 lg:px-8 flex items-center justify-between gap-4">
-          <Link to="/" className="flex items-center gap-2.5 min-w-0">
-            <span
-              className={cn(
-                "relative flex h-9 w-9 items-center justify-center rounded-lg border",
-                onLightHero
-                  ? "border-[hsl(var(--dv-jungle-ink)/0.12)] bg-[hsl(var(--dv-jungle-paper)/0.9)] backdrop-blur-sm shadow-sm"
-                  : "border-dv-line bg-dv-elevated",
-              )}
-            >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+          {/* Brand */}
+          <Link to="/" className="flex items-center gap-2 min-w-0 group shrink-0">
+            <span className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-[#FFFDFB] p-0.5 sm:p-1 ring-1 ring-[#FBE0D4] shadow-[0_2px_10px_rgba(255,84,34,0.08)] transition-transform group-hover:scale-105">
               <img
                 src="/dievektor_logo.png"
                 alt="dieVekter logo"
-                className="h-6 w-6 object-contain"
+                className="h-full w-full object-contain"
                 loading="eager"
               />
             </span>
-            <span
-              className={cn(
-                "text-lg font-semibold tracking-tight",
-                onLightHero ? "text-[hsl(var(--dv-jungle-ink))]" : "text-dv-fg",
-              )}
-            >
-              die<span className="dv-text-gradient">Vekter</span>
+            <span className="text-[17px] sm:text-[19px] font-bold tracking-tight text-[#141210]">
+              die<span className="text-[#FF5422]">Vekter</span>
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
-            {NAV.map((l) => (
-              <Link
-                key={l.name}
-                to={l.path}
-                className={cn(
-                  "relative px-3.5 py-2 text-sm font-medium transition-colors rounded-lg",
-                  onLightHero
-                    ? "text-[hsl(var(--dv-jungle-ink)/0.72)] hover:text-[hsl(var(--dv-jungle-ink))] hover:bg-[hsl(var(--dv-jungle-ink)/0.07)]"
-                    : "text-dv-muted hover:text-dv-fg hover:bg-dv-fg/[0.04]",
-                )}
-              >
-                {l.name}
-              </Link>
-            ))}
+          {/* Center pill nav */}
+          <nav
+            aria-label="Primary navigation"
+            className="hidden lg:flex items-center gap-0.5 rounded-full border border-stone-200/90 bg-white/95 p-1 shadow-[0_2px_14px_rgba(0,0,0,0.04)] backdrop-blur-md"
+          >
+            {NAV.map((item) => {
+              const active = item.match(location.pathname);
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={cn(
+                    "px-4 py-1.5 text-[13.5px] font-medium rounded-full transition-all duration-200 whitespace-nowrap",
+                    active
+                      ? "bg-[#FF5422] text-white font-semibold shadow-sm"
+                      : "text-stone-600 hover:text-[#141210] hover:bg-stone-100/80",
+                  )}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
 
-          <div className="flex items-center gap-2">
+          {/* Right actions */}
+          <div className="flex items-center gap-2 shrink-0">
             <Link
               to="/contact"
-              className={cn(
-                "hidden sm:inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition-all hover:-translate-y-px",
-                onLightHero
-                  ? "bg-[hsl(var(--dv-jungle-ink))] text-dv-fg hover:opacity-90"
-                  : "bg-dv-fg px-4 py-2 text-dv-bg hover:opacity-90",
-              )}
+              className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-stone-200 bg-white px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-[13.5px] font-medium text-[#141210] shadow-[0_2px_10px_rgba(0,0,0,0.04)] transition-all hover:border-[#FF5422] hover:text-[#FF5422] whitespace-nowrap"
             >
-              Start a Project
-              <ArrowUpRight className="h-4 w-4" />
+              <Mail className="h-3.5 w-3.5 text-[#FF5422]" />
+              <span>Get in touch</span>
             </Link>
+
             <button
-              type="button"
-              aria-label={open ? "Close menu" : "Open menu"}
-              aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className={cn(
-                "lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border",
-                onLightHero
-                  ? "border-[hsl(var(--dv-jungle-ink)/0.15)] bg-[hsl(var(--dv-jungle-paper)/0.85)] text-[hsl(var(--dv-jungle-ink))] backdrop-blur-sm"
-                  : "border-dv-line bg-dv-surface text-dv-fg",
-              )}
+              aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={open}
+              className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-[#141210] shadow-sm transition-colors hover:border-[#FF5422]"
             >
-              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
             </button>
           </div>
         </div>
@@ -134,57 +133,58 @@ export function SiteNav() {
       <AnimatePresence>
         {open && (
           <motion.div
-            key="menu"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 lg:hidden bg-dv-bg/97 backdrop-blur-2xl"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 lg:hidden bg-white pt-24 pb-8 px-6 overflow-y-auto"
           >
-            <div className="dv-grid absolute inset-0 opacity-30" aria-hidden />
-            <div className="relative h-full overflow-y-auto px-6 pt-24 pb-12">
-              <nav className="flex flex-col">
-                {NAV.map((l, i) => (
-                  <motion.div
-                    key={l.name}
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 + i * 0.05, duration: 0.35 }}
+            <div className="flex flex-col space-y-2 max-w-md mx-auto">
+              {NAV.map((item) => {
+                const active = item.match(location.pathname);
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={cn(
+                      "flex items-center justify-between rounded-2xl px-5 py-4 text-xl font-semibold transition-colors",
+                      active
+                        ? "bg-[#FF5422] text-white"
+                        : "bg-stone-50 text-[#141210] hover:bg-[#FFF4F0]",
+                    )}
                   >
-                    <Link
-                      to={l.path}
-                      className="block border-b border-dv-line py-4 text-2xl font-semibold tracking-tight text-dv-fg"
-                    >
-                      {l.name}
-                    </Link>
-                  </motion.div>
-                ))}
-              </nav>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-                className="mt-8 grid grid-cols-2 gap-x-4 gap-y-3"
-              >
-                {MOBILE_EXTRA.map((l) => (
-                  <Link key={l.name} to={l.path} className="py-2 text-sm text-dv-muted">
-                    {l.name}
+                    {item.name}
+                    <ArrowUpRight className="h-5 w-5 opacity-70" />
+                  </Link>
+                );
+              })}
+
+              <div className="pt-4 grid grid-cols-2 gap-2.5">
+                {MOBILE_EXTRA.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="rounded-xl border border-stone-200 px-4 py-3 text-sm font-medium text-stone-700 hover:border-[#FF5422] hover:text-[#FF5422]"
+                  >
+                    {item.name}
                   </Link>
                 ))}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
-                className="mt-8"
-              >
-                <Link
-                  to="/contact"
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-dv-fg px-6 py-4 text-base font-semibold text-dv-bg"
+              </div>
+
+              <div className="pt-6 border-t border-stone-200 space-y-2 text-xs text-stone-500">
+                <a href="mailto:team.dievekter@gmail.com" className="block hover:text-[#FF5422]">
+                  team.dievekter@gmail.com
+                </a>
+                <a
+                  href="https://wa.me/919404895667"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="block hover:text-[#FF5422]"
                 >
-                  Start a Project <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </motion.div>
+                  WhatsApp: +91 94048 95667
+                </a>
+                <p>Radhanagari, Kolhapur · UDYAM-MH-15-0320983</p>
+              </div>
             </div>
           </motion.div>
         )}

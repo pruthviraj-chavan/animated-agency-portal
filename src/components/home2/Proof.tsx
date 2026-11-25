@@ -1,99 +1,119 @@
 import { Link } from "react-router-dom";
-import type { CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
-import { Reveal, Section, SectionHeading } from "@/components/dv/primitives";
+import { motion } from "framer-motion";
 
-const stats = [
-  { v: "40+", l: "Products & systems shipped", ca: "199 95% 60%", ca2: "217 90% 62%" },
-  { v: "6+", l: "Industries served", ca: "246 84% 68%", ca2: "280 70% 66%" },
-  { v: "3", l: "Core capability verticals", ca: "38 92% 58%", ca2: "26 90% 60%" },
-  { v: "24/7", l: "Agent availability", ca: "158 84% 45%", ca2: "187 92% 55%" },
-];
-
-const work = [
+const recognitions = [
   {
-    t: "Multilingual support agent",
-    d: "A voice and chat agent handling customer queries in Hindi, English and code-mixed conversations, escalating cleanly to humans.",
-    tag: "AI Agents",
-    ca: "199 95% 60%",
+    year: "2026",
+    recognition: "Government Registered Micro Enterprise",
+    platform: "Udyam · MSME India",
+    project: "UDYAM-MH-15-0320983",
+    href: "https://udyamregistration.gov.in/Udyam_Verify.aspx",
+    external: true,
   },
   {
-    t: "Operations dashboard platform",
-    d: "A web platform unifying scattered spreadsheets into one live operational view with role-based access.",
-    tag: "Software",
-    ca: "246 84% 68%",
+    year: "2026",
+    recognition: "Verified Business Identifier",
+    platform: "Dun & Bradstreet",
+    project: "D-U-N-S 312163123",
+    href: "https://www.dnb.com/duns-number/lookup.html",
+    external: true,
   },
   {
-    t: "Lead-to-CRM automation",
-    d: "Inbound enquiries captured, qualified and written into CRM automatically, with follow-up sequences.",
-    tag: "Automation",
-    ca: "158 84% 45%",
+    year: "2025",
+    recognition: "Rising Talent · 100% Job Success",
+    platform: "Upwork Verified",
+    project: "Pruthviraj C. · dieVekter",
+    href: "https://www.upwork.com/freelancers/pruthviraj?mp_source=share",
+    external: true,
+  },
+  {
+    year: "2025",
+    recognition: "AI Education & School Workshops",
+    platform: "20+ Schools · Maharashtra",
+    project: "2,000+ Students Trained",
+    href: "/services/ai-training-workshops",
+    external: false,
+  },
+  {
+    year: "2025",
+    recognition: "Multilingual Voice & Web Production",
+    platform: "Dievekter Tech Deployments",
+    project: "9+ Live Websites & 40+ Systems",
+    href: "/projects",
+    external: false,
   },
 ];
 
 export function Proof() {
   return (
-    <Section id="work" tone="raised">
-      <div
-        aria-hidden
-        className="dv-sec-glow -top-24 right-[12%] h-72 w-[460px]"
-        style={{ "--ca": "38 92% 58%" } as CSSProperties}
-      />
-      <div
-        aria-hidden
-        className="dv-sec-glow bottom-[-6rem] left-[6%] h-80 w-[520px]"
-        style={{ "--ca": "199 95% 60%" } as CSSProperties}
-      />
+    <section className="dv-dot-bg py-20 sm:py-28" id="work">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-5xl">
+        <div className="flex justify-center mb-5">
+          <span className="inline-block rounded-full bg-[#FF5422] px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+            Recognition &amp; Proof
+          </span>
+        </div>
 
-      <SectionHeading
-        eyebrow="Proof"
-        title={
-          <>
-            Work that runs in the <span className="dv-text-gradient">real world</span>
-          </>
-        }
-        subtitle="Selected examples of the systems we design, build and maintain."
-      />
-
-      <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {stats.map((s, i) => (
-          <Reveal key={s.l} delay={i * 0.06}>
-            <div
-              className="dv-cardx relative rounded-2xl border border-dv-line bg-dv-bg/60 p-5"
-              style={{ "--ca": s.ca, "--ca2": s.ca2 } as CSSProperties}
-            >
-              <p className="dv-num-grad text-3xl font-semibold tracking-tight sm:text-4xl">{s.v}</p>
-              <p className="mt-1.5 text-xs leading-snug text-dv-dim sm:text-sm">{s.l}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-
-      <div className="mt-6 grid gap-5 lg:grid-cols-3">
-        {work.map((w, i) => (
-          <Reveal key={w.t} delay={i * 0.08}>
-            <div
-              className="dv-cardx flex h-full flex-col rounded-2xl border border-dv-line bg-dv-bg/60 p-6"
-              style={{ "--ca": w.ca } as CSSProperties}
-            >
-              <span className="dv-chip w-fit rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-wider">
-                {w.tag}
-              </span>
-              <h3 className="mt-4 text-lg font-semibold text-dv-fg">{w.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-dv-muted">{w.d}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
-
-      <Reveal delay={0.15} className="mt-8">
-        <Link
-          to="/portfolio"
-          className="inline-flex items-center gap-2 rounded-full border border-dv-line bg-dv-bg px-6 py-3 text-sm font-semibold text-dv-fg transition-colors hover:border-dv-accent/40"
+        <h2
+          className="text-center font-bold tracking-tight text-[#141210] mb-12"
+          style={{ fontSize: "clamp(28px, 3.8vw, 44px)", lineHeight: 1.08 }}
         >
-          View more work <ArrowUpRight className="h-4 w-4" />
-        </Link>
-      </Reveal>
-    </Section>
+          Work that gets noticed.
+        </h2>
+
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="border-b border-stone-900/80 text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-[#141210]">
+                <th className="pb-3.5 pr-6">Year</th>
+                <th className="pb-3.5 pr-6">Recognition</th>
+                <th className="pb-3.5 pr-6 hidden sm:table-cell">Platform</th>
+                <th className="pb-3.5 pr-4">Reference</th>
+                <th className="pb-3.5 w-8" aria-label="Open link" />
+              </tr>
+            </thead>
+            <tbody>
+              {recognitions.map((row, i) => (
+                <motion.tr
+                  key={row.recognition}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05, duration: 0.35 }}
+                  className="group border-b border-stone-200/80 hover:bg-[#FFF4F0]/70 transition-colors"
+                >
+                  <td className="py-4 pr-6 text-stone-500 font-medium">{row.year}</td>
+                  <td className="py-4 pr-6 text-[#141210] font-medium">{row.recognition}</td>
+                  <td className="py-4 pr-6 text-stone-500 hidden sm:table-cell">{row.platform}</td>
+                  <td className="py-4 pr-4 text-stone-600">{row.project}</td>
+                  <td className="py-4 text-right">
+                    {row.external ? (
+                      <a
+                        href={row.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Verify ${row.recognition}`}
+                        className="inline-flex h-8 w-8 items-center justify-center rounded-full text-stone-500 group-hover:bg-[#FF5422] group-hover:text-white transition-colors"
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    ) : (
+                      <Link
+                        to={row.href}
+                        aria-label={`View ${row.recognition}`}
+                        className="inline-flex h-8 w-8 items-center justify-center rounded-full text-stone-500 group-hover:bg-[#FF5422] group-hover:text-white transition-colors"
+                      >
+                        <ArrowUpRight className="h-4 w-4" />
+                      </Link>
+                    )}
+                  </td>
+                </motion.tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
   );
 }

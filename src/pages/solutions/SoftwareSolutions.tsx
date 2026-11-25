@@ -2,6 +2,8 @@ import { SolutionPage } from "@/components/dv/SolutionPage";
 
 const SoftwareSolutions = () => (
   <SolutionPage
+    path="/solutions/software"
+    serviceType="Software Engineering Solutions"
     eyebrow="Software Engineering"
     title={<>Product-grade <span className="dv-text-gradient">software</span>, built to last</>}
     intro="We build web platforms, mobile applications and APIs with modern architecture, clean interfaces and the operational tooling needed to run them in production."

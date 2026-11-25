@@ -1,0 +1,21 @@
+# dieVekter (DIEVEKTER / DieVekter Tech)
+
+> Registered Indian engineering & advisory enterprise (UDYAM-MH-15-0320983, D-U-N-S 312163123) based in Radhanagari, Kolhapur, Maharashtra, India.
+
+## Core Business Verticals
+- Technology & Software Solutions: Custom websites, e-commerce storefronts, cross-platform mobile apps, custom business software, multilingual AI agents (Hindi, Marathi, Hinglish, English), AI chatbots, CRM & business workflow automation, API integrations, cloud & backend engineering, UI/UX design, technical SEO.
+- Study Abroad Consultancy: Overseas education counselling, university shortlisting, Study in Germany checklists (public vs private institutions, APS India, uni-assist, student visa documentation checklist alignment via DAAD and German Missions in India).
+
+## Primary Pages
+- Home: https://www.dievekter.tech/
+- Technology Services: https://www.dievekter.tech/services
+- Study Abroad Hub: https://www.dievekter.tech/study-abroad
+- Study in Germany Guide: https://www.dievekter.tech/study-abroad/germany
+- Shipped Websites: https://www.dievekter.tech/projects
+- Journal & Guides: https://www.dievekter.tech/blog
+- About Us: https://www.dievekter.tech/about
+- Contact: https://www.dievekter.tech/contact
+
+## Contact
+- Email: team.dievekter@gmail.com
+- Phone / WhatsApp: +91 94048 95667

@@ -2,6 +2,8 @@ import { SolutionPage } from "@/components/dv/SolutionPage";
 
 const AISolutions = () => (
   <SolutionPage
+    path="/solutions/ai"
+    serviceType="AI Agents and Voice Solutions"
     eyebrow="AI Solutions"
     title={<>Multilingual <span className="dv-text-gradient">AI agents</span> that complete real work</>}
     intro="We design conversational and voice AI systems that understand Indian languages and code-mixed speech, then take action inside your CRM, database and workflows."
