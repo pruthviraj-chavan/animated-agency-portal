@@ -10,55 +10,6 @@
       ],
       "destination": "https://www.dievekter.tech/$1",
       "permanent": true
-    },
-    {
-      "source": "/services/custom-website-development",
-      "destination": "/services/website-development",
-      "permanent": true
-    },
-    {
-      "source": "/services/ecommerce-solutions",
-      "destination": "/services/ecommerce-development",
-      "permanent": true
-    },
-    {
-      "source": "/services/api-development",
-      "destination": "/services/api-integration",
-      "permanent": true
-    },
-    {
-      "source": "/services/web-hosting",
-      "destination": "/services/cloud-solutions",
-      "permanent": true
-    },
-    {
-      "source": "/about-us",
-      "destination": "/about",
-      "permanent": true
-    },
-    {
-      "source": "/contact-us",
-      "destination": "/contact",
-      "permanent": true
     }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
-        { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Content-Type, Accept" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
-      ]
-    },
-    {
-      "source": "/(.*)\\.js",
-      "headers": [
-        { "key": "Content-Type", "value": "application/javascript; charset=utf-8" }
-      ]
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  ]
 }

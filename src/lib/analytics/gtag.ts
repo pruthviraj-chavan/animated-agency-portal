@@ -32,10 +32,7 @@ function sanitizeParams(
 }
 
 export function getGaMeasurementId(): string {
-  const envId =
-    typeof import.meta !== "undefined" && import.meta.env?.VITE_GA_MEASUREMENT_ID
-      ? String(import.meta.env.VITE_GA_MEASUREMENT_ID).trim()
-      : "";
+  const envId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
   return envId || "G-XLDPHSXXCS";
 }
 
@@ -65,7 +62,7 @@ export function trackEnquiryVerticalSelect(vertical: AnalyticsVertical, sourcePa
 export function trackLeadSubmission({
   vertical,
   serviceInterest,
-  channel = "whatsapp",
+  channel = "form",
   sourcePage,
 }: {
   vertical: AnalyticsVertical;

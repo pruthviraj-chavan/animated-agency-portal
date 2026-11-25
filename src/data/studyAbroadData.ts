@@ -1,4 +1,4 @@
-import { FaqEntry } from "@/data/seoConfig";
+import type { FaqSchemaItem as FaqEntry } from "@/lib/seo/schema";
 
 export interface StudyAbroadCardItem {
   title: string;
