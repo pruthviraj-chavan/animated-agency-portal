@@ -1,14 +1,10 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
-import { withDriftX, withScaleUp } from "@/components/home2/ScrollEffects";
+import { DriftWatermark, ScaleGlow } from "@/components/animation/MotionPrimitives";
 import {
   AnimatedProjectsShowcase,
   ProjectDomainMarquee,
 } from "@/components/dv/AnimatedProjectsShowcase";
-
-const DriftWatermark = withDriftX(motion.div);
-const ScaleGlow = withScaleUp(motion.div);
 
 export function ProjectsShowcase() {
   return (
@@ -16,13 +12,11 @@ export function ProjectsShowcase() {
       className="dv-dot-bg relative overflow-hidden py-20 sm:py-28 border-t border-stone-100"
       id="projects"
     >
-      {/* Scroll-scaled subtle ambient aura (ScrollEffects.withScaleUp) */}
       <ScaleGlow
-        aria-hidden="true"
+        aria-hidden
         className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-80 w-80 sm:h-[420px] sm:w-[420px] rounded-full bg-[#FF5422]/10 blur-[120px]"
       />
 
-      {/* Giant scroll-driven horizontal drift watermark (ScrollEffects.withDriftX) */}
       <div className="pointer-events-none select-none overflow-hidden pb-4" aria-hidden="true">
         <DriftWatermark className="whitespace-nowrap text-center font-bold tracking-tight text-stone-100 text-[48px] sm:text-[90px] lg:text-[124px] leading-none">
           dievekter tech live websites &amp; client platforms
@@ -47,15 +41,13 @@ export function ProjectsShowcase() {
           </p>
         </div>
 
-        {/* Continuous Framer Motion Domain Marquee Strip */}
         <ProjectDomainMarquee className="mb-12 rounded-full border" />
 
-        {/* Scroll-linked Spotlight + 3D Parallax 9-Website Showcase Grid */}
         <AnimatedProjectsShowcase showFilters showSpotlight />
 
         <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
           <Link
-            to="/projects"
+            href="/projects"
             className="inline-flex items-center gap-2 rounded-full bg-[#141210] px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#FF5422]"
           >
             Open Full Projects Showcase <ArrowUpRight className="h-4 w-4" />

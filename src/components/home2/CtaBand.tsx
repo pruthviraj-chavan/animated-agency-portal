@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { trackContactAction } from "@/lib/analytics";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 
 const ORANGE_TICKER = [
   "AI agents built for real business work.",
@@ -19,33 +19,31 @@ const GRAY_TICKER = [
 export function CtaBand() {
   return (
     <>
-      {/* Crossed Diagonal Ticker Ribbons (Screenshot 2) */}
-      <div className="relative overflow-hidden py-14 sm:py-16 bg-white">
-        {/* Back light gray tilted strip */}
+      {/* Crossed Diagonal Ticker Ribbons */}
+      <div className="relative overflow-hidden py-14 sm:py-16 bg-white" aria-hidden="true">
         <div className="-mx-6 rotate-[-1.8deg] bg-[#F4F3F1] border-y border-stone-200/80 py-3.5 shadow-sm">
-          <div className="dv-home-ticker-track dv-home-ticker-track--reverse">
+          <div className="dv-ribbon-track dv-ribbon-track--reverse">
             {[...GRAY_TICKER, ...GRAY_TICKER, ...GRAY_TICKER].map((text, idx) => (
               <span
                 key={`g-${idx}`}
                 className="inline-flex items-center gap-6 px-4 text-sm sm:text-lg font-semibold text-[#141210]"
               >
                 {text}
-                <span className="h-1.5 w-1.5 rounded-full bg-stone-400" aria-hidden="true" />
+                <span className="h-1.5 w-1.5 rounded-full bg-stone-400" />
               </span>
             ))}
           </div>
         </div>
 
-        {/* Overlapping front vibrant orange tilted strip */}
         <div className="-mx-6 -mt-4 rotate-[1.8deg] bg-[#FF5422] py-3.5 shadow-lg">
-          <div className="dv-home-ticker-track">
+          <div className="dv-ribbon-track">
             {[...ORANGE_TICKER, ...ORANGE_TICKER, ...ORANGE_TICKER].map((text, idx) => (
               <span
                 key={`o-${idx}`}
                 className="inline-flex items-center gap-6 px-4 text-sm sm:text-lg font-semibold text-white"
               >
                 {text}
-                <span className="h-1.5 w-1.5 rounded-full bg-white/70" aria-hidden="true" />
+                <span className="h-1.5 w-1.5 rounded-full bg-white/70" />
               </span>
             ))}
           </div>
@@ -68,22 +66,22 @@ export function CtaBand() {
           </p>
           <div className="mt-9 flex flex-col sm:flex-row justify-center gap-3.5">
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF5422] px-7 py-3.5 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#e8460e]"
             >
               Start a Project <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <a
+            <TrackedLink
               href="https://wa.me/919404895667?text=Hi%20Dievekter%20Tech!%20I%20would%20like%20to%20discuss%20a%20project."
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackContactAction("whatsapp", "cta-band")}
+              track={{ kind: "contact", channel: "whatsapp", sourcePage: "cta-band" }}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-200 bg-white px-7 py-3.5 text-sm font-semibold text-[#141210] transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
             >
               WhatsApp · +91 94048 95667 <ArrowUpRight className="h-4 w-4 text-[#FF5422]" />
-            </a>
+            </TrackedLink>
             <Link
-              to="/agents"
+              href="/agents"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-200 bg-white px-7 py-3.5 text-sm font-semibold text-[#141210] transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
             >
               See AI Agents

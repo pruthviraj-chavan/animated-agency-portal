@@ -1,13 +1,18 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowUpRight, CheckCircle2, ChevronDown, ChevronRight, type LucideIcon } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2, ChevronRight, type LucideIcon } from "lucide-react";
 import { SiteNav } from "@/components/dv/SiteNav";
 import { SiteFooter } from "@/components/dv/SiteFooter";
 import { CtaBand } from "@/components/home2/CtaBand";
-import { SeoHead } from "@/components/seo/SeoHead";
-import { FaqEntry, buildFaqSchema, buildServiceSchema } from "@/data/seoConfig";
-import { trackServiceCta } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { FaqAccordion } from "@/components/seo/FaqAccordion";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
+import {
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildServiceSchema,
+  buildWebPageSchema,
+  type FaqSchemaItem,
+} from "@/lib/seo/schema";
 
 export type ServiceFeature = {
   title: string;
@@ -42,7 +47,7 @@ export interface ServiceDetailLayoutProps {
   techStack?: string[];
   industries?: string[];
   processSteps?: ProcessStepItem[];
-  faqs?: FaqEntry[];
+  faqs?: FaqSchemaItem[];
   relatedServices?: RelatedServiceLink[];
   ctaTitle: string;
   ctaDescription: string;
@@ -71,18 +76,7 @@ export function ServiceDetailLayout({
   ctaDescription,
   ctaButtonText,
 }: ServiceDetailLayoutProps) {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const resolvedSlug = path.split("/").filter(Boolean).pop() || "service";
-
-  const schemas = [
-    buildServiceSchema({
-      name: title,
-      description: seoDescription || description,
-      path,
-      serviceType: serviceType || title,
-    }),
-    faqs.length > 0 ? buildFaqSchema(faqs) : null,
-  ];
 
   const breadcrumbs = [
     { name: "Home", path: "/" },
@@ -92,16 +86,25 @@ export function ServiceDetailLayout({
 
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-[#141210]">
-      <SeoHead
-        path={path}
-        title={seoTitle}
-        description={seoDescription || description}
-        breadcrumbs={breadcrumbs}
-        schemas={schemas}
+      <JsonLd
+        nodes={[
+          buildWebPageSchema({
+            title: seoTitle || title,
+            description: seoDescription || description,
+            path,
+          }),
+          buildBreadcrumbSchema(breadcrumbs),
+          buildServiceSchema({
+            name: title,
+            description: seoDescription || description,
+            path,
+            serviceType: serviceType || title,
+          }),
+          faqs.length > 0 ? buildFaqSchema(faqs) : null,
+        ]}
       />
       <SiteNav />
       <main className="flex-grow pt-24">
-        {/* Hero */}
         <section className="dv-dot-bg relative overflow-hidden py-14 sm:py-20">
           <div
             aria-hidden="true"
@@ -111,7 +114,7 @@ export function ServiceDetailLayout({
             <nav aria-label="Breadcrumb" className="mb-6 flex justify-center">
               <ol className="inline-flex flex-wrap items-center gap-1.5 text-xs text-stone-500">
                 <li>
-                  <Link to="/" className="hover:text-[#FF5422] transition-colors">
+                  <Link href="/" className="hover:text-[#FF5422] transition-colors">
                     Home
                   </Link>
                 </li>
@@ -119,7 +122,7 @@ export function ServiceDetailLayout({
                   <ChevronRight className="h-3.5 w-3.5 text-stone-400" />
                 </li>
                 <li>
-                  <Link to="/services" className="hover:text-[#FF5422] transition-colors">
+                  <Link href="/services" className="hover:text-[#FF5422] transition-colors">
                     Services
                   </Link>
                 </li>
@@ -143,17 +146,17 @@ export function ServiceDetailLayout({
                 {description}
               </p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Link
-                  to={`/contact?vertical=technology&brief=${encodeURIComponent(
+                <TrackedLink
+                  href={`/contact?vertical=technology&brief=${encodeURIComponent(
                     `Technology Enquiry: ${title}`,
                   )}`}
-                  onClick={() => trackServiceCta(resolvedSlug, path)}
+                  track={{ kind: "service", slug: resolvedSlug, sourcePage: path }}
                   className="inline-flex items-center gap-2 rounded-full bg-[#FF5422] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#e8460e] transition-colors"
                 >
                   {ctaButtonText} <ArrowUpRight className="h-4 w-4" />
-                </Link>
+                </TrackedLink>
                 <Link
-                  to="/projects"
+                  href="/projects"
                   className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-6 py-3 text-sm font-semibold text-[#141210] hover:border-[#FF5422] hover:text-[#FF5422] transition-colors"
                 >
                   View Shipped Work
@@ -163,7 +166,6 @@ export function ServiceDetailLayout({
           </div>
         </section>
 
-        {/* Overview & Business Challenges */}
         {(overviewBody || (problemsSolved && problemsSolved.length > 0)) && (
           <section className="border-t border-stone-100 bg-white py-14 sm:py-16">
             <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-6xl">
@@ -202,7 +204,6 @@ export function ServiceDetailLayout({
           </section>
         )}
 
-        {/* Features Grid */}
         <section className="border-t border-stone-100 bg-[#FFF8F5] py-16 sm:py-20">
           <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-6xl">
             <h2 className="text-3xl font-bold text-center text-[#141210] mb-12">{sectionTitle}</h2>
@@ -226,7 +227,6 @@ export function ServiceDetailLayout({
           </div>
         </section>
 
-        {/* Tech Stack, Process & Industries */}
         {((techStack && techStack.length > 0) ||
           (processSteps && processSteps.length > 0) ||
           (industries && industries.length > 0)) && (
@@ -295,51 +295,17 @@ export function ServiceDetailLayout({
           </section>
         )}
 
-        {/* Visible FAQs */}
         {faqs.length > 0 && (
           <section className="border-t border-stone-100 bg-[#FFF8F5] py-14 sm:py-20">
             <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-4xl">
               <h2 className="text-2xl sm:text-3xl font-bold text-center text-[#141210] mb-10">
                 Frequently Asked Questions
               </h2>
-              <div className="space-y-3">
-                {faqs.map((faq, idx) => {
-                  const isOpen = openFaq === idx;
-                  return (
-                    <div
-                      key={faq.question}
-                      className="rounded-2xl border border-[#FBE0D4] bg-white"
-                    >
-                      <button
-                        type="button"
-                        onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        aria-expanded={isOpen}
-                        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-                      >
-                        <h3 className="text-sm sm:text-base font-semibold text-[#141210]">
-                          {faq.question}
-                        </h3>
-                        <ChevronDown
-                          className={cn(
-                            "h-4 w-4 shrink-0 text-[#FF5422] transition-transform",
-                            isOpen && "rotate-180",
-                          )}
-                        />
-                      </button>
-                      {isOpen && (
-                        <div className="border-t border-stone-100 px-5 pb-4 pt-3 text-sm leading-relaxed text-stone-600">
-                          {faq.answer}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+              <FaqAccordion items={faqs} tone="white" />
             </div>
           </section>
         )}
 
-        {/* Related Services */}
         {relatedServices.length > 0 && (
           <section className="border-t border-stone-100 bg-white py-12">
             <div className="container mx-auto px-5 sm:px-6 lg:px-8 max-w-5xl text-center">
@@ -350,7 +316,7 @@ export function ServiceDetailLayout({
                 {relatedServices.map((rel) => (
                   <Link
                     key={rel.path}
-                    to={rel.path}
+                    href={rel.path}
                     className="inline-flex items-center gap-1.5 rounded-full border border-stone-200 bg-white px-4 py-2 text-xs sm:text-sm font-medium text-[#141210] hover:border-[#FF5422] hover:text-[#FF5422] transition-colors"
                   >
                     {rel.label} <ArrowUpRight className="h-3.5 w-3.5" />
@@ -361,7 +327,6 @@ export function ServiceDetailLayout({
           </section>
         )}
 
-        {/* Highlight Banner */}
         <section className="dv-dot-bg py-16 sm:py-20">
           <div className="container mx-auto px-5 sm:px-6 lg:px-8">
             <div className="dv-dot-orange rounded-3xl p-8 sm:p-12 text-center max-w-4xl mx-auto text-white shadow-lg">
@@ -369,15 +334,15 @@ export function ServiceDetailLayout({
               <p className="text-base sm:text-lg text-white/90 mb-8 max-w-2xl mx-auto">
                 {ctaDescription}
               </p>
-              <Link
-                to={`/contact?vertical=technology&brief=${encodeURIComponent(
+              <TrackedLink
+                href={`/contact?vertical=technology&brief=${encodeURIComponent(
                   `Technology Enquiry: ${title}`,
                 )}`}
-                onClick={() => trackServiceCta(resolvedSlug, `${path}#banner`)}
+                track={{ kind: "service", slug: resolvedSlug, sourcePage: `${path}#banner` }}
                 className="inline-flex items-center gap-2 rounded-full bg-[#141210] px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
               >
                 {ctaButtonText} <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </section>

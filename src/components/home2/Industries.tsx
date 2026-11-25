@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
@@ -132,7 +134,7 @@ export function Industries() {
             </AnimatePresence>
 
             <Link
-              to={cat.to}
+              href={cat.to}
               className="mt-6 inline-flex items-center gap-1.5 text-xs font-medium text-stone-300 hover:text-white transition-colors"
             >
               Explore solutions <ArrowUpRight className="h-3.5 w-3.5" />

@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export interface ArticleHeading {
   id: string;
@@ -40,7 +40,7 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
           tokens.push(
             <Link
               key={`${match.index}-l`}
-              to={href}
+              href={href}
               className="font-medium text-[#FF5422] underline underline-offset-4 hover:text-[#e8460e]"
             >
               {label}

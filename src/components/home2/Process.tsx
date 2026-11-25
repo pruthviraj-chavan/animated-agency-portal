@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { MotionFadeIn } from "@/components/animation/MotionPrimitives";
 
 const steps = [
   { n: "01", t: "Discover", d: "We map the workflow, data and outcome that matter before writing a line of code." },
@@ -28,20 +28,15 @@ export function Process() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {steps.map((s, i) => (
-            <motion.div
-              key={s.n}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.4 }}
-              className="rounded-2xl border border-[#FBE0D4] bg-[#FFF7F4] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF5422]/40 hover:shadow-md"
-            >
-              <span className="text-sm font-black tracking-[0.16em] text-[#FF5422]">
-                {s.n}
-              </span>
-              <h3 className="mt-3 text-lg font-bold text-[#141210]">{s.t}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-stone-600">{s.d}</p>
-            </motion.div>
+            <MotionFadeIn key={s.n} delay={i * 0.06}>
+              <div className="h-full rounded-2xl border border-[#FBE0D4] bg-[#FFF7F4] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF5422]/40 hover:shadow-md">
+                <span className="text-sm font-black tracking-[0.16em] text-[#FF5422]">
+                  {s.n}
+                </span>
+                <h3 className="mt-3 text-lg font-bold text-[#141210]">{s.t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-stone-600">{s.d}</p>
+              </div>
+            </MotionFadeIn>
           ))}
         </div>
       </div>

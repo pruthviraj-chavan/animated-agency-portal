@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { RotateCcw, Plus, Trash2, Play } from "lucide-react";

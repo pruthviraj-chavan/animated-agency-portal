@@ -1,8 +1,10 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight, Lock, ShieldCheck, CheckCircle2, Sparkles } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
-import { trackStudyAbroadCta } from "@/lib/analytics";
+import { trackStudyAbroadCta } from "@/lib/analytics/gtag";
 import { cn } from "@/lib/utils";
 
 interface GlobeDestination {
@@ -149,7 +151,7 @@ export function InteractiveGlobeSection({
                   transition={{ type: "spring", stiffness: 320, damping: 20 }}
                 >
                   <Link
-                    to="/contact?vertical=study-abroad&brief=Free%20Study%20Abroad%20Consultation"
+                    href="/contact?vertical=study-abroad&brief=Free%20Study%20Abroad%20Consultation"
                     onClick={() => trackStudyAbroadCta("/contact#globe-call", sourcePage)}
                     className="inline-flex items-center gap-2 rounded-full bg-[#FF5422] hover:bg-[#e8460e] px-7 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(255,84,34,0.35)] transition-colors"
                   >
@@ -159,7 +161,7 @@ export function InteractiveGlobeSection({
                 </motion.div>
 
                 <Link
-                  to={activeDest.to}
+                  href={activeDest.to}
                   className="text-xs sm:text-sm font-medium text-stone-300 hover:text-white underline underline-offset-4 transition-colors"
                 >
                   Explore {activeDest.label} track →

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight, AudioLines, BadgeCheck, Clapperboard, Film, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
+import { MotionFadeIn } from "@/components/animation/MotionPrimitives";
 
 const stages = [
   { icon: Sparkles, label: "Concept", detail: "Your idea" },
@@ -13,12 +13,7 @@ export function AIVideoService() {
     <section className="dv-dot-bg py-20 sm:py-24" id="ai-video">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-          >
+          <MotionFadeIn direction="left">
             <div className="inline-flex items-center gap-2 rounded-full bg-[#FFF4F0] border border-[#FF5422]/25 px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-[#FF5422] mb-5">
               <Film className="h-3.5 w-3.5" aria-hidden="true" /> Creative technology
             </div>
@@ -36,18 +31,16 @@ export function AIVideoService() {
               count.
             </p>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-[#FF5422] px-6 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-[#e8460e]"
             >
               Discuss a video project <ArrowUpRight className="h-4 w-4" />
             </Link>
-          </motion.div>
+          </MotionFadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, x: 16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.08 }}
+          <MotionFadeIn
+            direction="right"
+            delay={0.08}
             className="rounded-2xl border border-[#FBE0D4] bg-[#FFF5F1] p-5 sm:p-7 shadow-sm"
           >
             <div className="flex items-center justify-between border-b border-[#F5D6C8] pb-4 text-xs font-medium text-stone-500 mb-5">
@@ -86,10 +79,9 @@ export function AIVideoService() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </MotionFadeIn>
         </div>
 
-        {/* Verified Upwork strip */}
         <div className="mt-12 rounded-2xl border border-stone-200 bg-white p-6 sm:p-8 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between shadow-sm">
           <div>
             <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#FF5422]">

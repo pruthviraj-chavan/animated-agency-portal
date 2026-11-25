@@ -1,10 +1,8 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import { FaqEntry } from "@/data/seoConfig";
-import { cn } from "@/lib/utils";
+import Link from "next/link";
+import type { FaqSchemaItem } from "@/lib/seo/schema";
+import { FaqAccordion } from "@/components/seo/FaqAccordion";
 
-export const HOME_FAQS: FaqEntry[] = [
+export const HOME_FAQS: FaqSchemaItem[] = [
   {
     question: "What technology services does DieVekter Tech build?",
     answer:
@@ -38,8 +36,6 @@ export const HOME_FAQS: FaqEntry[] = [
 ];
 
 export function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   return (
     <section
       className="border-t border-stone-100 bg-[#FFF8F5] py-16 sm:py-24"
@@ -65,51 +61,19 @@ export function FaqSection() {
           </p>
         </div>
 
-        <div className="space-y-3">
-          {HOME_FAQS.map((item, idx) => {
-            const isOpen = openIndex === idx;
-            return (
-              <div
-                key={item.question}
-                className="rounded-2xl border border-[#FBE0D4] bg-white transition-colors hover:border-[#FF5422]/40"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-4 px-5 py-4 sm:px-6 sm:py-5 text-left"
-                >
-                  <h3 className="text-sm sm:text-base font-semibold text-[#141210]">
-                    {item.question}
-                  </h3>
-                  <ChevronDown
-                    className={cn(
-                      "h-4 w-4 shrink-0 text-[#FF5422] transition-transform duration-200",
-                      isOpen && "rotate-180",
-                    )}
-                  />
-                </button>
-                {isOpen && (
-                  <div className="border-t border-stone-100 px-5 pb-5 pt-3 sm:px-6 text-sm leading-relaxed text-stone-600">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <FaqAccordion items={HOME_FAQS} tone="white" />
 
         <div className="mt-8 text-center text-xs sm:text-sm text-stone-500">
           Have a specific question?{" "}
           <Link
-            to="/contact"
+            href="/contact"
             className="font-semibold text-[#141210] underline underline-offset-4 hover:text-[#FF5422]"
           >
             Contact the dieVekter team
           </Link>{" "}
           or explore our{" "}
           <Link
-            to="/study-abroad/student-resources"
+            href="/study-abroad/student-resources"
             className="font-semibold text-[#141210] underline underline-offset-4 hover:text-[#FF5422]"
           >
             Study Abroad FAQs &amp; resources

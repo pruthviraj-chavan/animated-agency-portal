@@ -1,18 +1,14 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight, BookOpenCheck, FileCheck2, Globe2, GraduationCap } from "lucide-react";
-import { motion, useReducedMotion } from "framer-motion";
 import {
-  withDriftX,
-  withFlyInLeft,
-  withFlyInRight,
-  withScaleUp,
-} from "@/components/home2/ScrollEffects";
-import { trackStudyAbroadCta } from "@/lib/analytics";
-
-const DriftWatermark = withDriftX(motion.div);
-const FlyInLeft = withFlyInLeft(motion.div);
-const FlyInRight = withFlyInRight(motion.div);
-const ScaleUp = withScaleUp(motion.div);
+  DriftWatermark,
+  FlyLeftBlock,
+  FlyRightBlock,
+  MotionFadeIn,
+  ScaleGlow,
+  SpringButtonWrapper,
+} from "@/components/animation/MotionPrimitives";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 
 const pathways = [
   {
@@ -52,8 +48,6 @@ const includedTags = [
 ];
 
 export function StudyAbroadShowcase() {
-  const reduceMotion = Boolean(useReducedMotion());
-
   return (
     <section
       className="dv-dot-bg relative overflow-hidden border-t border-stone-100 py-16 sm:py-24"
@@ -67,7 +61,6 @@ export function StudyAbroadShowcase() {
 
       <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_1.35fr] items-start">
-          {/* Left narrative column */}
           <div>
             <span className="inline-block rounded-full bg-[#FF5422] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
               Study Abroad Consultancy
@@ -88,7 +81,6 @@ export function StudyAbroadShowcase() {
               documentation.
             </p>
 
-            {/* Quick service tags */}
             <div className="mt-5 flex flex-wrap gap-1.5">
               {includedTags.map((tag) => (
                 <span
@@ -100,9 +92,8 @@ export function StudyAbroadShowcase() {
               ))}
             </div>
 
-            {/* Editorial contrast card */}
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <FlyInLeft className="rounded-2xl bg-[#1F1C18] p-5 text-white shadow-sm">
+              <FlyLeftBlock className="rounded-2xl bg-[#1F1C18] p-5 text-white shadow-sm">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FF8C66]">
                   Free 30-Min Consultation
                 </p>
@@ -111,9 +102,9 @@ export function StudyAbroadShowcase() {
                   Public &amp; state-recognized universities, English &amp; German taught degrees,
                   and official DAAD / APS checklist mapping.
                 </p>
-              </FlyInLeft>
+              </FlyLeftBlock>
 
-              <ScaleUp className="dv-dot-orange rounded-2xl p-5 text-white shadow-sm flex flex-col justify-between">
+              <ScaleGlow className="dv-dot-orange rounded-2xl p-5 text-white shadow-sm flex flex-col justify-between">
                 <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/90">
                   Transparent Advisory
                 </p>
@@ -121,25 +112,21 @@ export function StudyAbroadShowcase() {
                   Admissions and student visa decisions are strictly made by universities and
                   official embassies/consulates — zero false guarantees.
                 </p>
-              </ScaleUp>
+              </ScaleGlow>
             </div>
 
             <div className="mt-7 flex flex-wrap gap-3">
-              <motion.div
-                whileHover={reduceMotion ? undefined : { scale: 1.04 }}
-                whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-              >
-                <Link
-                  to="/study-abroad"
-                  onClick={() => trackStudyAbroadCta("/study-abroad", "/")}
+              <SpringButtonWrapper>
+                <TrackedLink
+                  href="/study-abroad"
+                  track={{ kind: "study_abroad", destination: "/study-abroad", sourcePage: "/" }}
                   className="inline-flex items-center gap-2 rounded-full bg-[#FF5422] px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#e8460e]"
                 >
                   Explore Study Abroad Hub <ArrowUpRight className="h-4 w-4" />
-                </Link>
-              </motion.div>
+                </TrackedLink>
+              </SpringButtonWrapper>
               <Link
-                to="/study-abroad/germany"
-                onClick={() => trackStudyAbroadCta("/study-abroad/germany", "/")}
+                href="/study-abroad/germany"
                 className="inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-6 py-3 text-sm font-semibold text-[#141210] transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
               >
                 Study in Germany Guide
@@ -147,19 +134,14 @@ export function StudyAbroadShowcase() {
             </div>
           </div>
 
-          {/* Right 4-card structured grid */}
-          <FlyInRight className="grid gap-4 sm:grid-cols-2">
-            {pathways.map((item) => {
+          <FlyRightBlock className="grid gap-4 sm:grid-cols-2">
+            {pathways.map((item, idx) => {
               const Icon = item.icon;
               return (
-                <motion.div
-                  key={item.title}
-                  whileHover={reduceMotion ? undefined : { y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 280, damping: 22 }}
-                >
-                  <Link
-                    to={item.to}
-                    onClick={() => trackStudyAbroadCta(item.to, "/")}
+                <MotionFadeIn key={item.title} delay={idx * 0.05} hoverLift>
+                  <TrackedLink
+                    href={item.to}
+                    track={{ kind: "study_abroad", destination: item.to, sourcePage: "/" }}
                     className="group flex h-full flex-col justify-between rounded-2xl border border-[#FBE0D4] bg-[#FFF5F1] p-6 transition-colors duration-300 hover:border-[#FF5422]/45 hover:shadow-[0_20px_40px_-20px_rgba(255,84,34,0.25)]"
                   >
                     <div>
@@ -175,11 +157,11 @@ export function StudyAbroadShowcase() {
                       Read pathway details{" "}
                       <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
-                  </Link>
-                </motion.div>
+                  </TrackedLink>
+                </MotionFadeIn>
               );
             })}
-          </FlyInRight>
+          </FlyRightBlock>
         </div>
       </div>
     </section>

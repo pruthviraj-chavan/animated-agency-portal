@@ -1,12 +1,16 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 import { SiteNav } from "@/components/dv/SiteNav";
 import { SiteFooter } from "@/components/dv/SiteFooter";
 import { Reveal, Section, SectionHeading } from "@/components/dv/primitives";
 import { CtaBand } from "@/components/home2/CtaBand";
-import { SeoHead } from "@/components/seo/SeoHead";
-import { buildServiceSchema } from "@/data/seoConfig";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  buildBreadcrumbSchema,
+  buildServiceSchema,
+  buildWebPageSchema,
+} from "@/lib/seo/schema";
 
 export type SolutionBlock = {
   title: string;
@@ -33,21 +37,24 @@ export function SolutionPage({
   outcomes: string[];
   children?: ReactNode;
 }) {
+  const resolvedService = serviceType || eyebrow;
+  const breadcrumbs = [
+    { name: "Home", path: "/" },
+    { name: "Solutions", path: "/solutions" },
+    ...(path !== "/solutions" ? [{ name: eyebrow, path }] : []),
+  ];
+
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden bg-white text-[#141210]">
-      <SeoHead
-        path={path}
-        breadcrumbs={[
-          { name: "Home", path: "/" },
-          { name: "Solutions", path: "/solutions" },
-          ...(path !== "/solutions" ? [{ name: eyebrow, path }] : []),
-        ]}
-        schemas={[
+      <JsonLd
+        nodes={[
+          buildWebPageSchema({ title: resolvedService, description: intro, path }),
+          buildBreadcrumbSchema(breadcrumbs),
           buildServiceSchema({
-            name: serviceType || eyebrow,
+            name: resolvedService,
             description: intro,
             path,
-            serviceType: serviceType || eyebrow,
+            serviceType: resolvedService,
           }),
         ]}
       />
@@ -70,13 +77,13 @@ export function SolutionPage({
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                to={`/contact?vertical=technology&brief=${encodeURIComponent(eyebrow)}`}
+                href={`/contact?vertical=technology&brief=${encodeURIComponent(eyebrow)}`}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FF5422] px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-0.5 hover:bg-[#e8460e]"
               >
                 Start a Project <ArrowUpRight className="h-4 w-4" />
               </Link>
               <Link
-                to="/services"
+                href="/services"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-stone-200 bg-white px-7 py-3.5 text-sm font-semibold text-[#141210] transition-colors hover:border-[#FF5422] hover:text-[#FF5422]"
               >
                 Explore All Services

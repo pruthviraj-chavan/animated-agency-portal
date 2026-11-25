@@ -1,4 +1,7 @@
+"use client";
+
 import { useEffect, useId, useMemo, useRef, useState, type MouseEvent } from "react";
+import Image from "next/image";
 import { ArrowUpRight, Globe, Sparkles } from "lucide-react";
 import {
   AnimatePresence,
@@ -155,15 +158,15 @@ function ProjectBrowserPreview({
 
         {/* Actual Live Website Screenshot */}
         {!imageError && (
-          <img
+          <Image
             src={project.previewImage}
             alt={`${project.title} website preview`}
-            loading="lazy"
-            decoding="async"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
             className={cn(
-              "relative z-10 h-full w-full object-cover object-top transition-all duration-700 ease-out group-hover:scale-105",
+              "relative z-10 object-cover object-top transition-all duration-700 ease-out group-hover:scale-105",
               imageLoaded ? "opacity-100" : "opacity-0",
             )}
           />
@@ -396,10 +399,12 @@ export function AnimatedProjectsShowcase({
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                     className="group block h-full w-full relative"
                   >
-                    <img
+                    <Image
                       src={spotlight.previewImage}
                       alt={`${spotlight.title} flagship spotlight`}
-                      className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
                     <div
                       aria-hidden="true"

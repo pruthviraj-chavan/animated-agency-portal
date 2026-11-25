@@ -1,10 +1,6 @@
+import Image from "next/image";
 import { Bot, Languages, Star, Workflow } from "lucide-react";
-import { motion } from "framer-motion";
-import {
-  withFlyInLeft,
-  withFlyInRight,
-  withScaleUp,
-} from "@/components/home2/ScrollEffects";
+import { FlyLeftBlock, FlyRightBlock, ScaleGlow } from "@/components/animation/MotionPrimitives";
 
 const stats = [
   { v: "40+", l: "Systems shipped" },
@@ -13,15 +9,10 @@ const stats = [
   { v: "24/7", l: "AI availability" },
 ];
 
-const FlyInLeft = withFlyInLeft(motion.div);
-const FlyInRight = withFlyInRight(motion.div);
-const ScaleUp = withScaleUp(motion.div);
-
 export function AboutStudio() {
   return (
     <section className="dv-dot-bg py-16 sm:py-24" id="about">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-        {/* 4 Vibrant Orange Stat Cards (Screenshot 7 top strip) */}
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 mb-20 sm:mb-28">
           {stats.map((s) => (
             <div
@@ -31,16 +22,12 @@ export function AboutStudio() {
               <span className="text-4xl sm:text-5xl font-bold tracking-tight text-[#141210]">
                 {s.v}
               </span>
-              <span className="text-xs sm:text-sm font-medium text-[#141210]/85">
-                {s.l}
-              </span>
+              <span className="text-xs sm:text-sm font-medium text-[#141210]/85">{s.l}</span>
             </div>
           ))}
         </div>
 
-        {/* Asymmetric "About the Studio" Grid (Screenshot 7) */}
         <div className="grid gap-8 lg:grid-cols-[1fr_0.58fr_1.15fr] items-stretch">
-          {/* Left Copy Column */}
           <div className="flex flex-col justify-between py-2">
             <div>
               <span className="inline-block rounded-full bg-[#FF5422] px-3.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white">
@@ -64,9 +51,8 @@ export function AboutStudio() {
             </p>
           </div>
 
-          {/* Middle Column: Vertical studio card + Orange highlight block */}
           <div className="flex flex-col gap-4">
-            <FlyInLeft className="flex-1 min-h-[210px] rounded-2xl bg-[#1F1C18] p-5 text-white flex flex-col justify-between overflow-hidden relative shadow-lg">
+            <FlyLeftBlock className="flex-1 min-h-[210px] rounded-2xl bg-[#1F1C18] p-5 text-white flex flex-col justify-between overflow-hidden relative shadow-lg">
               <div
                 aria-hidden="true"
                 className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#FF5422]/35 blur-2xl"
@@ -87,36 +73,34 @@ export function AboutStudio() {
               <p className="relative z-10 text-[11px] text-stone-400">
                 Voice &amp; chat agents in production
               </p>
-            </FlyInLeft>
+            </FlyLeftBlock>
 
-            <ScaleUp className="dv-dot-orange rounded-2xl p-6 text-white flex flex-col justify-between min-h-[145px] shadow-sm">
+            <ScaleGlow className="dv-dot-orange rounded-2xl p-6 text-white flex flex-col justify-between min-h-[145px] shadow-sm">
               <span className="text-4xl sm:text-5xl font-bold tracking-tight">40+</span>
               <span className="text-xs font-medium text-white/90">
                 Products &amp; systems deployed
               </span>
-            </ScaleUp>
+            </ScaleGlow>
           </div>
 
-          {/* Right Column: Large Studio Showcase Visual + Verified Score Badge */}
-          <FlyInRight className="relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-stone-200 bg-[#FFF4F0] shadow-lg">
-            <img
+          <FlyRightBlock className="relative min-h-[340px] sm:min-h-[380px] rounded-2xl overflow-hidden border border-stone-200 bg-[#FFF4F0] shadow-lg">
+            <Image
               src="/dievektor.png"
               alt="dieVekter engineering studio showcase"
-              className="h-full w-full object-cover"
-              loading="lazy"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
             />
             <div
               aria-hidden="true"
               className="absolute inset-0 bg-gradient-to-t from-[#141210]/65 via-transparent to-transparent"
             />
 
-            {/* Top left floating badge */}
             <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-3.5 py-1.5 text-xs font-semibold text-[#141210] shadow-sm">
               <Workflow className="h-3.5 w-3.5 text-[#FF5422]" />
               AI · Software · Automation
             </div>
 
-            {/* Bottom right frosted score card (matches Screenshot 7) */}
             <div className="absolute bottom-4 right-4 rounded-2xl bg-white/90 backdrop-blur-md px-5 py-4 text-center shadow-xl border border-white">
               <p className="text-3xl sm:text-4xl font-bold tracking-tight text-[#141210]">4.9</p>
               <div className="mt-1 flex items-center justify-center gap-0.5 text-[#FF5422]">
@@ -128,7 +112,7 @@ export function AboutStudio() {
                 100% Verified Success
               </p>
             </div>
-          </FlyInRight>
+          </FlyRightBlock>
         </div>
       </div>
     </section>

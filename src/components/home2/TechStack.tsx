@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { MotionFadeIn } from "@/components/animation/MotionPrimitives";
 
 const groups = [
   {
@@ -43,26 +43,21 @@ export function TechStack() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             {groups.map((g, i) => (
-              <motion.div
-                key={g.t}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06, duration: 0.4 }}
-                className="rounded-2xl border border-[#FBE0D4] bg-[#FFF6F2] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
-              >
-                <h3 className="text-xs font-black uppercase tracking-[0.18em] text-[#FF5422]">
-                  {g.t}
-                </h3>
-                <ul className="mt-4 space-y-2.5">
-                  {g.items.map((it) => (
-                    <li key={it} className="flex items-start gap-2.5 text-sm text-stone-600">
-                      <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#FF5422]" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+              <MotionFadeIn key={g.t} delay={i * 0.06}>
+                <div className="h-full rounded-2xl border border-[#FBE0D4] bg-[#FFF6F2] p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  <h3 className="text-xs font-black uppercase tracking-[0.18em] text-[#FF5422]">
+                    {g.t}
+                  </h3>
+                  <ul className="mt-4 space-y-2.5">
+                    {g.items.map((it) => (
+                      <li key={it} className="flex items-start gap-2.5 text-sm text-stone-600">
+                        <span className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#FF5422]" />
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </MotionFadeIn>
             ))}
           </div>
         </div>

@@ -1,46 +1,26 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Mail, Menu, X } from "lucide-react";
+import { MOBILE_EXTRA_LINKS, PRIMARY_NAV } from "@/config/navigation";
 import { cn } from "@/lib/utils";
 
-const NAV = [
-  { name: "Home", path: "/", match: (p: string) => p === "/" },
-  { name: "About", path: "/about", match: (p: string) => p === "/about" },
-  {
-    name: "Services",
-    path: "/services",
-    match: (p: string) => p.startsWith("/services") || p.startsWith("/solutions") || p === "/agents",
-  },
-  {
-    name: "Study Abroad",
-    path: "/study-abroad",
-    match: (p: string) => p.startsWith("/study-abroad"),
-  },
-  {
-    name: "Projects",
-    path: "/projects",
-    match: (p: string) => p === "/projects" || p === "/portfolio" || p === "/products",
-  },
-  { name: "Blog", path: "/blog", match: (p: string) => p.startsWith("/blog") },
-  { name: "Contact", path: "/contact", match: (p: string) => p === "/contact" },
-];
-
-const MOBILE_EXTRA = [
-  { name: "Study in Germany", path: "/study-abroad/germany" },
-  { name: "AI Agents", path: "/services/ai-agents" },
-  { name: "Website Dev", path: "/services/website-development" },
-  { name: "Solutions", path: "/solutions" },
-  { name: "Portfolio", path: "/portfolio" },
-  { name: "Products", path: "/products" },
-  { name: "Internships", path: "/internship" },
-  { name: "Terms & Legal", path: "/terms" },
-];
+function isNavActive(item: (typeof PRIMARY_NAV)[number], pathname: string): boolean {
+  if (item.href === "/") return pathname === "/";
+  if ("prefixes" in item && item.prefixes) {
+    return item.prefixes.some((prefix) => pathname.startsWith(prefix));
+  }
+  return pathname === item.href;
+}
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname() || "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -49,7 +29,7 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [location.pathname]);
+  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -70,13 +50,15 @@ export function SiteNav() {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
           {/* Brand */}
-          <Link to="/" className="flex items-center gap-2 min-w-0 group shrink-0">
+          <Link href="/" className="flex items-center gap-2 min-w-0 group shrink-0">
             <span className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg sm:rounded-xl bg-[#FFFDFB] p-0.5 sm:p-1 ring-1 ring-[#FBE0D4] shadow-[0_2px_10px_rgba(255,84,34,0.08)] transition-transform group-hover:scale-105">
-              <img
+              <Image
                 src="/dievektor_logo.png"
                 alt="dieVekter logo"
+                width={40}
+                height={40}
                 className="h-full w-full object-contain"
-                loading="eager"
+                priority
               />
             </span>
             <span className="text-[17px] sm:text-[19px] font-bold tracking-tight text-[#141210]">
@@ -89,12 +71,12 @@ export function SiteNav() {
             aria-label="Primary navigation"
             className="hidden lg:flex items-center gap-0.5 rounded-full border border-stone-200/90 bg-white/95 p-1 shadow-[0_2px_14px_rgba(0,0,0,0.04)] backdrop-blur-md"
           >
-            {NAV.map((item) => {
-              const active = item.match(location.pathname);
+            {PRIMARY_NAV.map((item) => {
+              const active = isNavActive(item, pathname);
               return (
                 <Link
                   key={item.name}
-                  to={item.path}
+                  href={item.href}
                   className={cn(
                     "px-4 py-1.5 text-[13.5px] font-medium rounded-full transition-all duration-200 whitespace-nowrap",
                     active
@@ -111,7 +93,7 @@ export function SiteNav() {
           {/* Right actions */}
           <div className="flex items-center gap-2 shrink-0">
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-stone-200 bg-white px-3.5 py-2 sm:px-5 sm:py-2.5 text-xs sm:text-[13.5px] font-medium text-[#141210] shadow-[0_2px_10px_rgba(0,0,0,0.04)] transition-all hover:border-[#FF5422] hover:text-[#FF5422] whitespace-nowrap"
             >
               <Mail className="h-3.5 w-3.5 text-[#FF5422]" />
@@ -140,12 +122,12 @@ export function SiteNav() {
             className="fixed inset-0 z-40 lg:hidden bg-white pt-24 pb-8 px-6 overflow-y-auto"
           >
             <div className="flex flex-col space-y-2 max-w-md mx-auto">
-              {NAV.map((item) => {
-                const active = item.match(location.pathname);
+              {PRIMARY_NAV.map((item) => {
+                const active = isNavActive(item, pathname);
                 return (
                   <Link
                     key={item.name}
-                    to={item.path}
+                    href={item.href}
                     className={cn(
                       "flex items-center justify-between rounded-2xl px-5 py-4 text-xl font-semibold transition-colors",
                       active
@@ -160,10 +142,10 @@ export function SiteNav() {
               })}
 
               <div className="pt-4 grid grid-cols-2 gap-2.5">
-                {MOBILE_EXTRA.map((item) => (
+                {MOBILE_EXTRA_LINKS.map((item) => (
                   <Link
                     key={item.name}
-                    to={item.path}
+                    href={item.href}
                     className="rounded-xl border border-stone-200 px-4 py-3 text-sm font-medium text-stone-700 hover:border-[#FF5422] hover:text-[#FF5422]"
                   >
                     {item.name}

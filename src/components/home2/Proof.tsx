@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
 
 const recognitions = [
   {
@@ -74,13 +73,9 @@ export function Proof() {
               </tr>
             </thead>
             <tbody>
-              {recognitions.map((row, i) => (
-                <motion.tr
+              {recognitions.map((row) => (
+                <tr
                   key={row.recognition}
-                  initial={{ opacity: 0, y: 8 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05, duration: 0.35 }}
                   className="group border-b border-stone-200/80 hover:bg-[#FFF4F0]/70 transition-colors"
                 >
                   <td className="py-4 pr-6 text-stone-500 font-medium">{row.year}</td>
@@ -93,22 +88,22 @@ export function Proof() {
                         href={row.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`Verify ${row.recognition}`}
-                        className="inline-flex h-8 w-8 items-center justify-center rounded-full text-stone-500 group-hover:bg-[#FF5422] group-hover:text-white transition-colors"
+                        aria-label={`Open ${row.recognition}`}
+                        className="inline-flex h-8 w-8 items-center justify-center rounded-full text-stone-400 group-hover:text-[#FF5422] transition-colors"
                       >
                         <ArrowUpRight className="h-4 w-4" />
                       </a>
                     ) : (
                       <Link
-                        to={row.href}
-                        aria-label={`View ${row.recognition}`}
-                        className="inline-flex h-8 w-8 items-center justify-center rounded-full text-stone-500 group-hover:bg-[#FF5422] group-hover:text-white transition-colors"
+                        href={row.href}
+                        aria-label={`Open ${row.recognition}`}
+                        className="inline-flex h-8 w-8 items-center justify-center rounded-full text-stone-400 group-hover:text-[#FF5422] transition-colors"
                       >
                         <ArrowUpRight className="h-4 w-4" />
                       </Link>
                     )}
                   </td>
-                </motion.tr>
+                </tr>
               ))}
             </tbody>
           </table>

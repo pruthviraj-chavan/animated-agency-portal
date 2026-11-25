@@ -1,3 +1,5 @@
+"use client";
+
 import {
   forwardRef,
   useCallback,
@@ -161,7 +163,7 @@ function withScrollStyle<P extends WrappedProps>(
         [forwardedRef],
       );
 
-      return <Component {...(props as P)} ref={setRef} style={{ ...props.style, ...style }} />;
+      return <Component {...(props as P)} ref={setRef} style={{ ...((props as WrappedProps).style || {}), ...style }} />;
     },
   );
   Wrapped.displayName = `ScrollEffect(${Component.displayName || Component.name || "Element"})`;
@@ -273,7 +275,7 @@ export function withHideWhileScrolling<P extends WrappedProps>(Component: Compon
         <Component
           {...(props as P)}
           ref={forwardedRef}
-          style={{ ...props.style, opacity, y, pointerEvents: hidden ? "none" : undefined }}
+          style={{ ...((props as WrappedProps).style || {}), opacity, y, pointerEvents: hidden ? "none" : undefined }}
         />
       );
     },
@@ -311,7 +313,7 @@ export function withScrollWidth<P extends WrappedProps>(Component: ComponentType
         <Component
           {...(props as P)}
           ref={setRef}
-          style={{ ...props.style, width: below || reduce ? "100%" : width }}
+          style={{ ...((props as WrappedProps).style || {}), width: below || reduce ? "100%" : width }}
         />
       );
     },
@@ -395,7 +397,11 @@ export function withScrollWidthClip<P extends WrappedProps>(Component: Component
         <Component
           {...(props as P)}
           ref={setRef}
-          style={below || reduce ? props.style : { ...props.style, clipPath }}
+          style={
+            below || reduce
+              ? (props as WrappedProps).style
+              : { ...((props as WrappedProps).style || {}), clipPath }
+          }
         />
       );
     },
